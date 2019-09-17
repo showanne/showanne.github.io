@@ -1,0 +1,308 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+/* 這邊是max-width 1920px 不用設media 再往下尺寸才要設media*/
+#all{
+    display: flex;
+}
+#navbar{
+    width: 320px;
+    height: 100vh;
+    background-color: rgb(179, 232, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url("./img/mountain_logo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20% 0 0 0 ;
+    /* 為使之後設定 media 時方便設定，所以不針對某個方向設值 */
+}
+#menu{
+    font-size: 24pt;
+    color: sienna;
+    line-height: 3;
+    margin: 20% 0 0 0;
+}
+a{
+    text-decoration:none;
+    font-family: '微軟正黑體';
+    font-weight: bold;
+}
+a:hover{
+    color: rgb(227, 233, 252);
+    width: 100%;
+    background-color: royalblue;
+    border-radius: 5%;
+}
+#content{
+    width: calc(100vw - 320px);
+    height: 100vh;
+    background-color: rgb(196, 233, 255); 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+#container{
+    width: 955px;
+    height: 570px;
+    background-color: rgb(198, 209, 246);
+    display: flex;
+}
+.img{
+    width: 315px;
+    height: 570px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.M-img{
+    margin: 0 5px 0 0 ;
+}
+#img1{
+    background-image: url("./img/mountain_7.jpg");
+}
+#text{
+    display: none;
+}
+#img1:hover{
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+#img1:hover #text{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 70px;
+    height: 50px;
+    background-color: cornflowerblue;
+    opacity: unset;
+    font-size: 15pt;
+    font-family: '微軟正黑體';
+    color: rgb(52, 63, 82);
+    font-weight: bold;
+    /* letter-spacing: 1pt; */
+}
+#img2{
+    background-image: url("./img/mountain_2.jpg");
+}
+#img2:hover{
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+#img2:hover #text{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 70px;
+    height: 50px;
+    background-color: cornflowerblue;
+    opacity: unset;
+    font-size: 15pt;
+    font-family: '微軟正黑體';
+    color: rgb(52, 63, 82);
+    font-weight: bold;
+    /* letter-spacing: 1pt; */
+}
+#img3{
+    background-image: url("./img/mountain_9.jpg");
+}
+#img3:hover{
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+#img3:hover #text{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 70px;
+    height: 50px;
+    background-color: cornflowerblue;
+    opacity: unset;
+    font-size: 15pt;
+    font-family: '微軟正黑體';
+    color: rgb(52, 63, 82);
+    font-weight: bold;
+    /* letter-spacing: 1pt; */
+}
+
+@media(max-width:1280px){
+    #navbar{
+        width: 200px;
+    }
+    #content{
+        width: calc(100vw - 200px);
+    }
+    #container{
+        width: 800px;
+        /* height: 570px; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #img1.img{
+        width: 100%;
+        height: 50%;
+    }
+    #img1.M-img{
+        margin: 0 0 10px 0 ;
+    }
+    #img2.img{
+        width: calc(50% - 5px);
+        height: calc(50% - 10px);
+    }
+    #img3.img{
+        width: calc(50% - 5px);
+        height: calc(50% - 10px);
+    }
+    #img2.M-img{
+        margin: 0 10px 0 0 ;
+    }
+}
+
+@media(max-width:768px){
+    #all{
+        display: unset;
+    }
+    #navbar{
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        flex-direction: unset;
+        align-items: center;
+    }
+    #logo{
+        width: 80px;
+        height: 80px;
+        margin: 0 0 0 2% ;
+    }
+    #menu{
+        font-size: 19pt;
+        line-height:unset;
+        margin: auto;
+        /* 水平置中 */
+    }
+    #menu a{
+        margin: 0 3px;
+    }
+    #menu p{
+        display: none;
+    }
+    #content{
+        width: 100vw;
+        height: calc(100vh  - 100px);
+        padding: 5%;
+    }
+    #container{
+        width: 100%;
+        height: 800px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #img1.img{
+        width: 100%;
+        height: 50%;
+    }
+    #img1.M-img{
+        margin: 0 0 10px 0 ;
+    }
+    #img2.img{
+        width: calc(50% - 5px);
+        height: calc(50% - 10px);
+    }
+    #img3.img{
+        width: calc(50% - 5px);
+        height: calc(50% - 10px);
+    }
+    #img2.M-img{
+        margin: 0 10px 0 0 ;
+    }
+}
+
+@media(max-width:375px){
+    #all{
+        display: unset;
+    }
+    #navbar{
+        width: 100vw;
+        height: 80px;
+        display: flex;
+        flex-direction: unset;
+        position: relative;
+    }
+    #logo{
+        width: 55px;
+        height: 55px;
+        margin: auto;
+    }
+    #menu{
+        width: 50px;
+        height: 50px;
+        background-color: unset;
+        border: 3px solid black;
+        border-radius: 10%;
+        position: absolute;
+        left: 5%;
+        background-image: url("./img/mountain.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #hrefbox{
+        display: none;
+    }
+    #menu:hover{
+        display: block;
+        /* background-color: chocolate; */
+    }
+    #menu:hover #hrefbox{
+        width: 105px;
+        height: 101px;
+        background-color: rgb(150, 206, 235);
+        display: inline-block;
+        margin-top: 48px;
+        text-align: center;
+    }
+    #menu:hover a{
+        line-height: 1.5;
+        font-size: 17pt;
+    }
+    #menu:hover p{
+        display: none;
+    }
+    #content{
+        width: 100vw;
+        height: calc(100vh - 80px);
+        padding: unset;
+    }
+    #container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #container .img{
+        width: 100vw;
+        height: calc(100%/3);
+    }
+    #img1.M-img{
+        margin: 0;
+    }
+    #img2.M-img{
+        margin: 0;
+    }
+}

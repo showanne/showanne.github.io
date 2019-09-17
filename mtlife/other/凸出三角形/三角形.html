@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        border-right: 150px solid white;
+        border-left: 150px solid white;
+        border-bottom: 250px solid slateblue;
+        display: inline-block;
+    }
+
+    /* 對話框（左尖角）*/
+    .dialog-left {
+        background: #888888;
+        margin: 0 40px;
+        height: 90px;
+        position: relative;
+        width: 50px;
+    }
+
+    .dialog-left::before {
+        border-color: transparent #888888 #888888 transparent;
+        border-style: solid;
+        border-width: 20px;
+
+        /* 必須指定，才能顯示內容 */
+        content: "";
+
+        height: 0px;
+        left: -40px;
+
+        /* 必須指定，否則會變梯形 */
+        position: absolute;
+        top: 35px;
+        width: 0px;
+    }
+
+    .dialog-left::after {
+        border-color: transparent #fff #fff transparent;
+        border-style: solid solid solid solid;
+        border-width: 10px 20px;
+
+        /* 必須指定，才能顯示內容 */
+        content: "";
+
+        height: 0px;
+        left: -40px;
+
+        /* 必須指定，否則會變梯形 */
+        position: absolute;
+
+        top: 55px;
+        width: 0px;
+    }
+
+    /*
+ * 對話框，邊框式（下三角）
+ */
+.dialog-border-bottom {
+    border: 5px solid #888888;
+    height: 65px;
+    position: relative;
+    width: 80px;
+}
+.dialog-border-bottom:before {
+    border-color: #888888 transparent transparent; 
+    border-style: solid solid solid; 
+    border-width: 20px 20px 20px 20px; 
+    bottom: -40px;
+ 
+    /* 必須指定，才能顯示內容 */    content: "";
+ 
+    height: 0px;
+    left: 20px; 
+ 
+    /* 必須指定，否則會變梯形 */    position: absolute;
+ 
+    width: 0px;
+}
+.dialog-border-bottom:after {
+    border-color: #fff transparent transparent; 
+    border-style: solid solid solid solid; 
+    border-width: 20px; 
+    bottom: -33px;
+ 
+    /* 必須指定，才能顯示內容 */    content: "";
+ 
+    height: 0px;
+    left: 20px; 
+ 
+    /* 必須指定，否則會變梯形 */    position: absolute;
+ 
+    width: 0px;
+}
+</style>
+
+<body>
+    <div class="box"></div>
+    <p></p>
+    <div class="dialog-left"></div>
+    <p>
+    </p>
+
+    <div class="dialog-border-bottom"></div>
+</body>
+
+</html>

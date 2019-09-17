@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="classic.css" id="theme_base">
+    <link rel="stylesheet" href="classic.date.css" id="theme_date">
+    <!-- <script src="jquery.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="picker.js"></script>
+    <script src="picker.date.js"></script>
+</head>
+
+<body>
+
+    <!-- 選日期 -->
+    <p>日期：
+        <input type="text" id="datepicker" />
+    </p>
+
+    <script type="text/javascript">
+        var $input = $('#datepicker').pickadate()
+        console.log($('#datepicker'));
+        
+    </script>
+
+    <!-- 選時間 -->
+    <p>時間：
+        <input id="input_from" class="datepicker" type="time" name="time" autofocus>
+    </p>
+
+
+</body>
+
+</html>

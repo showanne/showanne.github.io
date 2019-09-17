@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>masonry</title>
+    <style>
+        .grid-item {
+            width: 200px;
+        }
+
+        .grid-item--width2 {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="row"> -->
+    <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (1).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (3).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (2).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (4).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (1).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (3).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (2).jpg" alt="">
+        </div>
+        <div class="grid-item ">
+            <img src="/瀑布流/test (4).jpg" alt="">
+        </div>
+    </div>
+
+
+    <!-- </div> -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- masonry -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- or -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
+    <script>
+
+        // // vanilla JS
+        // // init with element
+        // var grid = document.querySelector('.grid');
+        // var msnry = new Masonry(grid, {
+        //     // options...
+        //     itemSelector: '.grid-item',
+        //     columnWidth: 200
+        // });
+
+        // // init with selector
+        // var msnry = new Masonry('.grid', {
+        //     // options...
+        // });
+
+        // init Masonry
+        var $grid = $('.grid').masonry({
+            // options...
+        });
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.masonry('layout');
+        });
+        $('.grid').masonry({
+            // options...
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    </script>
+
+</body>
+
+</html>

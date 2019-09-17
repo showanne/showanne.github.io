@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .popWin {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 500;
+            width: 100%;
+            height: 100vh;
+            font-size: 15px;
+            line-height: 1.8;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            -webkit-transition: all .7s;
+            -o-transition: all .7s;
+            transition: all .7s;
+        }
+
+        .popWin .mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            -webkit-transition: all .7s;
+            -o-transition: all .7s;
+            transition: all .7s;
+        }
+
+        .popWin .inner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 700px;
+            max-width: 90%;
+            max-height: 85vh;
+            opacity: 0;
+            background-color: #fff;
+            -webkit-transition: all .7s;
+            -o-transition: all .7s;
+            transition: all .7s;
+        }
+
+        .popWin .close {
+            position: absolute;
+            right: -23px;
+            top: -23px;
+            z-index: 1;
+            width: 46px;
+            height: 46px;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* background-color: #fff; */
+            border-radius: 50%;
+        }
+
+        .popWin .popContent {
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--首頁彈跳廣告-->
+    <div class="popWin">
+        <!-- popWin -->
+        <div class="mask"></div>
+        <div class="inner">
+            <!-- inner -->
+            <a class="close"></a>
+            <div class="popContent">
+                <!-- popContent -->
+                <a href="https://www.taku-art.com/news-detail/137/"><img alt="優惠組dm_工作區域 1" border="0"
+                        src="upload/home_hotnews_b/tw_home_hotnews_list_19g08_b2r986hap3.png"
+                        title="優惠組dm_工作區域 1" /></a> </div><!-- popContent end -->
+        </div><!-- inner end -->
+    </div><!-- popWin end-->
+    <script>
+        $(function () {
+            var data = sessionStorage.getItem('popWin');
+            if (data != 'ok') {
+                $('.popWin').addClass('show');
+                $('body').css('overflow', 'hidden');
+                sessionStorage.setItem('popWin', 'ok');
+            } else {
+                $('.popWin').remove();
+            }
+
+            $('.popWin .mask, .popWin .close').click(function () {
+                $('.popWin').removeClass('show');
+                $('body').css('overflow', 'auto');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
