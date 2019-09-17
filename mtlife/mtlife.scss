@@ -1,0 +1,193 @@
+body {
+    height: 500vh;
+    overflow-x: hidden;
+}
+
+/* 通用 */
+.pt-56 {
+    padding-top: 56px;
+}
+
+/* w-618 和 w-382 是黃金比例 */
+.w-618 {
+    width: 61.8%;
+}
+
+.w-382 {
+    width: 38.2%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-img {
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media (min-width: 576px) {
+
+    .order-2 {
+        order: unset;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+}
+
+
+
+
+section {
+    background-color: rgb(201, 217, 248);
+}
+
+
+
+/* @media (min-width: 768px) {
+    .navbar-nav {
+        float: right;
+    }
+    09/13 mr-auto改ml-auto 可以讓nav置右了
+} */
+
+/* NAV 導覽列 */
+nav{
+    .navbar {
+    margin-bottom: 0;
+    /* 消除nav下空隙 */
+}
+}
+
+
+
+/* Banner */
+section#banner{
+    .h-banner {
+        height: calc(100vh - 56px);
+    }
+}
+
+
+/* 山居生活 */
+
+section#life{
+.swiper-container{
+    #life .swiper-pagination-bullet {
+    width: 60px;
+    height: 6px;
+    display: inline-block;
+    border-radius: unset;
+    background: rgb(221, 229, 236);
+    opacity: .5;
+}
+}
+.row{
+    .i-group {
+        font-size: 3rem;
+        display: flex;
+        justify-content: space-around;
+        align-content: space-between;
+        flex-wrap: wrap;
+
+        i {
+            padding: 0.5rem;
+            margin-top: 1.5rem;
+            background-color: #fff;
+            border-radius: 19px;
+        }
+    }
+}
+}
+
+
+/* 最新消息 */
+
+/* 山居故事 + 美好歲月 */
+
+/* 周邊景點 */
+section#viewpoint{
+    .card {
+        background-color: unset;
+        border: unset;
+
+        .Text {
+            text-align: center;
+            z-index: 30;
+            margin: -20px 40px 0 40px;
+            background: #fff;
+            padding: 15px;
+            position: relative;
+            transition: 0.9s;
+
+            .btn {
+                padding: 0.1rem 0.3rem;
+                background-color: rgb(120, 120, 248);
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+/* 行程推薦 */
+
+/* 山居位置 */
+section#map{
+    .vh-50 {
+        height: 50vh;
+    }
+    
+    .map-btn {
+        /* background-color: #7a9bf7; */
+        border-radius: .25rem .25rem 0 0;
+        width: 0;
+        height: 0;
+        border: unset;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 100px solid #7a9bf7;
+    }
+}
+
+
+
+/* 聯絡我們 */
+section#contact{
+    .contact-us {
+    background-color: rgb(14, 25, 70);
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    position: fixed;
+    right: 19px;
+    bottom: 19px;
+}
+
+.font-contact {
+    text-align: center;
+    line-height: 70px;
+    /* 數值跟著外面的圓 */
+    color: rgb(196, 236, 255);
+    font-size: 13pt;
+}
+}
+
+
+/* footer */
+
+footer {
+    background-color: #7a9bf7;
+}
