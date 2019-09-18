@@ -1,5 +1,4 @@
 body {
-    height: 500vh;
     overflow-x: hidden;
 }
 
@@ -148,12 +147,9 @@ section#viewpoint{
 
 /* 山居位置 */
 section#map{
-    .vh-50 {
-        height: 50vh;
-    }
     
     .map-btn {
-        /* background-color: #7a9bf7; */
+        background-color: transparent;
         border-radius: .25rem .25rem 0 0;
         width: 0;
         height: 0;
@@ -161,6 +157,16 @@ section#map{
         border-left: 100px solid transparent;
         border-right: 100px solid transparent;
         border-bottom: 100px solid #7a9bf7;
+        // display: flex;
+        // flex-direction: column;
+    }
+    .collapse{
+        .card{
+            iframe{
+                widows: 100%;
+                height: 60vh;
+            }
+        }
     }
 }
 
