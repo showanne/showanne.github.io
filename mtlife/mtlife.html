@@ -97,7 +97,7 @@
         <div class="container pt-56">
             <!-- 山居生活-房型介紹 -->
             <!-- Swiper -->
-            <div class="swiper-container vh-50">
+            <div class="swiper-container">
                 <div class="swiper-wrapper ">
                     <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
                     </div>
@@ -119,29 +119,29 @@
             </div>
 
             <!-- 山居生活-服務設施+特色餐點 -->
-            <div class="row mt-lg-5 justify-content-center">
-                <div class="col-lg-3 col-12 d-flex align-items-center">
+            <div class="row mt-lg-2 justify-content-center">
+                <div class="col-lg-3 col-12 my-3 d-flex align-items-center">
                     <img src="./img/life-2.jpg" alt="" class="img-fluid mx-auto">
                 </div>
-                <div class="col-lg-3 col-12 text-center">
-                    <h3>服務設施</h3>
-                    <div class="i-group">
-                        <i class="fas fa-bed"></i>
-                        <i class="fas fa-shower"></i>
-                        <i class="fas fa-person-booth"></i>
-                        <i class="fas fa-first-aid"></i>
-                        <i class="fas fa-mug-hot"></i>
-                        <i class="fas fa-utensils"></i>
+                <div class="col-lg-3 col-12 my-3 text-center">
+                    <h3 class="">服務設施</h3>
+                    <div class="i-group ">
+                        <i class="mt-xl-4 fas fa-bed"></i>
+                        <i class="mt-xl-4 fas fa-shower"></i>
+                        <i class="mt-xl-4 fas fa-person-booth"></i>
+                        <i class="mt-xl-4 fas fa-first-aid"></i>
+                        <i class="mt-xl-4 fas fa-mug-hot"></i>
+                        <i class="mt-xl-4 fas fa-utensils"></i>
                     </div>
                 </div>
-                <div class="col-lg-3 col-12 order-2 px-lg-1 text-center">
+                <div class="col-lg-3 col-12 my-3 order-lg-2 d-flex align-items-center">
+                    <img src="./img/life-1.jpg" alt="" class="img-fluid mx-auto">
+                </div>
+                <div class="col-lg-3 col-12 my-3 order-lg-1 px-lg-1 text-center">
                     <h3>特色餐點</h3>
                     <h5 class="mt-xl-4">
                         　　坐在戶外的觀景陽台，午後的斜陽與和風中，搓揉著山巒的氣息伴著濃郁的咖啡香；閉起雙眼，讓感官享受這份寧靜，讓心靈觸碰這片田野，讓這短暫但珍貴的片刻，融入你我的心。</h5>
 
-                </div>
-                <div class="col-lg-3 col-12 d-flex align-items-center">
-                    <img src="./img/life-1.jpg" alt="" class="img-fluid mx-auto">
                 </div>
 
             </div>
@@ -174,17 +174,17 @@
     <section id="about">
         <div class="container pt-56">
             <div class="row py-lg-1 ">
-                <div class="w-618 px-3 order-md-2">
-                    <h2 class="mt-2">帶您一起看見歲月靜好</h2>
-                    <p>在這裡，您找不到都市的繁華與喧鬧，
-                        <p>簡樸與脫俗充斥在「山居歲月」的每一個角落；
-                            <p>不用空調就能夠讓您呼吸乾淨清新的空氣，
-                                <p>不用抬頭就能讓您欣賞星夜下的奇蹟，
-                                    <p>我們會一直守在這裡，
-                                        <p>在「山居歲月」的小屋等你。
+                <div class="w-382 pr-lg-1 order-lg-2">
+                    <img src="./img/mountain-2.jpg" alt="歲月靜好" class="card-img">
                 </div>
-                <div class="w-382 order-md-1">
-                    <img src="/img/mountain-2.jpg" alt="歲月靜好" class="card-img">
+                <div class="w-618 pr-lg-1 order-lg-1 text-center  ">
+                    <h2 class="mt-2">帶您一起看見歲月靜好</h2>
+                    <p>在這裡，您找不到都市的繁華與喧鬧，</p>
+                    <p>簡樸與脫俗充斥在「山居歲月」的每一個角落；</p>
+                    <p>不用空調就能夠讓您呼吸乾淨清新的空氣，</p>
+                    <p>不用抬頭就能讓您欣賞星夜下的奇蹟，</p>
+                    <p>我們會一直守在這裡，</p>
+                    <p>在「山居歲月」的小屋等你。</p>
                 </div>
             </div>
         </div>
@@ -361,7 +361,7 @@
         });
     </script>
 
-    <!-- Swiper-banner -->
+    <!-- Swiper-life -->
     <script>
         var swiper = new Swiper('section#life .swiper-container', {
             loop: true,
@@ -381,7 +381,7 @@
     <script>
         var swiper = new Swiper('section#viewpoint .swiper-container', {
             loop: true,
-            slidesPerView: 3, 
+            slidesPerView: 3,
             spaceBetween: 30,
             freeMode: true,
             navigation: {
@@ -389,9 +389,13 @@
                 prevEl: '.swiper-button-prev',
             },
             breakpoints: { //響應式斷點
-                768: { //尺寸768px時變成1欄
+                540: { //尺寸540px時變成1欄
                     slidesPerView: 1,
                     spaceBetween: 20,
+                },
+                888: { //尺寸888px時變成2欄
+                    slidesPerView: 2,
+                    spaceBetween: 30,
                 },
             }
         });
