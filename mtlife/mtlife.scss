@@ -147,7 +147,13 @@ section#viewpoint{
 
 /* 山居位置 */
 section#map{
-    
+
+    button::after {
+        content: '山居位置' ;
+        position: absolute;
+        left: 2px;
+        top: 1px;
+    }
     .map-btn {
         background-color: transparent;
         border-radius: .25rem .25rem 0 0;
@@ -159,10 +165,9 @@ section#map{
         border-bottom: 100px solid #7a9bf7;
         // display: flex;
         // flex-direction: column;
+        position: relative;
     }
-    .map-btn ::before {
-        content: '山居位置' ;
-    }
+    
     .collapse{
         .card{
             iframe{
