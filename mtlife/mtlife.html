@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
         integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
 
+    <!-- lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
     <title>山居歲月</title>
 
     <style>
@@ -175,17 +178,23 @@
     <section id="about">
         <div class="container pt-56">
             <div class="row py-lg-1 ">
-                <div class="w-382 pr-lg-1 order-lg-2">
-                    <img src="./img/mountain-2.jpg" alt="歲月靜好" class="card-img">
-                </div>
-                <div class="w-618 pr-lg-1 order-lg-1 text-center  ">
-                    <h2 class="mt-2">帶您一起看見歲月靜好</h2>
-                    <p>在這裡，您找不到都市的繁華與喧鬧，</p>
-                    <p>簡樸與脫俗充斥在「山居歲月」的每一個角落；</p>
-                    <p>不用空調就能夠讓您呼吸乾淨清新的空氣，</p>
-                    <p>不用抬頭就能讓您欣賞星夜下的奇蹟，</p>
-                    <p>我們會一直守在這裡，</p>
-                    <p>在「山居歲月」的小屋等你。</p>
+                <div class="col pr-lg-1">
+                    <div class="story-img"></div>
+                    <!-- <img src="./img/mountain-2.jpg" alt="歲月靜好" class="card-img"> -->
+                    <div class="story">
+                        <h2>帶您一起看見歲月靜好</h2>
+                        <p>在這裡，您找不到都市的繁華與喧鬧，</p>
+                        <p>簡樸與脫俗充斥在「山居歲月」的每一個角落；</p>
+                        <p>不用空調就能夠讓您呼吸乾淨清新的空氣，</p>
+                        <p>不用抬頭就能讓您欣賞星夜下的奇蹟，</p>
+                        <p>我們會一直守在這裡，</p>
+                        <p>在「山居歲月」的小屋等你。</p>
+                    </div>
+                    <!-- 燈箱效果 -->
+                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <div class="photo">→美好歲月</div>
+                      </a>
+                    
                 </div>
             </div>
         </div>
@@ -283,8 +292,8 @@
         <div class="container pt-56 ">
             <button class="map-btn" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
-                
-                <!-- 山居位置 -->
+
+                <span></span>
                 <!-- 名字不知道怎麼水平，跟背景的顏色無法透明，用before、after -->
             </button>
             <div class="collapse" id="collapseExample">
@@ -317,7 +326,7 @@
                     <p><i class="pr-1 fab fa-line"></i>Line ID：0952070318</p>
                     <p><i class="pr-1 fas fa-map-marker-alt"></i>地址：新竹縣五峰鄉大隘村269號</p>
                     <p>Copyright © 山居歲月</p>
-                    </div>
+                </div>
                 <div class="col text-right ">本網頁僅用於教學及練習使用</div>
             </div>
         </div>
@@ -392,6 +401,35 @@
                     spaceBetween: 30,
                 },
             }
+        });
+    </script>
+
+    <!-- 漢堡條展開後，點連結會收合 -->
+    <script>
+        $(window).scroll(function () {
+            //小屏幕下的導航條折疊
+            if ($(window).width() < 768) {
+                //點擊導航鏈接之後，把導航選項折疊起來
+                $(".navbar-collapse a").click(function () {
+                    $(".navbar-collapse").removeClass('show');
+                    $(".navbar-collapse").addClass('hide');
+                });
+                //滾動屏幕時，把導航選項折疊起來
+                $(window).scroll(function () {
+                    $(".navbar-collapse").removeClass('show');
+                    $(".navbar-collapse").addClass('hide');
+                });
+            }
+        });
+    </script>
+
+    <!-- lightbox js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+    <script>
+        // 燈箱效果 lightbox
+        $(document).on("click", '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
         });
     </script>
 </body>

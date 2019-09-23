@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+
+</head>
+
+<body>
+    <div id="slider">
+
+        <img src="banner_1.jpg" alt="" />
+
+        <img src="banner_2.jpg" alt="" />
+
+        <img src="banner_3.jpg" alt="" />
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="flux.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        // $(function () {
+
+        //     if (!flux.browser.supportsTransitions)
+
+        //         alert("Flux Slider 需要您的浏览器支持 CSS3 transitions ，否则效果无法显示。");
+
+        //     //上面这句是个弹出框，提醒用户浏览器版本过旧。   
+
+        //     window.f = new flux.slider('#slider', {
+
+        //         //下面是可以设置的参数选项。
+
+        //         // controls: true,
+
+        //         autoplay: true,
+        //         transitions: ['zip', 'bars3d', 'cube', 'tiles3d', 'blinds3d', 'turn', 'explode', 'concentric', 'warp', 'blocks2'],
+
+        //         //可以是一个或者多个，多个时，则图片在切换时随机使用。
+
+        //     });
+
+        // });
+        if (!flux.browser.supportsTransitions)
+            alert("Flux Slider requires a browser that supports CSS3 transitions");
+
+        window.f = new flux.slider('#slider', {
+            // pagination: false,
+            // controls: false,
+            transitions: ['zip'],
+            // autoplay: false
+        });
+
+    </script>
+</body>
+
+</html>
