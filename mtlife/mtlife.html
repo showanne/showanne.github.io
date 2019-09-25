@@ -176,7 +176,7 @@
 
     <!-- 山居故事 + 美好歲月 -->
     <section id="about">
-        <div class="container pt-56">
+        <div class="pt-56">
             <div class="row py-lg-1 ">
                 <div class="col pr-lg-1">
                     <div class="story-img"></div>
@@ -191,10 +191,11 @@
                         <p>在「山居歲月」的小屋等你。</p>
                     </div>
                     <!-- 燈箱效果 -->
-                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery"
+                        class="col-md-4">
                         <div class="photo">→美好歲月</div>
-                      </a>
-                    
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -352,6 +353,11 @@
     <script>
         var swiper = new Swiper('section#banner .swiper-container', {
             loop: true,
+            speed: 3000,
+            autoplay: {
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+            },
             slidesPerView: 'auto',
             pagination: {
                 el: '.swiper-pagination',
@@ -368,6 +374,11 @@
     <script>
         var swiper = new Swiper('section#life .swiper-container', {
             loop: true,
+            speed: 1000,
+            autoplay: {
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+            },
             slidesPerView: 'auto',
             pagination: {
                 el: '.swiper-pagination',
@@ -384,6 +395,11 @@
     <script>
         var swiper = new Swiper('section#viewpoint .swiper-container', {
             loop: true,
+            speed: 3000,
+            autoplay: {
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+            },
             slidesPerView: 3,
             spaceBetween: 30,
             freeMode: true,

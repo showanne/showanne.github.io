@@ -1,7 +1,13 @@
 @charset "UTF-8";
 body {
   overflow-x: hidden;
-  font-family: '微軟正黑體';
+  font-family: '微軟正黑體', sans-serif !important;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+*:focus, *:hover {
+  outline: none !important;
 }
 
 /* 通用 */
@@ -118,7 +124,7 @@ section#about .col .story-img {
 }
 
 section#about .col .story {
-  background-color: #c4ffdb;
+  background-color: #c9d9f8;
   width: 550px;
   height: 550px;
   border-radius: 50%;
@@ -140,8 +146,12 @@ section#about .col .story {
   margin: -23rem 0rem 0rem 32rem;
 }
 
-section#about .col .photo {
-  background-color: #c4ffc4;
+section#about .col a {
+  text-decoration: none;
+}
+
+section#about .col a .photo {
+  background-color: #c9d9f8;
   width: 155px;
   height: 155px;
   border-radius: 50%;
@@ -156,8 +166,9 @@ section#about .col .photo {
           align-items: center;
   font-size: 15pt;
   color: #6999f3;
-  text-decoration: none;
   margin: -8rem 0rem 0rem 53rem;
+  -webkit-filter: drop-shadow(1px 3px 5px #333);
+          filter: drop-shadow(1px 3px 5px #333);
 }
 
 /* 周邊景點 */

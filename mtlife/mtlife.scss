@@ -1,14 +1,16 @@
 body {
     overflow-x: hidden;
-    font-family: '微軟正黑體';
+    font-family: '微軟正黑體', sans-serif !important;
+    transition: 0.7s;
+}
+*:focus, *:hover {
+    outline: none !important;
 }
 
 /* 通用 */
 .pt-56 {
     padding-top: 56px;
 }
-
-
 
 .swiper-slide {
     background-position: center;
@@ -129,7 +131,7 @@ section#about{
             height: 75vh;
         }
         .story{
-            background-color: rgb(196, 255, 219);
+            background-color: rgb(201, 217, 248);
             width: 550px;
             height: 550px;
             border-radius: 50%;
@@ -141,20 +143,25 @@ section#about{
             color: rgb(105, 153, 243);
             margin: -23rem 0rem 0rem 32rem;
          }
-        .photo{
-            background-color: rgb(196, 255, 196);
-            width: 155px;
-            height: 155px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 15pt;
-            color: rgb(105, 153, 243);
+         a{
             text-decoration: none;
-            margin: -8rem 0rem 0rem 53rem;
-
-        }
+            
+            .photo{
+                background-color: rgb(201, 217, 248);
+                width: 155px;
+                height: 155px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 15pt;
+                color: rgb(105, 153, 243);
+                
+                margin: -8rem 0rem 0rem 53rem;
+                filter:drop-shadow(1px 3px 5px #333);
+            }
+         }
+        
     }
 }
 
