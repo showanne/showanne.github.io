@@ -146,12 +146,15 @@ section#life{
 /* 山居故事 + 美好歲月 */
 section#about{
     position: relative;
-
+    height: unset;
     @media screen and (max-width: 576px) {
         height: 100vh;
     }
-
+    .row{
+        margin: 0;
+    }
     .col{
+        padding: 0;
         .story-img{
             background-image: url('./img/mountain-2.jpg');
             background-size: cover;

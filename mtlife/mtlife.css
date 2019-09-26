@@ -110,12 +110,21 @@ section#life .row h5 {
 /* 山居故事 + 美好歲月 */
 section#about {
   position: relative;
+  height: unset;
 }
 
 @media screen and (max-width: 576px) {
   section#about {
     height: 100vh;
   }
+}
+
+section#about .row {
+  margin: 0;
+}
+
+section#about .col {
+  padding: 0;
 }
 
 section#about .col .story-img {
