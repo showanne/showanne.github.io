@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的作品</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- css-doodle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+
+    <style>
+        body {
+            font: 900 100px/0.65 system-ui;
+            margin: 0;
+            overflow: hidden;
+            width: 110%;
+        }
+
+        span {
+            display: inline-block;
+            text-indent: -2rem;
+            position: relative;
+        }
+
+        .doodle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .web {
+            z-index: 9;
+        }
+    </style>
+
+</head>
+
+<body>
+    <css-doodle class="doodle">
+        :doodle {
+        @grid: 15 / 100vmax;
+        background: #fff;
+        cursor: pointer;
+
+        }
+        :doodle(:hover) { --s: 1 ; }
+
+        :after {
+        content: @pick(a,A);
+        font-size: 4vmax;
+        color: #000;
+        transform: scale(@rand(.2, .9));
+
+        }
+
+        transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+        transition-delay: @rand(650ms);
+        transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
+
+    </css-doodle>
+
+    <section class="web">
+        <div class="container vh-100">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 col-10">
+                    <div class="card mb-3 bg-dark text-light">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">木門咖啡</h2>
+                            <h5 class="card-text">tle bit longer.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-10">
+                    <div class="card mb-3 bg-dark text-light">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">山居歲月</h2>
+                            <h5 class="card-text">tle bit longer.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
