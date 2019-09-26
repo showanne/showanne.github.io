@@ -108,13 +108,30 @@ section#life .row h5 {
 
 /* 最新消息 */
 /* 山居故事 + 美好歲月 */
+section#about {
+  position: relative;
+}
+
+@media screen and (max-width: 576px) {
+  section#about {
+    height: 100vh;
+  }
+}
+
 section#about .col .story-img {
   background-image: url("./img/mountain-2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  width: 100%;
+  width: 100vw;
   height: 75vh;
+}
+
+@media screen and (max-width: 576px) {
+  section#about .col .story-img {
+    background-attachment: unset;
+    height: 55vh;
+  }
 }
 
 section#about .col .story {
@@ -137,14 +154,17 @@ section#about .col .story {
           align-items: center;
   font-size: 15pt;
   color: #6999f3;
-  margin: -23rem 0rem 0rem 32rem;
 }
 
 @media screen and (max-width: 576px) {
   section#about .col .story {
+    position: absolute;
+    left: 1px;
+    bottom: -229px;
+    width: 330px !important;
+    height: 300px !important;
     width: unset;
     height: unset;
-    margin: -3rem 0rem 0rem 0rem;
   }
   section#about .col .story h2 {
     font-size: 1.25rem;
@@ -165,29 +185,22 @@ section#about .col a .photo {
   width: 155px;
   height: 155px;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: 15pt;
   color: #6999f3;
-  margin: -8rem 0rem 0rem 53rem;
   -webkit-filter: drop-shadow(0px 1px 3px #487bda);
           filter: drop-shadow(0px 1px 3px #487bda);
 }
 
 @media screen and (max-width: 576px) {
   section#about .col a .photo {
+    position: absolute;
+    left: 43px;
+    bottom: -264px;
     display: inline-block;
     width: unset;
     height: unset;
-    border-radius: unset;
-    margin: 0.5rem  0 0 12rem;
+    border-radius: 1px;
+    letter-spacing: 0.15rem;
   }
 }
 
@@ -216,23 +229,36 @@ section#viewpoint .card .Text .btn {
 
 /* 行程推薦 */
 /* 山居位置 */
-section#map .map-btn::before {
-  content: '山居位置';
-  position: absolute;
-  left: 2px;
-  top: 1px;
+section#map {
+  position: relative;
 }
 
 section#map .map-btn {
   background-color: transparent;
-  border-radius: .25rem .25rem 0 0;
   width: 0;
   height: 0;
-  border: unset;
   border-left: 100px solid transparent;
   border-right: 100px solid transparent;
   border-bottom: 100px solid #7a9bf7;
-  position: relative;
+  position: absolute;
+  right: 19px;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  section#map .map-btn {
+    font-size: 11px;
+    border-left: 39px solid transparent;
+    border-right: 39px solid transparent;
+    border-bottom: 39px solid #7a9bf7;
+  }
+}
+
+section#map span {
+  position: absolute;
+  right: 38px;
+  bottom: 2px;
+  font-size: 13px;
 }
 
 section#map .collapse .card iframe {
