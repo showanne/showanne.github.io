@@ -7,6 +7,38 @@ body {
     outline: none !important;
 }
 
+/* 字體 */
+// h1{
+//     font-size: ;
+//     @media screen and (max-width: 576px) {
+//         font-size: ;
+//     }
+// }
+// h2{
+//     font-size: ;
+//     @media screen and (max-width: 576px) {
+//         font-size: ;
+//     }
+// }
+// h3{
+//     font-size: ;
+//     @media screen and (max-width: 576px) {
+//         font-size: ;
+//     }
+// }
+// h4{
+//     font-size: ;
+//     @media screen and (max-width: 576px) {
+//         font-size: ;
+//     }
+// }
+// h5{
+//     font-size: 1.25rem;
+//     @media screen and (max-width: 576px) {
+//         font-size: 0.9rem;
+//     }
+// }
+
 /* 通用 */
 .pt-56 {
     padding-top: 56px;
@@ -37,18 +69,18 @@ body {
     }
 }
 
-@media screen and (min-width: 1000px) {
-    .container {
-        max-width: 80%;
-    }
 
-}
 
-@media screen and (min-width: 1920px) {
+ @media screen and (min-width: 1920px) {
     .container {
         max-width: 1800px;
+        @media screen and (min-width: 1000px) {
+            max-width: 80%;
+        }
+
     }
 }
+
 
 
 
@@ -56,15 +88,6 @@ body {
 section {
     background-color: rgb(201, 217, 248);
 }
-
-
-
-/* @media (min-width: 768px) {
-    .navbar-nav {
-        float: right;
-    }
-    09/13 mr-auto改ml-auto 可以讓nav置右了
-} */
 
 /* NAV 導覽列 */
 nav{
@@ -110,6 +133,9 @@ section#life{
         h5{
             letter-spacing: 1px;
             line-height: 29px;
+            @media screen and (max-width: 576px) {
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -140,10 +166,27 @@ section#about{
             font-size: 15pt;
             color: rgb(105, 153, 243);
             margin: -23rem 0rem 0rem 32rem;
+
+            @media screen and (max-width: 576px) {
+                // display: none;
+                width: unset;
+                height: unset;
+                margin: -3rem 0rem 0rem 0rem;
+                h2{
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin-top: 1.75rem;
+                }
+                p{
+                    font-size: .85rem;
+                }
+            }
          }
          a{
             text-decoration: none;
-            
+            // @media screen and (max-width: 576px) {
+            //     display: none;
+            // }
             .photo{
                 background-color: rgb(201, 217, 248);
                 width: 155px;
@@ -154,9 +197,17 @@ section#about{
                 align-items: center;
                 font-size: 15pt;
                 color: rgb(105, 153, 243);
-                
                 margin: -8rem 0rem 0rem 53rem;
-                filter:drop-shadow(1px 3px 5px #333);
+                filter:drop-shadow(0px 1px 3px rgb(72, 123, 218));
+
+                @media screen and (max-width: 576px) {
+                    display: inline-block;
+                    width: unset;
+                    height: unset;
+                    border-radius: unset;
+                    
+                    margin: 0.5rem  0 0 12rem;
+                }
             }
          }
         
