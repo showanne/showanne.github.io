@@ -28,16 +28,17 @@
 
 <body>
     <!-- NAV 導覽列 -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #7a9bf7;">
-        <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark"
+        style="background: linear-gradient(to bottom, rgba(97,137,244,1) 0%,rgba(122,155,247,1) 100%);">
+        <div class="container ">
             <a class="navbar-brand" href="#">山居歲月</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto d-flex align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#life">山居生活</a>
                     </li>
@@ -104,7 +105,6 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper ">
                     <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
-
                     </div>
                     <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-2.jpg);">
                     </div>
@@ -121,6 +121,70 @@
                 <!-- Add Arrows -->
                 <div class="swiper-button-next px-lg-5"></div>
                 <div class="swiper-button-prev px-lg-5"></div>
+            </div>
+            <div class="swiper-container h-25 my-3">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide card text-center" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">雙人套房</h5>
+                            <p class="card-text">
+                                平日1,800元<br>
+                                假日2,300元<br>
+                                每加1人350元<br>
+                                過年：2,500元<br>
+                            </p>
+                            <a href="#" class="btn btn-primary">訂房去...</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card text-center" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">雙人榻榻米通鋪</h5>
+                            <p class="card-text">
+                                單價：1,500元<br>
+                                　　　　　　每加1人350元<br>
+                                過年：2,500 元<br>
+                                　　　　　　每加1人600元<br>
+                            </p>
+                            <a href="#" class="btn btn-primary">訂房去...</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card text-center" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">4~8人榻榻米通鋪</h5>
+                            <p class="card-text">
+                                單價：成人600元<br>
+                                　　　孩童450元<br>
+                                過年：成人700元<br>
+                                　　　孩童550元<br>
+                            </p>
+                            <a href="#" class="btn btn-primary">訂房去...</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card text-center" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">5~10人樓中樓通鋪套房</h5>
+                            <p class="card-text">
+                                單價：成人500元<br>
+                                　　　孩童350元 <br>
+                                過年：成人600元<br>
+                                　　　孩童450元<br>
+                            </p>
+                            <a href="#" class="btn btn-primary">訂房去...</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card text-center" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">包場</h5>
+                            <p class="card-text">
+                                單價：20人以內共14,000元<br>
+                                每加1人500元 <br>
+                                過年：20人以內共18,000元<br>
+                                每加1人600元<br>
+                            </p>
+                            <a href="#" class="btn btn-primary">訂房去...</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 山居生活-服務設施+特色餐點 -->
@@ -305,13 +369,13 @@
 
     <!-- 山居位置 -->
     <section id="map">
-        <div class="container pt-56 ">
+        <div class="container pt-4 ">
             <button class="map-btn" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
                 <span>山居位置</span>
             </button>
-            
-        
+
+
             <div class="collapse" id="collapseExample">
                 <div class="card card-body p-0">
                     <iframe
@@ -410,7 +474,7 @@
     <script>
         var swiper = new Swiper('section#viewpoint .swiper-container', {
             loop: true,
-            speed: 3000,
+            speed: 5000,
             autoplay: {
                 stopOnLastSlide: false,
                 disableOnInteraction: false,
@@ -441,14 +505,14 @@
     <!-- 漢堡條展開後，點連結會收合 -->
     <script>
         $(window).scroll(function () {
-            //小屏幕下的導航條折疊
+            //小屏幕下的漢堡條折疊
             if ($(window).width() < 768) {
-                //點擊導航鏈接之後，把導航選項折疊起來
+                //點擊鏈接之後，把選項折疊起來
                 $(".navbar-collapse a").click(function () {
                     $(".navbar-collapse").removeClass('show');
                     $(".navbar-collapse").addClass('hide');
                 });
-                //滾動屏幕時，把導航選項折疊起來
+                //滾動屏幕時，把選項折疊起來
                 $(window).scroll(function () {
                     $(".navbar-collapse").removeClass('show');
                     $(".navbar-collapse").addClass('hide');

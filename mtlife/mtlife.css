@@ -81,6 +81,7 @@ nav .navbar-nav a, nav .navbar-nav p {
 
 nav .navbar-nav p {
   margin: 0;
+  padding: 8 0;
 }
 
 /* Banner */
@@ -90,7 +91,7 @@ section#banner .h-banner {
 
 /* 山居生活 */
 section#life .swiper-container {
-  height: calc(70vh - 56px);
+  height: calc(66vh - 56px);
 }
 
 section#life .swiper-container .swiper-pagination-bullet {
@@ -100,6 +101,10 @@ section#life .swiper-container .swiper-pagination-bullet {
   border-radius: unset;
   background: #dde5ec;
   opacity: .5;
+}
+
+section#life .card-text {
+  letter-spacing: 0.25rem;
 }
 
 section#life .row i {
@@ -248,6 +253,19 @@ section#viewpoint .card .Text .btn {
   padding: 0.1rem 0.3rem;
   background-color: #7878f8;
   color: #fff;
+}
+
+section#viewpoint .swiper-container .swiper-button-next, section#viewpoint .swiper-container .swiper-button-prev {
+  top: unset;
+  bottom: 3%;
+}
+
+section#viewpoint .swiper-container .swiper-button-next {
+  right: 3px;
+}
+
+section#viewpoint .swiper-container .swiper-button-prev {
+  left: 3px;
 }
 
 /* 行程推薦 */
