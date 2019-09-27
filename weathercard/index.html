@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+    <!-- aos JS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>WeatherCard</title>
+
+    <style>
+        body{
+            height: 300vh;
+            font-family: '微軟正黑體',
+        }
+        .mt-50 {
+            margin-top: calc(50vh - 20px);
+        }
+
+        .mt-111 {
+            margin-top: calc(111vh - -39px);
+        }
+
+        .card-father {
+            position: relative;
+            width: 456px;
+            height: 333px;
+
+        }
+
+        #card-weather::after {
+            content: url("./Animated Weather Icons cloudy.jpg");
+            position: absolute;
+            left: 282px;
+            top: 24px;
+            width: 0;
+            height: 0;
+        }
+
+        .card {
+            border: unset;
+        }
+
+        .card-body {
+            background-color: #161616;
+            border-radius: 19px;
+            color: #0cf;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="text-center mt-50"> ↓ 往下滑 ↓ </h1>
+        <div class="card-father mx-auto mt-111" data-aos="zoom-in-up">
+            <div id="card-weather" class="card">
+                <!-- 在JS裡 -->
+            </div>
+        </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- aos JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+
+        //  資料取得地址 https://opendata.cwb.gov.tw/dist/opendata-swagger.html#/%E9%A0%90%E5%A0%B1/get_v1_rest_datastore_F_C0032_001
+
+        // 授權碼 CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D
+
+
+        const card = document.querySelector("#card-weather");
+
+        // 取得這個json資料(中央氣象台API)
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D&format=JSON')
+            .then(function (response) {
+
+                // 資料重新讀取
+                return response.json();
+            })
+            .then(function (myJson) {
+
+                //顯現這些json資料
+                console.log(myJson);
+
+                let city = myJson.records.location[3].locationName;
+                // console.log(myJson.records.location[3].locationName);
+
+                // let wx = myJson.records.location[3].weatherElement[4].time[2];
+                // console.log(wx);
+
+                let MaxT = myJson.records.location[3].weatherElement[4].time[0].parameter.parameterName;
+                // console.log(myJson.records.location[3].weatherElement[4].time[0].parameter.parameterName + '℃');  // "MaxT" 
+
+                let MinT = myJson.records.location[3].weatherElement[2].time[0].parameter.parameterName;
+                // console.log(myJson.records.location[3].weatherElement[2].time[0].parameter.parameterName + '℃'); // "MinT" 
+
+                let Wx = myJson.records.location[3].weatherElement[0].time[0].parameter.parameterName;
+                // console.log(myJson.records.location[3].weatherElement[0].time[0].parameter.parameterName); //Wx
+
+                let PoP = myJson.records.location[3].weatherElement[1].time[0].parameter.parameterName
+                // console.log(myJson.records.location[3].weatherElement[1].time[0].parameter.parameterName + '%'); // 降雨機率 "PoP"
+
+                let CI = myJson.records.location[3].weatherElement[3].time[0].parameter.parameterName;
+                // console.log(myJson.records.location[3].weatherElement[3].time[0].parameter.parameterName); // 感受 CI
+
+                let D = new Date;
+                console.log(new Date); //今天時間
+                // var Today=new Date();
+                // let day = document.write("今天日期是 " + D.getFullYear()+ " 年 " + (D.getMonth()+1) + " 月 " + D.getDate() + " 日");
+
+                let yy = D.getFullYear();
+                let mm = (D.getMonth() + 1);
+                let dd = D.getDate();
+                console.log(mm);
+
+                init_WeatherCard(city, yy, mm, dd, MinT, MaxT, PoP, Wx, CI);
+
+            });
+
+        function init_WeatherCard(city, yy, mm, dd, MinT, MaxT, PoP, Wx, CI) {
+            card.innerHTML =
+                `<div class="card-body">
+                    <h3 class="card-title">${city}</h3>
+                    <h4 class="card-subtitle mb-2 text-muted">${yy}/${mm}/${dd}</h4>
+                    <p class="card-text">
+                        <h4 class="text-left">${MinT}℃~${MaxT}℃</h4>
+                        <h5><i class="fas fa-tint"></i> 降雨機率 ${PoP}%</h5>
+                        <h5>氣象： ${Wx}</h5>
+                        <h5>感受： ${CI}</h5>
+                    </p>
+                    <a href="https://opendata.cwb.gov.tw/dist/opendata-swagger.html#/%E9%A0%90%E5%A0%B1/get_v1_rest_datastore_F_C0032_001" class="card-link">API</a>
+                    <a href="https://goo.gl/maps/TsiJ7G1phKp8LUJU8" class="card-link">Go</a>
+            </div>
+                `
+            // console.log(PoP);
+            // if (PoP > 80) {
+            //     card.InnerClass =
+            //     `#card-weather::after {
+            // content: url("./Animated Weather Icons sunny.jpg");}
+            //     `
+
+
+            // } else {
+
+            // }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
