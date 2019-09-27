@@ -98,6 +98,9 @@ nav{
     margin-bottom: 0;
     /* 消除nav下空隙 */
     }
+    .navbar-brand{
+        font-weight: 700;
+    }
     .navbar-nav a,.navbar-nav p{
         color: #0c2875 !important;
         line-height: calc(46vh / 15);
@@ -226,7 +229,7 @@ section#about{
                 border-radius: 50%;
                 font-size: 15pt;
                 color: rgb(105, 153, 243);
-                filter:drop-shadow(0px 1px 3px rgb(72, 123, 218));
+                filter:drop-shadow(1px 1px 1.5px rgb(72, 123, 218));
 
                 @media screen and (max-width: 576px) {
                     position: absolute;
@@ -235,7 +238,7 @@ section#about{
                     display: inline-block;
                     width: unset;
                     height: unset;
-                    border-radius: 1px;
+                    border-radius: 3px;
                     letter-spacing: 0.15rem;
                 }
             }
@@ -335,8 +338,9 @@ section#contact{
     height: 70px;
     border-radius: 35px;
     position: fixed;
-    right: 19px;
-    bottom: 19px;
+    right: 9px;
+    bottom: 9px;
+    z-index: 1199px;
 }
 
 .font-contact {
@@ -344,7 +348,8 @@ section#contact{
     line-height: 70px;
     /* 數值跟著外面的圓 */
     color: rgb(196, 236, 255);
-    font-size: 13pt;
+    font-size: 23pt;
+    transform:scaleX(-1) rotate(-29deg);
 }
 }
 

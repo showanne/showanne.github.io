@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
     <!-- css-doodle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
 
@@ -40,6 +44,11 @@
         .web {
             z-index: 9;
         }
+        .card .card-text a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+
     </style>
 
 </head>
@@ -69,23 +78,31 @@
     </css-doodle>
 
     <section class="web">
-        <div class="container vh-100">
+        <div class="container vh-100 mt-2">
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-6 col-10">
+                <div class="col-md-6 col-10 my-3" style="width: 330px; height:300px;">
                     <div class="card mb-3 bg-dark text-light">
-                        <img src="" class="card-img-top" alt="木門咖啡">
+                        <img src="https://images.zi.org.tw/sunnylife/20180118113729_39.jpg" class="card-img-top" alt="木門咖啡">
                         <div class="card-body">
                             <h2 class="card-title">木門咖啡</h2>
-                            <h5 class="card-text">tle bit longer.</h5>
+                            <h5 class="card-text text-right">
+                                <a href="https://woodendoorcafe.github.io/?openExternalBrowser=1">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                            </h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-10">
+                <div class="col-md-6 col-10 my-3" style="width: 330px; height:300px;">
                     <div class="card mb-3 bg-dark text-light">
-                        <img src="" class="card-img-top" alt="山居歲月">
+                        <img src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg" class="card-img-top" alt="山居歲月">
                         <div class="card-body">
                             <h2 class="card-title">山居歲月</h2>
-                            <h5 class="card-text">tle bit longer.</h5>
+                            <h5 class="card-text text-right">
+                                <a href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -107,31 +124,31 @@
 
 
 
-<script>
-// 用line開啟連結時，強制以外部瀏覽器開啟
+    <script>
+        // 用line開啟連結時，強制以外部瀏覽器開啟
 
-//<![CDATA[
-/*處理分享到 Line 的連結*/
-$("a").each(function () {
-var href = this.href;
+        //<![CDATA[
+        /*處理分享到 Line 的連結*/
+        $("a").each(function () {
+            var href = this.href;
 
-// http 網址才處理
-if (href.indexOf("http") != 0 || href.indexOf("//") < 0){
-return;
-}
+            // http 網址才處理
+            if (href.indexOf("http") != 0 || href.indexOf("//") < 0) {
+                return;
+            }
 
-// 網址沒有參數 ? 時, 直接加參數
-if (href.indexOf("?") < 0) {
-href += "?openExternalBrowser=1";
-} else {
-// 網址有參數 ? 時, 用 & 加參數
-href += "&openExternalBrowser=1";
-}
+            // 網址沒有參數 ? 時, 直接加參數
+            if (href.indexOf("?") < 0) {
+                href += "?openExternalBrowser=1";
+            } else {
+                // 網址有參數 ? 時, 用 & 加參數
+                href += "&openExternalBrowser=1";
+            }
 
-this.href = href;
-});
+            this.href = href;
+        });
 //]]>
-</script>
+    </script>
 </body>
 
 </html>

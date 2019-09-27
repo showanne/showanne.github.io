@@ -108,11 +108,11 @@
                     </div>
                     <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-2.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
+                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-3.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-2.jpg);">
+                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-4.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
+                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-5.jpg);">
                     </div>
                 </div>
                 <!-- Add Pagination -->
@@ -279,7 +279,6 @@
     <!-- 周邊景點 -->
     <section id="viewpoint">
         <div class="container pt-56">
-
             <!-- Swiper-viewpoint-->
             <div class="swiper-container px-lg-5">
                 <div class="swiper-wrapper">
@@ -387,7 +386,12 @@
     <section id="contact">
         
         <a href="tel:0952070318">
-            <div class="contact-us font-contact">聯絡我們</div>
+            <div class="contact-us font-contact">
+                    <i class="fas fa-phone-volume"></i>
+                <!-- <div>
+                    聯絡<br>我們
+                </div> -->
+            </div>
         </a>
         
     </section>
@@ -434,6 +438,18 @@
                 disableOnInteraction: false,
             },
             slidesPerView: 'auto',
+            spaceBetween: 50,
+            breakpoints: { //響應式斷點
+                360: {
+                    spaceBetween: 5,
+                },
+                540: {
+                    spaceBetween: 20,
+                },
+                888: {
+                    spaceBetween: 30,
+                },
+            },
             pagination: {
                 el: '.swiper-pagination',
                 dynamicBullets: true,
@@ -475,13 +491,13 @@
                 stopOnLastSlide: false,
                 disableOnInteraction: false,
             },
-            slidesPerView: 3,
-            spaceBetween: 30,
             freeMode: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            slidesPerView: 3,
+            spaceBetween: 30,
             breakpoints: { //響應式斷點
                 360: { //尺寸540px時變成1欄
                     slidesPerView: 1,
