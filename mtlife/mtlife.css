@@ -28,6 +28,16 @@ body {
   }
 }
 
+h5 {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 576px) {
+  h5 {
+    font-size: 0.9rem !important;
+  }
+}
+
 /* 通用 */
 .pt-56 {
   padding-top: 56px;
@@ -118,13 +128,19 @@ section#banner .h-banner {
 
 @media screen and (max-width: 576px) {
   section#banner .h-banner {
-    height: calc(100vh - 19px);
+    margin-top: 37px;
   }
 }
 
 /* 山居生活 */
 section#life .swiper-container {
   height: calc(66vh - 56px);
+}
+
+@media screen and (max-width: 576px) {
+  section#life .swiper-container {
+    height: calc(39vh - 19px);
+  }
 }
 
 section#life .swiper-container .swiper-pagination-bullet {
@@ -347,7 +363,7 @@ section#contact .contact-us {
   position: fixed;
   right: 9px;
   bottom: 9px;
-  z-index: 1199px;
+  z-index: 999;
 }
 
 section#contact .font-contact {

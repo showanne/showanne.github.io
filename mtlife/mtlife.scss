@@ -38,12 +38,12 @@ h3{
 //         font-size: ;
 //     }
 // }
-// h5{
-//     font-size: 1.25rem;
-//     @media screen and (max-width: 576px) {
-//         font-size: 0.9rem;
-//     }
-// }
+h5{
+    font-size: 1.25rem;
+    @media screen and (max-width: 576px) {
+        font-size: 0.9rem !important;
+    }
+}
 
 /* 通用 */
 .pt-56 {
@@ -128,7 +128,7 @@ section#banner{
     .h-banner {
         height: calc(100vh - 56px);
         @media screen and (max-width: 576px) {
-            height: calc(100vh - 19px);
+            margin-top:37px 
         }
     }
 }
@@ -139,6 +139,9 @@ section#banner{
 section#life{
     .swiper-container{
         height: calc(66vh - 56px);
+        @media screen and (max-width: 576px) {
+            height: calc(39vh - 19px);
+        }
 
         .swiper-pagination-bullet {
         width: 60px;
@@ -352,7 +355,7 @@ section#contact{
     position: fixed;
     right: 9px;
     bottom: 9px;
-    z-index: 1199px;
+    z-index: 999;
 }
 
 .font-contact {
