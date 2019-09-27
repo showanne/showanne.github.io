@@ -14,18 +14,24 @@ body {
 //         font-size: ;
 //     }
 // }
-// h2{
-//     font-size: ;
-//     @media screen and (max-width: 576px) {
-//         font-size: ;
-//     }
-// }
-// h3{
-//     font-size: ;
-//     @media screen and (max-width: 576px) {
-//         font-size: ;
-//     }
-// }
+h2{
+    // font-size: ;
+    @media screen and (max-width: 576px) {
+        font-size: 1.85rem !important;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        display: inline-block;
+        line-height: 1.9 !important;
+        font-weight: 700 !important;
+        
+    }
+}
+h3{
+    // font-size: ;
+    @media screen and (max-width: 576px) {
+        font-size: 1.35rem !important;
+    }
+}
 // h4{
 //     font-size: ;
 //     @media screen and (max-width: 576px) {
@@ -42,6 +48,9 @@ body {
 /* 通用 */
 .pt-56 {
     padding-top: 56px;
+    @media screen and (max-width: 576px) {
+        padding-top: 19px;
+    }
 }
 
 .swiper-slide {
@@ -118,6 +127,9 @@ nav{
 section#banner{
     .h-banner {
         height: calc(100vh - 56px);
+        @media screen and (max-width: 576px) {
+            height: calc(100vh - 19px);
+        }
     }
 }
 
@@ -153,7 +165,7 @@ section#life{
             letter-spacing: 1px;
             line-height: 29px;
             @media screen and (max-width: 576px) {
-                font-size: 0.9rem;
+            font-size: 0.9rem;
             }
         }
     }
@@ -167,7 +179,7 @@ section#about{
     position: relative;
     height: unset;
     @media screen and (max-width: 576px) {
-        height: 100vh;
+        height: 105vh;
     }
     .row{
         margin: 0;
@@ -207,7 +219,7 @@ section#about{
                 height: 300px !important;
                 width: unset;
                 height: unset;
-                h2{
+                h3{
                     font-size: 1.25rem;
                     font-weight: 700;
                     margin-top: 1.75rem;

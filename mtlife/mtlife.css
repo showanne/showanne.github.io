@@ -11,9 +11,32 @@ body {
 }
 
 /* 字體 */
+@media screen and (max-width: 576px) {
+  h2 {
+    font-size: 1.85rem !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    display: inline-block;
+    line-height: 1.9 !important;
+    font-weight: 700 !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h3 {
+    font-size: 1.35rem !important;
+  }
+}
+
 /* 通用 */
 .pt-56 {
   padding-top: 56px;
+}
+
+@media screen and (max-width: 576px) {
+  .pt-56 {
+    padding-top: 19px;
+  }
 }
 
 .swiper-slide {
@@ -93,6 +116,12 @@ section#banner .h-banner {
   height: calc(100vh - 56px);
 }
 
+@media screen and (max-width: 576px) {
+  section#banner .h-banner {
+    height: calc(100vh - 19px);
+  }
+}
+
 /* 山居生活 */
 section#life .swiper-container {
   height: calc(66vh - 56px);
@@ -138,7 +167,7 @@ section#about {
 
 @media screen and (max-width: 576px) {
   section#about {
-    height: 100vh;
+    height: 105vh;
   }
 }
 
@@ -198,7 +227,7 @@ section#about .col .story {
     width: unset;
     height: unset;
   }
-  section#about .col .story h2 {
+  section#about .col .story h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-top: 1.75rem;
