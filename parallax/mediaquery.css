@@ -222,3 +222,20 @@
         margin: 0 0 5% 0;
     }
 }
+@media(max-width:400px){
+    .font-tw{
+        color: rgb(138, 147, 182);
+        font-size: 9pt;
+        line-height: 19px;
+    }
+    #img-logo img{
+        width: 99px;
+        margin-right: 29px;
+    }
+    #navbar.P-1323{
+        padding: 7px 15px;
+    }
+    #theme #card-t.font-en {
+        font-size: 12pt;
+    }
+}
