@@ -267,8 +267,7 @@
                         </div>
                     </div>
                     <!-- 燈箱效果 -->
-                    <a id="photo" href="./img/photo-1.jpg" data-toggle="lightbox"
-                        data-gallery="gallery">
+                    <a id="photo" href="./img/photo-1.jpg" data-toggle="lightbox" data-gallery="gallery">
                         <div class="photo">→美好歲月</div>
                     </a>
                     <a href="./img/photo-2.jpg" data-toggle="lightbox" data-gallery="gallery"></a>
@@ -532,6 +531,48 @@
                 });
             }
         });
+    </script>
+
+<!-- NAV 向下滑隱藏 menu、向上滑顯示 menu -->
+    <script>
+        $(function () {
+            // show hide subnav depending on scroll direction
+            var position = $(window).scrollTop();
+
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll > position) {
+
+                    //only piece that matters
+                    $('nav')
+                        .stop(true, false)
+                        .removeClass('up')
+                        .addClass('down');
+
+
+                    // scrolling downwards, only here for dev purposes
+                    console.log('moving DOWN the page');
+                    $('input').val('down');
+
+                } else {
+                    //only piece that matters
+                    $('nav')
+                        .stop(true, false)
+                        .removeClass('down')
+                        .addClass('up');
+
+
+                    // scrolling upwards 
+                    console.log('moving UP the page');
+                    $('input').val('up');
+                }
+
+                position = scroll;
+            });
+
+        });
+
     </script>
 
     <!-- lightbox js -->
