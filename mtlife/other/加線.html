@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 1000px;
+            margin: 10px auto;
+            border: 1px solid red;
+        }
+
+        h3.title {
+            color: #F2AE11;
+            font-size: 1.3em;
+            margin-bottom: 3em;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        h3.title span {
+            display: block;
+            /*設定為塊級元素會獨佔一行形成上下居中的效果*/
+            font-size: 3em;
+            color: #212121;
+            position: relative;
+            /*定位橫線（當橫線的父元素）*/
+        }
+
+        h3.title span:before,
+        h3.title span:after {
+            content: '';
+            /*CSS偽類用法*/
+            position: absolute;
+            /*定位背景橫線的位置*/
+            top: 52%;
+            background: #494949;
+            /*寬和高做出來的背景橫線*/
+            width: 9%;
+            height: 2px;
+        }
+
+        h3.title span:before {
+            left: 25%;
+            /*調整背景橫線的左右距離*/
+        }
+
+        h3.title span:after {
+            right: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="title">Welcome to <span>Snapshot</span></h3>
+        <div class="row">
+            <img src="images/hz01.jpg" width="300" height="200">
+        </div>
+    </div>
+</body>
+
+</html>
