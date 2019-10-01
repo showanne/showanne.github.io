@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
         integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
 
+    <!-- css-doodle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+
+
     <style>
         * {
             box-sizing: border-box;
@@ -18,33 +22,51 @@
 
         body {
             min-height: 100vh;
-            max-width: 100vw;
+            /* max-width: 100vw; */
             overflow-x: hidden;
-            background: #ebeff2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-family: "system-ui", sans-serif;
             color: #08132E;
             line-height: 1.45;
-            padding: 4em 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .doodle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1140px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .m-1 {
             margin: 1rem;
         }
-        .color-eat{
+
+        .color-eat {
             background-color: burlywood;
         }
-        .color-live{
+
+        .color-live {
             background-color: lightgreen;
         }
-        .color-movie{
+
+        .color-movie {
             background-color: lightskyblue;
         }
-        .color-other{
+
+        .color-other {
             background-color: khaki;
         }
+
         img {
             max-width: 100%;
         }
@@ -130,67 +152,97 @@
 </head>
 
 <body>
-    <div class="m-1">
-        <div class="card_item">
-            <div class="card_item_line color-eat"></div>
-            餐飲
-        </div>
-        <div class="card">
-            <div class="card_img">
-                <div class="ishadow">
-                    <img data-blur="20" data-hover="true"
-                        src="https://dtdesign2009.weebly.com/uploads/4/7/9/2/47925315/img-0302-001_orig.jpg">
+    <!-- 背景 -->
+    <css-doodle class="doodle">
+        :doodle {
+        @grid: 15 / 100vmax;
+        background: #fff;
+        cursor: pointer;
+
+        }
+        :doodle(:hover) { --s: 1 ; }
+
+        :after {
+        content: @pick(a,A);
+        font-size: 4vmax;
+        color: #000;
+        transform: scale(@rand(.2, .9));
+
+        }
+
+        transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+        transition-delay: @rand(650ms);
+        transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
+
+    </css-doodle>
+
+    <!-- NAV -->
+    <nav>
+        <h1>Anne's</h1>
+    </nav>
+    <!-- 作品 -->
+    <div class="container">
+        <div class="m-1">
+            <div class="card_item">
+                <div class="card_item_line color-eat"></div>
+                餐飲
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <div class="ishadow">
+                        <img data-blur="20" data-hover="true"
+                            src="https://dtdesign2009.weebly.com/uploads/4/7/9/2/47925315/img-0302-001_orig.jpg">
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_title">木門咖啡</div>
+                    <a class="card_btn" href="https://woodendoorcafe.github.io/?openExternalBrowser=1"
+                        target="_blank"><i class="fas fa-link"></i></a>
                 </div>
             </div>
-            <div class="card_content">
-                <div class="card_title">木門咖啡</div>
-                <a class="card_btn" href="https://woodendoorcafe.github.io/?openExternalBrowser=1" target="_blank"><i
-                        class="fas fa-link"></i></a>
-            </div>
         </div>
-    </div>
 
-    <div class="m-1">
-        <div class="card_item">
-            <div class="card_item_line color-live"></div>
-            旅宿
-        </div>
-        <div class="card">
-            <div class="card_img">
-                <div class="ishadow">
-                    <img data-blur="20" data-hover="true"
-                        src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg">
+        <div class="m-1">
+            <div class="card_item">
+                <div class="card_item_line color-live"></div>
+                旅宿
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <div class="ishadow">
+                        <img data-blur="20" data-hover="true"
+                            src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg">
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_title">山居歲月</div>
+                    <a class="card_btn" href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1"
+                        target="_blank"><i class="fas fa-link"></i></a>
                 </div>
             </div>
-            <div class="card_content">
-                <div class="card_title">山居歲月</div>
-                <a class="card_btn" href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1" target="_blank"><i
-                        class="fas fa-link"></i></a>
-            </div>
         </div>
-    </div>
 
-    <div class="m-1">
-        <div class="card_item">
-            <div class="card_item_line color-movie"></div>
-            電影
-        </div>
-        <div class="card">
-            <div class="card_img">
-                <div class="ishadow">
-                    <img data-blur="20" data-hover="true"
-                        src="https://images.csmonitor.com/csmarchives/2011/07/poster.jpg?alias=standard_900x600nc">
+        <div class="m-1">
+            <div class="card_item">
+                <div class="card_item_line color-movie"></div>
+                電影
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <div class="ishadow">
+                        <img data-blur="20" data-hover="true"
+                            src="https://images.csmonitor.com/csmarchives/2011/07/poster.jpg?alias=standard_900x600nc">
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_title">哈利波特</div>
+                    <a class="card_btn" href="https://showanne.github.io/parallax/?openExternalBrowser=1"
+                        target="_blank"><i class="fas fa-link"></i></a>
                 </div>
             </div>
-            <div class="card_content">
-                <div class="card_title">哈利波特</div>
-                <a class="card_btn" href="https://showanne.github.io/parallax/?openExternalBrowser=1" target="_blank"><i
-                        class="fas fa-link"></i></a>
-            </div>
         </div>
-    </div>
 
-    <div class="m-1">
+        <div class="m-1">
             <div class="card_item">
                 <div class="card_item_line color-other"></div>
                 其他
@@ -204,13 +256,13 @@
                 </div>
                 <div class="card_content">
                     <div class="card_title">各種山</div>
-                    <a class="card_btn" href="https://showanne.github.io/mountain/?openExternalBrowser=1" target="_blank"><i
-                            class="fas fa-link"></i></a>
+                    <a class="card_btn" href="https://showanne.github.io/mountain/?openExternalBrowser=1"
+                        target="_blank"><i class="fas fa-link"></i></a>
                 </div>
             </div>
         </div>
 
-    <div class="m-1">
+        <div class="m-1">
             <div class="card_item">
                 <div class="card_item_line color-other"></div>
                 其他
@@ -224,11 +276,12 @@
                 </div>
                 <div class="card_content">
                     <div class="card_title">天氣卡片</div>
-                    <a class="card_btn" href="https://showanne.github.io/weathercard/?openExternalBrowser=1" target="_blank"><i
-                            class="fas fa-link"></i></a>
+                    <a class="card_btn" href="https://showanne.github.io/weathercard/?openExternalBrowser=1"
+                        target="_blank"><i class="fas fa-link"></i></a>
                 </div>
             </div>
         </div>
+    </div>
 
 
     <!-- image-shadow js -->
