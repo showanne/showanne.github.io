@@ -180,7 +180,7 @@ footer p {
 
 @media (max-width: 640px) {
     footer .m-1{
-        margin: 0.5rem;
+        margin:1rem 0.5rem;
     }
     footer a {
         font-size: 19px;
@@ -188,7 +188,7 @@ footer p {
     }
 
     footer p {
-        padding-top: 9px;
+        padding-top: 10px;
         font-size: 7px;
     }
 }
