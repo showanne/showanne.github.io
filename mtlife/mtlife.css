@@ -136,6 +136,10 @@ section#banner .h-banner {
 }
 
 /* 山居生活 */
+section#life .container {
+  position: relative;
+}
+
 section#life .swiper-container {
   height: calc(66vh - 56px);
 }
@@ -155,7 +159,30 @@ section#life .swiper-container .swiper-pagination-bullet {
   opacity: .5;
 }
 
-section#life .card-text {
+section#life .swiper-container .ml-btn-prev {
+  margin-left: 37.4rem;
+}
+
+section#life #price {
+  width: 370px;
+  height: 300px;
+  position: absolute;
+  top: 180px;
+  right: 101px;
+}
+
+@media screen and (max-width: 576px) {
+  section#life #price {
+    width: 100%;
+    height: 20%;
+  }
+}
+
+section#life #price .card-body .card-title {
+  margin: 1rem 0;
+}
+
+section#life #price .card-body .card-text {
   letter-spacing: 0.25rem;
 }
 

@@ -105,41 +105,41 @@
             <!-- 房型圖片 -->
             <div class="swiper-container">
                 <div class="swiper-wrapper ">
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
+                    <div class="swiper-slide stop-swiping w-100 swiper-img" style="background-image: url(./img/life-swiper-1.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-2.jpg);">
+                    <div class="swiper-slide stop-swiping w-100 swiper-img" style="background-image: url(./img/life-swiper-2.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-3.jpg);">
+                    <div class="swiper-slide stop-swiping w-100 swiper-img" style="background-image: url(./img/life-swiper-3.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-4.jpg);">
+                    <div class="swiper-slide stop-swiping w-100 swiper-img" style="background-image: url(./img/life-swiper-4.jpg);">
                     </div>
-                    <div class="swiper-slide w-100 swiper-img" style="background-image: url(./img/life-swiper-5.jpg);">
+                    <div class="swiper-slide stop-swiping w-100 swiper-img" style="background-image: url(./img/life-swiper-5.jpg);">
                     </div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
                 <!-- Add Arrows -->
                 <div class="swiper-button-next px-lg-5"></div>
-                <div class="swiper-button-prev px-lg-5"></div>
+                <div class="swiper-button-prev ml-btn-prev"></div>
             </div>
             <!-- 房型介紹卡片 -->
-            <div class="swiper-container h-25 my-3">
+            <div id="price" class="swiper-container my-3">
                 <div class="swiper-wrapper ">
-                    <div class="swiper-slide card text-center" style="width: 100%;">
+                    <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
-                            <h5 class="card-title">雙人套房</h5>
+                            <h3 class="card-title">雙人套房</h3>
                             <p class="card-text">
-                                平日1,800元<br>
-                                假日2,300元<br>
+                                平日：1,800元<br>
+                                假日：2,300元<br>
                                 每加1人350元<br>
                                 過年：2,500元<br>
                             </p>
                             <a href="tel:0952070318" class="btn btn-primary">訂房去...</a>
                         </div>
                     </div>
-                    <div class="swiper-slide card text-center" style="width: 100%;">
+                    <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
-                            <h5 class="card-title">雙人榻榻米通鋪</h5>
+                            <h3 class="card-title">雙人榻榻米通鋪</h3>
                             <p class="card-text">
                                 單價：1,500元<br>
                                 　　　　　　每加1人350元<br>
@@ -149,9 +149,9 @@
                             <a href="tel:0952070318" class="btn btn-primary">訂房去...</a>
                         </div>
                     </div>
-                    <div class="swiper-slide card text-center" style="width: 100%;">
+                    <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
-                            <h5 class="card-title">4~8人榻榻米通鋪</h5>
+                            <h3 class="card-title">4~8人榻榻米通鋪</h3>
                             <p class="card-text">
                                 單價：成人600元<br>
                                 　　　孩童450元<br>
@@ -161,9 +161,9 @@
                             <a href="tel:0952070318" class="btn btn-primary">訂房去...</a>
                         </div>
                     </div>
-                    <div class="swiper-slide card text-center" style="width: 100%;">
+                    <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
-                            <h5 class="card-title">5~10人樓中樓通鋪套房</h5>
+                            <h3 class="card-title">5~10人樓中樓通鋪套房</h3>
                             <p class="card-text">
                                 單價：成人500元<br>
                                 　　　孩童350元 <br>
@@ -173,9 +173,9 @@
                             <a href="tel:0952070318" class="btn btn-primary">訂房去...</a>
                         </div>
                     </div>
-                    <div class="swiper-slide card text-center" style="width: 100%;">
+                    <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
-                            <h5 class="card-title">包場</h5>
+                            <h3 class="card-title">包場</h3>
                             <p class="card-text">
                                 單價：20人以內共14,000元<br>
                                 每加1人500元 <br>
@@ -241,7 +241,7 @@
                         <h4>觀光局擴大國旅秋冬補助活動開跑
                             <p>即日起至2019.12.31</p>
                         </h4>
-                        
+
                     </div>
                     <div class="d-flex">
                         <div class="m-3"> 26 / Aug / 2019</div>
@@ -381,8 +381,8 @@
     <!-- 山居位置 -->
     <section id="map">
         <div class="container pt-4 text-right">
-            <button type="button" data-toggle="collapse" data-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample">
+            <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">
                 <i class="fas fa-sort-up"></i>
                 <h2 class="">山居位置</h2>
             </button>
@@ -494,6 +494,8 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            noSwiping: true,
+            noSwipingClass: 'stop-swiping',
         });
     </script>
 
