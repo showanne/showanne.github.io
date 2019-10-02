@@ -199,22 +199,23 @@ section#about .col {
 }
 
 section#about .col .story-img {
-  background-image: url("./img/mountain-2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   width: 100vw;
-  height: 75vh;
+  height: calc(100vh - 89px);
 }
 
 @media screen and (max-width: 576px) {
   section#about .col .story-img {
-    background-attachment: unset;
     height: 55vh;
   }
 }
 
 section#about .col .story {
+  position: absolute;
+  top: 50px;
+  right: 155px;
   background-color: #c9d9f8;
   width: 550px;
   height: 550px;
@@ -233,12 +234,12 @@ section#about .col .story {
       -ms-flex-align: center;
           align-items: center;
   font-size: 15pt;
-  color: #6999f3;
+  color: #1956c7;
 }
 
 @media screen and (max-width: 576px) {
   section#about .col .story {
-    position: absolute;
+    top: unset;
     right: 1px;
     bottom: -239px;
     width: 330px !important;
@@ -261,25 +262,30 @@ section#about .col a {
 }
 
 section#about .col a .photo {
-  background-color: #c9d9f8;
+  position: absolute;
+  right: 183px;
+  bottom: 53px;
+  background-color: #b9cef8;
   width: 155px;
   height: 155px;
   border-radius: 50%;
   font-size: 15pt;
-  color: #6999f3;
+  line-height: 155px;
+  color: #1956c7;
   -webkit-filter: drop-shadow(1px 1px 1.5px #487bda);
           filter: drop-shadow(1px 1px 1.5px #487bda);
 }
 
 @media screen and (max-width: 576px) {
   section#about .col a .photo {
-    position: absolute;
+    right: unset;
     left: 43px;
     bottom: -264px;
     display: inline-block;
     width: unset;
     height: unset;
     border-radius: 3px;
+    line-height: unset;
     letter-spacing: 0.15rem;
   }
 }

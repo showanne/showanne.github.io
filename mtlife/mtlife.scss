@@ -190,18 +190,19 @@ section#about{
     .col{
         padding: 0;
         .story-img{
-            background-image: url('./img/mountain-2.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             width: 100vw;
-            height: 75vh;
+            height: calc(100vh - 89px);
             @media screen and (max-width: 576px) {
-                background-attachment: unset;
                 height: 55vh;
             }
         }
         .story{
+            position: absolute;
+            top: 50px;
+            right: 155px;
             background-color: rgb(201, 217, 248);
             width: 550px;
             height: 550px;
@@ -211,11 +212,11 @@ section#about{
             justify-content: center;
             align-items: center;
             font-size: 15pt;
-            color: rgb(105, 153, 243);
+            color: rgb(25, 86, 199);
             
 
             @media screen and (max-width: 576px) {
-                position: absolute;
+                top: unset;
                 right: 1px;
                 bottom: -239px;
                 width: 330px !important;
@@ -238,22 +239,27 @@ section#about{
             //     display: none;
             // }
             .photo{
-                background-color: rgb(201, 217, 248);
+                position: absolute;
+                right: 183px;
+                bottom: 53px;
+                background-color: rgb(185, 206, 248);
                 width: 155px;
                 height: 155px;
                 border-radius: 50%;
                 font-size: 15pt;
-                color: rgb(105, 153, 243);
+                line-height: 155px;
+                color: rgb(25, 86, 199);
                 filter:drop-shadow(1px 1px 1.5px rgb(72, 123, 218));
 
                 @media screen and (max-width: 576px) {
-                    position: absolute;
+                    right: unset;
                     left: 43px;
                     bottom: -264px;
                     display: inline-block;
                     width: unset;
                     height: unset;
                     border-radius: 3px;
+                    line-height:unset;
                     letter-spacing: 0.15rem;
                 }
             }
