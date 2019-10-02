@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    /* max-width: 100vw; */
+    overflow-x: hidden;
+    font-family: "system-ui", sans-serif;
+    color: #08132E;
+    line-height: 1.45;
+
+}
+
+.doodle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.doodle-bg {
+    margin: 8vh 0;
+    width: 100vw;
+    height: 92vh;
+    /* 100vh-8vh (margin的 footer 的高度) = 92vh */
+}
+
+@media (max-width: 640px) {
+    .doodle-bg {
+        height: 312vh;
+    }
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.center {
+    margin: auto;
+    justify-content: center;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.color-eat {
+    background-color: burlywood;
+}
+
+.color-live {
+    background-color: lightgreen;
+}
+
+.color-movie {
+    background-color: lightskyblue;
+}
+
+.color-other {
+    background-color: khaki;
+}
+
+img {
+    max-width: 100%;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    box-shadow: 0px 25px 30px -15px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.card_item {
+    position: relative;
+    width: 88px;
+    top: 158px;
+    left: 212px;
+    z-index: 9;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.7rem 0.5rem;
+    letter-spacing: 1.9px;
+}
+
+.card_item_line {
+    width: 5px;
+    height: 29px;
+}
+
+.card_content {
+    padding: 0 0.7rem 0.7rem 0.7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card_img {
+    -webkit-transform: translateY(-2em);
+    transform: translateY(-2em);
+}
+
+.card_title {
+    line-height: 1.2;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.card_btn {
+    display: table;
+    padding: 0.45em 1.3em;
+    line-height: 1.2;
+    background: #08132E;
+    color: white;
+    border-radius: 3em;
+    text-decoration: none;
+    box-shadow: 0px 7px 15px -5px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card_btn:hover {
+    box-shadow: 0px 10px 25px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+}
+
+.ishadow img {
+    position: relative;
+    z-index: 2;
+    border-radius: 8px 8px 0 0;
+}
+
+.image-shadow {
+    z-index: 1 !important;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    background: -moz-linear-gradient(top, rgba(210, 183, 255, 0.03) 0%, rgba(210, 183, 255, 0.31) 31%, rgba(175, 161, 234, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(210, 183, 255, 0.03) 0%, rgba(210, 183, 255, 0.31) 31%, rgba(175, 161, 234, 1) 100%);
+    background: linear-gradient(to bottom, rgba(210, 183, 255, 0.03) 0%, rgba(210, 183, 255, 0.31) 31%, rgba(175, 161, 234, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#afa1ea', endColorstr='#00d2b7ff', GradientType=0);
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(76, 3, 145);
+    font-size: 26px;
+    margin: 0 7px;
+}
+
+footer p {
+    padding-top: 15px;
+    font-size: 12px;
+}
+
+@media (max-width: 640px) {
+    footer .m-1{
+        margin: 0.5rem;
+    }
+    footer a {
+        font-size: 19px;
+        margin: 0 1px;
+    }
+
+    footer p {
+        padding-top: 9px;
+        font-size: 7px;
+    }
+}

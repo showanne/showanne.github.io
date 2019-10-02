@@ -5,58 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的作品</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Card</title>
 
     <!-- fontawesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
         integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
 
-    <!-- css-doodle -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
-
-    <style>
-        body {
-            font: 900 100px/0.65 system-ui;
-            margin: 0;
-            overflow-x: hidden;
-            width: 110%;
-        }
-
-        span {
-            display: inline-block;
-            text-indent: -2rem;
-            position: relative;
-        }
-
-        .doodle {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .web {
-            z-index: 9;
-        }
-
-        .card .card-text a {
-            text-decoration: none;
-            color: aliceblue;
-        }
-    </style>
+    <link rel="stylesheet" href="./src/nav.css">
+    <link rel="stylesheet" href="./src/style.css">
 
 </head>
 
 <body>
-    <css-doodle class="doodle">
+    <!-- 背景 -->
+    <css-doodle class="doodle doodle-bg">
         :doodle {
-        @grid: 15 / 100vmax;
+        @grid: 9 / 100vmax;
         background: #fff;
         cursor: pointer;
 
@@ -77,109 +41,239 @@
 
     </css-doodle>
 
-    <section class="web">
+    <!-- NAV -->
+    <div id="nav-section">
+        <div class="overlay-navigation">
+            <nav role="navigation">
+                <ul>
+                    <li><a href="#" data-content="The beginning">Home</a></li>
+                    <li><a href="#" data-content="How about me?">About</a></li>
+                    <li><a href="#" data-content="What will I do?">Skills</a></li>
+                    <li><a href="#" data-content="Before, After.">Works</a></li>
+                    <li><a href="#" data-content="Contact me.">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="menu">
+            <a href="#" target="_blank">Anne's Portfolio</a>
+            <div class="open-overlay">
+                <span class="bar-top"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-bottom"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 作品 -->
+    <section>
         <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
-                    <div class="card bg-dark text-light">
-                        <img src="https://images.zi.org.tw/sunnylife/20180118113729_39.jpg" class="card-img-top"
-                            alt="木門咖啡">
-                        <div class="p-3 d-flex justify-content-around align-items-end">
-                            <h2 class="">木門咖啡</h2>
-                            <h5 class="card-text text-right">
-                                <a href="https://woodendoorcafe.github.io/?openExternalBrowser=1" target="_blank">
-                                    <i class="far fa-arrow-alt-circle-right"></i>
-                                </a>
-                            </h5>
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-eat"></div>
+                    餐飲
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://dtdesign2009.weebly.com/uploads/4/7/9/2/47925315/img-0302-001_orig.jpg">
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
-                    <div class="card bg-dark text-light">
-                        <img src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg" class="card-img-top"
-                            alt="山居歲月">
-                        <div class="p-3 d-flex justify-content-around align-items-end">
-                            <h2 class="">山居歲月</h2>
-                            <h5 class="card-text text-right">
-                                <a href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1"
-                                    target="_blank">
-                                    <i class="far fa-arrow-alt-circle-right"></i>
-                                </a>
-                            </h5>
-                        </div>
+                    <div class="card_content">
+                        <div class="card_title">木門咖啡</div>
+                        <a class="card_btn" href="https://woodendoorcafe.github.io/?openExternalBrowser=1"
+                            target="_blank"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
-                    <div class="card bg-dark text-light">
-                        <img src=" " class="card-img-top" alt="">
-                        <div class="p-3 d-flex justify-content-around align-items-end">
-                            <h2 class="">天氣卡片</h2>
-                            <h5 class="card-text text-right">
-                                <a href="https://showanne.github.io/weathercard/" target="_blank">
-                                    <i class="far fa-arrow-alt-circle-right"></i>
-                                </a>
-                            </h5>
+            </div>
+
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-live"></div>
+                    旅宿
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg">
                         </div>
                     </div>
+                    <div class="card_content">
+                        <div class="card_title">山居歲月</div>
+                        <a class="card_btn" href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1"
+                            target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
-                    <div class="card bg-dark text-light">
-                        <img src=" " class="card-img-top" alt="">
-                        <div class="p-3 d-flex justify-content-around align-items-end">
-                            <h2 class="">設計作品</h2>
-                            <h5 class="card-text text-right">
-                                <a href="./design_img/2-card_pclearning.jpg">
-                                    <i class="far fa-arrow-alt-circle-right"></i>
-                                </a>
-                                <a href="./design_img/3-card_eat.jpg"></a>
-                                <a href="./design_img/4-card_clothes.jpg"></a>
-                                <a href="./design_img/1-Matte Painting.jpg"></a>
-                            </h5>
+            </div>
+
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-movie"></div>
+                    電影
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://images.csmonitor.com/csmarchives/2011/07/poster.jpg?alias=standard_900x600nc">
                         </div>
+                    </div>
+                    <div class="card_content">
+                        <div class="card_title">哈利波特</div>
+                        <a class="card_btn" href="https://showanne.github.io/parallax/?openExternalBrowser=1"
+                            target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-other"></div>
+                    其他
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://www.peregrineadventures.com/blog/wp-content/uploads/2012/01/Jeff-Krause1.jpg">
+                        </div>
+                    </div>
+                    <div class="card_content">
+                        <div class="card_title">各種山</div>
+                        <a class="card_btn" href="https://showanne.github.io/mountain/?openExternalBrowser=1"
+                            target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-other"></div>
+                    其他
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg">
+                        </div>
+                    </div>
+                    <div class="card_content">
+                        <div class="card_title">天氣卡片</div>
+                        <a class="card_btn" href="https://showanne.github.io/weathercard/?openExternalBrowser=1"
+                            target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-1">
+                <div class="card_item">
+                    <div class="card_item_line color-other"></div>
+                    其他
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="ishadow">
+                            <img data-blur="20" data-hover="true"
+                                src="https://www.pkthink.com/images/pkthink-banner.jpg">
+                        </div>
+                    </div>
+                    <div class="card_content">
+                        <div class="card_title">平面設計作品</div>
+                        <a class="card_btn" href="#"
+                            target="_blank"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- footer -->
+    <footer>
+        <div class="d-flex center">
+            <div class="m-1">
+                <a href="tel:0918184250"><i class="fas fa-phone-square"></i></a>
+                <a href="https://line.me/ti/p/DsjxgOy4cO"><i class="fab fa-line"></i></a>
+                <a href="mailto:s85120ss@gmail.com"><i class="fas fa-envelope-open"></i></a>
+            </div>
+            <p class="m-1">本網頁之圖片來源皆為網路，如有侵權，煩請來信告知～</p>
+        </div>
+    </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
 
+    <!-- css-doodle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
 
+    <!-- image-shadow js -->
+    <script src="https://cdn.jsdelivr.net/gh/tunguskha/Image-shadow@latest/assets/js/image-shadow.min.js"></script>
 
-
+    <!-- nav 展開及摺疊效果 -->
     <script>
-        // 用line開啟連結時，強制以外部瀏覽器開啟
+        $('.open-overlay').click(function () {
+            $('.open-overlay').css('pointer-events', 'none');
+            var overlay_navigation = $('.overlay-navigation'),
+                top_bar = $('.bar-top'),
+                middle_bar = $('.bar-middle'),
+                bottom_bar = $('.bar-bottom');
 
-        //<![CDATA[
-        /*處理分享到 Line 的連結*/
-        $("a").each(function () {
-            var href = this.href;
+            overlay_navigation.toggleClass('overlay-active');
+            if (overlay_navigation.hasClass('overlay-active')) {
 
-            // http 網址才處理
-            if (href.indexOf("http") != 0 || href.indexOf("//") < 0) {
-                return;
-            }
+                top_bar.removeClass('animate-out-top-bar').addClass('animate-top-bar');
+                middle_bar.removeClass('animate-out-middle-bar').addClass('animate-middle-bar');
+                bottom_bar.removeClass('animate-out-bottom-bar').addClass('animate-bottom-bar');
+                overlay_navigation.removeClass('overlay-slide-up').addClass('overlay-slide-down')
+                overlay_navigation.velocity('transition.slideLeftIn', {
+                    duration: 300,
+                    delay: 0,
+                    begin: function () {
+                        $('nav ul li').velocity('transition.perspectiveLeftIn', {
+                            stagger: 150,
+                            delay: 0,
+                            complete: function () {
+                                $('nav ul li a').velocity({
+                                    opacity: [1, 0],
+                                }, {
+                                    delay: 10,
+                                    duration: 140
+                                });
+                                $('.open-overlay').css('pointer-events', 'auto');
+                            }
+                        })
+                    }
+                })
 
-            // 網址沒有參數 ? 時, 直接加參數
-            if (href.indexOf("?") < 0) {
-                href += "?openExternalBrowser=1";
             } else {
-                // 網址有參數 ? 時, 用 & 加參數
-                href += "&openExternalBrowser=1";
+                $('.open-overlay').css('pointer-events', 'none');
+                top_bar.removeClass('animate-top-bar').addClass('animate-out-top-bar');
+                middle_bar.removeClass('animate-middle-bar').addClass('animate-out-middle-bar');
+                bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
+                overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
+                $('nav ul li').velocity('transition.perspectiveRightOut', {
+                    stagger: 150,
+                    delay: 0,
+                    complete: function () {
+                        overlay_navigation.velocity('transition.fadeOut', {
+                            delay: 0,
+                            duration: 300,
+                            complete: function () {
+                                $('nav ul li a').velocity({
+                                    opacity: [0, 1],
+                                }, {
+                                    delay: 0,
+                                    duration: 50
+                                });
+                                $('.open-overlay').css('pointer-events', 'auto');
+                            }
+                        });
+                    }
+                })
             }
-
-            this.href = href;
-        });
-//]]>
+        })
     </script>
 </body>
 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的作品</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+    <!-- css-doodle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+
+    <style>
+        body {
+            font: 900 100px/0.65 system-ui;
+            margin: 0;
+            overflow-x: hidden;
+            width: 110%;
+        }
+
+        span {
+            display: inline-block;
+            text-indent: -2rem;
+            position: relative;
+        }
+
+        .doodle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .web {
+            z-index: 9;
+        }
+
+        .card .card-text a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <css-doodle class="doodle">
+        :doodle {
+        @grid: 15 / 100vmax;
+        background: #fff;
+        cursor: pointer;
+
+        }
+        :doodle(:hover) { --s: 1 ; }
+
+        :after {
+        content: @pick(a,A);
+        font-size: 4vmax;
+        color: #000;
+        transform: scale(@rand(.2, .9));
+
+        }
+
+        transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+        transition-delay: @rand(650ms);
+        transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
+
+    </css-doodle>
+
+    <section class="web">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
+                    <div class="card bg-dark text-light">
+                        <img src="https://images.zi.org.tw/sunnylife/20180118113729_39.jpg" class="card-img-top"
+                            alt="木門咖啡">
+                        <div class="p-3 d-flex justify-content-around align-items-end">
+                            <h2 class="">木門咖啡</h2>
+                            <h5 class="card-text text-right">
+                                <a href="https://woodendoorcafe.github.io/?openExternalBrowser=1" target="_blank">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
+                    <div class="card bg-dark text-light">
+                        <img src="https://pic.pimg.tw/weilife/1548769211-3790938575.jpg" class="card-img-top"
+                            alt="山居歲月">
+                        <div class="p-3 d-flex justify-content-around align-items-end">
+                            <h2 class="">山居歲月</h2>
+                            <h5 class="card-text text-right">
+                                <a href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1"
+                                    target="_blank">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
+                    <div class="card bg-dark text-light">
+                        <img src=" " class="card-img-top" alt="">
+                        <div class="p-3 d-flex justify-content-around align-items-end">
+                            <h2 class="">天氣卡片</h2>
+                            <h5 class="card-text text-right">
+                                <a href="https://showanne.github.io/weathercard/" target="_blank">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-10 my-3" style="width: 310px; height:270px;">
+                    <div class="card bg-dark text-light">
+                        <img src=" " class="card-img-top" alt="">
+                        <div class="p-3 d-flex justify-content-around align-items-end">
+                            <h2 class="">設計作品</h2>
+                            <h5 class="card-text text-right">
+                                <a href="./design_img/2-card_pclearning.jpg">
+                                    <i class="far fa-arrow-alt-circle-right"></i>
+                                </a>
+                                <a href="./design_img/3-card_eat.jpg"></a>
+                                <a href="./design_img/4-card_clothes.jpg"></a>
+                                <a href="./design_img/1-Matte Painting.jpg"></a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+        // 用line開啟連結時，強制以外部瀏覽器開啟
+
+        //<![CDATA[
+        /*處理分享到 Line 的連結*/
+        $("a").each(function () {
+            var href = this.href;
+
+            // http 網址才處理
+            if (href.indexOf("http") != 0 || href.indexOf("//") < 0) {
+                return;
+            }
+
+            // 網址沒有參數 ? 時, 直接加參數
+            if (href.indexOf("?") < 0) {
+                href += "?openExternalBrowser=1";
+            } else {
+                // 網址有參數 ? 時, 用 & 加參數
+                href += "&openExternalBrowser=1";
+            }
+
+            this.href = href;
+        });
+//]]>
+    </script>
+</body>
+
+</html>
