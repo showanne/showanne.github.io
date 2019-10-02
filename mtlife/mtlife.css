@@ -350,12 +350,33 @@ section#map button i {
   color: aliceblue;
   top: 140px;
   right: 104px;
+  -webkit-filter: drop-shadow(0.5px 0.5px 1.5px #094477);
+          filter: drop-shadow(0.5px 0.5px 1.5px #094477);
+}
+
+@media screen and (max-width: 576px) {
+  section#map button i {
+    font-size: 35px;
+    top: 62px;
+    right: 40px;
+  }
 }
 
 section#map button h2 {
   position: absolute;
   top: 185px;
   right: 65px;
+}
+
+@media screen and (max-width: 576px) {
+  section#map button h2 {
+    top: 79px;
+    right: 20px;
+    font-size: 12pt !important;
+    border-top: unset;
+    border-bottom: unset;
+    display: block;
+  }
 }
 
 section#map .collapse .card iframe {

@@ -337,11 +337,26 @@ section#map{
             color: aliceblue;
             top: 140px;
             right: 104px;
+            filter:drop-shadow(0.5px 0.5px 1.5px rgb(9, 68, 119));
+            @media screen and (max-width: 576px) {
+                font-size: 35px;
+                top: 62px;
+                right: 40px;
+            }
         }
         h2{
             position: absolute;
             top: 185px;
             right: 65px;
+
+            @media screen and (max-width: 576px) {
+                top: 79px;
+                right: 20px;
+                font-size: 12pt !important;
+                border-top: unset;
+                border-bottom: unset;   
+                display: block;             
+            }
         }
     }
    

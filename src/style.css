@@ -174,7 +174,7 @@ footer a {
 }
 
 footer p {
-    padding-top: 15px;
+    padding-top: 3px;
     font-size: 12px;
 }
 
@@ -188,7 +188,7 @@ footer p {
     }
 
     footer p {
-        padding-top: 10px;
+        padding-top: 1px;
         font-size: 7px;
     }
 }
