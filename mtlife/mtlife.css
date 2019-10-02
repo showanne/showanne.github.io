@@ -11,9 +11,16 @@ body {
 }
 
 /* 字體 */
+h1 {
+  font-size: 23pt !important;
+}
+
+h2 {
+  font-size: 21pt !important;
+}
+
 @media screen and (max-width: 576px) {
   h2 {
-    font-size: 1.85rem !important;
     border-top: 1px solid;
     border-bottom: 1px solid;
     display: inline-block;
@@ -22,20 +29,16 @@ body {
   }
 }
 
-@media screen and (max-width: 576px) {
-  h3 {
-    font-size: 1.35rem !important;
-  }
+h3 {
+  font-size: 18pt !important;
+}
+
+h4 {
+  font-size: 15pt !important;
 }
 
 h5 {
-  font-size: 1.25rem;
-}
-
-@media screen and (max-width: 576px) {
-  h5 {
-    font-size: 0.9rem !important;
-  }
+  font-size: 10pt !important;
 }
 
 /* 通用 */
@@ -319,34 +322,40 @@ section#viewpoint .swiper-container .swiper-button-prev {
 
 /* 行程推薦 */
 /* 山居位置 */
-section#map {
+section#map .container {
   position: relative;
 }
 
-section#map .map-btn {
+section#map button {
   background-color: transparent;
   width: 0;
   height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 100px solid #7a9bf7;
-  margin-left: 237px;
+  border-style: solid;
+  border-width: 100px;
+  border-color: transparent transparent  #7a9bf7 transparent;
 }
 
 @media screen and (max-width: 576px) {
-  section#map .map-btn {
+  section#map button {
     font-size: 11px;
-    border-left: 39px solid transparent;
-    border-right: 39px solid transparent;
-    border-bottom: 27px solid #7a9bf7;
+    border-style: solid;
+    border-width: 30px;
+    border-color: transparent transparent  #7a9bf7 transparent;
   }
 }
 
-section#map span {
+section#map button i {
   position: absolute;
-  right: 38px;
-  bottom: -3px;
-  font-size: 13px;
+  font-size: 53px;
+  color: aliceblue;
+  top: 140px;
+  right: 104px;
+}
+
+section#map button h2 {
+  position: absolute;
+  top: 185px;
+  right: 65px;
 }
 
 section#map .collapse .card iframe {
