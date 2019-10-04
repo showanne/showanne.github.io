@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HarryPotter</title>
 
+    <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Noto+Sans+TC&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./mediaquery.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
 
     <style>
-    
+
     </style>
 </head>
 
 <body>
-    <div id="navbar" class="P-1323">
-        <div id="logo">
-            <div id="img-logo">
-                <img src="./img/logo.jpg" alt="HarryPotter-logo">    
-            </div>
+    <header id="navbar" class=" P-1323">
+        <div class="logo">
+            <ul>
+                <li>
+                    <a href=""><img src="./img/logo.jpg" alt="HarryPotter-logo" title="Harry Potter"></a>
+                </li>
+            </ul>
         </div>
-        <div id="button" class="M-5 P-10 float-R font-tw">
-            <a href="#theme" class="font-herf">電影介紹</a>
+        <nav>
+            <ul class="navlinkgroup">
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#theme" class="font-herf" title="電影介紹">電影介紹</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#character" class="font-herf" title="主角介紹">主角介紹</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#parallax" class="font-herf" title="拍攝地點">拍攝地點</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#buy" class="font-herf" title="購買方式">購買方式</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bar">
+            <i class="fas fa-bars"></i>
         </div>
-        <div id="button" class="M-5 P-10 float-R font-tw">
-            <a href="#character" class="font-herf">主角介紹</a>
-        </div>
-        <div id="button" class="M-5 P-10 float-R font-tw">
-            <a href="#parallax" class="font-herf">拍攝地點</a>
-        </div>
-        <div id="button" class="P-10 float-R font-tw">
-            <a href="#buy" class="font-herf">購買方式</a>
-        </div>      
+    </header>
+
     </div>
     <div id="banner" class="img"></div>
     <div id="content">
@@ -44,7 +59,10 @@
                 </div>
                 <div id="card-t" class="W-40 font-en M-50">
                     <b>Harry Potter<br><br></b>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at autem dolores in magnam quibusdam consequuntur delectus ducimus! Sit, animi quis praesentium odio nobis ad id. Quisquam maiores eaque esse ut dolore assumenda repudiandae, sed accusamus dicta reiciendis, asperiores distinctio? Ex doloribus modi itaque vel nemo odio cumque iusto ratione?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at autem dolores in magnam
+                    quibusdam consequuntur delectus ducimus! Sit, animi quis praesentium odio nobis ad id. Quisquam
+                    maiores eaque esse ut dolore assumenda repudiandae, sed accusamus dicta reiciendis, asperiores
+                    distinctio? Ex doloribus modi itaque vel nemo odio cumque iusto ratione?
                 </div>
             </div>
         </div>
@@ -56,7 +74,8 @@
                     </div>
                     <div id="card-l" class="font-en M-50">
                         <b>Harry Potter<br><br></b>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem, sed cumque vel porro reiciendis nihil pariatur illo a.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
                     </div>
                 </div>
                 <div id="ch" class="W-30 M-5">
@@ -65,7 +84,8 @@
                     </div>
                     <div id="card-l" class="font-en M-50">
                         <b>Hermione Granger<br><br></b>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem, sed cumque vel porro reiciendis nihil pariatur illo a.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
                     </div>
                 </div>
                 <div id="ch" class="W-30">
@@ -74,7 +94,8 @@
                     </div>
                     <div id="card-l" class="font-en M-50">
                         <b>Ron Weasley<br><br></b>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem, sed cumque vel porro reiciendis nihil pariatur illo a.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
                     </div>
                 </div>
             </div>
@@ -97,9 +118,26 @@
             </div>
         </div>
     </div>
-    <div id="footer" class="W-100 font-tw">本網頁僅用於教學及練習使用</div>
+
     <a href="#banner">
         <div id="gototop" class="font-top">Top</div>
     </a>
+    <footer>
+        <div id="footer" class="W-100 font-tw">本網頁僅用於教學及練習使用</div>
+        <div class="copyright">© Anne 2019</div>
+    </footer>
+
+
+    <script>
+
+        var bar = document.querySelector(".bar")
+        var menu = document.querySelector(".navlinkgroup")
+
+        bar.onclick = function () {
+            menu.classList.toggle("active")
+        }
+
+    </script>
 </body>
+
 </html>
