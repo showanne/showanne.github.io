@@ -11,16 +11,16 @@ body {
 }
 
 /* 字體 */
-h1 {
-  font-size: 23pt !important;
+.h1, h1 {
+  font-size: 1.43rem !important;
 }
 
-h2 {
-  font-size: 21pt !important;
+.h2, h2 {
+  font-size: 1.32rem !important;
 }
 
 @media screen and (max-width: 576px) {
-  h2 {
+  .h2, h2 {
     border-top: 1px solid;
     border-bottom: 1px solid;
     display: inline-block;
@@ -29,16 +29,16 @@ h2 {
   }
 }
 
-h3 {
-  font-size: 18pt !important;
+.h3, h3 {
+  font-size: 1.125rem !important;
 }
 
-h4 {
-  font-size: 15pt !important;
+.h4, h4 {
+  font-size: 0.937rem !important;
 }
 
-h5 {
-  font-size: 10pt !important;
+.h5, h5 {
+  font-size: 0.625rem !important;
 }
 
 /* 通用 */
@@ -151,9 +151,6 @@ section#life .swiper-container {
 }
 
 section#life .swiper-container .swiper-pagination-bullet {
-  width: 60px;
-  height: 6px;
-  display: inline-block;
   border-radius: unset;
   background: #dde5ec;
   opacity: .5;
@@ -205,6 +202,14 @@ section#life .row h5 {
 }
 
 /* 最新消息 */
+section#news .row .r-news {
+  margin-bottom: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 1px #050141;
+}
+
 /* 山居故事 + 美好歲月 */
 section#about {
   position: relative;
@@ -359,6 +364,13 @@ section#map .container {
   position: relative;
 }
 
+@media screen and (max-width: 576px) {
+  section#map .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 section#map button {
   background-color: transparent;
   width: 0;
@@ -391,20 +403,21 @@ section#map button i {
   section#map button i {
     font-size: 35px;
     top: 62px;
-    right: 40px;
+    right: 26px;
   }
 }
 
 section#map button h2 {
   position: absolute;
   top: 185px;
-  right: 65px;
+  right: 80px;
 }
 
 @media screen and (max-width: 576px) {
   section#map button h2 {
     top: 79px;
-    right: 20px;
+    right: 21px;
+    line-height: 1.2 !important;
     font-size: 12pt !important;
     border-top: unset;
     border-bottom: unset;
