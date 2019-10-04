@@ -202,12 +202,37 @@ section#life .row h5 {
 }
 
 /* 最新消息 */
+section#news {
+  height: 100vh;
+  background-color: #0c2875;
+}
+
 section#news .row .r-news {
-  margin-bottom: 5px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   border: solid 1px #050141;
+  margin: 0 auto;
+}
+
+section#news .row .r-news p {
+  margin: 0;
+  padding: 0 15px;
+  line-height: 38px;
+  display: inline-block;
+}
+
+section#news .row .r-news .border-bottom {
+  border-bottom: 1px solid #050141 !important;
+}
+
+section#news .row .date {
+  line-height: 18px;
+}
+
+section#news .col-md-3 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* 山居故事 + 美好歲月 */
