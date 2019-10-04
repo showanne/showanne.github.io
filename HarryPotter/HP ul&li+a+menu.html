@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            background-color:indigo;
+        }
+        .container{
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 9px;
+        }
+
+        /* header */
+        header h2{
+            margin: 0;
+        }
+        header .container{
+            display: flex;
+            justify-content: space-between;
+            /* align-items: baseline; */
+        }
+        header .logo img{
+            height: 85px;
+            display: block;
+            /* <img>預設會再父層加一點高度，要加display: block; 覆蓋掉預設的display: inline; */
+        }
+        header .logo ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none; 
+            /* li 預設有一個點 要消除 */
+        }
+        .navlinkgroup{
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navlink{
+            list-style-type: none;   
+        }
+        .navlink:hover{
+            background-color:cornflowerblue;   
+            transition: 0.5s; 
+        }
+        header .navlink a{
+            color: bisque;
+            text-decoration: none;
+            padding: 29px 23px;
+            display: block;
+            
+        }
+        header .bar{
+            display: none;
+        }
+
+        @media screen and (max-width: 900px) {
+            
+            header nav .navlinkgroup{
+                display: none;
+                position: absolute;
+                top: 85px;
+                right: 0;
+                background-color: indigo;
+            }
+            header nav .navlinkgroup.active{
+                display: block;
+            }
+            header nav  {
+                flex-wrap:wrap;
+            }
+            header nav .navlink{
+                width: 30vw;  
+                text-align: center;
+            }
+            header .bar{
+                display: block;
+                line-height: 85px;
+            }
+            header .bar i{
+                color: bisque;
+                font-size: 27px;
+                box-sizing: border-box;
+                border: 1px solid bisque;
+                padding: 3px 5px;
+                margin-right: 9px;            
+            }
+            
+        }
+
+
+
+
+
+
+
+        section h2{
+            margin-top: 0;
+        }
+
+        /* section sec-banner */
+        .sec-banner{
+            background-color: rgb(218, 205, 255);
+            width: 100%;
+            padding: 9px 0;
+        }
+
+        /* section sec-news */
+        .sec-news{
+            background-color: rgb(172, 143, 255);
+            width: 100%;
+            padding: 9px 0;
+        }
+
+        /* section sec-aboutme */
+        .sec-aboutme{
+            background-color: rgb(218, 205, 255);
+            width: 100%;
+            padding: 9px 0;
+        }
+
+        /* section sec-contactme */
+        .sec-contactme{
+            background-color: rgb(172, 143, 255);
+            width: 100%;
+            padding: 9px 0;
+        }
+
+        /* section sec-footer */
+        .sec-footer{
+            background-color: rgb(218, 205, 255);
+            width: 100%;
+            padding: 9px 0;
+        }
+
+
+
+        /* footer */
+        footer{
+            background-color:indigo;
+        }
+        .navfootergroup{
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            margin: 0;
+            padding: 19px 0;
+        }
+        .navfootergroup H3{
+            text-decoration: none;
+            color:rgb(197, 196, 255);   
+        }
+        .navfooter{
+            list-style-type: none;
+            margin: 0;
+            padding: 9px 0;
+            color:rgb(158, 157, 252);   
+        }
+        .navfooter li a{
+            color:unset; 
+            color:rgb(158, 157, 252); 
+            text-decoration: none;  
+        }
+        .copyright{
+            display: flex;
+            justify-content: flex-end;
+            padding: 9px 0;
+            background-color:indigo;
+            color: blanchedalmond;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <ul><li><a href=""><img src="./logo.jpg" alt="Harry Potter" title="Harry Potter"></a></li></ul>
+            </div>
+            <nav>
+                <ul class="navlinkgroup">
+                    <li class="navlink">
+                        <a href="" title="banner"><h2>banner</h2></a>
+                    </li>
+                    <li class="navlink">
+                        <a href="" title="news"><h2>news</h2></a>
+                    </li>
+                    <li class="navlink">
+                        <a href="" title="aboutme"><h2>aboutme</h2></a>
+                    </li>
+                    <li class="navlink">
+                        <a href="" title="contactme"><h2>contactme</h2></a>
+                    </li>
+                    <li class="navlink">
+                        <a href="" title="footer"><h2>footer</h2></a>
+                    </li>
+                </ul>
+            </nav>  
+            <div class="bar">
+                <i class="fas fa-bars"></i>
+            </div>   
+        </div>
+    </header>
+    
+    <section class="sec-banner">
+        <div class="container">
+            <h2 title="banner">banner</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod porro doloremque consequatur adipisci, deserunt ut provident beatae odit id eveniet at ullam eum sint perspiciatis nobis, sapiente vero quis corrupti!  
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo dolorum, architecto in fugiat suscipit odio. Sequi nobis doloremque autem dolor iste nisi aperiam perferendis sint, ea ab fugit, debitis aliquam.
+        </div>
+    </section>
+    <section class="sec-news">
+        <div class="container">
+            <h2 title="news">news</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod porro doloremque consequatur adipisci, deserunt ut provident beatae odit id eveniet at ullam eum sint perspiciatis nobis, sapiente vero quis corrupti!    
+        </div>
+    </section>
+    <section class="sec-aboutme">
+        <div class="container">
+            <h2 title="aboutme">aboutme</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod porro doloremque consequatur adipisci, deserunt ut provident beatae odit id eveniet at ullam eum sint perspiciatis nobis, sapiente vero quis corrupti!    
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consectetur modi amet, hic libero quasi, ad omnis quae eius provident tenetur ipsam. Doloremque magni iste culpa modi reprehenderit at, doloribus repudiandae ab harum aspernatur voluptates excepturi!
+        </div>
+    </section>
+    <section class="sec-contactme">
+        <div class="container">
+            <h2 title="contactme">contactme</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod porro doloremque consequatur adipisci, deserunt ut provident beatae odit id eveniet at ullam eum sint perspiciatis nobis, sapiente vero quis corrupti!    
+        </div>
+    </section>
+    <section class="sec-footer">
+        <div class="container">
+            <h2 title="footer">footer</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod porro doloremque consequatur adipisci, deserunt ut provident beatae odit id eveniet at ullam eum sint perspiciatis nobis, sapiente vero quis corrupti!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae perferendis est, illo odit neque omnis!
+        </div>
+    </section>    
+        
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul class="navfootergroup">
+                    <li >
+                        <a href="">
+                            <h3 title="banner">banner</h3>
+                        </a>
+                        <ul class="navfooter">
+                            <li><a href="" title="banner">banner-1</a></li>
+                            <li><a href="" title="banner">banner-2</a></li>
+                            <li><a href="" title="banner">banner-3</a></li>
+                            <li><a href="" title="banner">banner-4</a></li>
+                            <li><a href="" title="banner">banner-5</a></li>
+                            <li><a href="" title="banner">banner-6</a></li>
+                            <li><a href="" title="banner">banner-7</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 title="news">news</h3>
+                        </a>
+                        <ul class="navfooter">
+                            <li><a href="" title="news">news-1</a></li>
+                            <li><a href="" title="news">news-2</a></li>
+                            <li><a href="" title="news">news-3</a></li>
+                            <li><a href="" title="news">news-4</a></li>
+                            <li><a href="" title="news">news-5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 title="aboutme">aboutme</h3>
+                        </a>
+                        <ul class="navfooter">
+                            <li><a href="" title="aboutme">aboutme-1</a></li>
+                            <li><a href="" title="aboutme">aboutme-2</a></li>
+                            <li><a href="" title="aboutme">aboutme-3</a></li>
+                            <li><a href="" title="aboutme">aboutme-4</a></li>
+                            <li><a href="" title="aboutme">aboutme-5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 title="contactme">contactme</h3>
+                        </a>
+                        <ul class="navfooter">
+                            <li><a href="" title="contactme">contactme-1</a></li>
+                            <li><a href="" title="contactme">contactme-2</a></li>
+                            <li><a href="" title="contactme">contactme-3</a></li>                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3 title="footer">footer</h3>
+                        </a>
+                        <ul class="navfooter">
+                            <li><a href="" title="footer">footer-1</a></li>
+                            <li><a href="" title="footer">footer-2</a></li>
+                            <li><a href="" title="footer">footer-3</a></li>
+                            <li><a href="" title="footer">footer-4</a></li>
+                            <li><a href="" title="footer">footer-5</a></li>
+                            <li><a href="" title="footer">footer-6</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">© Anne 2019</div>
+        </div>
+    </footer>
+    
+<script>
+
+    var bar = document.querySelector(".bar")
+    var menu = document.querySelector(".navlinkgroup")
+
+    bar.onclick = function(){
+        menu.classList.toggle("active")
+    }
+
+</script>
+
+</body>
+</html>
+
+<!-- 
+    1.收合功能
+        ok
+
+    2.js變數命名
+        ok
+
+    你的定位的位置寫錯了 選單中的幾個英文單字會被切掉
+
+    @media screen and (max-width: 900px)
+    header nav .navlinkgroup {
+        display: none;
+        position: absolute;
+        top: 85px;
+        right: 0;   <-----這裡要改
+        background-color: indigo;
+    }
+
+    
+ -->

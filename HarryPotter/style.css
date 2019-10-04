@@ -116,7 +116,11 @@
         align-items: center;
         justify-content: space-between;
     }
-    #navbar{
+    
+
+
+/* header */
+#navbar{
         background-color: rgb(19, 5, 36);
         width: 100%;
         /* max-width: 1920px; */
@@ -127,16 +131,10 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-    }
-
-
-/* header */
-header{
-    display: flex;
-    justify-content: space-between;
 }
+
 header .logo img{
-    height: 85px;
+    height: 75px;
     display: block;
     /* <img>預設會再父層加一點高度，要加display: block; 覆蓋掉預設的display: inline; */
 }
@@ -152,55 +150,48 @@ header .logo ul{
     padding: 0;
 }
 .navlink{
-    list-style-type: none;   
+    list-style-type: none;
+    margin: 0 3px;   
 }
 .navlink:hover{
-    background-color:cornflowerblue;   
+    background-color: rgb(235, 224, 255);   
     transition: 0.5s; 
 }
-header .navlink a{
-    color: bisque;
-    text-decoration: none;
-    padding: 29px 23px;
-    display: block;
-    
-}
+
 header .bar{
     display: none;
 }
 
 @media screen and (max-width: 900px) {
-    
+    header .logo img{
+        height: 60px;
+    }
     header nav .navlinkgroup{
         display: none;
         position: absolute;
-        top: 85px;
+        top: 60px;
         right: 0;
-        background-color: indigo;
+        background-color: rgba(19, 5, 36, 0.801);
     }
-    header nav .navlinkgroup.active{
-        display: block;
-    }
+
     header nav  {
         flex-wrap:wrap;
     }
     header nav .navlink{
-        width: 30vw;  
+        width: 100vw;  
+        padding: 3vh 20vh;
         text-align: center;
     }
     header .bar{
         display: block;
-        line-height: 85px;
     }
     header .bar i{
-        color: bisque;
+        color: rgb(151, 169, 241);
         font-size: 27px;
-        box-sizing: border-box;
-        border: 1px solid bisque;
+        border: 1px solid rgb(151, 169, 241);
         padding: 3px 5px;
         margin-right: 9px;            
-    }
-    
+    } 
 }
 
 
@@ -245,10 +236,7 @@ header .bar{
     #img-films{
         position: relative;
     }
-    #footer{
-        background-color:  rgb(19, 5, 36);
-        padding: 0 10%;
-    }
+
     #gototop{
         background-color: rgb(138, 147, 182);
         width: 70px;
@@ -257,6 +245,14 @@ header .bar{
         position: fixed;
         right: 19px;
         bottom: 19px;
+    }
+    .copyright{
+        font-family: 'Noto Sans TC', sans-serif;
+        display: flex;
+        justify-content: space-around;
+        background-color:rgb(19, 5, 36);
+        color: rgb(138, 147, 182);
+
     }
 
 @media(max-width:991px){
@@ -299,8 +295,8 @@ header .bar{
 @media(max-width:400px){
     .font-tw{
         color: rgb(138, 147, 182);
-        font-size: 9pt;
-        line-height: 19px;
+        font-size: 13pt;
+        /* line-height: 19px; */
     }
     #img-logo img{
         width: 99px;

@@ -14,9 +14,6 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -30,16 +27,16 @@
         </div>
         <nav>
             <ul class="navlinkgroup">
-                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                <li class="navlink M-5 P-10 float-R font-tw">
                     <a href="#theme" class="font-herf" title="電影介紹">電影介紹</a>
                 </li>
-                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                <li class="navlink M-5 P-10 float-R font-tw">
                     <a href="#character" class="font-herf" title="主角介紹">主角介紹</a>
                 </li>
-                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                <li class="navlink M-5 P-10 float-R font-tw">
                     <a href="#parallax" class="font-herf" title="拍攝地點">拍攝地點</a>
                 </li>
-                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                <li class="navlink M-5 P-10 float-R font-tw">
                     <a href="#buy" class="font-herf" title="購買方式">購買方式</a>
                 </li>
             </ul>
@@ -122,22 +119,36 @@
     <a href="#banner">
         <div id="gototop" class="font-top">Top</div>
     </a>
-    <footer>
-        <div id="footer" class="W-100 font-tw">本網頁僅用於教學及練習使用</div>
-        <div class="copyright">© Anne 2019</div>
+    <footer class="copyright">
+        <p>本網頁僅用於教學及練習使用</p>
+        <p>© Anne 2019</p>
     </footer>
 
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+  
     <script>
+        //點擊鏈接之後，把選項折疊起來 
+        $(function () {
+            $(".bar").click(function () {
+                $(".navlinkgroup").slideToggle("slow");
+            });
+            $(".navlink").click(function () {
+                $(".navlinkgroup").slideToggle("slow");
+            });
+        });
 
-        var bar = document.querySelector(".bar")
-        var menu = document.querySelector(".navlinkgroup")
-
-        bar.onclick = function () {
-            menu.classList.toggle("active")
-        }
-
+        // //滾動屏幕時，把選項折疊起來
+        // $(window).scroll(function () {
+        //     $(window).scroll(function () {
+        //         $(".navlinkgroup").slideToggle("slow");
+        //     });
+        // });
     </script>
+
+
 </body>
 
 </html>
