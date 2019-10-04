@@ -1,0 +1,317 @@
+*{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding-top: 10vh;
+    }
+
+    /* .float-L{
+        float: left;
+    }
+    .float-R{
+        float: right;
+    }
+    .clear{
+        clear: both;
+    } */
+    /* 作業要求 不用float 改用 flex */
+
+    .img{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .W-55{
+        width: 55%;
+    }
+    .W-40{
+        width: 40%;
+    }
+    .W-50{
+        width: 50%;
+    }
+    .W-30{
+        width: 30%;
+    }
+    .W-10{
+        width: 10%;
+    }
+    .W-475{
+        width: 47.5%;
+    }
+    .W-100{
+        width: 100%;
+    }
+    .H-100{
+        height: 100%;
+    }
+    .H-10{
+        height: 10vh;
+    }
+    .H-500{
+        height: 50vh;
+    }
+    .H-50{
+        height: 50px;
+    }
+
+    /* .M-5{
+        margin: 0 5% 0 0;
+    }
+    .M-05{
+        margin: 0 5% 0 5%;
+    }
+    .M-50{
+        margin: 5% 0 5% 0;
+    } */
+    /* 測試 margin 都不用，改用 justify-content: space-between + space-around */
+    
+    .M-a{
+        margin: auto;
+    }
+    .P-1323{
+        padding: 13px 23px;
+    }
+    .P-10{
+        padding: 0 10px 0 10px;
+    }
+    
+    .P-25{
+        padding-top: calc(25vh - 25px);
+    }
+    .font-tw{
+        color: rgb(138, 147, 182);
+        font-size: 25pt;
+        font-weight:bold ;
+        font-family:'Noto Sans TC', sans-serif;
+        line-height: 50px;
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        text-align-last: justify;
+    }
+    .font-en{
+        color: rgb(151, 169, 241);
+        font-size: 16pt;
+        font-family: 'Lexend Deca', sans-serif;
+        line-height: 1.2;
+        text-align: left;
+        padding: 0 20px;
+    }
+    .font-herf{
+        text-decoration:none;
+        color:rgb(138, 147, 182);
+    }
+    .font-top{
+        /* color: rgb(151, 169, 241); */
+        font-size: 16pt;
+        font-family: 'Lexend Deca', sans-serif;
+        text-align: center;
+        line-height: 70px;
+    }
+    #container{
+        max-width: 1140px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #navbar{
+        background-color: rgb(19, 5, 36);
+        width: 100%;
+        /* max-width: 1920px; */
+        height: 10vh;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #logo img{
+        width: 199px;
+    }
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header .logo img{
+    height: 85px;
+    display: block;
+    /* <img>預設會再父層加一點高度，要加display: block; 覆蓋掉預設的display: inline; */
+}
+header .logo ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    /* li 預設有一個點 要消除 */
+}
+.navlinkgroup{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navlink{
+    list-style-type: none;   
+}
+.navlink:hover{
+    background-color:cornflowerblue;   
+    transition: 0.5s; 
+}
+header .navlink a{
+    color: bisque;
+    text-decoration: none;
+    padding: 29px 23px;
+    display: block;
+    
+}
+header .bar{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    
+    header nav .navlinkgroup{
+        display: none;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        background-color: indigo;
+    }
+    header nav .navlinkgroup.active{
+        display: block;
+    }
+    header nav  {
+        flex-wrap:wrap;
+    }
+    header nav .navlink{
+        width: 30vw;  
+        text-align: center;
+    }
+    header .bar{
+        display: block;
+        line-height: 85px;
+    }
+    header .bar i{
+        color: bisque;
+        font-size: 27px;
+        box-sizing: border-box;
+        border: 1px solid bisque;
+        padding: 3px 5px;
+        margin-right: 9px;            
+    }
+    
+}
+
+
+/* banner */
+    #banner{
+        width: 100%;
+        height: 90vh;
+        background-image: url('./img/HarryPotter-Groupphoto4.jpg');
+    }
+    #content{
+        background-color: rgb(19, 5, 36);
+    }
+    #content .M-50{
+        margin: 5% 0 5% 0;
+    }
+    
+    #parallax{
+        width:100%;
+        height: 50vh;
+        background-image: url('./img/Hoggwart2.jpg');
+        background-attachment: fixed;
+        /* padding-top: calc(35vh - 25px); */
+        /* 用 flex ↓ ，免去padding */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #text{
+        background-color:rgb(3, 3, 61);
+        
+    }
+    #buy #text{
+        background-color:rgb(3, 3, 61);
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(35%);
+    }
+    #img-book{
+        position: relative;
+    }
+    
+    #img-films{
+        position: relative;
+    }
+    #footer{
+        background-color:  rgb(19, 5, 36);
+        padding: 0 10%;
+    }
+    #gototop{
+        background-color: rgb(138, 147, 182);
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        position: fixed;
+        right: 19px;
+        bottom: 19px;
+    }
+
+@media(max-width:991px){
+    .font-tw{
+        color: rgb(138, 147, 182);
+        font-size: 19pt;
+        font-weight: unset;
+    }
+    #navbar .W-10{
+        width: unset;
+    }
+
+    /* logo縮放問題→用img並固定寬度解決 */
+
+    #banner{
+        height: 90vh;
+    }
+    /* banner圖片縮放問題→不處理 */
+
+    #container{
+        display: block;
+    }
+    #theme .W-55,.W-40{
+        width: unset;
+    }
+    #ch{
+        width: unset;
+    }
+    #ch #img-l{
+        margin: 0 0 5% 0;
+        padding: 5%;
+    }
+    #buy .W-475{
+        width: unset;
+    }
+    #buy #img-book{
+        margin: 0 0 5% 0;
+    }
+}
+@media(max-width:400px){
+    .font-tw{
+        color: rgb(138, 147, 182);
+        font-size: 9pt;
+        line-height: 19px;
+    }
+    #img-logo img{
+        width: 99px;
+        margin-right: 29px;
+    }
+    #navbar.P-1323{
+        padding: 7px 15px;
+    }
+    #theme #card-t.font-en {
+        font-size: 12pt;
+    }
+}

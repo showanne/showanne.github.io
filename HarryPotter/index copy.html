@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HarryPotter</title>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Noto+Sans+TC&display=swap" rel="stylesheet">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./mediaquery.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class=" P-1323">
+        <div class="logo">
+            <ul>
+                <li>
+                    <a href=""><img src="./img/logo.jpg" alt="HarryPotter-logo" title="Harry Potter"></a>
+                </li>
+            </ul>
+        </div>
+        <nav>
+            <ul class="navlinkgroup">
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#theme" class="font-herf" title="電影介紹">電影介紹</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#character" class="font-herf" title="主角介紹">主角介紹</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#parallax" class="font-herf" title="拍攝地點">拍攝地點</a>
+                </li>
+                <li id="button" class="navlink M-5 P-10 float-R font-tw">
+                    <a href="#buy" class="font-herf" title="購買方式">購買方式</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bar">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    </div>
+    <div id="banner" class="img"></div>
+    <div id="content">
+        <div id="theme">
+            <div id="container" class="P-1323">
+                <div id="img-t" class="W-55 M-5">
+                    <img src="./img/HarryPotter-Groupphoto3.jpg" class="img W-100" alt="">
+                </div>
+                <div id="card-t" class="W-40 font-en M-50">
+                    <b>Harry Potter<br><br></b>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at autem dolores in magnam
+                    quibusdam consequuntur delectus ducimus! Sit, animi quis praesentium odio nobis ad id. Quisquam
+                    maiores eaque esse ut dolore assumenda repudiandae, sed accusamus dicta reiciendis, asperiores
+                    distinctio? Ex doloribus modi itaque vel nemo odio cumque iusto ratione?
+                </div>
+            </div>
+        </div>
+        <div id="character">
+            <div id="container">
+                <div id="ch" class="W-30 M-5">
+                    <div id="img-l">
+                        <img src="./img/HarryPotter.jpg" class="img W-100" alt="">
+                    </div>
+                    <div id="card-l" class="font-en M-50">
+                        <b>Harry Potter<br><br></b>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
+                    </div>
+                </div>
+                <div id="ch" class="W-30 M-5">
+                    <div id="img-l">
+                        <img src="./img/HermioneGranger.jpg" class="img W-100" alt="">
+                    </div>
+                    <div id="card-l" class="font-en M-50">
+                        <b>Hermione Granger<br><br></b>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
+                    </div>
+                </div>
+                <div id="ch" class="W-30">
+                    <div id="img-l">
+                        <img src="./img/RonWeasley.jpg" class="img W-100" alt="">
+                    </div>
+                    <div id="card-l" class="font-en M-50">
+                        <b>Ron Weasley<br><br></b>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus natus id dolorem,
+                        sed cumque vel porro reiciendis nihil pariatur illo a.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="parallax" class="img">
+            <div id="text" class="W-40 H-50 M-a font-tw P-10 ">霍格華茲</div>
+        </div>
+        <div id="buy">
+            <div id="container" class="P-1323">
+                <div id="img-book" class="img W-475 M-5">
+                    <img src="./img/HarryPotter-book.png" class="W-100" alt="">
+                    <div id="text" class="W-30 M-a font-tw P-10">叢書</div>
+                </div>
+                <div id="img-films" class="img W-475">
+                    <img src="./img/HarryPotter-films.png" class="W-100" alt="">
+                    <div id="text" class="W-30 M-a font-tw P-10">電影</div>
+                </div>
+                <!-- 使用<img>，.img裡的效果對<img>無效  -->
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#banner">
+        <div id="gototop" class="font-top">Top</div>
+    </a>
+    <footer>
+        <div id="footer" class="W-100 font-tw">本網頁僅用於教學及練習使用</div>
+        <div class="copyright">© Anne 2019</div>
+    </footer>
+
+
+    <script>
+
+        var bar = document.querySelector(".bar")
+        var menu = document.querySelector(".navlinkgroup")
+
+        bar.onclick = function () {
+            menu.classList.toggle("active")
+        }
+
+    </script>
+</body>
+
+</html>
