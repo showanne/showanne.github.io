@@ -1,3 +1,8 @@
+$c1:#7a9bf7;
+$c2:rgb(201, 217, 248);
+$c3:#0c2875;
+$c4:rgb(25, 86, 199);
+
 body {
     overflow-x: hidden;
     font-family: '微軟正黑體', sans-serif !important;
@@ -59,14 +64,10 @@ body {
     }
 }
 
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-}
-
-.swiper-img {
+.bg-img {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* w-618 和 w-382 是黃金比例 */
@@ -84,15 +85,12 @@ body {
     }
 }
 
-
-
  @media screen and (min-width: 1920px) {
     .container {
         max-width: 1800px;
         @media screen and (min-width: 1000px) {
             max-width: 80%;
         }
-
     }
 }
 
@@ -101,7 +99,7 @@ body {
 
 
 section {
-    background-color: rgb(201, 217, 248);
+    background-color: $c2;
 }
 
 /* NAV 導覽列 */
@@ -117,7 +115,7 @@ nav{
         font-weight: 700;
     }
     .navbar-nav a,.navbar-nav p{
-        color: #0c2875 !important;
+        color: $c3 !important;
         line-height: calc(46vh / 15);
         text-align: center;
     }
@@ -148,43 +146,85 @@ section#life{
     }
     .swiper-container{
         
-        height: calc(66vh - 56px);
-        @media screen and (max-width: 576px) {
+        height: 435px;
+        @media screen and (max-width: 768px) {
             height: calc(39vh - 19px);
         }
 
-        .swiper-pagination-bullet {
-        border-radius: unset;
-        background: rgb(221, 229, 236);
-        opacity: .5;
+        .swiper-button-next, .swiper-button-prev{
+            width: 30px;
+            height: 24px;
         }
+        .swiper-pagination-bullet {
+            width: 66px;
+            border-radius: unset;
+            background: rgb(17, 218, 253);
+            // opacity: .8;
+            }
 
         .ml-btn-prev{
-            margin-left: 37.4rem;
+            margin-left: 46.4rem;
+            @media screen and (max-width: 1200px){
+                margin-left: 35.2rem;
+            }
+            @media screen and (max-width: 992px){
+                margin-left: 22.5rem;
+            }
+            @media screen and (max-width: 768px){
+                margin-left: unset;
+            }
         }
     }
     #price{
-        width: 370px;
+        width: 235px;
         height: 300px;
         position: absolute;
-        top: 21vh;
-        right: 15.5vh;
-        @media screen and (max-width: 576px) {
-            width: 100%;
-            height: 20%;
+        top: 176px;
+        right: 98px;
+        @media screen and (max-width: 992px){
+            top: 172px;
+            right: 63px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 80%;
+            // height: 20%;
             position: unset;
             top: unset;
             right: unset;
+            margin-top: -25px;
         }
 
-        .card-body{
+        .card{
+            border: unset;
+            border-radius: unset;
 
-            .card-title {
-                margin: 1rem 0;
+            .card-body{
+                h2{
+                    @media screen and (max-width: 576px) {
+                        border-top: unset;
+                        border-bottom: unset;
+                        display: block;
+                        line-height: unset;  
+                        padding-top: 0;          
+                    } 
+                }
+                .card-text {
+                    letter-spacing: 0.25rem;
+                }
+                p{
+                    line-height: 25px;
+                }
+                small{
+                    line-height: 17.5px;
+                }
+                a{
+                    margin-bottom: 5rem !important;
+                }
             }
-            .card-text {
-                letter-spacing: 0.25rem;
-            }
+        }
+        .swiper-pagination-bullet {
+            width: 13px;
+            margin: 0 5px;
         }
     }
     
@@ -193,8 +233,9 @@ section#life{
         i {
             font-size: 2.5rem;
             padding: 0.5rem;
-            background-color: #fff;
+            background-color: $c3;
             border-radius: 19px;
+            color: $c2;
         }
         h5{
             letter-spacing: 1px;
@@ -210,7 +251,8 @@ section#life{
 /* 最新消息 */
 section#news{
     height: 100vh;
-    background-color: #0c2875; //暫時給顏色
+    // background-color: $c3; //暫時給顏色
+    
     
     h2{
         padding-top: 28px;
@@ -237,9 +279,9 @@ section#news{
 
     }
 
-    #news-bottom{
+    // #news-bottom{
 
-    }
+    // }
     .col-lg-3, .col-md-5 {
         padding-left: 0;
         padding-right: 0;
@@ -316,7 +358,7 @@ section#about{
             position: absolute;
             top: 50px;
             right: 155px;
-            background-color: rgb(201, 217, 248);
+            background-color: $c2;
             width: 550px;
             height: 550px;
             border-radius: 50%;
@@ -325,7 +367,7 @@ section#about{
             justify-content: center;
             align-items: center;
             font-size: 15pt;
-            color: rgb(25, 86, 199);
+            color: $c4;
             
 
             @media screen and (max-width: 576px) {
@@ -355,14 +397,14 @@ section#about{
                 position: absolute;
                 right: 183px;
                 bottom: 53px;
-                background-color: rgb(185, 206, 248);
+                background-color: $c2;
                 width: 155px;
                 height: 155px;
                 border-radius: 50%;
                 font-size: 15pt;
                 line-height: 155px;
-                color: rgb(25, 86, 199);
-                filter:drop-shadow(1px 1px 1.5px rgb(72, 123, 218));
+                color: $c4;
+                filter:drop-shadow(1px 1px 1.5px $c3);
 
                 @media screen and (max-width: 576px) {
                     right: unset;
@@ -440,27 +482,27 @@ section#map{
         height: 0;
         // border-left: 100px solid transparent;
         // border-right: 100px solid transparent;
-        // border-bottom: 100px solid #7a9bf7;
+        // border-bottom: 100px solid $c1;
         border-style: solid;
         border-width: 100px;
-        border-color: transparent transparent  #7a9bf7 transparent;
+        border-color: transparent transparent  $c1 transparent;
 
         @media screen and (max-width: 576px) {
             font-size: 11px;
             // border-left: 39px solid transparent;
             // border-right: 39px solid transparent;
-            // border-bottom: 27px solid #7a9bf7;
+            // border-bottom: 27px solid $c1;
             border-style: solid;
             border-width: 30px;
-            border-color: transparent transparent  #7a9bf7 transparent;
+            border-color: transparent transparent  $c1 transparent;
         }
         i{
             position: absolute;
             font-size: 53px;
-            color: aliceblue;
+            color: $c2;
             top: 140px;
             right: 104px;
-            filter:drop-shadow(0.5px 0.5px 1.5px rgb(9, 68, 119));
+            filter:drop-shadow(0.5px 0.5px 1.5px $c3);
             @media screen and (max-width: 576px) {
                 font-size: 35px;
                 top: 62px;
@@ -514,7 +556,8 @@ section#contact{
     text-align: center;
     line-height: 70px;
     /* 數值跟著外面的圓 */
-    color: rgb(196, 236, 255);
+    color: $c2;
+    // color: rgb(77, 131, 156); //原本顏色
     font-size: 23pt;
     transform:scaleX(-1) rotate(-29deg);
 }
@@ -524,5 +567,18 @@ section#contact{
 /* footer */
 
 footer {
-    background-color: #7a9bf7;
+    background-color: $c1;
+
+    .row{
+        .col-md-3{
+            i.fa-paper-plane{
+                font-size: 1.9rem;
+            }
+            p{
+                line-height: 30px;
+                margin: 0;
+            }
+        }
+    }
+    
 }
