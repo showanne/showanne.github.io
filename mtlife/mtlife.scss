@@ -266,15 +266,65 @@ section#news{
         } 
     }
     #news-top{
-        // width: 300px;
-        height: 115px;
+        height: 135px;
         padding: 0;
         margin: 0 auto;
         overflow: hidden;
         @media screen and (max-width: 1200px) {
-            // width: 280px;
             height: 119px;
-            margin: 0 -15px;
+        }
+        .slide-text{
+            animation: slide-text 19s linear infinite;
+        }
+
+        @keyframes slide-text {
+            0% {
+                margin-top: 0;
+            }
+            30% {
+                margin-top: 0;
+            }
+            34% {
+                margin-top: -140px;
+            }
+            64% {
+                margin-top: -140px;
+            }
+            68% {
+                margin-top: -279px;
+            }
+            98% {
+                margin-top: -279px;
+            }          
+            100% {
+                margin-top: 0;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            
+            @keyframes slide-text {
+                0% {
+                    margin-top: 0;
+                }
+                30% {
+                    margin-top: 0;
+                }
+                34% {
+                    margin-top: -127.5px;
+                }
+                64% {
+                    margin-top: -127.5px;
+                }
+                68% {
+                    margin-top: -255px;
+                }
+                98% {
+                    margin-top: -255px;
+                }          
+                100% {
+                    margin-top: 0;
+                }
+            }
         }
 
     }
@@ -515,7 +565,7 @@ section#map{
             right: 80px;
 
             @media screen and (max-width: 576px) {
-                top: 79px;
+                top: 85px;
                 right: 21px;
                 line-height: 1.2 !important;
                 font-size: 12pt !important;
@@ -570,6 +620,13 @@ footer {
     background-color: $c1;
 
     .row{
+        .col-12{
+            a{
+                text-decoration: none;
+                color: $c3;
+                // i{}
+            }
+        }
         .col-md-3{
             i.fa-paper-plane{
                 font-size: 1.9rem;

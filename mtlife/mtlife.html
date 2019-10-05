@@ -253,7 +253,7 @@
                     <h2 class="text-center">最新消息</h2>
                     <!-- 最新消息-top -->
                     <div id="news-top">
-                        <div class="row my-4">
+                        <div class="row my-4 slide-text">
                             <div class="col-4 text-center">
                                 <div class="r-news my-1">
                                     <p class="border-bottom">01</p>
@@ -266,11 +266,37 @@
                                 <p class="h4 text-muted">即日起至2019.12.31</p>
                             </div>
                         </div>
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">02</p>
+                                    <p>Oct</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
+                            </div>
+                            <div class="col-8 pt-3">
+                                <h4>山居歲月 ∣ 10月公休公告</h4>
+                                <p class="h4 text-muted">...........</p>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">05</p>
+                                    <p>Oct</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
+                            </div>
+                            <div class="col-8 pt-3">
+                                <h4>山居歲月 ∣ 10月團體包場</h4>
+                                <p class="h4 text-muted">.......</p>
+                            </div>
+                        </div>
                     </div>
                     <!-- 最新消息-bottom -->
                     <div id="news-bottom">
                         <div class="row my-4 border-top">
-                            <div class="col-4 text-center">
+                            <div class="col-4 px-0 text-center">
                                 <div class="h5 date"> 02 / Oct / 2019</div>
                             </div>
                             <div class="col-8">
@@ -278,7 +304,7 @@
                             </div>
                         </div>
                         <div class="row my-4 border-top">
-                            <div class="col-4 text-center">
+                            <div class="col-4 px-0 text-center">
                                 <div class="h5 date"> 05 / Oct / 2019</div>
                             </div>
                             <div class="col-8">
@@ -420,7 +446,7 @@
             <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
                 aria-controls="collapseExample">
                 <i class="fas fa-sort-up"></i>
-                <h2 class="">山居<br class="d-md-none d-block">位置</h2>
+                <h2 class="">山居<br class="d-sm-none d-block">位置</h2>
             </button>
 
 
@@ -453,12 +479,20 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 col-12">
                     <div class="row align-items-end">
-                        <div class="col-sm-6 col-12 text-left">
+                        <!-- 電腦版 -->
+                        <div class="col-sm-6 col-12 text-left d-sm-block d-none">
                             <p class="h4">山居歲月連絡資訊</p>
                             <p class="h4"><i class="pr-1 fas fa-phone-square-alt"></i>預約山居：0952-070318</p>
                             <p class="h4"><i class="pr-1 fab fa-line"></i>Line ID：0952070318</p>
                             <p class="h4"><i class="pr-1 fas fa-map-marker-alt"></i>地址：新竹縣五峰鄉大隘村269號</p>
                         </div>
+                       <!-- 手機板 -->
+                        <div class="col-12 text-center d-sm-none d-block">
+                                <p class="h4">山居歲月連絡資訊</p>
+                                <a href="tel:0952070318"><i class="h1 mx-1 mb-2 fas fa-phone-square-alt"></i></a>
+                                <a href=""><i class="h1 mx-1 mb-2 fab fa-line"></i></a>
+                                <a href="https://goo.gl/maps/ynSwpv9MBWvJcAU49"><i class="h1 mx-1 mb-2 fas fa-map-marker-alt"></i></a>
+                            </div>
                         <div class="col-sm-5 col-12 text-sm-right text-center">
                             <small>
                                 <p class="h5">Copyright © 2019 山居歲月</p>
@@ -467,7 +501,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-12 bg-secondary d-flex justify-content-center align-items-center">
+                <div class="col-md-3 col-12 py-md-0 py-2 bg-secondary d-flex justify-content-center align-items-center">
                     <i class="fas fa-paper-plane mr-3"></i>
                     <p class="h3">線上訂房</p>
                 </div>
@@ -479,8 +513,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>

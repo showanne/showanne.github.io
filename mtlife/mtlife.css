@@ -283,7 +283,7 @@ section#news h2 {
 }
 
 section#news #news-top {
-  height: 115px;
+  height: 135px;
   padding: 0;
   margin: 0 auto;
   overflow: hidden;
@@ -292,7 +292,108 @@ section#news #news-top {
 @media screen and (max-width: 1200px) {
   section#news #news-top {
     height: 119px;
-    margin: 0 -15px;
+  }
+}
+
+section#news #news-top .slide-text {
+  -webkit-animation: slide-text 19s linear infinite;
+          animation: slide-text 19s linear infinite;
+}
+
+@-webkit-keyframes slide-text {
+  0% {
+    margin-top: 0;
+  }
+  30% {
+    margin-top: 0;
+  }
+  34% {
+    margin-top: -140px;
+  }
+  64% {
+    margin-top: -140px;
+  }
+  68% {
+    margin-top: -279px;
+  }
+  98% {
+    margin-top: -279px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes slide-text {
+  0% {
+    margin-top: 0;
+  }
+  30% {
+    margin-top: 0;
+  }
+  34% {
+    margin-top: -140px;
+  }
+  64% {
+    margin-top: -140px;
+  }
+  68% {
+    margin-top: -279px;
+  }
+  98% {
+    margin-top: -279px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  @-webkit-keyframes slide-text {
+    0% {
+      margin-top: 0;
+    }
+    30% {
+      margin-top: 0;
+    }
+    34% {
+      margin-top: -127.5px;
+    }
+    64% {
+      margin-top: -127.5px;
+    }
+    68% {
+      margin-top: -255px;
+    }
+    98% {
+      margin-top: -255px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+  @keyframes slide-text {
+    0% {
+      margin-top: 0;
+    }
+    30% {
+      margin-top: 0;
+    }
+    34% {
+      margin-top: -127.5px;
+    }
+    64% {
+      margin-top: -127.5px;
+    }
+    68% {
+      margin-top: -255px;
+    }
+    98% {
+      margin-top: -255px;
+    }
+    100% {
+      margin-top: 0;
+    }
   }
 }
 
@@ -554,7 +655,7 @@ section#map button h2 {
 
 @media screen and (max-width: 576px) {
   section#map button h2 {
-    top: 79px;
+    top: 85px;
     right: 21px;
     line-height: 1.2 !important;
     font-size: 12pt !important;
@@ -594,6 +695,11 @@ section#contact .font-contact {
 /* footer */
 footer {
   background-color: #7a9bf7;
+}
+
+footer .row .col-12 a {
+  text-decoration: none;
+  color: #0c2875;
 }
 
 footer .row .col-md-3 i.fa-paper-plane {
