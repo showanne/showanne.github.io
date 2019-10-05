@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="mtlife.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
@@ -131,7 +131,7 @@
             </div>
             <!-- 房型介紹卡片 -->
             <div id="price" class="swiper-container my-3">
-                <div class="swiper-wrapper ">
+                <div class="swiper-wrapper">
                     <div class="swiper-slide stop-swiping card text-center">
                         <div class="card-body">
                             <h3 class="card-title">雙人套房</h3>
@@ -193,14 +193,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
 
             <!-- 山居生活-服務設施+特色餐點 -->
-            <div class="row mt-lg-2 justify-content-center">
-                <div class="col-lg-3 col-12 d-flex align-items-center">
+            <div class="row py-lg-2 py-0 justify-content-center">
+                <div class="col-lg-3 col-12 my-lg-0 my-3 d-flex align-items-center">
                     <img src="./img/life-2.jpg" alt="" class="img-fluid mx-auto">
                 </div>
-                <div class="col-lg-3 col-10 text-center">
+                <div class="col-lg-3 col-10 my-lg-0 my-3 text-center">
                     <h3 class="mb-3 mb-lg-4">服務設施</h3>
                     <div class="">
                         <div class="row mb-3 mb-lg-4">
@@ -215,12 +217,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-12 order-lg-2 d-flex align-items-center">
+                <div class="col-lg-3 col-12 my-lg-0 my-3 order-lg-2 d-flex align-items-center">
                     <img src="./img/life-1.jpg" alt="" class="img-fluid mx-auto">
                 </div>
-                <div class="col-lg-3 col-10 order-lg-1 px-lg-1">
+                <div class="col-lg-3 col-10 my-lg-0 my-3 order-lg-1 px-lg-1">
                     <h3 class="mb-3">特色餐點</h3>
-                    <h4 class="">
+                    <div class="h4">
                         坐在戶外的觀景陽台，
                         午後的斜陽與和風中，
                         搓揉著山巒的氣息伴著濃郁的咖啡香；
@@ -228,7 +230,7 @@
                         讓心靈觸碰這片田野，
                         讓這短暫但珍貴的片刻，
                         融入你我的心。
-                    </h4>
+                    </div>
                 </div>
 
             </div>
@@ -237,48 +239,53 @@
     </section>
 
     <!-- 最新消息 -->
-    <section id="news">
+    <section id="news" class="d-flex justify-content-center align-items-center">
         <div class="container pt-56">
             <!-- 最新消息(有跳轉動畫) -->
             <div class="row justify-content-center">
-                <div class="col-md-4 col-11 mr-3 p-5 bg-light">
+                <div class="col-lg-4 col-md-6 col-11 mr-md-3 mr-0 p-sm-5 p-4 bg-light">
                     <h2 class="text-center">最新消息</h2>
-                    <div class="row my-5">
-                        <div class="col-4 text-center bg-primary">
-                            <div class="r-news my-1">
-                                <p class="border-bottom">01</p>
-                                <p>Sep</p>
+                    <!-- 最新消息-top -->
+                    <div id="news-top">
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">01</p>
+                                    <p>Sep</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
                             </div>
-                            <p class="h5 my-1">2019年</p>
-                        </div>
-                        <div class="col-8">
-                            <h4>觀光局擴大國旅秋冬補助活動開跑</h4>
-                            <p class="h4 text-muted">即日起至2019.12.31</p>
-                        </div>
-                    </div>
-
-                    <div class="row my-5 border-bottom">
-                        <div class="col-4 text-center">
-                            <div class="h5 date"> 02 / Oct / 2019</div>
-                        </div>
-                        <div class="col-8">
-                            <h4 class="h4">山居歲月 ∣ 10月公休公告</h4>
+                            <div class="col-8 pt-3">
+                                <h4>觀光局擴大國旅秋冬補助活動開跑</h4>
+                                <p class="h4 text-muted">即日起至2019.12.31</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row my-5 border-bottom">
-                        <div class="col-4 text-center">
-                            <div class="h5 date"> 05 / Oct / 2019</div>
+                    <!-- 最新消息-bottom -->
+                    <div id="news-bottom">
+                        <div class="row my-4 border-top">
+                            <div class="col-4 text-center">
+                                <div class="h5 date"> 02 / Oct / 2019</div>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="h4">山居歲月 ∣ 10月公休公告</h4>
+                            </div>
                         </div>
-                        <div class="col-8">
-                            <h4 class="h4">山居歲月 ∣ 10月團體包場</h4>
+                        <div class="row my-4 border-top">
+                            <div class="col-4 text-center">
+                                <div class="h5 date"> 05 / Oct / 2019</div>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="h4">山居歲月 ∣ 10月團體包場</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
-            <!-- 最新消息(純訊息) -->
-                <div class="col-md-3 mr-3 d-md-block d-none bg-secondary">
+                <!-- 最新消息(純訊息) -->
+                <div class="col-lg-3 col-md-5 mr-lg-3 mr-0 d-md-block d-none bg-secondary">
                     <img src="./img/life-2.jpg" alt="" class="img-fluid mx-auto">
                 </div>
-                <div class="col-md-3 d-md-block d-none bg-secondary">
+                <div class="col-lg-3 d-lg-block d-none bg-secondary">
                     <img src="./img/life-2.jpg" alt="" class="img-fluid mx-auto">
                 </div>
             </div>
@@ -456,124 +463,125 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+</body>
 
-    <!-- Swiper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
-    <!-- Swiper-banner -->
-    <script>
-        var swiper = new Swiper('section#banner .swiper-container', {
-            loop: true,
-            speed: 3000,
-            autoplay: {
-                stopOnLastSlide: false,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 'auto',
-            spaceBetween: 50,
-            breakpoints: { //響應式斷點
-                360: {
-                    spaceBetween: 5,
-                },
-                540: {
-                    spaceBetween: 20,
-                },
-                888: {
-                    spaceBetween: 30,
-                },
-            },
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
+<!-- Swiper-banner -->
+<script>
+    var swiper = new Swiper('section#banner .swiper-container', {
+        loop: true,
+        speed: 3000,
+        autoplay: {
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 'auto',
+        // spaceBetween: 50,
+        // breakpoints: { //響應式斷點
+        //     360: {
+        //         spaceBetween: 5,
+        //     },
+        //     540: {
+        //         spaceBetween: 20,
+        //     },
+        //     888: {
+        //         spaceBetween: 30,
+        //     },
+        // },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 
-    <!-- Swiper-life -->
-    <script>
-        var swiper = new Swiper('section#life .swiper-container', {
-            loop: true,
-            speed: 1000,
-            autoplay: {
-                stopOnLastSlide: false,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 'auto',
-            pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            noSwiping: true,
-            noSwipingClass: 'stop-swiping',
-        });
-    </script>
+<!-- Swiper-life -->
+<script>
+    var swiper = new Swiper('section#life .swiper-container', {
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        noSwiping: true,
+        noSwipingClass: 'stop-swiping',
+    });
+</script>
 
-    <!-- Swiper-viewpoint -->
-    <script>
-        var swiper = new Swiper('section#viewpoint .swiper-container', {
-            loop: true,
-            speed: 5000,
-            autoplay: {
-                stopOnLastSlide: false,
-                disableOnInteraction: false,
+<!-- Swiper-viewpoint -->
+<script>
+    var swiper = new Swiper('section#viewpoint .swiper-container', {
+        loop: true,
+        speed: 5000,
+        autoplay: {
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        freeMode: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 3,
+        spaceBetween: 30,
+        breakpoints: { //響應式斷點
+            360: { //尺寸540px時變成1欄
+                slidesPerView: 1,
             },
-            freeMode: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            540: { //尺寸540px時變成1欄
+                slidesPerView: 1,
+                spaceBetween: 20,
             },
-            slidesPerView: 3,
-            spaceBetween: 30,
-            breakpoints: { //響應式斷點
-                360: { //尺寸540px時變成1欄
-                    slidesPerView: 1,
-                },
-                540: { //尺寸540px時變成1欄
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                888: { //尺寸888px時變成2欄
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-            }
-        });
-    </script>
+            888: { //尺寸888px時變成2欄
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        }
+    });
+</script>
 
-    <!-- 漢堡條展開後，點連結會收合 -->
-    <script>
-        $(window).scroll(function () {
-            //小屏幕下的漢堡條折疊
-            if ($(window).width() < 768) {
-                //點擊鏈接之後，把選項折疊起來
-                $(".navbar-collapse a").click(function () {
-                    $(".navbar-collapse").removeClass('show');
-                    $(".navbar-collapse").addClass('hide');
-                });
-                //滾動屏幕時，把選項折疊起來
-                $(window).scroll(function () {
-                    $(".navbar-collapse").removeClass('show');
-                    $(".navbar-collapse").addClass('hide');
-                });
-            }
-        });
-    </script>
+<!-- 漢堡條展開後，點連結會收合 -->
+<script>
+    $(window).scroll(function () {
+        //小屏幕下的漢堡條折疊
+        if ($(window).width() < 768) {
+            //點擊鏈接之後，把選項折疊起來
+            $(".navbar-collapse a").click(function () {
+                $(".navbar-collapse").removeClass('show');
+                $(".navbar-collapse").addClass('hide');
+            });
+            //滾動屏幕時，把選項折疊起來
+            $(window).scroll(function () {
+                $(".navbar-collapse").removeClass('show');
+                $(".navbar-collapse").addClass('hide');
+            });
+        }
+    });
+</script>
 
-    <!-- NAV 向下滑隱藏 menu、向上滑顯示 menu -->
-    <!-- <script>
+<!-- NAV 向下滑隱藏 menu、向上滑顯示 menu -->
+<!-- <script>
         $(function () {
             // show hide subnav depending on scroll direction
             var position = $(window).scrollTop();
@@ -614,15 +622,15 @@
 
     </script> -->
 
-    <!-- lightbox js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-    <script>
-        // 燈箱效果 lightbox
-        $(document).on("click", '[data-toggle="lightbox"]', function (event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
-    </script>
+<!-- lightbox js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+<script>
+    // 燈箱效果 lightbox
+    $(document).on("click", '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
 </body>
 
 </html>

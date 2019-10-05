@@ -39,6 +39,12 @@ body {
     // }
 }
 .h5, h5{
+    font-size: 0.812rem !important;
+    // @media screen and (max-width: 576px) {
+    //     font-size: 0.9rem !important;
+    // }
+}
+.h6, h6{
     font-size: 0.625rem !important;
     // @media screen and (max-width: 576px) {
     //     font-size: 0.9rem !important;
@@ -141,6 +147,7 @@ section#life{
         position: relative;
     }
     .swiper-container{
+        
         height: calc(66vh - 56px);
         @media screen and (max-width: 576px) {
             height: calc(39vh - 19px);
@@ -160,11 +167,14 @@ section#life{
         width: 370px;
         height: 300px;
         position: absolute;
-        top: 180px;
-        right: 101px;
+        top: 21vh;
+        right: 15.5vh;
         @media screen and (max-width: 576px) {
             width: 100%;
             height: 20%;
+            position: unset;
+            top: unset;
+            right: unset;
         }
 
         .card-body{
@@ -201,33 +211,81 @@ section#life{
 section#news{
     height: 100vh;
     background-color: #0c2875; //暫時給顏色
-    .row{
-        .r-news {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border: solid 1px #050141;
-        margin: 0 auto;
+    
+    h2{
+        padding-top: 28px;
 
-        p{
-            margin: 0;
-            padding: 0 15px;
-            line-height: 38px;
-            display: inline-block;
+        @media screen and (max-width: 576px) {
+            border-top: unset;
+            border-bottom: unset;
+            display: block;
+            line-height: unset;  
+            padding-top: 0;          
+        } 
+    }
+    #news-top{
+        // width: 300px;
+        height: 115px;
+        padding: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        @media screen and (max-width: 1200px) {
+            // width: 280px;
+            height: 119px;
+            margin: 0 -15px;
         }
-        .border-bottom{
-            border-bottom: 1px solid #050141 !important;
+
+    }
+
+    #news-bottom{
+
+    }
+    .col-lg-3, .col-md-5 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row{
+        .col-4{
+            // padding-left: 0;
+            // padding-right: 0;
+            @media screen and (max-width: 576px) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .r-news {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: solid 1px #050141;
+                margin: 0 auto;
+                @media screen and (max-width: 1200px) {
+                    width: 68px;
+                    height: 68px;
+                }
+
+                p{
+                    margin: 0;
+                    padding: 0 15px;
+                    line-height: 38px;
+                    display: inline-block;
+                    @media screen and (max-width: 1200px){
+                        line-height: 32px;
+                    }
+                }
+                .border-bottom{
+                    border-bottom: 1px solid #050141 !important;
+                }
+            }
         }
+        .border-top{
+            border-top: 1px solid #050141 !important;
+            padding-top: 27px;
         }
         .date{
             line-height: 18px;
         }
-    }
-    .col-md-3{
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
+    }    
 }
 
 
