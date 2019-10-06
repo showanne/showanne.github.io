@@ -591,6 +591,18 @@ section#contact .font-contact {
           transform: scaleX(-1) rotate(-29deg);
 }
 
+section#contact .form-control-feedback {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  z-index: 12;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
 section#contact #success_message {
   display: none;
 }

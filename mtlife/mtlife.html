@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Optional theme  Bootstrap v3 可以 v4 取消了-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 
     <!-- bootstrap-validator -->
     <link rel="stylesheet"
@@ -463,51 +465,82 @@
             </div>
         </a>
 
-        <form class="well form-horizontal" action=" " method="post" id="contact_form">
-            <!-- 姓名-->
-            <div class="form-group">
-                <label class="col-md-4 control-label">姓名</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="first_name" placeholder="姓名" class="form-control" type="text">
+        <div style="width: 370px; margin: 0 auto; padding: 19px 0;">
+            <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                <!-- 姓名-->
+                <div class="form-group">
+                    <label class="sr-only" for="form-name">姓名</label>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                姓名
+                                <i class="ml-1 fas fa-paper-plane"></i>
+                            </div>
+                        </div>
+                        <input name="name" placeholder="姓名" type="text" class="form-control" id="form-name">
                     </div>
                 </div>
-            </div>
-            <!-- 連絡電話-->
-            <div class="form-group">
-                <label class="col-md-4 control-label">連絡電話</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input name="contact_no" placeholder="09XX-XXXXXX" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-            <!-- 電子信箱-->
-            <div class="form-group">
-                <label class="col-md-4 control-label">電子信箱</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="xx@xxx.com" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Success message -->
-            <div class="alert alert-success" role="alert" id="success_message">Success <i
-                    class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4"><br>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit"
-                        class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span
-                            class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                <!-- 連絡電話-->
+                <div class="form-group">
+                    <label class="sr-only" for="form-phone">連絡電話</label>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                連絡電話
+                                <i class="ml-1 fas fa-paper-plane"></i>
+                            </div>
+                        </div>
+                        <input name="phone" placeholder="09xx-xxx-xxx，0x-xxxx-xxxx" type="number" class="form-control"
+                            id="form-phone">
+                    </div>
                 </div>
-            </div>
-        </form>
+
+                <!-- 電子信箱-->
+                <div class="form-group">
+                    <label class="sr-only" for="form-email">電子信箱</label>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                電子信箱
+                                <i class="ml-1 fas fa-paper-plane"></i>
+                            </div>
+                        </div>
+                        <input name="email" placeholder="xx@xxx.com" type="email" class="form-control" id="form-email">
+                    </div>
+                </div>
+
+                <!-- 需求說明 -->
+                <div class="form-group">
+                    <label class="sr-only" for="form-question">需求說明</label>
+                    <div class="input-group w-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                需求說明
+                                <i class="ml-1 fas fa-paper-plane"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <textarea name="question" placeholder="需求描述..." class="form-control rounded-0" id="form-question"
+                        rows="3"></textarea>
+                </div>
+
+                <!-- Success message -->
+                <div class="alert alert-success" role="alert" id="success_message">Success <i
+                        class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        <button type="submit" class="btn btn-warning">
+                            SUBMIT
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
 
     <!-- 山居位置 -->
@@ -750,6 +783,85 @@
     </script>
 
     <!-- 聯絡我們 表單 -->
+    <script>
+        $(document).ready(function () {
+            $('#contact_form').bootstrapValidator({
+                // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+                feedbackIcons: {
+                    valid: 'far fa-check-circle',
+                    invalid: 'far fa-times-circle',
+                    validating: 'fas fa-redo-alt'
+                },
+                fields: {
+                    name: {
+                        validators: {
+                            stringLength: {
+                                min: 2,
+                                message: '請輸入姓名'
+                            },
+                            notEmpty: {
+                                message: '請輸入姓名'
+                            },
+                        }
+                    },
+
+                    phone: {
+                        validators: {
+                            stringLength: {
+                                min: 8,
+                                max: 10,
+                                message: '請輸入連絡電話'
+                            },
+                            notEmpty: {
+                                message: '請輸入連絡電話'
+                            }
+                        }
+                    },
+
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: '請輸入電子信箱'
+                            },
+                            emailAddress: {
+                                message: '請輸入有效的電子信箱'
+                            },
+                        }
+                    },
+
+                    question: {
+                        validators: {
+                            stringLength: {
+                                min: 2,
+                                message: '請輸入您的問題'
+                            },
+                            notEmpty: {
+                                message: '請輸入您的問題'
+                            }
+                        }
+                    },
+                }
+            })
+                .on('success.form.bv', function (e) {
+                    $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                    $('#contact_form').data('bootstrapValidator').resetForm();
+
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Get the form instance
+                    var $form = $(e.target);
+
+                    // Get the BootstrapValidator instance
+                    var bv = $form.data('bootstrapValidator');
+
+                    // Use Ajax to submit form data
+                    $.post($form.attr('action'), $form.serialize(), function (result) {
+                        console.log(result);
+                    }, 'json');
+                });
+        });
+    </script>
 </body>
 
 </html>
