@@ -148,7 +148,7 @@ section#life{
         
         height: 435px;
         @media screen and (max-width: 768px) {
-            height: calc(39vh - 19px);
+            height: calc(50vh - 19px);
         }
 
         .swiper-button-next, .swiper-button-prev{
@@ -187,7 +187,7 @@ section#life{
         }
         @media screen and (max-width: 768px) {
             width: 80%;
-            // height: 20%;
+            height: auto;
             position: unset;
             top: unset;
             right: unset;
@@ -541,24 +541,16 @@ section#map{
 section#contact{
     .contact-us {
     background-color: rgb(14, 25, 70);
+    color: $c2;
     width: 70px;
     height: 70px;
     border-radius: 35px;
     position: fixed;
-    right: 9px;
-    bottom: 9px;
+    right: 19px;
+    bottom: 19px;
     z-index: 999;
     }
 
-    .font-contact {
-        text-align: center;
-        line-height: 70px;
-        /* 數值跟著外面的圓 */
-        color: $c2;
-        // color: rgb(77, 131, 156); //原本顏色
-        font-size: 23pt;
-        transform:scaleX(-1) rotate(-29deg);
-    }
     .form-control-feedback {
         position: absolute;
         top: 4px;

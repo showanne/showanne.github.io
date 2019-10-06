@@ -146,7 +146,7 @@ section#life .swiper-container {
 
 @media screen and (max-width: 768px) {
   section#life .swiper-container {
-    height: calc(39vh - 19px);
+    height: calc(50vh - 19px);
   }
 }
 
@@ -201,6 +201,7 @@ section#life #price {
 @media screen and (max-width: 768px) {
   section#life #price {
     width: 80%;
+    height: auto;
     position: unset;
     top: unset;
     right: unset;
@@ -572,23 +573,14 @@ section#map .collapse .card iframe {
 /* 聯絡我們 */
 section#contact .contact-us {
   background-color: #0e1946;
+  color: #c9d9f8;
   width: 70px;
   height: 70px;
   border-radius: 35px;
   position: fixed;
-  right: 9px;
-  bottom: 9px;
+  right: 19px;
+  bottom: 19px;
   z-index: 999;
-}
-
-section#contact .font-contact {
-  text-align: center;
-  line-height: 70px;
-  /* 數值跟著外面的圓 */
-  color: #c9d9f8;
-  font-size: 23pt;
-  -webkit-transform: scaleX(-1) rotate(-29deg);
-          transform: scaleX(-1) rotate(-29deg);
 }
 
 section#contact .form-control-feedback {
