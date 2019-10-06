@@ -255,8 +255,6 @@ section#news{
     
     
     h2{
-        padding-top: 28px;
-
         @media screen and (max-width: 576px) {
             border-top: unset;
             border-bottom: unset;
@@ -265,77 +263,10 @@ section#news{
             padding-top: 0;          
         } 
     }
-    #news-top{
-        height: 135px;
-        padding: 0;
-        margin: 0 auto;
-        overflow: hidden;
-        @media screen and (max-width: 1200px) {
-            height: 119px;
-        }
-        .slide-text{
-            animation: slide-text 19s linear infinite;
-        }
+    // #news-top{}
 
-        @keyframes slide-text {
-            0% {
-                margin-top: 0;
-            }
-            30% {
-                margin-top: 0;
-            }
-            34% {
-                margin-top: -140px;
-            }
-            64% {
-                margin-top: -140px;
-            }
-            68% {
-                margin-top: -279px;
-            }
-            98% {
-                margin-top: -279px;
-            }          
-            100% {
-                margin-top: 0;
-            }
-        }
-        @media screen and (max-width: 1200px) {
-            
-            @keyframes slide-text {
-                0% {
-                    margin-top: 0;
-                }
-                30% {
-                    margin-top: 0;
-                }
-                34% {
-                    margin-top: -127.5px;
-                }
-                64% {
-                    margin-top: -127.5px;
-                }
-                68% {
-                    margin-top: -255px;
-                }
-                98% {
-                    margin-top: -255px;
-                }          
-                100% {
-                    margin-top: 0;
-                }
-            }
-        }
+    // #news-bottom{}
 
-    }
-
-    // #news-bottom{
-
-    // }
-    .col-lg-3, .col-md-5 {
-        padding-left: 0;
-        padding-right: 0;
-    }
     .row{
         .col-4{
             // padding-left: 0;
@@ -346,12 +277,16 @@ section#news{
             }
 
             .r-news {
-                width: 80px;
-                height: 80px;
+                width: 74px;
+                height: 74px;
                 border-radius: 50%;
                 border: solid 1px #050141;
                 margin: 0 auto;
                 @media screen and (max-width: 1200px) {
+                    width: 54px;
+                    height: 54px;
+                }
+                @media screen and (max-width: 992px) {
                     width: 68px;
                     height: 68px;
                 }
@@ -359,9 +294,14 @@ section#news{
                 p{
                     margin: 0;
                     padding: 0 15px;
-                    line-height: 38px;
+                    font-family: 'Franklin Gothic Medium',serif;
+                    line-height: 35px;
+                    // 跟著r-news的寬高
                     display: inline-block;
                     @media screen and (max-width: 1200px){
+                        line-height: 24px;
+                    }
+                    @media screen and (max-width: 992px){
                         line-height: 32px;
                     }
                 }
@@ -370,6 +310,16 @@ section#news{
                 }
             }
         }
+        .col-8{
+            a{
+                text-decoration: none;
+                color: $c3;
+            }
+            a:hover{
+                color: $c4;
+            }
+        }
+
         .border-top{
             border-top: 1px solid #050141 !important;
             padding-top: 27px;
@@ -379,8 +329,6 @@ section#news{
         }
     }    
 }
-
-
 
 /* 山居故事 + 美好歲月 */
 section#about{
@@ -600,17 +548,21 @@ section#contact{
     right: 9px;
     bottom: 9px;
     z-index: 999;
-}
+    }
 
-.font-contact {
-    text-align: center;
-    line-height: 70px;
-    /* 數值跟著外面的圓 */
-    color: $c2;
-    // color: rgb(77, 131, 156); //原本顏色
-    font-size: 23pt;
-    transform:scaleX(-1) rotate(-29deg);
-}
+    .font-contact {
+        text-align: center;
+        line-height: 70px;
+        /* 數值跟著外面的圓 */
+        color: $c2;
+        // color: rgb(77, 131, 156); //原本顏色
+        font-size: 23pt;
+        transform:scaleX(-1) rotate(-29deg);
+    }
+    
+    #success_message {
+        display: none;
+    }
 }
 
 

@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+    <!-- lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+    <title>山居歲月-最新消息動畫</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            font-family: '微軟正黑體', sans-serif !important;
+            -webkit-transition: 0.7s;
+            transition: 0.7s;
+        }
+
+        *:focus,
+        *:hover {
+            outline: none !important;
+        }
+
+        /* 字體 */
+        .h1,
+        h1 {
+            font-size: 1.43rem !important;
+        }
+
+        .h2,
+        h2 {
+            font-size: 1.32rem !important;
+        }
+
+        @media screen and (max-width: 576px) {
+
+            .h2,
+            h2 {
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+                display: inline-block;
+                line-height: 1.9 !important;
+                font-weight: 700 !important;
+            }
+        }
+
+        .h3,
+        h3 {
+            font-size: 1.125rem !important;
+        }
+
+        .h4,
+        h4 {
+            font-size: 0.937rem !important;
+        }
+
+        .h5,
+        h5 {
+            font-size: 0.812rem !important;
+        }
+
+        .h6,
+        h6 {
+            font-size: 0.625rem !important;
+        }
+
+        /* 通用 */
+        .pt-56 {
+            padding-top: 56px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .pt-56 {
+                padding-top: 19px;
+            }
+        }
+
+        .bg-img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 最新消息 */
+        section#news {
+            height: 100vh;
+        }
+
+        @media screen and (max-width: 576px) {
+            section#news h2 {
+                border-top: unset;
+                border-bottom: unset;
+                display: block;
+                line-height: unset;
+                padding-top: 0;
+            }
+        }
+
+        section#news #news-top {
+            height: 135px;
+            padding: 0;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 1200px) {
+            section#news #news-top {
+                height: 119px;
+            }
+        }
+
+        section#news #news-top .slide-text {
+            -webkit-animation: slide-text 19s linear infinite;
+            animation: slide-text 19s linear infinite;
+        }
+
+        @-webkit-keyframes slide-text {
+            0% {
+                margin-top: 0;
+            }
+
+            30% {
+                margin-top: 0;
+            }
+
+            34% {
+                margin-top: -140px;
+            }
+
+            64% {
+                margin-top: -140px;
+            }
+
+            68% {
+                margin-top: -279px;
+            }
+
+            98% {
+                margin-top: -279px;
+            }
+
+            100% {
+                margin-top: 0;
+            }
+        }
+
+        @keyframes slide-text {
+            0% {
+                margin-top: 0;
+            }
+
+            30% {
+                margin-top: 0;
+            }
+
+            34% {
+                margin-top: -140px;
+            }
+
+            64% {
+                margin-top: -140px;
+            }
+
+            68% {
+                margin-top: -279px;
+            }
+
+            98% {
+                margin-top: -279px;
+            }
+
+            100% {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            @-webkit-keyframes slide-text {
+                0% {
+                    margin-top: 0;
+                }
+
+                30% {
+                    margin-top: 0;
+                }
+
+                34% {
+                    margin-top: -127.5px;
+                }
+
+                64% {
+                    margin-top: -127.5px;
+                }
+
+                68% {
+                    margin-top: -255px;
+                }
+
+                98% {
+                    margin-top: -255px;
+                }
+
+                100% {
+                    margin-top: 0;
+                }
+            }
+
+            @keyframes slide-text {
+                0% {
+                    margin-top: 0;
+                }
+
+                30% {
+                    margin-top: 0;
+                }
+
+                34% {
+                    margin-top: -127.5px;
+                }
+
+                64% {
+                    margin-top: -127.5px;
+                }
+
+                68% {
+                    margin-top: -255px;
+                }
+
+                98% {
+                    margin-top: -255px;
+                }
+
+                100% {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        section#news .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @media screen and (max-width: 576px) {
+            section#news .row .col-4 {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        section#news .row .col-4 .r-news {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: solid 1px #050141;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 1200px) {
+            section#news .row .col-4 .r-news {
+                width: 68px;
+                height: 68px;
+            }
+        }
+
+        section#news .row .col-4 .r-news p {
+            margin: 0;
+            padding: 0 15px;
+            line-height: 38px;
+            display: inline-block;
+        }
+
+        @media screen and (max-width: 1200px) {
+            section#news .row .col-4 .r-news p {
+                line-height: 32px;
+            }
+        }
+
+        section#news .row .col-4 .r-news .border-bottom {
+            border-bottom: 1px solid #050141 !important;
+        }
+
+        section#news .row .border-top {
+            border-top: 1px solid #050141 !important;
+            padding-top: 27px;
+        }
+
+        section#news .row .date {
+            line-height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 最新消息 -->
+    <section id="news" class="d-flex justify-content-center align-items-center bg-img"
+        style="background-image:url('./img/bg-img-1.jpg');">
+        <div class="container pt-56">
+            <!-- 最新消息(有跳轉動畫) -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-11 mr-md-3 mr-0 p-sm-5 p-4 bg-light">
+                    <h2 class="text-center">最新消息</h2>
+                    <!-- 最新消息-top -->
+                    <div id="news-top">
+                        <div class="row my-4 slide-text">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">01</p>
+                                    <p>Sep</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
+                            </div>
+                            <div class="col-8 pt-3">
+                                <h4>觀光局擴大國旅秋冬補助活動開跑</h4>
+                                <p class="h4 text-muted">即日起至2019.12.31</p>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">16</p>
+                                    <p>Sep</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
+                            </div>
+                            <div class="col-8 pt-3">
+                                <h4>200元夜市抵用券等你來拿</h4>
+                                <p class="h4 text-muted">即日起至領完為止</p>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <div class="r-news my-1">
+                                    <p class="border-bottom">05</p>
+                                    <p>Oct</p>
+                                </div>
+                                <p class="h5 my-2">2019年</p>
+                            </div>
+                            <div class="col-8 pt-3">
+                                <h4>山居歲月 ∣ 10月團體包場</h4>
+                                <p class="h4 text-muted">.......</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 最新消息-bottom -->
+                    <div id="news-bottom">
+                        <div class="row my-4 border-top">
+                            <div class="col-4 px-0 text-center">
+                                <div class="h5 date"> 02 / Oct / 2019</div>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="h4">山居歲月 ∣ 10月公休公告</h4>
+                            </div>
+                        </div>
+                        <div class="row my-4 border-top">
+                            <div class="col-4 px-0 text-center">
+                                <div class="h5 date"> 05 / Oct / 2019</div>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="h4">山居歲月 ∣ 10月團體包場</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <small>這裡是給swiper的點點留的，先不調間距</small> -->
+                </div>
+                <!-- 最新消息(純訊息) -->
+                <div class="col mr-lg-3 mr-0 d-md-block d-none bg-secondary">
+                    <img src="./img/news-1.1.jpg" alt="" class="img-fluid mx-auto">
+                </div>
+                <div class="col d-lg-block d-none bg-secondary">
+                    <img src="./img/news-2.1.jpg" alt="" class="img-fluid mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- bootstrap-validator -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css">
+
+</head>
+
+<body>
+
+        <form id="appendant_form" class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+            <div class="form-group form-group-lg">
+                <label for="appendant_name" class="col-sm-2 control-label">名稱</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="appendant_name" id="appendant_name" placeholder="名稱">
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label for="appendant_price" class="col-sm-2 control-label">價格</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="appendant_price" id="appendant_price" placeholder="價格/元">
+                </div>
+            </div>
+        </form>
+        <button type="button" id="addAppendant" class="btn btn-default">確認</button>
+
+
+    <!-- jquery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- bootstrap-validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <script>
+    //初始化表單驗證
+    $(document).ready(function () {
+        formValidator();
+    });
+    //form驗證規則
+    function formValidator() {
+        $("#appendant_form").bootstrapValidator({//根據自己的formid進行更改
+            message: 'This value is not valid',//預設提示資訊
+            feedbackIcons: {//提示圖示
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                appendant_name: {//名稱校驗
+                    message: '名稱驗證失敗',
+                    validators: {//驗證條件
+                        notEmpty: {
+                            message: '附屬品名稱不能為空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 30,
+                            message: '附屬品名稱不能超過30個字'
+                        }
+                    }
+                },
+                appendant_price: {
+                    message: '價格驗證失敗',
+                    validators: {
+                        notEmpty: {
+                            message: '附屬品價格不能為空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 5,
+                            message: '價格不能超過5位'
+                        },
+                        regexp: {//自定義校驗
+                            regexp: /^[0-9]*$/,//正則表示式
+                            message: '附屬品價格只能為數字'
+                        }
+                    }
+                },
+            },
+        })
+    }
+    /*手動驗證表單，當是普通按鈕時。*/
+    $('#appendant_form').data('bootstrapValidator').validate();//啟用驗證
+        var flag = $('#appendant_form').data('bootstrapValidator').isValid()//驗證是否通過true/false
+    </script>
+</body>
+
+</html>
