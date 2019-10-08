@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body { height: 490px; margin: 0; padding: 0; }
+      #map { height: 100%;width: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+
+function initMap() {
+  //設定中心點座標
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat: 24.639433, lng: 121.099609}
+  });
+  //顯示各區的點
+  var data =[
+    {
+      position: {lat: 24.639433, lng: 121.099609},
+      map: map,
+      title: '山居歲月'
+    },{
+      position: {lat: 24.575272, lng: 121.105233},
+      map: map,
+      title: '清泉風景特定區' 
+    }
+  ]
+  //跑迴圈依序將值塞入到 marker
+  for(i=0;i<data.length;i++){
+    new google.maps.Marker(data[i]);
+  }
+
+}
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSZj7HnTbixm72wl5atDQoXws-cUL_Wmg&callback=initMap">
+    </script>
+  </body>
+</html>

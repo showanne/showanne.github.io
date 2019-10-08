@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.639433, 121.099609]
+      },
+      "properties": {
+        "id": 1,
+        "name": "山居歲月民宿",
+        "site": "311新竹縣五峰鄉269號"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.575272, 121.105233]
+      },
+      "properties": {
+        "id": 2,
+        "name": "清泉風景特定區",
+        "site": "311新竹縣五峰鄉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.641150, 121.093286]
+      },
+      "properties": {
+        "id": 3,
+        "name": "五指山風景區",
+        "site": "314新竹縣北埔鄉外坪村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.699858, 121.082112]
+      },
+      "properties": {
+        "id": 4,
+        "name": "北埔六塘",
+        "site": "314新竹縣北埔鄉上大湖村5鄰62號"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.699800, 121.057247]
+      },
+      "properties": {
+        "id": 5,
+        "name": "北埔老街",
+        "site": "314新竹縣北埔鄉北埔街"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.663271, 121.072577]
+      },
+      "properties": {
+        "id": 6,
+        "name": "北埔冷泉",
+        "site": "314新竹縣北埔鄉大坪路"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.698809, 121.071112]
+      },
+      "properties": {
+        "id": 7,
+        "name": "綠世界生態農場",
+        "site": "314新竹縣北埔鄉大湖村7鄰20號"
+      }
+    }
+  ]
+}

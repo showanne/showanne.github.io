@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Info Windows - Google Maps API demo - Augustus - Let's Write</title>
+
+  <link rel="canonical" href="https://letswrite.tw/google-map-api-marker-custom/">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- fontawesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div id="map-viewpoint" class="container">
+    <div class="row">
+      <!-- 各景點按鍵 -->
+      <div class="col-3 bg-warning" style="position: absolute; z-index: 19;">
+        <button type="button" class="btn d-block" v-for="f in features" @click="openInfoWindows(f.properties.id)">
+          <i class="fas fa-map-marker-alt"></i> {{ f.properties.name }}
+        </button>
+      </div>
+      <!-- 地圖 -->
+      <div class="col">
+        <div id="map" class="embed-responsive embed-responsive-16by9"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- google map API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSZj7HnTbixm72wl5atDQoXws-cUL_Wmg" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+  <!-- map -->
+  <script>
+    const googleMap = new Vue({
+      el: '#map-viewpoint',
+      data: {
+        map: null,
+        features: [], // 存入每一個地點
+        infowindowAll: {}, // 存入每一個marker上的info windows
+        hideBusiness: 'hide', // 隱藏周圍商家：hide隱藏;show顯示
+        hideStyle: [
+          {
+            featureType: 'poi.business',
+            stylers: [{
+              visibility: 'off'
+            }]
+          }
+        ],
+      },
+      methods: {
+        // init google map
+        initMap() {
+
+          // 預設顯示的地點
+          let location = {
+            lat: 24.639433, // 經度
+            lng: 121.099609 // 緯度
+          };
+
+          // 建立地圖
+          this.map = new google.maps.Map(document.getElementById('map'), {
+            center: location,
+            zoom: 13,
+            mapTypeId: 'terrain'
+          });
+          // 放置多個marker
+          fetch('./mtlife.geojson')
+            .then(results => results.json())
+            .then(result => {
+              this.features = result.features;
+              Array.prototype.forEach.call(this.features, r => {
+                let latLng = new google.maps.LatLng(r.geometry.coordinates[0], r.geometry.coordinates[1]);
+                let marker = new google.maps.Marker({
+                  position: latLng,
+                  icon: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                  // icon: '圖檔的絕對路徑.png',
+                  map: this.map
+                });
+                // info window 把訊息放入提示小框框
+                let infowindow = new google.maps.InfoWindow({
+                  content: `<h5>${r.properties.name}</h5>` +
+                    `<h5>${r.properties.site}</h5>`
+                });
+                // 監聽 marker click 事件
+                marker.addListener('click', e => {
+                  infowindow.open(this.map, marker);
+                });
+                // 加一個open的method，就可由外部按鈕開啟
+                this.infowindowAll[r.properties.id] = {
+                  open: function () {
+                    infowindow.open(this.map, marker);
+                  }
+                };
+              });
+            });
+        },
+        // 由外部按鈕開啟info windows
+        openInfoWindows(id) {
+          this.infowindowAll[id].open();
+        }
+      },
+      created() {
+        window.addEventListener('load', () => {
+          this.initMap();
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

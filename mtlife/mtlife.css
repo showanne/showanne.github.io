@@ -89,7 +89,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1920px) and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   .container {
     max-width: 80%;
   }
@@ -122,6 +122,11 @@ nav .navbar-nav a, nav .navbar-nav p {
 nav .navbar-nav p {
   margin: 0;
   padding: 8 0;
+}
+
+nav .navbar-dark .navbar-toggler {
+  color: rgba(201, 217, 248, 0.5);
+  border-color: unset;
 }
 
 /* Banner */
@@ -158,7 +163,7 @@ section#life .swiper-container .swiper-button-next, section#life .swiper-contain
 section#life .swiper-container .swiper-pagination-bullet {
   width: 66px;
   border-radius: unset;
-  background: #11dafd;
+  background: #7a9bf7;
 }
 
 section#life .swiper-container .ml-btn-prev {
@@ -463,6 +468,17 @@ section#about .col a .photo {
 }
 
 /* 周邊景點 */
+section#viewpoint #map-viewpoint {
+  position: relative;
+  height: 600px;
+}
+
+section#viewpoint #map-viewpoint .btn-viewpoint {
+  position: absolute;
+  z-index: 19;
+  right: 19px;
+}
+
 section#viewpoint .card {
   background-color: unset;
   border: unset;
@@ -500,18 +516,18 @@ section#viewpoint .swiper-container .swiper-button-prev {
 
 /* 行程推薦 */
 /* 山居位置 */
-section#map .container {
+section#location .container {
   position: relative;
 }
 
 @media screen and (max-width: 576px) {
-  section#map .container {
+  section#location .container {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-section#map button {
+section#location button {
   background-color: transparent;
   width: 0;
   height: 0;
@@ -521,7 +537,7 @@ section#map button {
 }
 
 @media screen and (max-width: 576px) {
-  section#map button {
+  section#location button {
     font-size: 11px;
     border-style: solid;
     border-width: 30px;
@@ -529,7 +545,7 @@ section#map button {
   }
 }
 
-section#map button i {
+section#location button i {
   position: absolute;
   font-size: 53px;
   color: #c9d9f8;
@@ -540,21 +556,21 @@ section#map button i {
 }
 
 @media screen and (max-width: 576px) {
-  section#map button i {
+  section#location button i {
     font-size: 35px;
     top: 62px;
     right: 26px;
   }
 }
 
-section#map button h2 {
+section#location button h2 {
   position: absolute;
   top: 185px;
   right: 80px;
 }
 
 @media screen and (max-width: 576px) {
-  section#map button h2 {
+  section#location button h2 {
     top: 85px;
     right: 21px;
     line-height: 1.2 !important;
@@ -565,7 +581,7 @@ section#map button h2 {
   }
 }
 
-section#map .collapse .card iframe {
+section#location .collapse .card iframe {
   widows: 100%;
   height: 60vh;
 }
@@ -583,7 +599,29 @@ section#contact .contact-us {
   z-index: 999;
 }
 
-section#contact .form-control-feedback {
+section#contact .contact-img {
+  width: 199px;
+  background-color: darkorchid;
+}
+
+@media screen and (max-width: 576px) {
+  section#contact .contact-img {
+    width: unset;
+    display: none;
+  }
+}
+
+section#contact #contact_form {
+  margin-left: 199px;
+}
+
+@media screen and (max-width: 576px) {
+  section#contact #contact_form {
+    margin-left: unset;
+  }
+}
+
+section#contact #contact_form .form-control-feedback {
   position: absolute;
   top: 4px;
   right: 0;
@@ -595,7 +633,11 @@ section#contact .form-control-feedback {
   text-align: center;
 }
 
-section#contact #success_message {
+section#contact #contact_form .help-block {
+  padding-left: 110px;
+}
+
+section#contact #contact_form #success_message {
   display: none;
 }
 
