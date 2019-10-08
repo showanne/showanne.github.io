@@ -567,11 +567,11 @@ section#contact{
     }
 
     .contact-img{
-        width: 199px;
-        background-color: darkorchid;
+        width: 249px;
+        height: 435.33px;
+
 
         @media screen and (max-width: 576px) {
-            width: unset;
             display: none;
         }
     }

@@ -609,13 +609,12 @@ section#contact .contact-us {
 }
 
 section#contact .contact-img {
-  width: 199px;
-  background-color: darkorchid;
+  width: 249px;
+  height: 435.33px;
 }
 
 @media screen and (max-width: 576px) {
   section#contact .contact-img {
-    width: unset;
     display: none;
   }
 }
