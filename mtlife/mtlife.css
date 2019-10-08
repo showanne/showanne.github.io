@@ -121,12 +121,11 @@ nav .navbar-nav a, nav .navbar-nav p {
 
 nav .navbar-nav p {
   margin: 0;
-  padding: 8 0;
+  padding: 0;
 }
 
-nav .navbar-dark .navbar-toggler {
-  color: rgba(201, 217, 248, 0.5);
-  border-color: unset;
+nav .navbar-toggler {
+  border: unset !important;
 }
 
 /* Banner */
@@ -477,6 +476,16 @@ section#viewpoint #map-viewpoint .btn-viewpoint {
   position: absolute;
   z-index: 19;
   right: 19px;
+  top: 119px;
+}
+
+section#viewpoint #map-viewpoint .btn {
+  letter-spacing: 3px;
+  line-height: 25px;
+}
+
+section#viewpoint #map-viewpoint .gmnoprint {
+  display: none;
 }
 
 section#viewpoint .card {
@@ -608,16 +617,6 @@ section#contact .contact-img {
   section#contact .contact-img {
     width: unset;
     display: none;
-  }
-}
-
-section#contact #contact_form {
-  margin-left: 199px;
-}
-
-@media screen and (max-width: 576px) {
-  section#contact #contact_form {
-    margin-left: unset;
   }
 }
 

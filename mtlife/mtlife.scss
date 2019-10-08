@@ -113,12 +113,10 @@ nav{
     }
     .navbar-nav p{
         margin: 0;
-        padding: 8 0;
+        padding: 0;
     }
-    .navbar-dark .navbar-toggler{
-        // 改邊框顏色及槓槓的顏色
-        color: rgba($c2,.5);
-        border-color: unset; 
+    .navbar-toggler{
+        border: unset !important; 
     }
 }
 
@@ -429,6 +427,15 @@ section#viewpoint{
             position: absolute; 
             z-index: 19;
             right:19px;
+            top: 119px;
+        }
+        .btn{
+            letter-spacing: 3px;
+            line-height: 25px;
+        }
+        .gmnoprint{
+            // 這是地圖的控制項
+            display: none;
         }
     }
     .card {
@@ -570,11 +577,6 @@ section#contact{
     }
 
     #contact_form{
-        margin-left:199px;
-        @media screen and (max-width: 576px) {
-            margin-left:unset;
-        }
-
 
         .form-control-feedback {
             position: absolute;
@@ -587,7 +589,7 @@ section#contact{
             line-height: 34px;
             text-align: center;
         }
-    
+
         .help-block {
             padding-left: 110px;
             // 這是調整提示文字的位置
