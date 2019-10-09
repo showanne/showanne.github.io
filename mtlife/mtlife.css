@@ -613,7 +613,14 @@ section#contact .contact-us {
   position: fixed;
   right: 19px;
   bottom: 19px;
-  z-index: 999;
+  z-index: 199;
+}
+
+@media screen and (max-width: 576px) {
+  section#contact .contact-us {
+    right: 9px;
+    bottom: 9px;
+  }
 }
 
 section#contact .contact-img {
@@ -640,7 +647,16 @@ section#contact #contact_form .form-control-feedback {
 }
 
 section#contact #contact_form .help-block {
+  color: #750c1a;
   padding-left: 110px;
+}
+
+section#contact #contact_form .fa-check-color {
+  color: #0c2875;
+}
+
+section#contact #contact_form .fa-wrong-color {
+  color: #750c1a;
 }
 
 section#contact #contact_form #success_message {

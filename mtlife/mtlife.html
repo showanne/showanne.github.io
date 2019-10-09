@@ -238,8 +238,11 @@
                                 您可以不受到戶外環境的打擾，沈浸優雅的夜晚時光
                             </div>
                             <div class="h4 text-left">
+                                check 時間 <br>
                                 。check in：PM 3:00後 <br>
                                 　check out：AM 11:00前 <br>
+                                <br>
+                                其餘注意事項 <br>
                                 。為響應環保，並無提盥洗用具，請遊客自備，謝謝合作。 <br>
                                 。訂房附贈早餐。有使用廚房自行烹煮食物之房客，恕不提供早餐。 <br>
                                 。餐點均為無菜單料理，請事先來電告知不吃的食物類型即可。 <br>
@@ -617,10 +620,10 @@
                                         class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
 
                                 <!-- Button -->
-                                <div class="form-group mb-0">
+                                <div class="form-group mb-0 mr-2 text-right">
                                     <label class="control-label"></label>
-                                    <button type="submit" class="btn btn-warning">
-                                        SUBMIT
+                                    <button type="submit" class="btn border-top pt-1 px-1">
+                                        確認送出
                                         <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
@@ -810,7 +813,7 @@
                     // 建立地圖
                     this.map = new google.maps.Map(document.getElementById('map'), {
                         center: location,
-                        zoom: 12,
+                        zoom: 15,
                         // mapTypeId: 'terrain' //地圖樣式
                     });
                     // 放置多個marker
@@ -920,11 +923,11 @@
     <script>
         $(document).ready(function () {
             $('#contact_form').bootstrapValidator({
-                // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+                // 表單提示icon
                 feedbackIcons: {
-                    valid: 'far fa-check-circle',
-                    invalid: 'far fa-times-circle',
-                    validating: 'fas fa-redo-alt'
+                    valid: 'far fa-check-circle fa-check-color',
+                    invalid: 'far fa-times-circle fa-wrong-color',
+                    validating: 'fas fa-redo-alt fa-wrong-color'
                 },
                 fields: {
                     name: {

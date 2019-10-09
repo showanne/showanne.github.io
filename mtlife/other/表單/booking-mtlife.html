@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Booking mtlife</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .section {
+            position: relative;
+            height: 100vh;
+        }
+
+        .section .section-center {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        #booking {
+            font-family: 'Montserrat', sans-serif;
+            /* background-image: url('../img/background.jpg'); */
+            /* background-size: cover;
+            background-position: center; */
+            background-color: antiquewhite;
+            font-weight: 300;
+        }
+
+        .booking-form {
+            background: #fff;
+            padding: 30px 15px 0px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .booking-form .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .booking-form .form-control {
+            border: none;
+            height: 65px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            font-size: 24px;
+            color: #090a0b;
+            font-weight: 300;
+            background: #f2f1f1;
+            border-radius: 4px;
+        }
+
+        .booking-form .form-control::-webkit-input-placeholder {
+            color: #b1b6bd;
+        }
+
+        .booking-form .form-control:-ms-input-placeholder {
+            color: #b1b6bd;
+        }
+
+        .booking-form .form-control::placeholder {
+            color: #b1b6bd;
+        }
+
+        .booking-form input[type="date"].form-control:invalid {
+            color: #b1b6bd;
+        }
+
+        .booking-form select.form-control {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .booking-form select.form-control+.select-arrow {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 24px;
+            text-align: center;
+            pointer-events: none;
+            height: 65px;
+            line-height: 65px;
+            color: #b1b6bd;
+            font-size: 14px;
+        }
+
+        .booking-form select.form-control+.select-arrow:after {
+            content: '▼';
+            display: block;
+            /* -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); */
+
+        }
+
+        .booking-form .form-label {
+            color: #184c8f;
+            display: block;
+            font-weight: 600;
+            height: 25px;
+            line-height: 25px;
+            font-size: 16px;
+            position: relative;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .booking-form .form-label:after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: #f2f1f1 transparent transparent transparent;
+        }
+
+        .booking-form .form-btn {
+            margin-bottom: 30px;
+        }
+
+        .booking-form .submit-btn {
+            background: #184c8f;
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            height: 90px;
+            font-size: 18px;
+            width: 100%;
+            color: #fff;
+            border-radius: 4px;
+            display: block;
+        }
+
+
+        .counter-btn {
+            font-size: 1.5em;
+            font-weight: 300;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.2);
+            cursor: pointer;
+            outline: none;
+        }
+
+        .counter-btn:hover {
+            box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="booking-form">
+                    <form>
+                        <div class="row">
+                            <!-- 聯絡資料 -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="姓名">
+                                    <span class="form-label">主要聯絡人姓名</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="電話">
+                                    <span class="form-label">主要聯絡人電話</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="email" placeholder="信箱">
+                                    <span class="form-label">主要聯絡人信箱</span>
+                                </div>
+                            </div>
+                            <!-- 訂房資訊 -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="date" required>
+                                    <span class="form-label">入住日期</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="date" required>
+                                    <span class="form-label">退房日期</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row px-3 justify-content-center">
+                                    <button class=" counter-btn my-2" type="button" id="cnt-down">-</button>
+                                    <div class="col-6 form-group">
+                                        <input type="number" id="guestNo" class="form-control" name="guests" value="2">
+                                        <span class="form-label">入住人數</span>
+                                    </div>
+                                    <button class=" counter-btn my-2" type="button" id="cnt-up">+</button>
+                                </div>
+                            </div>
+                            <!-- 匯款資訊 -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="date" required>
+                                    <span class="form-label">訂金匯款日期</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="帳號末五碼">
+                                    <span class="form-label">訂金匯款帳號</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="金額">
+                                    <span class="form-label">訂金匯款金額</span>
+                                </div>
+                            </div>
+                            <!-- 有話想說 -->
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <textarea name="question" placeholder="想說什麼..." class="form-control"rows="2"></textarea>
+                                    <span class="form-label">有話想說</span>
+                                </div>
+                            </div>
+                            <!-- 確認送出 -->
+                            <div class="col-md-3">
+                                <div class="form-btn">
+                                    <button class="submit-btn">確認送出</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- 表單人數 按鈕js -->
+    <script>
+        $(document).ready(function () {
+
+            var guestAmount = $('#guestNo');
+
+            $('#cnt-up').click(function () {
+                guestAmount.val(Math.min(parseInt($('#guestNo').val()) + 1, 30));
+            });
+            $('#cnt-down').click(function () {
+                guestAmount.val(Math.max(parseInt($('#guestNo').val()) - 1, 1));
+            });
+
+            $('.btn').click(function () {
+
+                var $btn = $('.btn');
+
+                $btn.toggleClass('booked');
+                $('.diamond').toggleClass('windup');
+                $('form').slideToggle(300);
+                $('.linkbox').toggle(200);
+
+                if ($btn.text() === "BOOK NOW") {
+                    $btn.text("BOOKED!");
+                } else {
+                    $btn.text("BOOK NOW");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

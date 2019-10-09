@@ -1,7 +1,9 @@
+// 顏色
 $c1:#7a9bf7;
 $c2:rgb(201, 217, 248);
 $c3:#0c2875;
 $c4:rgb(25, 86, 199);
+$c5:#750c1a;
 
 body {
     overflow-x: hidden;
@@ -572,7 +574,12 @@ section#contact{
     position: fixed;
     right: 19px;
     bottom: 19px;
-    z-index: 999;
+    z-index: 199;
+
+    @media screen and (max-width: 576px){
+            right: 9px;
+            bottom: 9px;
+        }
     }
 
     .contact-img{
@@ -600,9 +607,14 @@ section#contact{
         }
 
         .help-block {
+            color: $c5;
             padding-left: 110px;
             // 這是調整提示文字的位置
         }
+
+        // 調整表單提示icon的顏色
+        .fa-check-color{color: $c3;}
+        .fa-wrong-color{color: $c5;}
     
         #success_message {
             display: none;
@@ -610,9 +622,7 @@ section#contact{
     }
 }
 
-
 /* footer */
-
 footer {
     background-color: $c1;
 
