@@ -227,27 +227,201 @@ section#life{
         }
     }
     // 住宿須知
-    .modal{
-        color: $c3;
-        .close{
+    #Modal-notice{
+        .modal{
             color: $c3;
+            .close{
+                color: $c3;
+            }
         }
     }
+    
+    // 線上訂房
+    #Modal-booking{
+        .modal-dialog{
+            max-width:1140px;
+            @media screen and (max-width: 1200px){
+                max-width:80%;
+            }
+            @media screen and (max-width: 768px) {
+                max-width:500px;
+            }
+            @media screen and (max-width: 576px) {
+                max-width:300px;
+                margin: auto;
+            }
+        }
+        #booking {
+            font-weight: 300;
+
+            .booking-form{
+                .form-group {
+                    position: relative;
+                    margin-bottom: 30px;
+                }
+
+                .form-control {
+                    border: none;
+                    height: 65px;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    color: #090a0b;
+                    font-weight: 300;
+                    background: #f2f1f1;
+                    border-radius: 4px;
+                    @media screen and (max-width: 1000px){
+                        height: unset;
+                        font-size: unset;
+                    }
+                }
+
+                .form-control::-webkit-input-placeholder, .form-control:-ms-input-placeholder, .form-control::placeholder, input[type="date"].form-control:invalid {
+                    color: #b1b6bd;
+                    font-size: 0.812rem;
+                    line-height: 65px;
+                    @media screen and (max-width: 1000px){
+                        line-height: 36px;
+                    }
+                }
+        
+                select.form-control {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
+        
+                select.form-control+.select-arrow {
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 24px;
+                    text-align: center;
+                    pointer-events: none;
+                    height: 65px;
+                    line-height: 65px;
+                    color: #b1b6bd;
+                    font-size: 14px;
+                }
+        
+                select.form-control+.select-arrow:after {
+                    content: '▼';
+                    display: block;    
+                }
+        
+                .form-label {
+                    color: #184c8f;
+                    display: block;
+                    font-weight: 600;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 16px;
+                    position: relative;
+                    margin-top: 10px;
+                    padding-left: 3px;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+        
+                .form-label:after {
+                    content: '';
+                    position: absolute;
+                    left: 10px;
+                    top: -10px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 10px 0 10px;
+                    border-color: #f2f1f1 transparent transparent transparent;
+                }
+        
+                .form-btn {
+                    margin-bottom: 30px;
+                }
+        
+                .submit-btn {
+                    background: #184c8f;
+                    border: none;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    height: 96px;
+                    font-size: 18px;
+                    width: 100%;
+                    color: $c2;
+                    border-radius: 4px;
+                    display: block;
+                    @media screen and (max-width: 1000px){
+                        height: 44px;
+                    }
+                }
+
+                .counter-btn {
+                    font-size: 1.5em;
+                    font-weight: 300;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    background: #fff;
+                    border: none;
+                    border-radius: 50%;
+                    box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.2);
+                    margin: 13px 0;
+                    cursor: pointer;
+                    outline: none;
+                    @media screen and (max-width: 1000px){
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        margin: 8px 0;
+                    }
+                }
+        
+                .counter-btn:hover {
+                    box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.3);
+                }
+            }
+        }
+    }
+    
     // 服務設施+特色餐點
     .row{
 
         i {
             font-size: 2.5rem;
             padding: 0.5rem;
-            background-color: $c3;
-            border-radius: 19px;
-            color: $c2;
+            color: $c3;
         }
         h5{
             letter-spacing: 1px;
             line-height: 29px;
             @media screen and (max-width: 576px) {
-            font-size: 0.9rem;
+                font-size: 0.9rem;
+                }
+        }
+        p{
+            margin: 0;
+            span {
+                font-size: 2em;
+                line-height: unset;
+                color: $c3;
+                position: relative;
+                /*定位槓槓（當槓槓的父元素）*/
+            }
+            span:before, span:after {
+                content: '';
+                /*定位槓槓的位置*/
+                position: absolute;
+                top: 50%;
+                background: $c3;
+                /*寬和高做出來的槓槓*/
+                width: 500%;
+                height: 1.7px;
+            }
+            /*調整槓槓的左右距離*/
+            span:before {
+                left: 80%;
+            }
+            span:after {
+                right: 80%;
             }
         }
     }
@@ -257,9 +431,7 @@ section#life{
 /* 最新消息 */
 section#news{
     height: 100vh;
-    // background-color: $c3; //暫時給顏色
-    
-    
+
     h2{
         @media screen and (max-width: 576px) {
             border-top: unset;

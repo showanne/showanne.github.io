@@ -249,20 +249,192 @@ section#life #price .swiper-pagination-bullet {
   margin: 0 5px;
 }
 
-section#life .modal {
+section#life #Modal-notice .modal {
   color: #0c2875;
 }
 
-section#life .modal .close {
+section#life #Modal-notice .modal .close {
   color: #0c2875;
+}
+
+section#life #Modal-booking .modal-dialog {
+  max-width: 1140px;
+}
+
+@media screen and (max-width: 1200px) {
+  section#life #Modal-booking .modal-dialog {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section#life #Modal-booking .modal-dialog {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section#life #Modal-booking .modal-dialog {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
+section#life #Modal-booking #booking {
+  font-weight: 300;
+}
+
+section#life #Modal-booking #booking .booking-form .form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+section#life #Modal-booking #booking .booking-form .form-control {
+  border: none;
+  height: 65px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #090a0b;
+  font-weight: 300;
+  background: #f2f1f1;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1000px) {
+  section#life #Modal-booking #booking .booking-form .form-control {
+    height: unset;
+    font-size: unset;
+  }
+}
+
+section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control:-ms-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form input[type="date"].form-control:invalid {
+  color: #b1b6bd;
+  font-size: 0.812rem;
+  line-height: 65px;
+}
+
+section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control:-ms-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control::placeholder, section#life #Modal-booking #booking .booking-form input[type="date"].form-control:invalid {
+  color: #b1b6bd;
+  font-size: 0.812rem;
+  line-height: 65px;
+}
+
+@media screen and (max-width: 1000px) {
+  section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control:-ms-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form input[type="date"].form-control:invalid {
+    line-height: 36px;
+  }
+  section#life #Modal-booking #booking .booking-form .form-control::-webkit-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control:-ms-input-placeholder, section#life #Modal-booking #booking .booking-form .form-control::placeholder, section#life #Modal-booking #booking .booking-form input[type="date"].form-control:invalid {
+    line-height: 36px;
+  }
+}
+
+section#life #Modal-booking #booking .booking-form select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+section#life #Modal-booking #booking .booking-form select.form-control + .select-arrow {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 24px;
+  text-align: center;
+  pointer-events: none;
+  height: 65px;
+  line-height: 65px;
+  color: #b1b6bd;
+  font-size: 14px;
+}
+
+section#life #Modal-booking #booking .booking-form select.form-control + .select-arrow:after {
+  content: '▼';
+  display: block;
+}
+
+section#life #Modal-booking #booking .booking-form .form-label {
+  color: #184c8f;
+  display: block;
+  font-weight: 600;
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 3px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+section#life #Modal-booking #booking .booking-form .form-label:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #f2f1f1 transparent transparent transparent;
+}
+
+section#life #Modal-booking #booking .booking-form .form-btn {
+  margin-bottom: 30px;
+}
+
+section#life #Modal-booking #booking .booking-form .submit-btn {
+  background: #184c8f;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 96px;
+  font-size: 18px;
+  width: 100%;
+  color: #c9d9f8;
+  border-radius: 4px;
+  display: block;
+}
+
+@media screen and (max-width: 1000px) {
+  section#life #Modal-booking #booking .booking-form .submit-btn {
+    height: 44px;
+  }
+}
+
+section#life #Modal-booking #booking .booking-form .counter-btn {
+  font-size: 1.5em;
+  font-weight: 300;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.2);
+          box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.2);
+  margin: 13px 0;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 1000px) {
+  section#life #Modal-booking #booking .booking-form .counter-btn {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 8px 0;
+  }
+}
+
+section#life #Modal-booking #booking .booking-form .counter-btn:hover {
+  -webkit-box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.3);
+          box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.3);
 }
 
 section#life .row i {
   font-size: 2.5rem;
   padding: 0.5rem;
-  background-color: #0c2875;
-  border-radius: 19px;
-  color: #c9d9f8;
+  color: #0c2875;
 }
 
 section#life .row h5 {
@@ -274,6 +446,38 @@ section#life .row h5 {
   section#life .row h5 {
     font-size: 0.9rem;
   }
+}
+
+section#life .row p {
+  margin: 0;
+  /*調整槓槓的左右距離*/
+}
+
+section#life .row p span {
+  font-size: 2em;
+  line-height: unset;
+  color: #0c2875;
+  position: relative;
+  /*定位槓槓（當槓槓的父元素）*/
+}
+
+section#life .row p span:before, section#life .row p span:after {
+  content: '';
+  /*定位槓槓的位置*/
+  position: absolute;
+  top: 50%;
+  background: #0c2875;
+  /*寬和高做出來的槓槓*/
+  width: 500%;
+  height: 1.7px;
+}
+
+section#life .row p span:before {
+  left: 80%;
+}
+
+section#life .row p span:after {
+  right: 80%;
 }
 
 /* 最新消息 */
