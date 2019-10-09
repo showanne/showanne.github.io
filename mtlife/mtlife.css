@@ -431,6 +431,35 @@ section#life #Modal-booking #booking .booking-form .counter-btn:hover {
           box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.3);
 }
 
+section#life .row div {
+  position: relative;
+}
+
+section#life .row div .spanL, section#life .row div .spanR {
+  position: absolute;
+  top: 65px;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19px;
+}
+
+@media screen and (max-width: 991px) {
+  section#life .row div .spanL, section#life .row div .spanR {
+    display: none;
+  }
+}
+
+section#life .row div .spanL {
+  right: 15px;
+  border-color: transparent #c9d9f8 transparent transparent;
+}
+
+section#life .row div .spanR {
+  border-color: transparent transparent transparent #c9d9f8;
+}
+
 section#life .row i {
   font-size: 2.5rem;
   padding: 0.5rem;
@@ -637,7 +666,6 @@ section#about .col .story {
   }
   section#about .col .story h3 {
     font-size: 1.25rem;
-    font-weight: 700;
     margin-top: 1.75rem;
   }
   section#about .col .story p {
@@ -652,6 +680,7 @@ section#about .col a {
 section#about .col a .photo {
   position: absolute;
   right: 183px;
+  left: unset;
   bottom: 53px;
   background-color: #c9d9f8;
   width: 155px;
@@ -687,7 +716,7 @@ section#viewpoint #map-viewpoint {
 section#viewpoint #map-viewpoint .btn-viewpoint {
   position: absolute;
   z-index: 19;
-  right: 19px;
+  left: -19px;
   top: 119px;
 }
 

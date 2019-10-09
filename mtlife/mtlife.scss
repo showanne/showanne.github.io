@@ -384,7 +384,30 @@ section#life{
     
     // 服務設施+特色餐點
     .row{
+        div{
+            position: relative;
+            .spanL, .spanR{
+                position: absolute;
+                top: 65px;
+                background-color: transparent;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 19px;
+                
+                @media screen and (max-width: 991px) {
+                    display: none
+                }
+            }
+            .spanL{
+                right: 15px;
+                border-color: transparent $c2 transparent transparent;
+            }
+            .spanR{
+                border-color: transparent transparent transparent $c2;
+            }
 
+        }
         i {
             font-size: 2.5rem;
             padding: 0.5rem;
@@ -545,7 +568,6 @@ section#about{
             font-size: 15pt;
             color: $c4;
             
-
             @media screen and (max-width: 576px) {
                 top: unset;
                 right: 1px;
@@ -556,7 +578,6 @@ section#about{
                 height: unset;
                 h3{
                     font-size: 1.25rem;
-                    font-weight: 700;
                     margin-top: 1.75rem;
                 }
                 p{
@@ -566,12 +587,10 @@ section#about{
          }
          a{
             text-decoration: none;
-            // @media screen and (max-width: 576px) {
-            //     display: none;
-            // }
             .photo{
                 position: absolute;
                 right: 183px;
+                left: unset;
                 bottom: 53px;
                 background-color: $c2;
                 width: 155px;
@@ -609,7 +628,7 @@ section#viewpoint{
         .btn-viewpoint{
             position: absolute; 
             z-index: 19;
-            right:19px;
+            left:-19px;
             top: 119px;
         }
         .btn{
@@ -676,18 +695,12 @@ section#location{
         background-color: transparent;
         width: 0;
         height: 0;
-        // border-left: 100px solid transparent;
-        // border-right: 100px solid transparent;
-        // border-bottom: 100px solid $c1;
         border-style: solid;
         border-width: 100px;
         border-color: transparent transparent  $c1 transparent;
 
         @media screen and (max-width: 576px) {
             font-size: 11px;
-            // border-left: 39px solid transparent;
-            // border-right: 39px solid transparent;
-            // border-bottom: 27px solid $c1;
             border-style: solid;
             border-width: 30px;
             border-color: transparent transparent  $c1 transparent;
