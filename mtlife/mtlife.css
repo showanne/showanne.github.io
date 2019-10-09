@@ -249,6 +249,14 @@ section#life #price .swiper-pagination-bullet {
   margin: 0 5px;
 }
 
+section#life .modal {
+  color: #0c2875;
+}
+
+section#life .modal .close {
+  color: #0c2875;
+}
+
 section#life .row i {
   font-size: 2.5rem;
   padding: 0.5rem;

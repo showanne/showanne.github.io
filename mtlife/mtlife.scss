@@ -139,6 +139,7 @@ section#life{
     .container{
         position: relative;
     }
+    // 房型圖片
     .swiper-container{
         
         height: 435px;
@@ -170,6 +171,7 @@ section#life{
             }
         }
     }
+    // 房型介紹卡片&價格
     #price{
         width: 235px;
         height: 300px;
@@ -222,7 +224,14 @@ section#life{
             margin: 0 5px;
         }
     }
-    
+    // 住宿須知
+    .modal{
+        color: $c3;
+        .close{
+            color: $c3;
+        }
+    }
+    // 服務設施+特色餐點
     .row{
 
         i {
