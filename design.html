@@ -16,6 +16,42 @@
             background-color: #FFCC00;
         }
 
+        .typing-slider {
+            font-family: '微軟正黑體';
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .typing-slider p {
+            position: relative;
+            display: inline;
+            font-size: 0;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            animation: slide 15s step-start infinite;
+        }
+
+        .typing-slider p::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-left: 3px solid black;
+            background-color: #FFCC00;
+            animation: typing 5s infinite, cursor 1s infinite;
+        }
+
+        .typing-slider p {
+            animation-delay: 0s;
+        }
+
+        .typing-slider p::after {
+            animation-delay: 0s;
+            animation-timing-function: steps(18), step-end;
+        }
+
         @keyframes cursor {
 
             from,
@@ -50,48 +86,12 @@
                 letter-spacing: 0;
             }
         }
-
-        .typing-slider {
-            font-family: '微軟正黑體';
-            font-weight: bold;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .typing-slider p {
-            position: relative;
-            display: inline;
-            font-size: 0;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            animation: slide 15s step-start infinite;
-        }
-
-        .typing-slider p::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            border-left: 3px solid black;
-            background-color: #FFCC00;
-            animation: typing 5s infinite, cursor 1s infinite;
-        }
-
-        .typing-slider p {
-            animation-delay: 0s;
-        }
-
-        .typing-slider p::after {
-            animation-delay: 0s;
-            animation-timing-function: steps(16), step-end;
-        }
     </style>
 </head>
 
 <body>
     <div class="typing-slider">
-        <p>敬請期待...</p>
+        <p>To Be Continued...</p>
     </div>
 </body>
 

@@ -36,7 +36,7 @@
             background: rgb(255, 255, 255);
             border-radius: 5px;
             width: 500px;
-            height: 200px;
+            height: 250px;
             margin: auto;
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
@@ -46,6 +46,15 @@
             align-items: center;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            text-align: center;
+        }
+
+        @media (max-width: 530px) {
+            .profile {
+                display: block;
+                width: 270px;
+                height: auto;
+            }
         }
 
         .profile:after {
@@ -84,7 +93,7 @@
             right: 3px;
             width: 20px;
             height: 20px;
-            border: 4px solid rgb(246, 219, 250);
+            border: 4px solid rgb(249, 240, 250);
             -webkit-transform: scale(0);
             transform: scale(0);
             background: -webkit-linear-gradient(top, #2196F3 0%, #2196F3 50%, #221177 50%, #221177 100%);
@@ -106,13 +115,13 @@
             border-radius: 50%;
             -webkit-transition: -webkit-box-shadow 0.3s ease;
             transition: box-shadow 0.3s ease;
-            -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
-            box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+            -webkit-box-shadow: 0px 0px 0px 8px rgba(207, 50, 255, 0.06);
+            box-shadow: 0px 0px 0px 8px rgba(207, 50, 255, 0.06);
         }
 
         .profile .profile-img a:hover>img {
-            -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0px 0px 0px 12px rgba(207, 50, 255, 0.1);
+            box-shadow: 0px 0px 0px 12px rgba(207, 50, 255, 0.1);
         }
 
         .profile .profile-content {
@@ -131,7 +140,7 @@
             -webkit-transform: translateZ(50px);
             transform: translateZ(50px);
             display: block;
-            font-size: 1.3rem;
+            font-size: 1.39rem;
             letter-spacing: 3px;
         }
 
@@ -145,6 +154,13 @@
             color: #35175c;
             text-decoration: none;
             pointer-events: auto;
+        }
+        .profile a:hover {
+            color: #8446e9;
+        }
+
+        .profile a i {
+            margin-right: 9px;
         }
     </style>
 </head>
@@ -163,6 +179,7 @@
                 <p class="related">
                     <a href="mailto:s85120ss@gmail.com"><i class="fas fa-envelope-open"></i>s85120ss@gmail.com</a>
                 </p>
+                <small><p>如果您對我有興趣，歡迎與我聯絡</p></small>
             </div>
         </div>
     </div>
