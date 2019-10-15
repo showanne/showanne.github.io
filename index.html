@@ -315,12 +315,22 @@
 
     <!-- 點logo出現卡片 -->
     <script>
-        var logo = document.querySelector(".logo")
-        var card = document.querySelector("#profile")
+        var logo = document.querySelector(".logo");
+        var card = document.querySelector("#profile");
+        var exit = document.querySelector(".profile:before");
+        var outside = document.querySelector(".bg-profile");
+        
 
         logo.onclick = function () {
             card.classList.toggle("active")
+        };
+        exit.onclick = function () {
+            card.classList.add("active")
+        };
+        outside.onclick = function () {
+            card.classList.add("active")
         }
+        // 想做3個效果 1.點logo 2.點X 3.點外圍空白 皆可關閉卡片
     </script>
 </body>
 

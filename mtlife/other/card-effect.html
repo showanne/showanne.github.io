@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- https://codepen.io/halidaa/pen/GGZqqg -->
+    <title>card effect</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+        #backup {
+            display: none;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, #b1f7e3, #727991, #7f4fca);
+            color: #333;
+            font-family: Nunito, sans-serif;
+            line-height: 2em;
+            min-height: 100vh;
+            padding: 10px;
+            transition: height 5s;
+        }
+
+        h1 {
+            border-bottom: 1px solid #fcfcfc;
+            color: #fcfcfc;
+            display: inline-block;
+            margin-right: 80px;
+            max-width: 200px;
+            padding: 10px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px #727991;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        h1 .limit-error {
+            font-size: .5em;
+            font-weight: normal;
+            line-height: 1em;
+            text-transform: none;
+
+            position: absolute;
+            left: 0;
+            bottom: -75px;
+            width: 100%;
+            opacity: 0;
+            transition: all .2s;
+        }
+
+        h1 .limit-error.show {
+            opacity: 1;
+        }
+
+        nav {
+            display: inline-block;
+            margin-top: -50px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        nav button {
+            background: white;
+            border: 2px solid white;
+            border-radius: 100%;
+            box-sizing: border-box;
+            color: #7f4fca;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 38px;
+            margin: 5px 10px;
+            padding: 0 5px;
+            height: 40px;
+            width: 40px;
+            opacity: 0.8;
+            text-align: center;
+
+            transition: all 0.2s;
+        }
+
+        nav button:hover,
+        nav button:focus {
+            border-color: #b1f7e3;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        nav button[disabled],
+        nav button[disabled]:hover {
+            background: #afafaf;
+            border-color: #afafaf;
+            cursor: default;
+            filter: grayscale(1);
+            opacity: 0.8;
+        }
+
+        #articles {
+            display: inline-block;
+            list-style: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            position: relative;
+
+            perspective: 1000px;
+            perspective-origin: 50% -50%;
+
+            height: 500px;
+            width: 300px;
+
+            transition: all 1s;
+            vertical-align: middle;
+        }
+
+        #articles h2 {
+            font-size: 1.25em;
+            margin: 0;
+            min-height: 100px;
+        }
+
+        #articles .date {
+            color: #727991;
+            font-size: 0.8em;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+
+        #articles li {
+            background: #7f4fca;
+            border-radius: 5px;
+            display: inline-block;
+            max-height: 390px;
+            max-width: 300px;
+            overflow: hidden;
+            vertical-align: top;
+
+            box-shadow: 0 0 3px 0 #b1f7e3;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+
+            transition: all 0.5s;
+            opacity: 1;
+
+            z-index: -2;
+        }
+
+        #articles li.go-away {
+            opacity: 0;
+            top: 600px;
+            transform: rotateX(10deg);
+        }
+
+        #articles li.error {
+            color: #fff;
+            text-align: center;
+            padding: 35px 10px;
+        }
+
+        #articles li .card-content {
+            background: white;
+            opacity: 1;
+            position: relative;
+            padding: 5px 15px;
+            top: 0;
+
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #articles li .card-content.open,
+        #articles li:hover .card-content.open,
+        #articles li:focus .card-content.open {
+            top: -200px;
+            opacity: 0.8;
+        }
+
+        #articles li:hover .card-content.open .description,
+        #articles li:focus .card-content.open .description {
+            opacity: 1;
+        }
+
+        #articles li:hover,
+        #articles li:focus {
+            cursor: pointer;
+        }
+
+        #articles li:hover .card-content,
+        #articles li:focus .card-content {
+            top: -50px;
+        }
+
+        #articles li:hover .description,
+        #articles li:focus .description {
+            opacity: 0.3;
+        }
+
+        #articles li .card-content:before {
+            content: "";
+            height: 7.5px;
+            width: 75px;
+
+            position: absolute;
+            top: -3px;
+            left: 0;
+        }
+
+
+        #articles li .card-content:before {
+            background-color: #747796;
+        }
+
+        #articles li.snapshot .card-content:before {
+            background-color: #749d1c;
+        }
+
+        #articles li.soompi .card-content:before {
+            background-color: #7f4fca;
+        }
+
+        #articles li.music .card-content:before {
+            background-color: #4ecdc4;
+        }
+
+        #articles li.celeb .card-content:before {
+            background-color: #ff6b6b;
+        }
+
+        #articles li.features .card-content:before {
+            background-color: #f8ca00;
+        }
+
+        #articles li.music a {
+            color: #4ecdc4;
+        }
+
+        #articles li.celeb a {
+            color: #ff6b6b;
+        }
+
+        #articles li.features a {
+            color: #f8ca00;
+        }
+
+        #articles li.snapshot a {
+            color: #749d1c;
+        }
+
+        #articles li.soompi a {
+            color: #7f4fca;
+        }
+
+        #articles .card-image {
+            background-color: #727991;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 200px;
+            width: 100%;
+        }
+
+        #articles .eyebrow-title {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        #articles .description {
+            line-height: 1.5em;
+            opacity: 0;
+
+            transition: all 0.5s;
+        }
+
+        #articles .open .description {
+            opacity: 1;
+        }
+
+        .description p:first-child {
+            overflow: hidden;
+            max-height: 145px;
+        }
+
+        .description p:nth-child(2) {
+            display: none;
+        }
+
+        .more-info {
+            color: #fff;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 663px) {
+            .more-info {
+                text-align: left;
+                margin-left: 0;
+                max-width: 600px;
+            }
+
+            h1 {
+                margin-right: 30px;
+            }
+
+            #articles {
+                height: 600px;
+            }
+
+            nav {
+                margin-top: 0;
+                width: 50px;
+            }
+
+            nav button {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (min-width: 900px) {
+            h1 {
+                margin-right: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BTS Articles on Soompi <span class="limit-error">*Limit error: Using old data from June 5, images may not
+            load.</span></h1>
+
+    <ul id="articles">
+
+    </ul>
+
+    <nav>
+        <button class="prev-article" disabled><i class="fas fa-arrow-left"></i></button>
+        <button class="next-article"><i class="fas fa-arrow-right"></i></button>
+    </nav>
+
+    <p class="more-info">Card stack inspiration from <a href="https://tympanus.net/Development/CardStackEffects/"
+            target="_blank" rel="noopener noreferrer">Tympanus</a> | Don't know BTS? <a
+            href="https://codepen.io/halidaa/full/ZowRYy" target="_blank" rel="noopener noreferrer">I gotchu</a></p>
+
+    <script type="template" id="article-template">
+  <li class="{{category}}" style="z-index:{{z-index}};">
+    <div class="card-image">
+    </div>
+    <div class="card-content">
+      <p class="eyebrow-title">{{category}}</p>
+      <h2>{{title}}</h2>
+      <p class="date">{{pubDate}}</p>
+      <div class="description">
+        {{description}}
+        <p class="read-more"><a target="_blank" tabindex="-1" rel="noreferrer noopener" href="{{url}}">Read Full Article</a></p>
+      </div>
+    </div>
+  </li>
+</script>
+
+    <div id="backup">
+        <channel>
+            <item>
+                <title>BTS Drops Special &#8220;Bangtan News&#8221; Interview And Dance Practice Video For 2018 BTS
+                    Festa</title>
+                <link>
+                https://www.soompi.com/2018/06/05/bts-drops-special-bangtan-news-interview-dance-practice-video-2018-bts-festa/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/05/bts-drops-special-bangtan-news-interview-dance-practice-video-2018-bts-festa/#respond
+                </comments>
+                <pubDate>Tue, 05 Jun 2018 15:20:44 +0000</pubDate>
+                <category>Celeb</category>
+                <description>
+                    <p>With just eight days left until BTS’s fifth anniversary (June 13), the group released a new
+                        self-edited interview for fans as well as a never-before-seen dance practice for the 32nd Golden
+                        Disc Awards in a continuation of their 2018 BTS Festa celebration. Check out the interview and
+                        dance practice below. Big Hit Entertainment also revealed that [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/05/bts-drops-special-bangtan-news-interview-dance-practice-video-2018-bts-festa/">BTS
+                            Drops Special &#8220;Bangtan News&#8221; Interview And Dance Practice Video For 2018 BTS
+                            Festa</a> appeared first on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180759</post-id>
+            </item>
+            <item>
+                <title>BTS&#8217;s &#8220;Fake Love&#8221; Spends 2nd Week On Billboard&#8217;s Hot 100</title>
+                <link>https://www.soompi.com/2018/06/05/btss-fake-love-spends-2nd-week-on-billboards-hot-100/</link>
+                <comments>
+                    https://www.soompi.com/2018/06/05/btss-fake-love-spends-2nd-week-on-billboards-hot-100/#respond
+                </comments>
+                <pubDate>Tue, 05 Jun 2018 13:10:54 +0000</pubDate>
+                <category>Music</category>
+                <description>
+                    <p>BTS&#8217;s &#8220;Fake Love&#8221; is on Billboard&#8217;s Hot 100 chart for the second week in
+                        a row! On June 5, Billboard released its charts for the week ending in June 9. BTS&#8217;s
+                        &#8220;Fake Love&#8221; has come in at No. 51 on the Hot 100 (Billboard&#8217;s top songs
+                        chart), after debuting at No. 10 last week. As [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/05/btss-fake-love-spends-2nd-week-on-billboards-hot-100/">BTS&#8217;s
+                            &#8220;Fake Love&#8221; Spends 2nd Week On Billboard&#8217;s Hot 100</a> appeared first on
+                        <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180737</post-id>
+            </item>
+            <item>
+                <title>BTS&#8217;s V Shows Love For Park Seo Joon With Humorous But Thoughtful Gift</title>
+                <link>https://www.soompi.com/2018/06/04/btss-v-shows-love-park-seo-joon-humorous-thoughtful-gift/</link>
+                <comments>
+                    https://www.soompi.com/2018/06/04/btss-v-shows-love-park-seo-joon-humorous-thoughtful-gift/#respond
+                </comments>
+                <category>Snapshot</category>
+                <description>
+                    <p>V and Park Seo Joon have shown their close friendship once again! On June 5, Park Seo Joon
+                        uploaded photos in front of the coffee truck that V sent to the set of &#8220;What&#8217;s Wrong
+                        with Secretary Kim?&#8221; The coffee truck features two banners and an unflattering selfie of
+                        Park Seo Joon. V shows his tough [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/04/btss-v-shows-love-park-seo-joon-humorous-thoughtful-gift/">BTS&#8217;s
+                            V Shows Love For Park Seo Joon With Humorous But Thoughtful Gift</a> appeared first on <a
+                            rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180593</post-id>
+            </item>
+            <item>
+                <title>Yubin Comments On BTS&#8217;s Billboard Success And Talks About Wonder Girls&#8217; U.S.
+                    Experience</title>
+                <link>
+                https://www.soompi.com/2018/06/04/yubin-comments-bts-billboard-success-talks-wonder-girls-u-s-experience/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/04/yubin-comments-bts-billboard-success-talks-wonder-girls-u-s-experience/#respond
+                </comments>
+                <pubDate>Tue, 05 Jun 2018 02:58:06 +0000</pubDate>
+                <category>Celeb</category>
+                <description>
+                    <p>On June 4, Yubin held press interviews ahead of her upcoming solo debut. One news
+                        outlet mentioned BTS&#8217;s success on Billboard charts and asked her response as someone who
+                        has previously experienced Billboard. Yubin answered, &#8220;They are showing impressive
+                        success. As a Korean artist, I feel happy and proud. Since we have also promoted in that
+                        [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/04/yubin-comments-bts-billboard-success-talks-wonder-girls-u-s-experience/">Yubin
+                            Comments On BTS&#8217;s Billboard Success And Talks About Wonder Girls&#8217; U.S.
+                            Experience</a> appeared first on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.
+                    </p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180585</post-id>
+            </item>
+            <item>
+                <title>11 Most Memorable Moments Of BTS&#8217;s Time In The United States This Year</title>
+                <link>https://www.soompi.com/2018/06/04/11-memorable-moments-btss-time-united-states-year/</link>
+                <comments>https://www.soompi.com/2018/06/04/11-memorable-moments-btss-time-united-states-year/#respond
+                </comments>
+                <pubDate>Tue, 05 Jun 2018 01:51:13 +0000</pubDate>
+                <category>Celeb</category>
+                <description>
+                    <p>BTS did it again: they traveled to the United States, snatched an award, performed, gave
+                        interviews; and left a trail of baffled bystanders and teary-eyed ARMYs. While the boys were
+                        busy promoting, ARMYs around the world engaged in the great ticket war of 2018, fighting for a
+                        chance to attend a &#8220;BTS World Tour: Love [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/04/11-memorable-moments-btss-time-united-states-year/">11
+                            Most Memorable Moments Of BTS&#8217;s Time In The United States This Year</a> appeared first
+                        on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1179855</post-id>
+            </item>
+            <item>
+                <title>Book That Inspired BTS&#8217;s &#8220;Magic Shop&#8221; Becomes Best Seller In Korea</title>
+                <link>https://www.soompi.com/2018/06/04/book-inspired-btss-magic-shop-becomes-best-seller-korea/</link>
+                <comments>
+                    https://www.soompi.com/2018/06/04/book-inspired-btss-magic-shop-becomes-best-seller-korea/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 18:04:54 +0000</pubDate>
+                <category>Music</category>
+                <description>
+                    <p>BTS’s continuing relationship with literature has turned out another best seller in Korea! On
+                        June 4, it was revealed that “Into the Magic Shop: A Neurosurgeon’s Quest to Discover the
+                        Mysteries of the Brain and the Secrets of the Heart” by James R. Doty, the book that became the
+                        motif for “Magic Shop,” the seventh [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/04/book-inspired-btss-magic-shop-becomes-best-seller-korea/">Book
+                            That Inspired BTS&#8217;s &#8220;Magic Shop&#8221; Becomes Best Seller In Korea</a> appeared
+                        first on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180447</post-id>
+            </item>
+            <item>
+                <title>BTS And ARMY Relive Some Of The Best Moments Of The Past Year Through Special Photos For 2018 BTS
+                    Festa</title>
+                <link>
+                https://www.soompi.com/2018/06/04/bts-and-army-relive-some-best-moments-past-year-special-photo-collection/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/04/bts-and-army-relive-some-best-moments-past-year-special-photo-collection/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 15:26:50 +0000</pubDate>
+                <category>Celeb</category>
+                <description>
+                    <p>BTS is continuing their fifth anniversary celebrations by taking fans down memory lane! On June 5
+                        at midnight KST, BTS shared photos from the past year as part of their 2018 BTS Festa event,
+                        which is leading up to their fifth anniversary on June 13. The photos put the spotlight on
+                        special moments from 2017 and [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/04/bts-and-army-relive-some-best-moments-past-year-special-photo-collection/">BTS
+                            And ARMY Relive Some Of The Best Moments Of The Past Year Through Special Photos For 2018
+                            BTS Festa</a> appeared first on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.
+                    </p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180291</post-id>
+            </item>
+            <item>
+                <title>BTS Achieves Perfect Score With &#8220;Fake Love&#8221;; Soompi&#8217;s K-Pop Music Chart 2018,
+                    June Week 1</title>
+                <link>
+                https://www.soompi.com/2018/06/03/bts-achieves-perfect-score-fake-love-soompis-k-pop-music-chart-2018-june-week-1/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/03/bts-achieves-perfect-score-fake-love-soompis-k-pop-music-chart-2018-june-week-1/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 06:02:39 +0000</pubDate>
+                <category>Features</category>
+                <description>
+                    <p>BTS has achieved perfection this week with their new song &#8220;FAKE LOVE,&#8221; moving up 10
+                        spots to take over as our new No. 1 song! This song won on “&#8221;Inkigayo,&#8221; &#8220;Music
+                        Bank,&#8221; and &#8220;Music Core&#8221; last week, and also topped all other chart sources.
+                        “FAKE LOVE&#8221; becomes the first song in 2018 to achieve a [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/03/bts-achieves-perfect-score-fake-love-soompis-k-pop-music-chart-2018-june-week-1/">BTS
+                            Achieves Perfect Score With &#8220;Fake Love&#8221;; Soompi&#8217;s K-Pop Music Chart 2018,
+                            June Week 1</a> appeared first on <a rel="nofollow"
+                            href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1179731</post-id>
+            </item>
+            <item>
+                <title>Watch: BTS Unveils Action-Packed &#8220;Fake Love&#8221; MV Shooting Video</title>
+                <link>https://www.soompi.com/2018/06/03/watch-bts-unveils-action-packed-fake-love-mv-shooting-video/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/03/watch-bts-unveils-action-packed-fake-love-mv-shooting-video/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 05:34:21 +0000</pubDate>
+                <category>Celeb</category>
+                <description>
+                    <p>BTS has released new behind-the-scenes footage from the filming of their &#8220;Fake Love&#8221;
+                        music video! The new video clip starts out with the members of BTS getting ready to film their
+                        individual scenes for the music video. Jimin explains, &#8220;[The music video] is about
+                        trauma.&#8221; RM describes his scene by saying, &#8220;In my case, I [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/03/watch-bts-unveils-action-packed-fake-love-mv-shooting-video/">Watch:
+                            BTS Unveils Action-Packed &#8220;Fake Love&#8221; MV Shooting Video</a> appeared first on <a
+                            rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180117</post-id>
+            </item>
+            <item>
+                <title>BTS Announces Worldwide Digital Release Of &#8220;Fake Love&#8221; Rock Remix</title>
+                <link>https://www.soompi.com/2018/06/03/bts-announces-worldwide-digital-release-fake-love-rock-remix/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/03/bts-announces-worldwide-digital-release-fake-love-rock-remix/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 03:44:40 +0000</pubDate>
+                <category>Music</category>
+                <description>
+                    <p>BTS will be releasing a special &#8220;Fake Love&#8221; remix! On June 4, it was revealed that
+                        the &#8220;Fake Love (Rocking Vibe Mix)&#8221; will be released digitally via Korean and
+                        international music streaming sites. The &#8220;Rocking Vibe Mix&#8221; is an alternative rock
+                        version of &#8220;Fake Love&#8221; and features powerful electronic guitar and drum sounds. Big
+                        Hit Entertainment&#8217;s Slow [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/03/bts-announces-worldwide-digital-release-fake-love-rock-remix/">BTS
+                            Announces Worldwide Digital Release Of &#8220;Fake Love&#8221; Rock Remix</a> appeared first
+                        on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180055</post-id>
+            </item>
+            <item>
+                <title>BTS&#8217;s &#8220;Love Yourself: Tear&#8221; Continues To Chart High On Billboard 200 For 2nd
+                    Week</title>
+                <link>https://www.soompi.com/2018/06/03/btss-love-tear-continues-chart-high-billboard-200-2nd-week/
+                </link>
+                <comments>
+                    https://www.soompi.com/2018/06/03/btss-love-tear-continues-chart-high-billboard-200-2nd-week/#respond
+                </comments>
+                <pubDate>Mon, 04 Jun 2018 03:13:34 +0000</pubDate>
+                <category>Music</category>
+                <description>
+                    <p>BTS&#8217;s new album &#8220;Love Yourself: Tear&#8221; continues to make history on the
+                        Billboard charts! After setting a new record last week by becoming the first-ever K-pop artist
+                        to reach No. 1 on Billboard&#8217;s famous Top 200 Albums chart, BTS continued to perform well
+                        on the chart for the second consecutive week. According to Billboard, &#8220;Love [&#8230;]</p>
+                    <p>The post <a rel="nofollow"
+                            href="https://www.soompi.com/2018/06/03/btss-love-tear-continues-chart-high-billboard-200-2nd-week/">BTS&#8217;s
+                            &#8220;Love Yourself: Tear&#8221; Continues To Chart High On Billboard 200 For 2nd Week</a>
+                        appeared first on <a rel="nofollow" href="https://www.soompi.com">Soompi</a>.</p>
+                </description>
+                <post-id xmlns="com-wordpress:feed-additions:1">1180021</post-id>
+            </item>
+        </channel>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+
+    <script>
+        var CORSProxy = "https://cors-hld.herokuapp.com/";
+        var activeArticle = 0;
+        var totalArticle = 7;
+
+        var xDown = null;
+        var yDown = null;
+
+        function trimString(string, maxLength) {
+            if (string.length > maxLength) {
+                string = string.substring(0, maxLength);
+                string = string.substr(0, Math.min(string.length, string.lastIndexOf(" ")));
+                string += "[...]";
+            }
+            return string;
+        }
+
+        function replaceText(original, before, after) {
+            if (before.constructor !== Array) {
+                before = [before];
+                after = [after];
+            }
+            var result = original;
+            for (var i = 0; i < before.length; i++) {
+                result = result.split(before[i]).join(after[i]);
+            }
+            return result;
+        }
+
+        function fetchImage(url, i) {
+            $.ajax({
+                url: CORSProxy + url,
+                type: 'GET'
+            }).done(function (html) {
+                var image = $(html).find(".image-wrapper").first().html();
+                image = $(image).attr("src").replace("7x5", "420x300");
+
+                $("#articles li").eq(i).find(".card-image").css("background-image", "url(" + image + ")");
+            })
+        }
+
+        function fetchFeed(url) {
+            $.ajax({
+                url: CORSProxy + url,
+                type: 'GET',
+                dataType: "xml",
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //$("#articles").append("<li class='error'><h2>Can't Fetch News :/</h2></li>");
+                    //$("#articles").css("max-height","100px");
+                    generateCards($("#backup").html(), false);
+                    $(".limit-error").addClass("show");
+                },
+                success: function (xml) {
+                    generateCards(xml, true);
+                }
+            })
+        }
+
+        function generateHtml(data) {
+            var html = $("#article-template").html();
+            var before = ["{{category}}", "{{title}}", "{{pubDate}}", "{{description}}", "{{url}}", "{{z-index}}"];
+
+            return replaceText(html, before, data);
+        }
+
+        function generateCards(xml, isCDATA) {
+            var items = $(xml).find('item');
+            for (var i = 0; i < totalArticle; i++) {
+                var url = $(items[i]).find('link').text();
+                var title = $(items[i]).find('title').text();
+                title = trimString(title, 65);
+                var description = $(items[i]).find('description').text();
+
+                if (!isCDATA)
+                    description = $(items[i]).find('description').html();
+
+                var pubDate = new Date($(items[i]).find('pubDate').text());
+                pubDate = moment(pubDate).fromNow();
+
+
+                var category = $(items[i]).find('category').last().text().toLowerCase();
+                var html = generateHtml([category, title, pubDate, description, url, (i * -2)]);
+
+                $("#articles").append(html);
+                fetchImage(url, i);
+            }
+            $("#articles").css("max-height", "600px");
+            arrangeCards();
+
+            $("#articles li").click(function () {
+                $(this).find(".card-content").toggleClass("open");
+                if ($(this).find(".card-content").hasClass("open")) {
+                    $("#articles li").eq(activeArticle).find("a").removeAttr("tabindex");
+                }
+            })
+
+            $('#articles li').keypress(function (e) {
+                var key = e.which;
+                if (key == 13)  // the enter key code
+                {
+                    $(this).find(".card-content").toggleClass("open");
+                    if ($(this).find(".card-content").hasClass("open")) {
+                        $("#articles li").eq(activeArticle).find("a").removeAttr("tabindex");
+                    }
+                    else {
+                        $("#articles li").eq(activeArticle).find("a").attr("tabindex", -1);
+                    }
+                    return false;
+                }
+            });
+
+            $(".card-content a").click(function (e) {
+                e.stopPropagation();
+            })
+        }
+
+        function arrangeCards() {
+            var order = 0;
+            for (var i = activeArticle; i < totalArticle; i++) {
+                $("#articles li").removeAttr("tabindex");
+                $("#articles li").eq(i).css("transform", "translate3d(0px, 0px, " + order * -50 + "px) rotateX(0deg)");
+                order++;
+            }
+            $("#articles .card-content").removeClass("open");
+            $("#articles li").eq(activeArticle).attr("tabindex", 0);
+            $("#articles li").eq(activeArticle).find("a").attr("tabindex", -1);
+            $("#articles li").eq(activeArticle).find(".open a").removeAttr("tabindex");
+        }
+
+        function nextCard() {
+            if (activeArticle < totalArticle - 1) {
+                $("nav button").removeAttr("disabled");
+                $("#articles li").eq(activeArticle).addClass("go-away");
+                activeArticle++;
+                arrangeCards();
+
+                if (activeArticle == totalArticle - 1)
+                    $(".next-article").attr("disabled", "");
+            }
+        }
+
+        function prevCard() {
+            if (activeArticle > 0) {
+                $("nav button").removeAttr("disabled");
+                activeArticle--;
+                $("#articles li").eq(activeArticle).removeClass("go-away");
+                arrangeCards();
+
+                if (activeArticle == 0)
+                    $(".prev-article").attr("disabled", "");
+            }
+        }
+
+        //swiping functions (from https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
+        function handleTouchStart(evt) {
+            xDown = evt.touches[0].clientX;
+            yDown = evt.touches[0].clientY;
+        };
+
+        function handleTouchMove(evt) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    nextCard();
+                } else {
+                    prevCard();
+                }
+            }
+            xDown = null;
+            yDown = null;
+        };
+
+        $(function () {
+            fetchFeed("https://www.soompi.com/fanclub/bts/feed/");
+
+            $(".prev-article").click(function () {
+                prevCard();
+            })
+            $(".next-article").click(function () {
+                nextCard();
+            })
+
+            //navigate with arrow keyboard
+            $(document).keydown(function (e) {
+                switch (e.which) {
+                    case 37: // left
+                        prevCard();
+                        break;
+
+                    case 38: // up
+                        prevCard();
+                        break;
+
+                    case 39: // right
+                        nextCard();
+                        break;
+
+                    case 40: // down
+                        nextCard();
+                        break;
+
+                    default: return;
+                }
+                e.preventDefault();
+            });
+
+            //swipe listener
+            document.getElementById("articles").addEventListener('touchstart', handleTouchStart, false);
+            document.getElementById("articles").addEventListener('touchmove', handleTouchMove, false);
+
+        })
+    </script>
+</body>
+
+</html>
