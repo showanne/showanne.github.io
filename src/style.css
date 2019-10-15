@@ -37,11 +37,11 @@ body {
 }
 
 /* 個人資訊 */
-#profile{
+/* #profile{
     display: none;
-}
+} */
 .active{
-    display: flex;
+    display: none;
 }
 
 .bg-profile {
