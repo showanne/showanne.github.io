@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聯絡資訊 - Anne's Portfolio</title>
+
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+    <!-- google fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Noto+Sans+TC|Noto+Serif+TC:600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/nav.css">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            /* font-family: 'Noto Sans TC', sans-serif; */
+            /* font-family: 'Noto Serif TC', serif; */
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* 個人資訊 */
+        .bg-profile {
+            /* background: #edf2f49c; */
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: flex;
+            width: 100%;
+            height: 85vh;
+            position: absolute;
+            z-index: 999;
+        }
+
+        .profile:before {
+            content: "X";
+            position: absolute;
+            width: 12px;
+            height: 10px;
+            top: 19px;
+            right: 19px;
+        }
+
+        .profile {
+            pointer-events: none;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            padding: 30px;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            width: 500px;
+            height: auto;
+            margin: auto;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        @media (max-width: 530px) {
+            .profile {
+                display: block;
+                width: 270px;
+            }
+        }
+
+        .profile:after {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            border-radius: 50%;
+            left: 0;
+            bottom: -50px;
+            box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile .profile-img {
+            width: 199px;
+            height: 199px;
+            display: inline-block;
+            text-align: center;
+            -webkit-animation: moveIn 1s 3.1s ease forwards;
+            animation: moveIn 1s 3.1s ease forwards;
+            -webkit-transform: translateZ(69px);
+            transform: translateZ(69px);
+        }
+
+        .profile .profile-img a {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            margin: 35px 30px;
+        }
+
+        .profile .profile-img a:after {
+            position: absolute;
+            content: "";
+            bottom: 3px;
+            right: 3px;
+            width: 20px;
+            height: 20px;
+            border: 4px solid rgb(249, 240, 250);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            background: -webkit-linear-gradient(top, #2196F3 0%, #2196F3 50%, #221177 50%, #221177 100%);
+            background: linear-gradient(#2196F3 0%, #2196F3 50%, #221177 50%, #221177 100%);
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            -webkit-animation: scaleIn 0.3s 3.5s ease forwards;
+            animation: scaleIn 0.3s 3.5s ease forwards;
+            -webkit-transform: translateZ(23px);
+            transform: translateZ(23px);
+        }
+
+        .profile .profile-img a>img {
+            width: 120px;
+            max-width: 100%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-transition: -webkit-box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease;
+            -webkit-box-shadow: 0px 0px 0px 8px rgba(207, 50, 255, 0.06);
+            box-shadow: 0px 0px 0px 8px rgba(207, 50, 255, 0.06);
+        }
+
+        .profile .profile-img a:hover>img {
+            -webkit-box-shadow: 0px 0px 0px 12px rgba(207, 50, 255, 0.1);
+            box-shadow: 0px 0px 0px 12px rgba(207, 50, 255, 0.1);
+        }
+
+        .profile .profile-content {
+            margin: auto;
+            text-align: center;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .profile .profile-content h1 {
+            letter-spacing: 5px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 500;
+        }
+
+        .profile h1 {
+            -webkit-transform: translateZ(100px);
+            transform: translateZ(100px);
+        }
+
+        .profile p {
+            -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+            display: block;
+            font-size: 1.1rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 3px;
+            margin: 0.9rem 0 0 0;
+        }
+
+        .profile p.related {
+            -webkit-transform: translateZ(80px);
+            transform: translateZ(80px);
+            letter-spacing: 1.5px;
+            margin: 0.9rem 0 0 0;
+        }
+        .profile small p{
+            letter-spacing: 1.3px;
+            margin: 1rem 0 0 0;
+        }
+
+        .profile a {
+            color: #35175c;
+            text-decoration: none;
+            pointer-events: auto;
+        }
+
+        .profile a:hover {
+            color: #8446e9;
+        }
+
+        .profile a i {
+            margin-right: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <div id="nav-section">
+        <!-- 這是menu -->
+        <!-- <div class="overlay-navigation">
+                <nav role="navigation">
+                    <ul>
+                        <li><a href="#" data-content="The beginning">Home</a></li>
+                        <li><a href="#" data-content="How about me?">About</a></li>
+                        <li><a href="#" data-content="What will I do?">Skills</a></li>
+                        <li><a href="#" data-content="Before, After.">Works</a></li>
+                        <li><a href="#" data-content="Contact me.">Contact</a></li>
+                    </ul>
+                </nav>
+            </div> -->
+
+        <div class="menu">
+            <a target="_blank" href="https://showanne.github.io/" class="logo">Anne's Portfolio</a>
+            <!-- 這是nav展開的選項 -->
+            <!-- <div class="open-overlay">
+                    <span class="bar-top"></span>
+                    <span class="bar-middle"></span>
+                    <span class="bar-bottom"></span>
+                </div> -->
+        </div>
+    </div>
+
+    <!-- 個人資訊 -->
+    <div id="profile" class="bg-profile">
+        <div class="profile">
+            <div class="profile-img">
+                <a target="_blank" href="#">
+                    <img src="https://cf.shopee.tw/file/b1b27381dac1bebe5247960b3d98df5c_tn" class="hoverZoomLink">
+                </a>
+            </div>
+            <div class="profile-content">
+                <h1>詹琇安</h1>
+                <p><a href="tel:0918184250"><i class="fas fa-phone-square"></i>0918-184250</a></p>
+                <p class="related">
+                    <a href="mailto:s85120ss@gmail.com"><i class="fas fa-envelope-open"></i>s85120ss@gmail.com</a>
+                </p>
+                <small>
+                    <p>如果您對我有興趣，<br>歡迎與我聯絡</p>
+                </small>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+    <!-- 卡片懸浮hover效果 -->
+    <script>
+        var profile = $(".profile");
+
+        $(document).on("mousemove", function (e) {
+            var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
+            var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
+            profile.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
+        });
+    </script>
+</body>
+
+</html>
