@@ -36,6 +36,9 @@ body {
     }
 }
 
+h1.anne{
+    display: none;
+}
 
 /* 作品 */
 .container {
