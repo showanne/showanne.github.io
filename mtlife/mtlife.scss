@@ -412,6 +412,9 @@ section#life{
             font-size: 2.5rem;
             padding: 0.5rem;
             color: $c3;
+            @media screen and (max-width: 576px) {
+                font-size: 1.9rem;
+                }
         }
         h5{
             letter-spacing: 1px;
@@ -428,6 +431,10 @@ section#life{
                 color: $c3;
                 position: relative;
                 /*定位槓槓（當槓槓的父元素）*/
+
+                @media screen and (max-width: 576px) {
+                    font-size: 1.5em;
+                }
             }
             span:before, span:after {
                 content: '';
@@ -438,6 +445,11 @@ section#life{
                 /*寬和高做出來的槓槓*/
                 width: 500%;
                 height: 1.7px;
+
+                @media screen and (max-width: 576px) {
+                    width: 420%;
+                    height: 1.3px;
+                }
             }
             /*調整槓槓的左右距離*/
             span:before {

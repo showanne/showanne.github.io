@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our supernews</title>
+
+
+
+  </head>
+
+  <body>
+
+      <section id="news">
+
+      </section>
+
+    <script>
+    
+    var section = document.querySelector('#news');
+    var requestURL = 'news.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+      var newsslider = request.response;
+      newsthing(newsslider);
+    }
+    function newsthing(jsonObj) {
+      var news = jsonObj['thing'];
+      for(var i = 0; i < news.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('img');
+        var myList = document.createElement('ul');
+        myH2.textContent = news[i].yyyy + '/' + news[i].mm + '/' + news[i].dd;
+        myPara1.textContent = news[i].title;
+        myPara2.textContent = news[i].detail;
+        myPara3.textContent = news[i].image;
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+        section.appendChild(myArticle);
+      }
+    }
+    </script>
+  </body>
+</html>

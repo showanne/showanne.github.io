@@ -466,6 +466,12 @@ section#life .row i {
   color: #0c2875;
 }
 
+@media screen and (max-width: 576px) {
+  section#life .row i {
+    font-size: 1.9rem;
+  }
+}
+
 section#life .row h5 {
   letter-spacing: 1px;
   line-height: 29px;
@@ -490,6 +496,12 @@ section#life .row p span {
   /*定位槓槓（當槓槓的父元素）*/
 }
 
+@media screen and (max-width: 576px) {
+  section#life .row p span {
+    font-size: 1.5em;
+  }
+}
+
 section#life .row p span:before, section#life .row p span:after {
   content: '';
   /*定位槓槓的位置*/
@@ -499,6 +511,13 @@ section#life .row p span:before, section#life .row p span:after {
   /*寬和高做出來的槓槓*/
   width: 500%;
   height: 1.7px;
+}
+
+@media screen and (max-width: 576px) {
+  section#life .row p span:before, section#life .row p span:after {
+    width: 420%;
+    height: 1.3px;
+  }
 }
 
 section#life .row p span:before {
