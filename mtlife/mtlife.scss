@@ -58,6 +58,22 @@ body {
     // }
 }
 
+/* 大標的樣式 */
+.title {
+    letter-spacing: 1rem;
+    position: relative;
+}
+
+.title:after {
+    content: '';
+    position: absolute;
+    top:10px;
+    left: 509px;
+    background-color: rgba(134, 215, 252, 0.5);
+    width: 13%;
+    height: 23px;
+}
+
 /* 通用 */
 .pt-56 {
     padding-top: 56px;
@@ -550,6 +566,11 @@ section#about{
     @media screen and (max-width: 576px) {
         height: 105vh;
     }
+    .title:after {
+        left: 800px;
+        // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
+        width: 8%;
+    }
     .row{
         margin: 0;
     }
@@ -560,18 +581,18 @@ section#about{
             background-position: center;
             background-attachment: fixed;
             width: 100vw;
-            height: calc(100vh - 89px);
+            height: calc(100vh - 217px);
             @media screen and (max-width: 576px) {
                 height: 55vh;
             }
         }
         .story{
             position: absolute;
-            top: 50px;
-            right: 155px;
-            background-color: $c2;
-            width: 550px;
-            height: 550px;
+            top: 250px;
+            right: 355px;
+            // background-color: $c2;
+            // width: 550px;
+            // height: 550px;
             border-radius: 50%;
             display: flex;
             flex-flow: column;

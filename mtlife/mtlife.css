@@ -45,6 +45,22 @@ body {
   font-size: 0.625rem !important;
 }
 
+/* 大標的樣式 */
+.title {
+  letter-spacing: 1rem;
+  position: relative;
+}
+
+.title:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 509px;
+  background-color: rgba(134, 215, 252, 0.5);
+  width: 13%;
+  height: 23px;
+}
+
 /* 通用 */
 .pt-56 {
   padding-top: 56px;
@@ -626,6 +642,11 @@ section#about {
   }
 }
 
+section#about .title:after {
+  left: 800px;
+  width: 8%;
+}
+
 section#about .row {
   margin: 0;
 }
@@ -639,7 +660,7 @@ section#about .col .story-img {
   background-position: center;
   background-attachment: fixed;
   width: 100vw;
-  height: calc(100vh - 89px);
+  height: calc(100vh - 217px);
 }
 
 @media screen and (max-width: 576px) {
@@ -650,11 +671,8 @@ section#about .col .story-img {
 
 section#about .col .story {
   position: absolute;
-  top: 50px;
-  right: 155px;
-  background-color: #c9d9f8;
-  width: 550px;
-  height: 550px;
+  top: 250px;
+  right: 355px;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
