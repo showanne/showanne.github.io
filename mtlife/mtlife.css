@@ -547,9 +547,16 @@ section#life .row p span:before, section#life .row p span:after {
   height: 1.7px;
 }
 
+@media screen and (max-width: 880px) {
+  section#life .row p span:before, section#life .row p span:after {
+    width: 763%;
+    height: 1.3px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   section#life .row p span:before, section#life .row p span:after {
-    width: 420%;
+    width: 616%;
     height: 1.3px;
   }
 }
@@ -659,10 +666,31 @@ section#about .title:after {
   width: 8%;
 }
 
+@media screen and (max-width: 1200px) {
+  section#about .title:after {
+    left: 422px;
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  section#about .title:after {
+    left: 443px;
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 895px) {
+  section#about .title:after {
+    left: 302px;
+    width: 19%;
+  }
+}
+
 @media screen and (max-width: 576px) {
-  section#about .title:after .title:after {
-    left: 223px;
-    width: 27%;
+  section#about .title:after {
+    left: 224px;
+    width: 25%;
   }
 }
 
@@ -706,6 +734,13 @@ section#about .col .story {
   color: #1956c7;
 }
 
+@media screen and (max-width: 800px) {
+  section#about .col .story {
+    top: 135px;
+    right: 22px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   section#about .col .story {
     top: 19px;
@@ -724,6 +759,34 @@ section#about .col .story {
 section#photo .title:after {
   left: 800px;
   width: 8%;
+}
+
+@media screen and (max-width: 1200px) {
+  section#photo .title:after {
+    left: 422px;
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  section#photo .title:after {
+    left: 443px;
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 895px) {
+  section#photo .title:after {
+    left: 302px;
+    width: 19%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section#photo .title:after {
+    left: 224px;
+    width: 25%;
+  }
 }
 
 section#photo a {

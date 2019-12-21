@@ -478,8 +478,13 @@ section#life{
                 width: 500%;
                 height: 1.7px;
 
+                @media screen and (max-width: 880px) {
+                    width: 763%;
+                    height: 1.3px;
+                }
+
                 @media screen and (max-width: 576px) {
-                    width: 420%;
+                    width: 616%;
                     height: 1.3px;
                 }
             }
@@ -585,14 +590,24 @@ section#about{
         // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
         width: 8%;
 
-        @media screen and (max-width: 576px){
-            .title:after {
-                left: 223px;
-                width: 27%;
+        @media screen and (max-width: 1200px){
+            left: 422px;
+            width: 14%;
+        }
+        @media screen and (max-width: 1080px) {
+            left: 443px;
+            width: 14%;
+        }
+        @media screen and (max-width: 895px) {
+            left: 302px;
+            width: 19%;
+        }
+        @media screen and (max-width: 576px) {
+                left: 224px;
+                width: 25%;
             }
         }
 
-    }
     .row{
         margin: 0;
     }
@@ -618,6 +633,11 @@ section#about{
             font-size: 15pt;
             color: $c4;
             
+            @media screen and (max-width: 800px){
+                top: 135px;
+                right: 22px;
+            }
+            
             @media screen and (max-width: 576px) {
                 top: 19px;
                 right: 7px;
@@ -640,6 +660,23 @@ section#photo{
         left: 800px;
         // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
         width: 8%;
+
+        @media screen and (max-width: 1200px){
+            left: 422px;
+            width: 14%;
+        }
+        @media screen and (max-width: 1080px) {
+            left: 443px;
+            width: 14%;
+        }
+        @media screen and (max-width: 895px) {
+            left: 302px;
+            width: 19%;
+        }
+        @media screen and (max-width: 576px) {
+                left: 224px;
+                width: 25%;
+        }
     }
     a {
         text-decoration: none;
