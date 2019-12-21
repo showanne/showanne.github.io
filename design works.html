@@ -10,7 +10,7 @@
 
     <style>
         body {
-            font-family: '微軟正黑體', sans-serif;
+            font-family: sans-serif;
             margin: 0;
             background: #f2f2f2;
         }
@@ -54,7 +54,8 @@
             padding: 1em;
             margin: 0 0 1.5em;
             width: 100%;
-            -webkit-transition: 1s ease all;
+            /* -webkit-transition: 1s ease all; */
+            /* 黃底線問題 暫時註記 */
             box-sizing: border-box;
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
@@ -65,7 +66,7 @@
             max-width: 100%;
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 320px) {
             .masonry {
                 -moz-column-count: 1;
                 -webkit-column-count: 1;
@@ -73,7 +74,7 @@
             }
         }
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (min-width: 321px) and (max-width: 768px) {
             .masonry {
                 -moz-column-count: 2;
                 -webkit-column-count: 2;
@@ -81,7 +82,7 @@
             }
         }
 
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (min-width: 769px) and (max-width: 1200px) {
             .masonry {
                 -moz-column-count: 3;
                 -webkit-column-count: 3;
@@ -97,6 +98,7 @@
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -141,7 +143,30 @@
             海報 - OOO
             <img src="./src/img/XXX">
         </div>
-
+        <div class="item">
+            山居歲月
+            <img src="./src/img/0-mtlife.png">
+        </div>
+        <div class="item">
+            木門咖啡
+            <img src="./src/img/0-wdcafe.png">
+        </div>
+        <div class="item">
+            PS 接景
+            <img src="./src/img/1-Matte Painting.jpg">
+        </div>
+        <div class="item">
+            名片 - 民眾技藝
+            <img src="./src/img/2-card_pclearning.jpg">
+        </div>
+        <div class="item">
+            名片 - 廣豐燒臘
+            <img src="./src/img/3-card_eat.jpg">
+        </div>
+        <div class="item">
+            名片 - 王子的衣
+            <img src="./src/img/4-card_clothes.jpg">
+        </div>
 
 
 
