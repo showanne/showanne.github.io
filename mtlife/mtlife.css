@@ -19,16 +19,6 @@ body {
   font-size: 1.32rem !important;
 }
 
-@media screen and (max-width: 576px) {
-  .h2, h2 {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    display: inline-block;
-    line-height: 1.9 !important;
-    font-weight: 700 !important;
-  }
-}
-
 .h3, h3 {
   font-size: 1.125rem !important;
 }
@@ -56,9 +46,37 @@ body {
   position: absolute;
   top: 10px;
   left: 509px;
-  background-color: rgba(134, 215, 252, 0.5);
-  width: 13%;
   height: 23px;
+  width: 13%;
+  background-color: rgba(134, 215, 252, 0.5);
+}
+
+@media screen and (max-width: 1200px) {
+  .title:after {
+    left: 422px;
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .title:after {
+    left: 419px;
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 895px) {
+  .title:after {
+    left: 302px;
+    width: 19%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title:after {
+    left: 210px;
+    width: 27%;
+  }
 }
 
 /* 通用 */
@@ -630,21 +648,22 @@ section#news .row .date {
   line-height: 18px;
 }
 
-/* 山居故事 + 美好歲月 */
+/* 山居故事 */
 section#about {
   position: relative;
   height: unset;
 }
 
-@media screen and (max-width: 576px) {
-  section#about {
-    height: 105vh;
-  }
-}
-
 section#about .title:after {
   left: 800px;
   width: 8%;
+}
+
+@media screen and (max-width: 576px) {
+  section#about .title:after .title:after {
+    left: 223px;
+    width: 27%;
+  }
 }
 
 section#about .row {
@@ -660,7 +679,7 @@ section#about .col .story-img {
   background-position: center;
   background-attachment: fixed;
   width: 100vw;
-  height: calc(100vh - 217px);
+  height: calc(100vh - 257px);
 }
 
 @media screen and (max-width: 576px) {
@@ -671,9 +690,8 @@ section#about .col .story-img {
 
 section#about .col .story {
   position: absolute;
-  top: 250px;
-  right: 355px;
-  border-radius: 50%;
+  top: 189px;
+  right: 359px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -681,25 +699,17 @@ section#about .col .story {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   font-size: 15pt;
   color: #1956c7;
 }
 
 @media screen and (max-width: 576px) {
   section#about .col .story {
-    top: unset;
-    right: 1px;
-    bottom: -239px;
-    width: 330px !important;
-    height: 300px !important;
-    width: unset;
-    height: unset;
+    top: 19px;
+    right: 7px;
   }
   section#about .col .story h3 {
     font-size: 1.25rem;
@@ -710,37 +720,23 @@ section#about .col .story {
   }
 }
 
-section#about .col a {
+/* 美好歲月 */
+section#photo .title:after {
+  left: 800px;
+  width: 8%;
+}
+
+section#photo a {
   text-decoration: none;
 }
 
-section#about .col a .photo {
-  position: absolute;
-  right: 183px;
-  left: unset;
-  bottom: 53px;
-  background-color: #c9d9f8;
-  width: 155px;
-  height: 155px;
-  border-radius: 50%;
-  font-size: 15pt;
-  line-height: 155px;
-  color: #1956c7;
-  -webkit-filter: drop-shadow(1px 1px 1.5px #0c2875);
-          filter: drop-shadow(1px 1px 1.5px #0c2875);
+section#photo a img {
+  width: 50%;
 }
 
-@media screen and (max-width: 576px) {
-  section#about .col a .photo {
-    right: unset;
-    left: 43px;
-    bottom: -264px;
-    display: inline-block;
-    width: unset;
-    height: unset;
-    border-radius: 3px;
-    line-height: unset;
-    letter-spacing: 0.15rem;
+@media screen and (max-width: 768px) {
+  section#photo a img {
+    width: 95vw;
   }
 }
 

@@ -23,15 +23,15 @@ body {
 }
 .h2, h2{
     font-size: 1.32rem !important;
-    @media screen and (max-width: 576px) {
-        // font-size: 1.85rem !important;
-        border-top: 1px solid;
-        border-bottom: 1px solid;
-        display: inline-block;
-        line-height: 1.9 !important;
-        font-weight: 700 !important;
+    // @media screen and (max-width: 576px) {
+    //     // font-size: 1.85rem !important;
+    //     border-top: 1px solid;
+    //     border-bottom: 1px solid;
+    //     display: inline-block;
+    //     line-height: 1.9 !important;
+    //     font-weight: 700 !important;
         
-    }
+    // }
 }
 .h3, h3{
     font-size: 1.125rem !important;
@@ -69,9 +69,25 @@ body {
     position: absolute;
     top:10px;
     left: 509px;
-    background-color: rgba(134, 215, 252, 0.5);
-    width: 13%;
     height: 23px;
+    width: 13%;
+    background-color: rgba(134, 215, 252, 0.5);
+        @media screen and (max-width: 1200px){
+            left: 422px;
+            width: 14%;
+        }
+        @media screen and (max-width: 1080px) {
+            left: 419px;
+            width: 15%;
+        }
+        @media screen and (max-width: 895px) {
+            left: 302px;
+            width: 19%;
+        }
+        @media screen and (max-width: 576px) {
+            left: 210px;
+            width: 27%;
+        }
 }
 
 /* 通用 */
@@ -559,17 +575,23 @@ section#news{
     }    
 }
 
-/* 山居故事 + 美好歲月 */
+/* 山居故事 */
 section#about{
     position: relative;
     height: unset;
-    @media screen and (max-width: 576px) {
-        height: 105vh;
-    }
+
     .title:after {
         left: 800px;
         // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
         width: 8%;
+
+        @media screen and (max-width: 576px){
+            .title:after {
+                left: 223px;
+                width: 27%;
+            }
+        }
+
     }
     .row{
         margin: 0;
@@ -581,34 +603,25 @@ section#about{
             background-position: center;
             background-attachment: fixed;
             width: 100vw;
-            height: calc(100vh - 217px);
+            height: calc(100vh - 257px);
             @media screen and (max-width: 576px) {
                 height: 55vh;
             }
         }
         .story{
             position: absolute;
-            top: 250px;
-            right: 355px;
-            // background-color: $c2;
-            // width: 550px;
-            // height: 550px;
-            border-radius: 50%;
+            top: 189px;
+            right: 359px;
             display: flex;
             flex-flow: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
             font-size: 15pt;
             color: $c4;
             
             @media screen and (max-width: 576px) {
-                top: unset;
-                right: 1px;
-                bottom: -239px;
-                width: 330px !important;
-                height: 300px !important;
-                width: unset;
-                height: unset;
+                top: 19px;
+                right: 7px;
+
                 h3{
                     font-size: 1.25rem;
                     margin-top: 1.75rem;
@@ -618,36 +631,24 @@ section#about{
                 }
             }
          }
-         a{
-            text-decoration: none;
-            .photo{
-                position: absolute;
-                right: 183px;
-                left: unset;
-                bottom: 53px;
-                background-color: $c2;
-                width: 155px;
-                height: 155px;
-                border-radius: 50%;
-                font-size: 15pt;
-                line-height: 155px;
-                color: $c4;
-                filter:drop-shadow(1px 1px 1.5px $c3);
+    }
+}
 
-                @media screen and (max-width: 576px) {
-                    right: unset;
-                    left: 43px;
-                    bottom: -264px;
-                    display: inline-block;
-                    width: unset;
-                    height: unset;
-                    border-radius: 3px;
-                    line-height:unset;
-                    letter-spacing: 0.15rem;
-                }
+/* 美好歲月 */
+section#photo{
+    .title:after {
+        left: 800px;
+        // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
+        width: 8%;
+    }
+    a {
+        text-decoration: none;
+        img {
+            width: 50%;
+            @media screen and (max-width: 768px){
+                width: 95vw;
             }
-         }
-        
+        }
     }
 }
 
