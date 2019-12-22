@@ -586,9 +586,9 @@ section#about{
     height: unset;
 
     .title:after {
-        left: 800px;
+        left: 716px;
         // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
-        width: 8%;
+        width: 9%;
 
         @media screen and (max-width: 1200px){
             left: 422px;
@@ -657,9 +657,9 @@ section#about{
 /* 美好歲月 */
 section#photo{
     .title:after {
-        left: 800px;
+        left: 716px;
         // 大標的底線位置，由於此區的 relative 是不同地方，導致位置有位移
-        width: 8%;
+        width: 9%;
 
         @media screen and (max-width: 1200px){
             left: 422px;

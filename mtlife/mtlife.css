@@ -662,8 +662,8 @@ section#about {
 }
 
 section#about .title:after {
-  left: 800px;
-  width: 8%;
+  left: 716px;
+  width: 9%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -757,8 +757,8 @@ section#about .col .story {
 
 /* 美好歲月 */
 section#photo .title:after {
-  left: 800px;
-  width: 8%;
+  left: 716px;
+  width: 9%;
 }
 
 @media screen and (max-width: 1200px) {
