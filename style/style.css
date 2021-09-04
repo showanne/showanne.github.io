@@ -82,7 +82,7 @@ img {
     max-width: 100%;
 }
 
-.card {
+/* .card {
     width: 300px;
     background: white;
     border-radius: 8px;
@@ -158,7 +158,7 @@ img {
 
 .image-shadow {
     z-index: 1 !important;
-}
+} */
 
 footer {
     position: relative;

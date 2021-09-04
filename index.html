@@ -2,74 +2,75 @@
 <html lang="zh-tw">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anne's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anne's Portfolio</title>
 
-    <!-- fontawesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+  <!-- fontawesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
 
-    <!-- nav -->
-    <link rel="stylesheet" href="style/nav.css">
-    <link rel="stylesheet" href="style/style.css">
+  <!-- nav -->
+  <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/card.css">
+  <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <!-- 背景 -->
-    <css-doodle class="doodle doodle-bg">
-        :doodle {
-        @grid: 9 / 100vmax;
-        background: #fff;
-        cursor: pointer;
+  <!-- 背景 -->
+  <css-doodle class="doodle doodle-bg">
+    :doodle {
+    @grid: 9 / 100vmax;
+    background: #fff;
+    cursor: pointer;
 
-        }
-        :doodle(:hover) { --s: 1 ; }
+    }
+    :doodle(:hover) { --s: 1 ; }
 
-        :after {
-        content: @pick(a,A);
-        font-size: 4vmax;
-        color: #000;
-        transform: scale(@rand(.2, .9));
+    :after {
+    content: @pick(a,A);
+    font-size: 4vmax;
+    color: #000;
+    transform: scale(@rand(.2, .9));
 
-        }
+    }
 
-        transition: .5s cubic-bezier(.175, .885, .32, 1.275);
-        transition-delay: @rand(650ms);
-        transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
+    transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+    transition-delay: @rand(650ms);
+    transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
 
-    </css-doodle>
+  </css-doodle>
 
-    <!-- NAV -->
-    <div id="nav-section">
-        <!-- 這是menu -->
-        <div class="overlay-navigation">
-            <nav role="navigation">
-                <ul>
-                    <li><a href="./index.html" data-content="The beginning">Home</a></li>
-                    <li><a href="./skills.html" data-content="What will I do?">Skills</a></li>
-                    <li><a href="#" data-content="Before, After.">Works</a></li>
-                    <!-- 放 cakeresume 履歷網址 -->
-                    <li><a href="./design.html" data-content="How about my graphic design?">Design</a></li>
-                    <li><a href="./profile.html" data-content="Contact me.">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <h1 class="anne">詹琇安</h1>
-
-        <div class="menu">
-            <a href="./profile.html" class="logo" title="詹琇安的作品集">Anne's Portfolio</a>
-            <!-- 這是nav展開的選項 -->
-            <div class="open-overlay">
-                <span class="bar-top"></span>
-                <span class="bar-middle"></span>
-                <span class="bar-bottom"></span>
-            </div>
-        </div>
+  <!-- NAV -->
+  <div id="nav-section">
+    <!-- 這是menu -->
+    <div class="overlay-navigation">
+      <nav role="navigation">
+        <ul>
+          <li><a href="./index.html" data-content="The beginning">Home</a></li>
+          <li><a href="./skills.html" data-content="What will I do?">Skills</a></li>
+          <li><a href="#" data-content="Before, After.">Works</a></li>
+          <!-- 放 cakeresume 履歷網址 -->
+          <li><a href="./design.html" data-content="How about my graphic design?">Design</a></li>
+          <li><a href="./profile.html" data-content="Contact me.">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- 個人資訊 -->
-    <!-- <div id="profile" class="bg-profile">
+
+    <h1 class="anne">詹琇安</h1>
+
+    <div class="menu">
+      <a href="./profile.html" class="logo" title="詹琇安的作品集">Anne's Portfolio</a>
+      <!-- 這是nav展開的選項 -->
+      <div class="open-overlay">
+        <span class="bar-top"></span>
+        <span class="bar-middle"></span>
+        <span class="bar-bottom"></span>
+      </div>
+    </div>
+  </div>
+  <!-- 個人資訊 -->
+  <!-- <div id="profile" class="bg-profile">
         <div class="profile">
             <div class="profile-img">
                 <a target="_blank" href="#">
@@ -89,339 +90,167 @@
         </div>
     </div> -->
 
-    <h1 class="anne">詹琇安</h1>
+  <h1 class="anne">詹琇安</h1>
 
-    <!-- 作品 -->
-    <section>
-        <div class="container">
-            <!-- DTNS -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    功能
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-DTNS.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">DTNS</div>
-                        <a class="card_btn" target="_blank"
-                           href="https://showanne.github.io/DTNS/#/?openExternalBrowser=1">
-                            <i class="fas fa-link"></i>
-                        </a>
-                    </div>
-                </div>
+  <!-- 作品 -->
+  <section>
+    <ul class="grid cardUL"></ul>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="d-flex center m-1">
+      <a href="tel:0918184250"><i class="fas fa-phone-square"></i></a>
+      <a href="https://line.me/ti/p/DsjxgOy4cO"><i class="fab fa-line"></i></a>
+      <a href="mailto:showanne.e@gmail.com"><i class="fas fa-envelope-square"></i></a>
+      <p>Copyright © 2021 Anne's</p>
+    </div>
+    <div class="d-flex center m-n1">
+      <p>本網頁之圖片來源皆為網路，如有侵權，煩請來信告知～</p>
+    </div>
+  </footer>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- css-doodle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+
+  <!-- image-shadow js -->
+  <script src="https://cdn.jsdelivr.net/gh/tunguskha/Image-shadow@latest/assets/js/image-shadow.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- nav -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+  <script src="./script/nav.js"></script>
+
+  <!-- card effect -->
+  <script src="./script/modernizr.custom.js"></script>
+  <script src="./script/toucheffects.js"></script>
+
+  <script>
+    const profileData = [
+      {
+        title: 'DTNS',
+        used: ['Vue', 'VueMaterialUI', 'RWD', 'Axios', 'Sass', 'ESLint', 'PWA'],
+        showImg: 'show-DTNS.jpg',
+        webLink: 'https://showanne.github.io/DTNS/#/?openExternalBrowser=1'
+      },
+      {
+        title: 'Stock.Find',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-linebot.jpg',
+        webLink: 'https://line.me/R/ti/p/@625frasl'
+      },
+      {
+        title: '木門咖啡',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-wdcoffee.jpg',
+        webLink: 'https://woodendoorcafe.github.io/?openExternalBrowser=1'
+      },
+      {
+        title: '山居歲月',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-mtlife.jpg',
+        webLink: 'https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1'
+      },
+      {
+        title: '番茄鐘',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-pomodoro.jpg',
+        webLink: 'https://showanne.github.io/Vue-pomodoro/#/'
+      },
+      {
+        title: 'To Do List',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-ToDoList.jpg',
+        webLink: 'https://showanne.github.io/Vue-ToDoList/'
+      },
+      {
+        title: '射氣球',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-balloon_darts.jpg',
+        webLink: 'https://showanne.github.io/JQ-BalloonDarts/'
+      },
+      {
+        title: '打字樂',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-keyboard.jpg',
+        webLink: 'https://showanne.github.io/JS-wam/practice-keyboard/'
+      },
+      {
+        title: '抓貓趣',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-HamsterGame.jpg',
+        webLink: 'https://showanne.github.io/JS-wam/practice-HamsterGame/HamsterGame.html'
+      },
+      // {
+      //   title: '踩地雷',
+      //   u[sed: '',]
+      //   showImg: '',
+      //   webLink: ''
+      // },
+      {
+        title: '可愛時鐘',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-clock.jpg',
+        webLink: 'https://showanne.github.io/JS-clockBao/'
+      },
+      {
+        title: '天氣卡片',
+        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        showImg: 'show-weather.jpg',
+        webLink: 'https://showanne.github.io/weathercard/'
+      },
+      // {
+      //   title: '哈利波特',
+      //   u[sed: 'RWD'],
+      //   showImg: 'show-HarryPotter.jpg',
+      //   webLink: 'https://showanne.github.io/HarryPotter/'
+      // },
+      {
+        title: '平面設計作品',
+        used: ['AI', 'PS'],
+        showImg: 'show-design.jpg',
+        webLink: './design.html'
+      }
+    ]
+
+    for (let i = 0; i < profileData.length; i++) {
+      $('ul.grid').append(`
+        <li>
+					<figure>
+            <h3 class="card_title">` + profileData[i].title + `</h3>
+						<div>
+              <img src="./src/webImg/` + profileData[i].showImg + `" alt=` + profileData[i].title + `>
             </div>
-
-            <!-- linebot -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    功能
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-linebot.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">Stock.Find</div>
-                        <a class="card_btn" target="_blank" href="https://line.me/R/ti/p/@625frasl">
-                            <i class="fas fa-link"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 木門咖啡 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-eat"></div>
-                    餐飲
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-wdcoffee.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">木門咖啡</div>
-                        <a class="card_btn" href="https://woodendoorcafe.github.io/?openExternalBrowser=1"
-                           target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 山居歲月 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-live"></div>
-                    旅宿
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-mtlife.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">山居歲月</div>
-                        <a class="card_btn" href="https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1"
-                           target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 番茄鐘 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    功能
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-pomodoro.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">番茄鐘</div>
-                        <a class="card_btn" href="https://showanne.github.io/Vue-pomodoro/#/" target="_blank"><i
-                               class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- To Do List -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    功能
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-ToDoList.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">To Do List</div>
-                        <a class="card_btn" href="https://showanne.github.io/Vue-ToDoList/" target="_blank"><i
-                               class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 射氣球 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-play"></div>
-                    遊戲
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-balloon_darts.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">射氣球</div>
-                        <a class="card_btn" href="https://showanne.github.io/JQ-BalloonDarts/" target="_blank"><i
-                               class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- 打字樂 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-play"></div>
-                    遊戲
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-keyboard.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">打字樂</div>
-                        <a class="card_btn" href="https://showanne.github.io/JS-wam/practice-keyboard/"
-                           target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 抓貓趣 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-play"></div>
-                    遊戲
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-HamsterGame.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">抓貓趣</div>
-                        <a class="card_btn" href="https://showanne.github.io/JS-wam/practice-HamsterGame/HamsterGame.html"
-                           target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 可愛時鐘 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    功能
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true" src="./src/webImg/show-clock.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">可愛時鐘</div>
-                        <a class="card_btn" href="https://showanne.github.io/JS-clockBao/" target="_blank"><i
-                               class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 天氣卡片 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    其他
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true"
-                                 src="./src/webImg/show-weather.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">天氣卡片</div>
-                        <a class="card_btn" href="https://showanne.github.io/weathercard/?openExternalBrowser=1"
-                           target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 哈利波特 -->
-            <!-- <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-movie"></div>
-                    電影
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true"
-                                src="https://images.csmonitor.com/csmarchives/2011/07/poster.jpg?alias=standard_900x600nc">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">哈利波特</div>
-                        <a class="card_btn" href="https://showanne.github.io/HarryPotter/?openExternalBrowser=1"
-                            target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- 平面設計作品 -->
-            <div class="m-1">
-                <div class="card_item" data-aos="zoom-in">
-                    <div class="card_item_line color-other"></div>
-                    其他
-                </div>
-                <div class="card">
-                    <div class="card_img">
-                        <div class="ishadow">
-                            <img data-blur="20" data-hover="true"
-                                 src="./src/webImg/show-design.jpg">
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <div class="card_title">平面設計作品</div>
-                        <a class="card_btn" href="./design.html" target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- footer -->
-    <footer>
-        <div class="d-flex center m-1">
-            <a href="tel:0918184250"><i class="fas fa-phone-square"></i></a>
-            <a href="https://line.me/ti/p/DsjxgOy4cO"><i class="fab fa-line"></i></a>
-            <a href="mailto:showanne.e@gmail.com"><i class="fas fa-envelope-square"></i></a>
-            <p>Copyright © 2021 Anne's</p>
-        </div>
-        <div class="d-flex center m-n1">
-            <p>本網頁之圖片來源皆為網路，如有侵權，煩請來信告知～</p>
-        </div>
-    </footer>
-
-    <!-- jQuery JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- css-doodle -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+						<figcaption>
+							<h3>` + profileData[i].title + `</h3>
+              <ul class="usedList">
+                
+              </ul>
+							<a target="_blank" href=` + profileData[i].webLink + `>
+                <i class="fas fa-link"></i>
+              </a>
+						</figcaption>
+					</figure>
+				</li>
+      `)
+      // for (let j = 0; j < profileData[i].used.length; j++) {
+      //   console.log(i, j, profileData[i].used[j]);
+      //   $('ul.usedList').append(`
+      //   <li class="tag">` + profileData[i].used[j] + `</li>
+      //   `)
+      // }
+    }
     
-    <!-- image-shadow js -->
-    <script src="https://cdn.jsdelivr.net/gh/tunguskha/Image-shadow@latest/assets/js/image-shadow.min.js"></script>
-    
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-        </script>
-
-    <!-- nav -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
-    <script src="./script/nav.js"></script>
-
-    <!-- 卡片懸浮hover效果 -->
-    <!-- <script>
-        var profile = $(".profile");
-
-        $(document).on("mousemove", function (e) {
-            var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
-            var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
-            profile.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
-        });
-    </script> -->
-
-    <!-- 點logo出現卡片 -->
-    <!-- <script>
-        var logo = document.querySelector(".logo");
-        var card = document.querySelector("#profile");
-        var exit = document.querySelector(".profile:before");
-        var outside = document.querySelector(".bg-profile");
-        
-
-        logo.onclick = function () {
-            card.classList.toggle("active")
-        };
-        exit.onclick = function () {
-            card.classList.add("active")
-        };
-        outside.onclick = function () {
-            card.classList.add("active")
-        }
-        // 想做3個效果 1.點logo 2.點X 3.點外圍空白 皆可關閉卡片
-    </script> -->
+  </script>
 </body>
 
 </html>
