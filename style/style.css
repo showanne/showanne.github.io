@@ -26,7 +26,7 @@ body {
 .doodle-bg {
     padding: 8vh 0;
     width: 100vw;
-    height: 92vh;
+    height: 166vh;
     /* 100vh-8vh (padding的 footer 的高度) = 92vh */
 }
 
