@@ -235,7 +235,7 @@
 						<figcaption>
 							<h3>` + profileData[i].title + `</h3>
               <ul class="usedList">
-                
+
               </ul>
 							<a target="_blank" href=` + profileData[i].webLink + `>
                 <i class="fas fa-link"></i>
@@ -247,6 +247,7 @@
 					</figure>
 				</li>
       `)
+
       for (let j = 0; j < profileData[i].used.length; j++) {
         console.log(i, j, profileData[i].used[j]);
         $('ul.usedList, ul.usedList-M').append(`

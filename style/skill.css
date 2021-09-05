@@ -88,7 +88,7 @@ a {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   position: absolute;
   margin-left: -140px;
   top: 20%;
@@ -96,7 +96,7 @@ a {
 
 .list a {
   display: block;
-  color: #fff;
+  color: #29363b;
 }
 
 .list a:hover {
@@ -109,8 +109,8 @@ a {
   background: #E0FBAC;
   margin: 0;
   height: 55px;
-  width: 270px;
-  color: #fff;
+  width: 282px;
+  color: #29363b;
 }
 
 .list dt {
@@ -123,16 +123,16 @@ a {
   transform: translateZ(0.3px);
 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .list dd {
 
   border-top: 1px dashed rgba(255,255,255,0.3);
-  line-height: 35px;
-  font-size: 11px;
-  height: 35px;
   margin: 0;
+  line-height: 46px;
+  font-size: 20px;
+  height: 46px;
 }
 
 /* UI */
@@ -220,14 +220,13 @@ a {
 
 /* Individual styles */
 
-.sashimi dt, .sashimi dd, .sashimi a { background: #73C8A9; }
-.nigiri dt, .nigiri dd, .nigiri a { background: #E32551; }
-.maki dt, .maki dd, .maki a { background: #FFC219; }
+.sashimi dt, .sashimi dd, .sashimi a { background: #99b998; }
+.nigiri dt, .nigiri dd, .nigiri a { background: #ea495f; }
+.maki dt, .maki dd, .maki a { background: #fdcea9; }
 
-.sashimi a:hover { background: #61c19e; }
-.nigiri a:hover { background: #d31b46; }
-.maki a:hover { background: #ffbb00; }
-
+.sashimi a:hover { background: #93ba92; }
+.nigiri a:hover { background: #ec4259; }
+.maki a:hover { background: #fbc79f; }
 .nigiri {
 
   -webkit-transform: perspective(1200px) rotateY(27deg) !important;
