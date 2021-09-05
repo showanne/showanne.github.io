@@ -226,10 +226,12 @@
       $('ul.grid').append(`
         <li>
 					<figure>
-            <h3 class="card_title">` + profileData[i].title + `</h3>
-						<div>
-              <img src="./src/webImg/` + profileData[i].showImg + `" alt=` + profileData[i].title + `>
-            </div>
+              <h3 class="card_title">` + profileData[i].title + `</h3>
+              <div>
+                <a target="_blank" href=` + profileData[i].webLink + `>
+                  <img src="./src/webImg/` + profileData[i].showImg + `" alt=` + profileData[i].title + `>
+                </a>
+              </div>
 						<figcaption>
 							<h3>` + profileData[i].title + `</h3>
               <ul class="usedList">
@@ -239,15 +241,18 @@
                 <i class="fas fa-link"></i>
               </a>
 						</figcaption>
+            <ul class="usedList-M">
+                
+            </ul>
 					</figure>
 				</li>
       `)
-      // for (let j = 0; j < profileData[i].used.length; j++) {
-      //   console.log(i, j, profileData[i].used[j]);
-      //   $('ul.usedList').append(`
-      //   <li class="tag">` + profileData[i].used[j] + `</li>
-      //   `)
-      // }
+      for (let j = 0; j < profileData[i].used.length; j++) {
+        console.log(i, j, profileData[i].used[j]);
+        $('ul.usedList, ul.usedList-M').append(`
+          <li class="tag">` + profileData[i].used[j] + `</li>
+        `)
+      }
     }
     
   </script>
