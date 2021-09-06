@@ -12,13 +12,15 @@
 
   <!-- nav -->
   <link rel="stylesheet" href="style/nav.css">
+
   <link rel="stylesheet" href="style/card.css">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/doodle.css">
 </head>
 
 <body>
   <!-- 背景 -->
-  <css-doodle class="doodle doodle-bg">
+  <!-- <css-doodle class="doodle doodle-bg">
     :doodle {
     @grid: 9 / 100vmax;
     background: #fff;
@@ -39,7 +41,11 @@
     transition-delay: @rand(650ms);
     transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
 
-  </css-doodle>
+  </css-doodle> -->
+
+  <div id="bg">
+    <css-doodle use="var(--rule)"></css-doodle>
+  </div>
 
   <!-- NAV -->
   <div id="nav-section">
@@ -114,7 +120,8 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <!-- css-doodle -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script> -->
 
   <!-- image-shadow js -->
   <script src="https://cdn.jsdelivr.net/gh/tunguskha/Image-shadow@latest/assets/js/image-shadow.min.js"></script>
@@ -138,7 +145,7 @@
     const profileData = [
       {
         title: 'DTNS',
-        used: ['Vue', 'VueMaterialUI', 'RWD', 'Axios', 'Sass', 'ESLint', 'PWA'],
+        used: ['前端', 'Vue', 'VueMaterialUI', 'RWD', 'Axios', 'Sass', 'ESLint', 'PWA', '後端', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'cors', 'jwt', 'Line login', 'Heroku' ],
         showImg: 'show-DTNS.jpg',
         webLink: 'https://showanne.github.io/DTNS/#/?openExternalBrowser=1'
       },
@@ -150,43 +157,43 @@
       },
       {
         title: '木門咖啡',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['Bootstrap 4', 'RWD', 'JavaScript'],
         showImg: 'show-wdcoffee.jpg',
         webLink: 'https://woodendoorcafe.github.io/?openExternalBrowser=1'
       },
       {
         title: '山居歲月',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['RWD', 'JavaScript', 'Sass', 'API'],
         showImg: 'show-mtlife.jpg',
         webLink: 'https://showanne.github.io/mtlife/mtlife.html?openExternalBrowser=1'
       },
       {
         title: '番茄鐘',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['Vue.js', 'Vuex', 'BootstrapVue'],
         showImg: 'show-pomodoro.jpg',
         webLink: 'https://showanne.github.io/Vue-pomodoro/#/'
       },
       {
         title: 'To Do List',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['Vue.js'],
         showImg: 'show-ToDoList.jpg',
         webLink: 'https://showanne.github.io/Vue-ToDoList/'
       },
       {
         title: '射氣球',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['JQuery', 'sweetalert2.js'],
         showImg: 'show-balloon_darts.jpg',
         webLink: 'https://showanne.github.io/JQ-BalloonDarts/'
       },
       {
-        title: '打字樂',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        title: '打字練習遊戲',
+        used: ['JQuery', 'Localstorage'],
         showImg: 'show-keyboard.jpg',
         webLink: 'https://showanne.github.io/JS-wam/practice-keyboard/'
       },
       {
         title: '抓貓趣',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['JQuery'],
         showImg: 'show-HamsterGame.jpg',
         webLink: 'https://showanne.github.io/JS-wam/practice-HamsterGame/HamsterGame.html'
       },
@@ -198,13 +205,13 @@
       // },
       {
         title: '可愛時鐘',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['JavaScript'],
         showImg: 'show-clock.jpg',
         webLink: 'https://showanne.github.io/JS-clockBao/'
       },
       {
         title: '天氣卡片',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['JavaScript', 'aos.js', 'Axios'],
         showImg: 'show-weather.jpg',
         webLink: 'https://showanne.github.io/weathercard/'
       },
@@ -234,6 +241,7 @@
               </div>
 						<figcaption>
 							<h3>` + profileData[i].title + `</h3>
+              <p>` + profileData[i].used + `</p>
               <ul class="usedList">
 
               </ul>
@@ -248,12 +256,12 @@
 				</li>
       `)
 
-      for (let j = 0; j < profileData[i].used.length; j++) {
-        console.log(i, j, profileData[i].used[j]);
-        $('ul.usedList, ul.usedList-M').append(`
-          <li class="tag">` + profileData[i].used[j] + `</li>
-        `)
-      }
+      // for (let j = 0; j < profileData[i].used.length; j++) {
+      //   console.log(i, j, profileData[i].used[j]);
+      //   $('ul.usedList, ul.usedList-M').append(`
+      //     <li class="tag">` + profileData[i].used[j] + `</li>
+      //   `)
+      // }
     }
     
   </script>

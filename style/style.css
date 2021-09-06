@@ -14,7 +14,7 @@ body {
 
 }
 
-.doodle {
+/* .doodle {
     position: absolute;
     top: 0;
     right: 0;
@@ -27,14 +27,14 @@ body {
     padding: 8vh 0;
     width: 100vw;
     height: 166vh;
-    /* 100vh-8vh (padding的 footer 的高度) = 92vh */
+    100vh-8vh (padding的 footer 的高度) = 92vh
 }
 
 @media (max-width: 640px) {
     .doodle-bg {
         height: 312vh;
     }
-}
+} */
 
 h1.anne{
     display: none;
