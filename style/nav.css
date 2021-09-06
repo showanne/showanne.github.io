@@ -3,7 +3,7 @@
 #nav-section {
   width: 100vw;
   height: 10vh;
-  background: -moz-linear-gradient(
+  /* background: -moz-linear-gradient(
     top,
     rgba(175, 161, 234, 1) 0%,
     rgba(210, 183, 255, 0.31) 69%,
@@ -20,7 +20,7 @@
     rgba(175, 161, 234, 1) 0%,
     rgba(210, 183, 255, 0.31) 69%,
     rgba(210, 183, 255, 0.03) 100%
-  );
+  ); */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#afa1ea', endColorstr='#00d2b7ff', GradientType=0);
 }
 
@@ -35,17 +35,18 @@
 
 .menu a {
   font-family: 'Work Sans', sans-serif;
-  color: #222;
+  color: #2a003e;
   font-weight: 300;
   font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   z-index: 10;
   top: 4.2vh;
   left: 5vh;
   padding-bottom: 3px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #2a003e;
   cursor: pointer;
 }
 

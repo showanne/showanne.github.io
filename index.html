@@ -14,35 +14,103 @@
   <link rel="stylesheet" href="style/nav.css">
 
   <link rel="stylesheet" href="style/card.css">
+
+  <!-- <link rel="stylesheet" href="style/skill.css"> -->
+
   <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="style/doodle.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(../src/sakura.png);
+      background-size: contain;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* h1 {
+      text-align: center;
+      font-family: "Noto Sans JP";
+      color: pink;
+      text-shadow: 0px 0px 5px purple;
+      font-size: 100px;
+      position: absolute;
+      top: 20%;
+      width: 100%;
+    } */
+
+    #bg {
+      margin: 0;
+      overflow: hidden;
+      /* Photo by Lily Zhou on Unsplash */
+      /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1553227012-4a94e9a035e1); */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+    }
+
+    /* 背景 */
+    css-doodle {
+      --rule: (:doodle {
+          @grid: 6/ 100vw 100vh;
+          background: transparent;
+          filter:blur(2px);
+        }
+
+        background-image: linear-gradient(to left, #FFBFEC, #FFC0E8, 60%, #FF86C6);
+        @size: @rand(5, 25)px;
+        border-radius: @rand(10, 15)px @rand(1, 5)px;
+        position: absolute;
+        @place-cell: @rand(0, 20)% -5vh;
+        left: @rand(-100, 100)%;
+        filter: drop-shadow(0px 0px 1px purple);
+        animation: sakura 5s linear @rand(0, 7)s infinite;
+        --skewX: @rand(0, 20)deg;
+        --skewY: @rand(0, 20)deg;
+
+        @keyframes sakura {
+          0% {
+            transform: translateX(0) translateY(0vh) rotate(@rand(0, 72)deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+            opacity: 1.0;
+          }
+
+          25% {
+            transform: translateX(25vw) translateY(26vh) rotate(@rand(73, 144)deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+            opacity: @rand(0.1, 0.9);
+          }
+
+          50% {
+            transform: translateX(50vw) translateY(52vh) rotate(@rand(145, 216)deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+            opacity: @rand(0.1, 0.9);
+          }
+
+          75% {
+            transform: translateX(75vw) translateY(78vh) rotate(@rand(217, 288)deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+            opacity: @rand(0.1, 0.9);
+          }
+
+          99.99% {
+            transform: translateX(100vw) translateY(104vh) rotate(@rand(289, 360)deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+          }
+
+          100% {
+            opacity: 1.0;
+            transform: translateX(100vw) translateY(0vh) rotate(0deg) skewX(@var(--skewX)) skewY(@var(--skewY));
+          }
+        }
+
+      );
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 背景 -->
-  <!-- <css-doodle class="doodle doodle-bg">
-    :doodle {
-    @grid: 9 / 100vmax;
-    background: #fff;
-    cursor: pointer;
-
-    }
-    :doodle(:hover) { --s: 1 ; }
-
-    :after {
-    content: @pick(a,A);
-    font-size: 4vmax;
-    color: #000;
-    transform: scale(@rand(.2, .9));
-
-    }
-
-    transition: .5s cubic-bezier(.175, .885, .32, 1.275);
-    transition-delay: @rand(650ms);
-    transform: translateY(calc(var(--s) * 100%)) rotate(calc(var(--s) * 360deg));
-
-  </css-doodle> -->
-
   <div id="bg">
     <css-doodle use="var(--rule)"></css-doodle>
   </div>
@@ -118,10 +186,11 @@
 
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
+  
   <!-- css-doodle -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script> -->
+  <!-- card effect -->
 
   <!-- image-shadow js -->
   <script src="https://cdn.jsdelivr.net/gh/tunguskha/Image-shadow@latest/assets/js/image-shadow.min.js"></script>
@@ -137,7 +206,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
   <script src="./script/nav.js"></script>
 
-  <!-- card effect -->
+  <!-- 技能 -->
+  <script src="./script/skill.js"></script>
+
   <script src="./script/modernizr.custom.js"></script>
   <script src="./script/toucheffects.js"></script>
 
@@ -145,19 +216,19 @@
     const profileData = [
       {
         title: 'DTNS',
-        used: ['前端', 'Vue', 'VueMaterialUI', 'RWD', 'Axios', 'Sass', 'ESLint', 'PWA', '後端', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'cors', 'jwt', 'Line login', 'Heroku' ],
+        used: ['VueMaterial', 'Vue', 'Sass', 'PWA', 'Node.js', 'Express', 'MongoDB', 'jwt', 'Line login'],
         showImg: 'show-DTNS.jpg',
         webLink: 'https://showanne.github.io/DTNS/#/?openExternalBrowser=1'
       },
       {
         title: 'Stock.Find',
-        used: ['Node.js', 'Line Flex Message', 'Axios'],
+        used: ['Node'],
         showImg: 'show-linebot.jpg',
         webLink: 'https://line.me/R/ti/p/@625frasl'
       },
       {
         title: '木門咖啡',
-        used: ['Bootstrap 4', 'RWD', 'JavaScript'],
+        used: ['Bootstrap', 'RWD', 'JavaScript'],
         showImg: 'show-wdcoffee.jpg',
         webLink: 'https://woodendoorcafe.github.io/?openExternalBrowser=1'
       },
@@ -181,19 +252,19 @@
       },
       {
         title: '射氣球',
-        used: ['JQuery', 'sweetalert2.js'],
+        used: ['jQuery', 'sweetalert2'],
         showImg: 'show-balloon_darts.jpg',
         webLink: 'https://showanne.github.io/JQ-BalloonDarts/'
       },
       {
         title: '打字練習遊戲',
-        used: ['JQuery', 'Localstorage'],
+        used: ['jQuery'],
         showImg: 'show-keyboard.jpg',
         webLink: 'https://showanne.github.io/JS-wam/practice-keyboard/'
       },
       {
         title: '抓貓趣',
-        used: ['JQuery'],
+        used: ['jQuery'],
         showImg: 'show-HamsterGame.jpg',
         webLink: 'https://showanne.github.io/JS-wam/practice-HamsterGame/HamsterGame.html'
       },
@@ -211,7 +282,7 @@
       },
       {
         title: '天氣卡片',
-        used: ['JavaScript', 'aos.js', 'Axios'],
+        used: ['JavaScript'],
         showImg: 'show-weather.jpg',
         webLink: 'https://showanne.github.io/weathercard/'
       },
@@ -230,40 +301,41 @@
     ]
 
     for (let i = 0; i < profileData.length; i++) {
+      let tag = ''
+
+      for (let j = 0; j < profileData[i].used.length; j++) {
+        // console.log(i, j, profileData[i].used[j]);
+        // $('ul.usedList, ul.usedList-M').eq(i).append(`
+        tag += '<li class="tag">' + profileData[i].used[j] + '</li>'
+        // `)
+      }
+
       $('ul.grid').append(`
         <li>
 					<figure>
               <h3 class="card_title">` + profileData[i].title + `</h3>
               <div>
-                <a target="_blank" href=` + profileData[i].webLink + `>
-                  <img src="./src/webImg/` + profileData[i].showImg + `" alt=` + profileData[i].title + `>
+                <a target="_blank" href="` + profileData[i].webLink + `">
+                  <img src="./src/webImg/` + profileData[i].showImg + `" alt="` + profileData[i].title + `">
                 </a>
               </div>
 						<figcaption>
 							<h3>` + profileData[i].title + `</h3>
-              <p>` + profileData[i].used + `</p>
               <ul class="usedList">
-
+                ${tag}
               </ul>
-							<a target="_blank" href=` + profileData[i].webLink + `>
+							<a target="_blank" href="` + profileData[i].webLink + `">
                 <i class="fas fa-link"></i>
               </a>
 						</figcaption>
             <ul class="usedList-M">
-                
+              ${tag}
             </ul>
 					</figure>
 				</li>
       `)
-
-      // for (let j = 0; j < profileData[i].used.length; j++) {
-      //   console.log(i, j, profileData[i].used[j]);
-      //   $('ul.usedList, ul.usedList-M').append(`
-      //     <li class="tag">` + profileData[i].used[j] + `</li>
-      //   `)
-      // }
     }
-    
+
   </script>
 </body>
 
