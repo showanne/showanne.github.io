@@ -40,12 +40,13 @@
   font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
-  /* position: absolute; */
-  position: fixed;
+  position: absolute;
+  /* position: fixed; */
   z-index: 10;
   top: 4.2vh;
   left: 5vh;
   padding-bottom: 3px;
+  margin-left: 1rem;
   border-bottom: 1px solid #2a003e;
   cursor: pointer;
 }

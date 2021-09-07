@@ -2,15 +2,6 @@ h1.anne {
   display: none;
 }
 
-/* 作品 */
-/* .container {
-  max-width: 1140px;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
 .d-flex {
   display: flex;
 }
@@ -18,7 +9,7 @@ h1.anne {
 .center {
   margin: auto;
   justify-content: center;
-} */
+}
 
 .m-1 {
   margin: 1rem;
