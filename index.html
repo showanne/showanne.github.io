@@ -15,37 +15,38 @@
 
   <link rel="stylesheet" href="style/card.css">
 
-  <!-- <link rel="stylesheet" href="style/skill.css"> -->
+  <link rel="stylesheet" href="style/skill.css">
 
   <link rel="stylesheet" href="style/style.css">
 
   <style>
+    *,::before,::after {
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
       background: url(../src/sakura.png);
-      background-size: contain;
+      background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
       background-attachment: fixed;
-    }
 
-    /* h1 {
-      text-align: center;
-      font-family: "Noto Sans JP";
-      color: pink;
-      text-shadow: 0px 0px 5px purple;
-      font-size: 100px;
-      position: absolute;
-      top: 20%;
-      width: 100%;
-    } */
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+      overflow-x: hidden;
+      font-family: 'system-ui', sans-serif;
+      color: #08132e;
+      line-height: 1.45;
+
+      /* MacOS 字體邊緣平滑 */
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+    }
 
     #bg {
       margin: 0;
       overflow: hidden;
-      /* Photo by Lily Zhou on Unsplash */
-      /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1553227012-4a94e9a035e1); */
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
@@ -122,9 +123,8 @@
       <nav role="navigation">
         <ul>
           <li><a href="./index.html" data-content="The beginning">Home</a></li>
-          <li><a href="./skills.html" data-content="What will I do?">Skills</a></li>
-          <li><a href="#" data-content="Before, After.">Works</a></li>
-          <!-- 放 cakeresume 履歷網址 -->
+          <li><a href="#skills" data-content="What will I do?">Skills</a></li>
+          <li><a href="https://www.cakeresume.com/ss85120ss" data-content="Before, After.">Works</a></li>
           <li><a href="./design.html" data-content="How about my graphic design?">Design</a></li>
           <li><a href="./profile.html" data-content="Contact me.">Contact</a></li>
         </ul>
@@ -168,7 +168,68 @@
 
   <!-- 作品 -->
   <section>
-    <ul class="grid cardUL"></ul>
+    <ul class="grid cardUL">
+      <li class="dtns">
+        <figure>
+          <h3 class="card_title">DTNS</h3>
+          <div>
+            <a target="_blank" href="https://showanne.github.io/DTNS/#/?openExternalBrowser=1">
+              <img src="./src/webImg/show-DTNS.jpg" alt="DTNS">
+            </a>
+          </div>
+          <figcaption>
+            <h3>DTNS</h3>
+            <ul class="usedList">
+              <li class="tag">VueMaterial</li><li class="tag">Vue</li><li class="tag">Sass</li><li class="tag">PWA</li><li class="tag">Node.js</li><li class="tag">Express</li><li class="tag">MongoDB</li><li class="tag">jwt</li><li class="tag">Line login</li>
+            </ul>
+            <a target="_blank" href="https://showanne.github.io/DTNS/#/?openExternalBrowser=1">
+              <i class="fas fa-link"></i>
+            </a>
+          </figcaption>
+          <ul class="usedList-M">
+            <li class="tag">VueMaterial</li><li class="tag">Vue</li><li class="tag">Sass</li><li class="tag">PWA</li><li class="tag">Node.js</li><li class="tag">Express</li><li class="tag">MongoDB</li><li class="tag">jwt</li><li class="tag">Line login</li>
+          </ul>
+        </figure>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills">
+    <div class="skillsList">
+      <dl class="list maki">
+        <dt><i class="fas fa-laptop-code"></i></i>前端</dt>
+        <!-- <dd><a href="#">Vue.js / Vue Cli / Vue Router</a></dd> -->
+      </dl>
+
+      <dl class="list nigiri">
+        <dt><i class="fas fa-sitemap"></i></i>後端</dt>
+        <!-- <dd><a href="#">MongoDB</a></dd> -->
+      </dl>
+
+      <dl class="list sashimi">
+        <dt><i class="fas fa-tools"></i>其他</dt>
+        <!-- <dd><a href="#">Illustrator</a></dd> -->
+      </dl>
+
+      <!-- 摺疊效果 -->
+      <!-- <a href="#" class="toggle">Toggle</a> -->
+    </div>
+
+    <div class="skillsList-M">
+      <ul>
+        <li><i class="fas fa-laptop-code"></i></i>前端
+          <ul class="frontend"></ul>
+        </li>
+        <li><i class="fas fa-sitemap"></i></i>後端
+          <ul class="backend"></ul>
+        </li>
+        <li><i class="fas fa-tools"></i>其他
+          <ul class="other"></ul>
+        </li>
+      </ul>
+
+    </div>
   </section>
 
   <!-- footer -->
@@ -186,7 +247,7 @@
 
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  
+
   <!-- css-doodle -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script> -->
@@ -206,16 +267,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
   <script src="./script/nav.js"></script>
 
-  <!-- 技能 -->
-  <script src="./script/skill.js"></script>
-
+  <!-- card -->
   <script src="./script/modernizr.custom.js"></script>
   <script src="./script/toucheffects.js"></script>
 
   <script>
+    // 作品
     const profileData = [
       {
-        title: 'DTNS',
+        title: 'DTNS ()',
         used: ['VueMaterial', 'Vue', 'Sass', 'PWA', 'Node.js', 'Express', 'MongoDB', 'jwt', 'Line login'],
         showImg: 'show-DTNS.jpg',
         webLink: 'https://showanne.github.io/DTNS/#/?openExternalBrowser=1'
@@ -313,12 +373,12 @@
       $('ul.grid').append(`
         <li>
 					<figure>
-              <h3 class="card_title">` + profileData[i].title + `</h3>
-              <div>
-                <a target="_blank" href="` + profileData[i].webLink + `">
-                  <img src="./src/webImg/` + profileData[i].showImg + `" alt="` + profileData[i].title + `">
-                </a>
-              </div>
+            <h3 class="card_title">` + profileData[i].title + `</h3>
+            <div>
+              <a target="_blank" href="` + profileData[i].webLink + `">
+                <img src="./src/webImg/` + profileData[i].showImg + `" alt="` + profileData[i].title + `">
+              </a>
+            </div>
 						<figcaption>
 							<h3>` + profileData[i].title + `</h3>
               <ul class="usedList">
@@ -336,7 +396,38 @@
       `)
     }
 
+    // 技能
+    const frontend = ['Vue.js / Vue Cli / Vue Router', 'Bootstrap', 'Axios / Ajax', 'Node.js', 'JavaScript', 'JQuery', 'CSS / Scss', 'HTML']
+    const backend = ['MongoDB', 'Express', 'JSON Web Token']
+    const other = ['Illustrator', 'Photoshop', 'Figma', 'Chrome Dev Tool', 'Git 版本管理', 'Xmind', 'Draw.io']
+
+    for (let f = 0; f < frontend.length; f++) {
+      $('.maki').append(`
+        <dd><a href="#">${frontend[f]}</a></dd>
+      `)
+      $('.frontend').append(`
+      <li><i class="fas fa-angle-right fa-xs"></i>${frontend[f]}</li>
+      `)
+    }
+    for (let b = 0; b < backend.length; b++) {
+      $('.nigiri').append(`
+        <dd><a href="#">${backend[b]}</a></dd>
+      `)
+      $('.backend').append(`
+      <li><i class="fas fa-angle-right fa-xs"></i>${backend[b]}</li>
+      `)
+    }
+    for (let o = 0; o < other.length; o++) {
+      $('.sashimi').append(`
+        <dd><a href="#">${other[o]}</a></dd>
+      `)
+      $('.other').append(`
+        <li><i class="fas fa-angle-right fa-xs"></i>${other[o]}</li>
+      `)
+    }
   </script>
+  <!-- 技能 -->
+  <script src="./script/skill.js"></script>
 </body>
 
 </html>
