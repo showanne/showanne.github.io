@@ -1,5 +1,5 @@
 // nav 展開及摺疊效果
-$('.open-overlay').click(function () {
+$('.open-overlay, nav ul li').click(function () {
   $('.open-overlay').css('pointer-events', 'none')
   var overlay_navigation = $('.overlay-navigation'),
     top_bar = $('.bar-top'),
