@@ -7,8 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anne's Skills</title>
 
+  <!-- fontawesome CSS -->
+  <script src="https://kit.fontawesome.com/ded260f5f5.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"> -->
+
   <link rel="stylesheet" href="style/skill.css">
   <link rel="stylesheet" href="style/nav.css">
+
+  <style>
+    .skillsList{
+      display: none;
+    }
+    .skillsList-M{
+      display: flex;
+      justify-content: center;
+    }
+    @media (min-width:960px) {
+      .skillsList{
+        display: block;
+      }
+      .skillsList-M{
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -41,42 +63,21 @@
     </div>
   </div>
 
-  <!-- <header class="header">
-    <hgroup>
-      <h1>Anne's Skills</h1>
-      <h2>CSS 3D Dropdown Concept</h2>
-    </hgroup>
-  </header> -->
-
   <section class="skillsList">
 
     <dl class="list maki">
-      <dt>前端</dt>
-      <dd><a href="#">Vue.js / Vue Cli / Vue Router</a></dd>
-      <dd><a href="#">Bootstrap</a></dd>
-      <dd><a href="#">Axios / Ajax</a></dd>
-      <dd><a href="#">Node.js</a></dd>
-      <dd><a href="#">JavaScript</a></dd>
-      <dd><a href="#">JQuery</a></dd>
-      <dd><a href="#">CSS / Scss</a></dd>
-      <dd><a href="#">HTML</a></dd>
+      <dt><i class="fas fa-laptop-code"></i></i>前端</dt>
+      <!-- <dd><a href="#">Vue.js / Vue Cli / Vue Router</a></dd> -->
     </dl>
 
     <dl class="list nigiri">
-      <dt>後端</dt>
-      <dd><a href="#">MongoDB</a></dd>
-      <dd><a href="#">Express</a></dd>
+      <dt><i class="fas fa-sitemap"></i></i>後端</dt>
+      <!-- <dd><a href="#">MongoDB</a></dd> -->
     </dl>
 
     <dl class="list sashimi">
-      <dt>其他</dt>
-      <dd><a href="#">Illustrator</a></dd>
-      <dd><a href="#">Photoshop</a></dd>
-      <dd><a href="#">Figma</a></dd>
-      <dd><a href="#">Chrome Dev Tool</a></dd>
-      <dd><a href="#">Git 版本管理</a></dd>
-      <dd><a href="#">Xmind</a></dd>
-      <dd><a href="#">Draw.io</a></dd>
+      <dt><i class="fas fa-tools"></i>其他</dt>
+      <!-- <dd><a href="#">Illustrator</a></dd> -->
     </dl>
 
     <!-- 摺疊效果 -->
@@ -84,51 +85,60 @@
 
   </section>
 
-  <!-- <section class="skillsList">
+  <section class="skillsList-M">
     <ul>
-      <li>前端
-        <ul class="frontendOL"></ul>
+      <li><i class="fas fa-laptop-code"></i></i>前端
+        <ul class="frontend"></ul>
       </li>
-      <li>後端
-        <ul class="backendOL"></ul>
+      <li><i class="fas fa-sitemap"></i></i>後端
+        <ul class="backend"></ul>
       </li>
-      <li>其他
-        <ul class="otherOL"></ul>
+      <li><i class="fas fa-tools"></i>其他
+        <ul class="other"></ul>
       </li>
     </ul>
-  </section> -->
+  </section>
 
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
-
-  <script src="./script/skill.js"></script>
   <!-- nav -->
   <script src="./script/nav.js"></script>
 
   <script>
     const frontend = ['Vue.js / Vue Cli / Vue Router', 'Bootstrap', 'Axios / Ajax', 'Node.js', 'JavaScript', 'JQuery', 'CSS / Scss', 'HTML']
-    const backend = ['MongoDB', 'Express']
+    const backend = ['MongoDB', 'Express', 'JSON Web Token']
     const other = ['Illustrator', 'Photoshop', 'Figma', 'Chrome Dev Tool', 'Git 版本管理', 'Xmind', 'Draw.io']
 
     for (let f = 0; f < frontend.length; f++) {
-      $('.frontendOL').append(`
-        <li>` + frontend[f] + `</li>
+      $('.maki').append(`
+        <dd><a href="#">${frontend[f]}</a></dd>
+      `)
+      $('.frontend').append(`
+      <li><i class="fas fa-angle-right fa-xs"></i>${frontend[f]}</li>
       `)
     }
     for (let b = 0; b < backend.length; b++) {
-      $('.backendOL').append(`
-        <li>` + backend[b] + `</li>
+      $('.nigiri').append(`
+        <dd><a href="#">${backend[b]}</a></dd>
+      `)
+      $('.backend').append(`
+      <li><i class="fas fa-angle-right fa-xs"></i>${backend[b]}</li>
       `)
     }
     for (let o = 0; o < other.length; o++) {
-      $('.otherOL').append(`
-        <li>` + other[o] + `</li>
+      $('.sashimi').append(`
+        <dd><a href="#">${other[o]}</a></dd>
+      `)
+      $('.other').append(`
+        <li><i class="fas fa-angle-right fa-xs"></i>${other[o]}</li>
       `)
     }
   </script>
+  <script src="./script/skill.js"></script>
+
 </body>
 
 </html>
