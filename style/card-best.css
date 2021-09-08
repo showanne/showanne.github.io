@@ -31,15 +31,19 @@
   flex: 0 1 1;
 }
 
-@media (min-width: 600px) {
-	/* #best h2 {
-		font-size: 2em;
-	} */
+#best ul{
+  padding-inline-start: 0;
+}
+
+@media (min-width: 800px) {
 	.item {
-		min-width: 50%;
+    min-width: 50%;
 		max-width: 50%;
 		flex: 0 1 50%;
 	}
+  #best ul{
+    padding-inline-start: 40px;
+  }
 }
 
 #best i {
