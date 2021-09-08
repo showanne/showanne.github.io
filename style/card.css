@@ -154,7 +154,7 @@
 	transition: transform 0.4s, opacity 0.1s;
 }
 
-.cardUL figcaption a {
+.cardUL figcaption .linkArea {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
