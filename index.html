@@ -5,23 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Anne's Portfolio</title>
+  <!-- <title>Anne's Portfolio</title> -->
+
+  <!-- Primary Meta Tags -->
+<title>Anne's Portfolio</title>
+<meta name="title" content="Anne's Portfolio">
+<meta name="description" content="Hi , I'm Anne . 
+A frontend developer from Taiwan.
+「勇於嘗試，積極學習，斜槓發展」是我面對新事物與新挑戰所採取的態度。">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://showanne.github.io/">
+<meta property="og:title" content="Anne's Portfolio">
+<meta property="og:description" content="Hi , I'm Anne . 
+A frontend developer from Taiwan.
+「勇於嘗試，積極學習，斜槓發展」是我面對新事物與新挑戰所採取的態度。">
+<meta property="og:image" content="https://raw.githubusercontent.com/showanne/showanne.github.io/master/src/Anne.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://showanne.github.io/">
+<meta property="twitter:title" content="Anne's Portfolio">
+<meta property="twitter:description" content="Hi , I'm Anne . 
+A frontend developer from Taiwan.
+「勇於嘗試，積極學習，斜槓發展」是我面對新事物與新挑戰所採取的態度。">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/showanne/showanne.github.io/master/src/Anne.jpg">
 
   <!-- fontawesome CSS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
 
   <!-- nav -->
   <link rel="stylesheet" href="style/nav.css">
 
   <link rel="stylesheet" href="style/card.css">
+  <link rel="stylesheet" href="style/card-best.css">
 
   <link rel="stylesheet" href="style/skill.css">
 
   <link rel="stylesheet" href="style/style.css">
 
   <style>
-    *,::before,::after {
+    *,
+    ::before,
+    ::after {
       box-sizing: border-box;
+      list-style: none;
     }
 
     body {
@@ -168,29 +197,10 @@
 
   <!-- 作品 -->
   <section>
+    
+
+    <!-- 作品 card -->
     <ul class="grid cardUL">
-      <li class="dtns">
-        <figure>
-          <h3 class="card_title">DTNS</h3>
-          <div>
-            <a target="_blank" href="https://showanne.github.io/DTNS/#/?openExternalBrowser=1">
-              <img src="./src/webImg/show-DTNS.jpg" alt="DTNS">
-            </a>
-          </div>
-          <figcaption>
-            <h3>DTNS</h3>
-            <ul class="usedList">
-              <li class="tag">VueMaterial</li><li class="tag">Vue</li><li class="tag">Sass</li><li class="tag">PWA</li><li class="tag">Node.js</li><li class="tag">Express</li><li class="tag">MongoDB</li><li class="tag">jwt</li><li class="tag">Line login</li>
-            </ul>
-            <a target="_blank" href="https://showanne.github.io/DTNS/#/?openExternalBrowser=1">
-              <i class="fas fa-link"></i>
-            </a>
-          </figcaption>
-          <ul class="usedList-M">
-            <li class="tag">VueMaterial</li><li class="tag">Vue</li><li class="tag">Sass</li><li class="tag">PWA</li><li class="tag">Node.js</li><li class="tag">Express</li><li class="tag">MongoDB</li><li class="tag">jwt</li><li class="tag">Line login</li>
-          </ul>
-        </figure>
-      </li>
     </ul>
   </section>
 
@@ -198,12 +208,12 @@
   <section id="skills">
     <div class="skillsList">
       <dl class="list maki">
-        <dt><i class="fas fa-laptop-code"></i></i>前端</dt>
+        <dt><i class="fas fa-laptop-code"></i>前端</dt>
         <!-- <dd><a href="#">Vue.js / Vue Cli / Vue Router</a></dd> -->
       </dl>
 
       <dl class="list nigiri">
-        <dt><i class="fas fa-sitemap"></i></i>後端</dt>
+        <dt><i class="fas fa-sitemap"></i>後端</dt>
         <!-- <dd><a href="#">MongoDB</a></dd> -->
       </dl>
 
@@ -275,7 +285,7 @@
     // 作品
     const profileData = [
       {
-        title: 'DTNS ()',
+        title: 'DTNS',
         used: ['VueMaterial', 'Vue', 'Sass', 'PWA', 'Node.js', 'Express', 'MongoDB', 'jwt', 'Line login'],
         showImg: 'show-DTNS.jpg',
         webLink: 'https://showanne.github.io/DTNS/#/?openExternalBrowser=1'
