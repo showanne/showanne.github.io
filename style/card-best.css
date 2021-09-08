@@ -4,13 +4,13 @@
   background: #f4edffaa;
 }
 
-#best h2 {
+/* #best h2 {
 	margin: 1em 0;
   font-size: 1.5em;
   border-bottom: 3px solid #2a003e;
   padding-bottom: 0.3em;
   color: #2a003e;
-}
+} */
 
 #best h2:hover {
 	color: #7876b3;
@@ -19,8 +19,9 @@
 #best .container {
 	max-width: 1140px;
 	padding: 1rem;
+	margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -31,9 +32,9 @@
 }
 
 @media (min-width: 600px) {
-	#best h2 {
+	/* #best h2 {
 		font-size: 2em;
-	}
+	} */
 	.item {
 		min-width: 50%;
 		max-width: 50%;

@@ -1,9 +1,9 @@
 .grid {
-	padding: 20px 20px 100px 20px;
+	padding: 20px;
 	/* max-width: 1300px; */
 	list-style: none;
 	text-align: center;
-	margin: 5rem auto;
+	margin: 2rem auto;
   background: #ffffffaa;
 }
 
@@ -199,7 +199,7 @@
   line-height: 26px;
   padding: 0 20px 0 10px !important;
   position: relative;
-  margin: 0 10px 10px 0 !important;
+  margin: 5px 5px !important;
   text-decoration: none;
   -webkit-transition: color 0.2s;
 }
