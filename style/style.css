@@ -3,12 +3,41 @@ h1.anne {
 }
 
 h2 {
-	margin: 1rem 0;
-  padding: 1rem 0 0.5rem 0;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  position: relative;
   text-align: center;
   font-size: 1.5rem;
-  border-bottom: 3px solid #2a003e;
+  /* border-bottom: 3px solid #2a003e; */
   color: #2a003e;
+  /* padding: 0 3% 40px 8%;
+  margin: 2% 0; */
+
+  letter-spacing: 0.15em;
+
+}
+
+h2:before,h2:after{
+  content: '';
+  -webkit-transition: .6s;
+  -moz-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+  width: 10%;
+  height: 3px;
+  background: #2a003e;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2:before {
+  left: 21%;
+}
+h2:after {
+  right: 12%;
 }
 
 #skills div:nth-child(1) {
@@ -16,9 +45,9 @@ h2 {
 }
 
 @media (min-width: 600px) {
-	h2 {
-		font-size: 2rem;
-	}
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 .d-flex {
