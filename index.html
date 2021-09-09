@@ -87,6 +87,23 @@ A frontend developer from Taiwan.
       -moz-font-smoothing: antialiased;
     }
 
+    /* 滾動條整體部分 */
+    body::-webkit-scrollbar {
+      width: 8px;
+      background-color: white;
+    }
+    /* 滾動條裡面可以拖動的那條 */
+    body::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: gray;
+    }
+    /* 滾動條外層的軌道 */
+    body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+      background-color: #f5f5f5;
+      border-radius: 10px;
+    }
+
     #bg {
       margin: 0;
       overflow: hidden;
@@ -208,7 +225,7 @@ A frontend developer from Taiwan.
     </div> -->
 
   <h1 class="anne">詹琇安</h1>
-  
+
   <!-- 作品 -->
   <section>
     <div id="best">
