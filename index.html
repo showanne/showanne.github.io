@@ -365,7 +365,7 @@ A frontend developer from Taiwan.
       <a href="tel:0918184250"><i class="fas fa-phone-square"></i></a>
       <a href="https://line.me/ti/p/DsjxgOy4cO"><i class="fab fa-line"></i></a>
       <a href="mailto:showanne.e@gmail.com"><i class="fas fa-envelope-square"></i></a>
-      <p>Copyright © 2021 Anne's</p>
+      <p class="copyright">Copyright © <span>2019</span> Anne's</p>
     </div>
     <div class="d-flex center m-n1">
       <p>本網頁之圖片來源皆為網路，如有侵權，煩請來信告知～</p>
@@ -399,6 +399,11 @@ A frontend developer from Taiwan.
   <script src="./script/toucheffects.js"></script>
 
   <script>
+    // 作品
+    const nowYear = new Date().getFullYear()
+    // console.log($('.copyright span').text(), nowYear)
+    $('.copyright span').text(nowYear)
+	  
     // 作品
     const profileData = [
       {
