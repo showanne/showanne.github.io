@@ -1,0 +1,249 @@
+// LINE 數位名片 - Anne
+// <script src="https://gist.github.com/showanne/6aca2a56269588144cebef84dd05a5d0.js"></script>
+// microprogram.csv
+// id,uuid,title_tw,name_tw,title_en,name_en,mobile,office,ext,email-office,email,web,resume,lineme
+// 1,00000000-0000-0000-0000-000000000000,前端工程師,詹琇安,Front-end Developer,Anne Jan,0918184250,28771-6606,288,anne@circles.tw,showanne.e@gmail.com,https://showanne.github.io/,https://www.cakeresume.com/ss85120ss,https://line.me/ti/p/DsjxgOy4cO
+
+// microprogram.txt
+
+function vcardUuid (vcard, secret) {
+  const hash = CryptoJS.HmacMD5(JSON.stringify(vcard), secret)
+  const hex = CryptoJS.enc.Hex.stringify(hash)
+  return hex.replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5')
+}
+function gaScreenView (vcard) {
+  const CARD_NAME = 'Anne by CiRCLELiNKS'
+  return `https://www.google-analytics.com/collect?${Qs.stringify({
+    an: 'LINE 數位版名片',
+    cd: `${CARD_NAME}-${vcard.name_tw}`, // 畫面名稱，在此用來紀錄數位版名片的版本
+    cid: vcardUuid(vcard, CARD_NAME), // uuid
+    ds: 'app', // 資料來源，填寫為 app
+    sc: 'start',
+    t: 'screenview',
+    tid: 'UA-39556213-12', // GA 追蹤代碼
+    ul: 'zh-tw', // locale
+    v: 1, // api version
+  })}`
+}
+%>
+
+{
+  "altText": "來認識「${vcard.name_tw}」吧！",
+  "type": "flex",
+  "contents": {
+    {
+      "type": "bubble",
+      "size": "kilo",
+      "body": {
+        "layout": "vertical",
+        "paddingAll": "20px",
+        "type": "box",
+        "contents": [
+          {
+            "aspectMode": "fit",
+            "aspectRatio": "2008:639",
+            "size": "full",
+            "type": "image",
+            "url": "https://www.circles.tw/static/portal/img/circlelinks.svg",
+            "action": {
+              "label": "action",
+              "type": "uri",
+              "uri": "https://www.circles.tw/portal?openExternalBrowser=1"
+            }
+          },
+          {
+            "size": "lg",
+            "text": "${vcard.name_en} ${vcard.name_tw}",
+            "type": "text",
+            "weight": "bold",
+            "wrap": true
+          },
+          {
+            "margin": "md",
+            "size": "xxs",
+            "text": "${vcard.title_en}｜${vcard.title_tw}",
+            "type": "text",
+            "wrap": true
+          },
+          {
+            "flex": 1,
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "type": "filler"
+              }
+            ],
+            "height": "19px"
+          },
+          {
+            "layout": "horizontal",
+            "type": "box",
+            "contents": [
+              {
+                "flex": 0,
+                "layout": "vertical",
+                "type": "box",
+                "contents": [
+                  {
+                    "align": "center",
+                    "color": "#E2231A",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "M",
+                    "type": "text",
+                    "weight": "bold"
+                  },
+                  {
+                    "align": "center",
+                    "color": "#E2231A",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "T",
+                    "type": "text",
+                    "weight": "bold"
+                  },
+                  {
+                    "align": "center",
+                    "color": "#E2231A",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "F",
+                    "type": "text",
+                    "weight": "bold"
+                  },
+                  {
+                    "align": "center",
+                    "color": "#E2231A",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "E",
+                    "type": "text",
+                    "weight": "bold"
+                  },
+                  {
+                    "align": "center",
+                    "color": "#E2231A",
+                    "flex": 0,
+                    "size": "sm",
+                    "type": "text",
+                    "weight": "bold",
+                    "text": " "
+                  }
+                ]
+              },
+              {
+                "layout": "vertical",
+                "type": "box",
+                "contents": [
+                  {
+                    "size": "sm",
+                    "text": "+886 ${vcard.mobile.slice(1)}",
+                    "type": "text",
+                    "action": {
+                      "label": "action",
+                      "type": "uri",
+                      "uri": "tel:${vcard.mobile}"
+                    }
+                  },
+                  {
+                    "size": "sm",
+                    "text": "+886 ${vcard.office} #${vcard.ext}",
+                    "type": "text",
+                    "action": {
+                      "label": "action",
+                      "type": "uri",
+                      "uri": "tel:0${vcard.office}"
+                    }
+                  },
+                  {
+                    "size": "sm",
+                    "text": "+886 ${vcard.office}",
+                    "type": "text"
+                  },
+                  {
+                    "text": "${vcard.email-office}",
+                    "type": "text",
+                    "wrap": true,
+                    "action": {
+                      "label": "action",
+                      "type": "uri",
+                      "uri": "mailto:${vcard.email-office}"
+                    }
+                  },
+                  {
+                    "text": "${vcard.email}",
+                    "type": "text",
+                    "wrap": true,
+                    "action": {
+                      "label": "action",
+                      "type": "uri",
+                      "uri": "mailto:${vcard.email}"
+                    }
+                  }
+                ]
+              }
+            ],
+            "spacing": "sm"
+          },
+          {
+            "height": "1px",
+            "layout": "vertical",
+            "offsetStart": "0px",
+            "offsetTop": "0px",
+            "position": "absolute",
+            "type": "box",
+            "width": "1px",
+            "contents": [
+              {
+                "aspectMode": "fit",
+                "aspectRatio": "1:1",
+                "size": "full",
+                "type": "image",
+                "url": "https://www.google-analytics.com/collect?an=My%20App&ds=app&tid=UA-xxxxxxxxx-1&ul=zh-tw&v=1&uid=Udeadbeefdeadbeefdeadbeefdeadbeef&cid=deadbeef-dead-beef-dead-beefdeadbeef&t=screenview&cd=a&z=1592381805597"
+              }
+            ]
+          },
+          {
+            "flex": 1,
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "type": "filler"
+              }
+            ],
+            "height": "19px"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "個人網站 ${vcard.web}",
+              "uri": "${vcard.web}"
+            },
+            "height": "sm"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "個人履歷 ${vcard.resume}",
+              "uri": "${vcard.resume}"
+            },
+            "height": "sm"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "認識我 ${vcard.lineme}",
+              "uri": "${vcard.lineme}"
+            },
+            "height": "sm"
+          }
+        ]
+      }
+    }
+  }
+}

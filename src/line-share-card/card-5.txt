@@ -1,0 +1,212 @@
+{
+  "type": "bubble",
+  "size": "kilo",
+  "body": {
+    "layout": "vertical",
+    "paddingAll": "20px",
+    "type": "box",
+    "contents": [
+      {
+        "aspectMode": "fit",
+        "size": "full",
+        "type": "image",
+        "url": "https://www.circles.tw/static/portal/img/circlelinks.svg",
+        "action": {
+          "label": "action",
+          "type": "uri",
+          "uri": "https://www.circles.tw/portal?openExternalBrowser=1"
+        },
+        "aspectRatio": "1240:330"
+      },
+      {
+        "size": "lg",
+        "text": "詹琇安 Anne Jan\t",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "margin": "xs",
+        "size": "xxs",
+        "text": "Front-end Developer",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "margin": "xs",
+        "size": "xxs",
+        "text": "前端工程師",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "flex": 1,
+        "layout": "vertical",
+        "type": "box",
+        "contents": [
+          {
+            "type": "filler"
+          }
+        ],
+        "height": "19px"
+      },
+      {
+        "layout": "horizontal",
+        "type": "box",
+        "contents": [
+          {
+            "flex": 0,
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "M",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "E",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#E2231A",
+                "flex": 0,
+                "size": "sm",
+                "type": "text",
+                "weight": "bold",
+                "text": " "
+              }
+            ]
+          },
+          {
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "size": "sm",
+                "text": "+886 918184250",
+                "type": "text",
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "tel:0918184250"
+                }
+              },
+              {
+                "text": "anne@circles.tw",
+                "type": "text",
+                "wrap": true,
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "mailto:anne@circles.tw"
+                }
+              },
+              {
+                "text": "showanne.e@gmail.com",
+                "type": "text",
+                "wrap": true,
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "mailto:showanne.e@gmail.com"
+                }
+              }
+            ]
+          }
+        ],
+        "spacing": "sm"
+      },
+      {
+        "height": "1px",
+        "layout": "vertical",
+        "offsetStart": "0px",
+        "offsetTop": "0px",
+        "position": "absolute",
+        "type": "box",
+        "width": "1px",
+        "contents": [
+          {
+            "aspectMode": "fit",
+            "aspectRatio": "1:1",
+            "size": "full",
+            "type": "image",
+            "url": "https://showanne.github.io/"
+          }
+        ]
+      },
+      {
+        "flex": 1,
+        "layout": "vertical",
+        "type": "box",
+        "contents": [
+          {
+            "type": "filler"
+          }
+        ],
+        "height": "19px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "個人網站",
+              "uri": "https://showanne.github.io/"
+            },
+            "height": "sm",
+            "flex": 1
+          }
+        ],
+        "flex": 1
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "個人履歷",
+              "uri": "https://www.cakeresume.com/ss85120ss"
+            },
+            "height": "sm",
+            "flex": 0
+          }
+        ],
+        "flex": 1
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "認識我",
+              "uri": "https://line.me/ti/p/DsjxgOy4cO"
+            },
+            "height": "sm",
+            "flex": 0
+          }
+        ],
+        "flex": 1
+      }
+    ]
+  }
+}

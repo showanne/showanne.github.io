@@ -1,0 +1,214 @@
+{
+  "type": "bubble",
+  "size": "kilo",
+  "body": {
+    "layout": "vertical",
+    "paddingAll": "19px",
+    "type": "box",
+    "contents": [
+      {
+        "aspectMode": "fit",
+        "size": "full",
+        "type": "image",
+        "url": "https://www.circles.tw/static/portal/img/circlelinks.svg",
+        "action": {
+          "label": "action",
+          "type": "uri",
+          "uri": "https://www.circles.tw/portal?openExternalBrowser=1"
+        },
+        "aspectRatio": "2008:639"
+      },
+      {
+        "size": "lg",
+        "text": "${vcard.name_en} ${vcard.name_tw}",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "margin": "md",
+        "size": "xxs",
+        "text": "${vcard.title_en}｜${vcard.title_tw}",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "flex": 1,
+        "layout": "vertical",
+        "type": "box",
+        "contents": [
+          {
+            "type": "filler"
+          }
+        ],
+        "height": "19px"
+      },
+      {
+        "layout": "horizontal",
+        "type": "box",
+        "contents": [
+          {
+            "flex": 0,
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "M",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "T",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "F",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "text": "E",
+                "type": "text",
+                "weight": "bold"
+              },
+              {
+                "align": "center",
+                "color": "#514ca0",
+                "flex": 0,
+                "size": "sm",
+                "type": "text",
+                "weight": "bold",
+                "text": " "
+              }
+            ]
+          },
+          {
+            "layout": "vertical",
+            "type": "box",
+            "contents": [
+              {
+                "size": "sm",
+                "text": "+886 ${vcard.mobile.slice(1)}",
+                "type": "text",
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "tel:${vcard.mobile}"
+                }
+              },
+              {
+                "size": "sm",
+                "text": "+886 ${vcard.office} #${vcard.ext}",
+                "type": "text",
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "tel:0${vcard.office},#${vcard.ext}"
+                }
+              },
+              {
+                "size": "sm",
+                "text": "+886 ${vcard.office}",
+                "type": "text"
+              },
+              {
+                "text": "${vcard.email_office}",
+                "type": "text",
+                "wrap": true,
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "mailto:${vcard.email_office}"
+                }
+              },
+              {
+                "text": "${vcard.email}",
+                "type": "text",
+                "wrap": true,
+                "action": {
+                  "label": "action",
+                  "type": "uri",
+                  "uri": "mailto:${vcard.email}"
+                }
+              }
+            ]
+          }
+        ],
+        "spacing": "sm"
+      },
+      {
+        "height": "1px",
+        "layout": "vertical",
+        "offsetStart": "0px",
+        "offsetTop": "0px",
+        "position": "absolute",
+        "type": "box",
+        "width": "1px",
+        "contents": [
+          {
+            "aspectMode": "fit",
+            "aspectRatio": "1:1",
+            "size": "full",
+            "type": "image",
+            "url": "https://showanne.github.io/gaWeb/"
+          }
+        ]
+      },
+      {
+        "flex": 1,
+        "layout": "vertical",
+        "type": "box",
+        "contents": [
+          {
+            "type": "filler"
+          }
+        ],
+        "height": "19px"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "個人網站 ${vcard.web}",
+          "uri": "${vcard.web}"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "個人履歷 ${vcard.resume}",
+          "uri": "${vcard.resume}"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "認識我 ${vcard.lineme}",
+          "uri": "${vcard.lineme}"
+        },
+        "height": "sm"
+      }
+    ]
+  }
+}
