@@ -229,17 +229,101 @@ A frontend developer from Taiwan.
   <!-- <section>我的首頁 要 100 vh</section> -->
 
   <!-- 作品 -->
-  <!-- <section>
-    <div id="best">
+  <section>
+    <div class="highlight">
       <a target="_blank" href="https://rabbitfund-frontend.vercel.app/">
-        <h2>團體專題</h2>
+        <h2>團隊協作專題</h2>
+        <!-- <i class="fas fa-link"></i> -->
       </a>
       <div class="container">
+        <!-- <figure class="item">
+              <a target="_blank" href="https://rabbitfund-frontend.vercel.app/">
+                <img src="./src/webImg/show-rabbitfund/rabbitfund - 1.png" alt="倍而兔募資平台" title="倍而兔募資平台">
+              </a>
+          <figcaption>
+            倍而兔募資平台 - 團隊協作專題 <br> (從企劃、資料架構規劃到程式執行)
+          </figcaption>
+        </figure> -->
+
+        <ul class="item">
+          <a target="_blank" href="https://rabbitfund-frontend.vercel.app/">
+            <strong>
+              <h3>倍而兔募資平台</h3>
+            </strong>
+          </a>
+          <h3><i class="fas fa-laptop-house"></i>網站功能簡介</h3>
+          <li><i class="fas fa-fire-alt"></i>一般用戶可以瀏覽 / 搜尋募資專案。</li>
+          <li><i class="fas fa-fire-alt"></i>贊助方可以贊助募資專案。</li>
+          <li><i class="fas fa-fire-alt"></i>贊助方可以檢視自己所有的贊助紀錄。 </li>
+          <li><i class="fas fa-fire-alt"></i>提案方可以新增 / 編輯募資提案。</li>
+          <li><i class="fas fa-fire-alt"></i>提案方可以檢視自己的提案紀錄。</li>
+          <li><i class="fas fa-fire-alt"></i>提案方可以查看自己提案專案的募資進度、金額。</li>
+          <li><i class="fas fa-fire-alt"></i>提案方可以查看自己提案專案的贊助人員名單。</li>
+          <li><i class="fas fa-fire-alt"></i>會員可以修改自己的會員資料。</li>
+        </ul>
+
+        <ul class="item">
+          <!-- <a target="_blank" href="https://rabbitfund-frontend.vercel.app/">
+            <strong>
+              <h3>倍而兔募資平台</h3>
+            </strong>
+          </a> -->
+          <br><br>
+          <h3><i class="fas fa-tools"></i>協作工具</h3>
+          <li><i class="fas fa-fire-alt"></i>使用 Notion 作為專案管理工具。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 Git 協作管理程式碼。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 Figma 繪製線稿圖及設計稿。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 Whimscal 繪製溝通流程圖及規劃。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 Hackolade 規劃資料庫及建立 ERD 關係圖。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 UptimeRobot 定時確認連線狀態，確保網站運行狀況。</li>
+          <li><i class="fas fa-fire-alt"></i>使用 Discord 頻道做為日常溝通及開發提醒 (GitHub notify) 的管道。</li>
+        </ul>
+
+        <ul class="item">
+          <h3><i class="fas fa-laptop-code"></i>前台使用技術
+            <a target="_blank" href="https://github.com/rabbitfund/rabbitfund_frontend">
+              <i class="fab fa-github"></i>
+            </a>
+          </h3>
+          <li><i class="far fa-check-square"></i>使用 Vue3 Composition API 開發。</li>
+          <li><i class="far fa-check-square"></i>使用 Nuxt.js 開發 SSR 網站以符合 SEO 需求。 </li>
+          <li><i class="far fa-check-square"></i>使用 Pinia 來做狀態管理。 </li>
+          <li><i class="far fa-check-square"></i>使用 TypeScript 預做型別檢查，並且建立更嚴謹的程式碼撰寫風格。</li>
+          <li><i class="far fa-check-square"></i>RWD 響應式網頁設計。 </li>
+          <li><i class="far fa-check-square"></i>應用 components 去管理重複的元件。</li>
+          <li><i class="far fa-check-square"></i>使用 Tailwind CSS 來美化網站。 </li>
+          <li><i class="far fa-check-square"></i>使用 ESLint 管理程式碼風格。 </li>
+          <li><i class="far fa-check-square"></i>使用 GitHub Actions 來完成自動化部屬。</li>
+          <li><i class="far fa-check-square"></i>部署在 Vercel。</li>
+          <!-- <li class="tag">Vue</li> -->
+        </ul>
+
+        <ul class="item">
+          <h3><i class="fas fa-sitemap"></i>後台使用技術
+            <a target="_blank" href="https://github.com/rabbitfund/rabbitfund_backend">
+              <i class="fab fa-github"></i>
+            </a>
+          </h3>
+          <li><i class="far fa-check-square"></i>自行規劃資料庫關聯及撰寫。</li>
+          <li><i class="far fa-check-square"></i>開發使用 Node.js，並搭配 Expresss 來建立網頁伺服器和路由 。 </li>
+          <li><i class="far fa-check-square"></i>資料庫使用 MongoDB 來儲存資料，並搭配 Mongoose 套件來操作資料的存取。 </li>
+          <li><i class="far fa-check-square"></i>cors 去處理跨域請求。 </li>
+          <li><i class="far fa-check-square"></i>驗證使用 jwt 機制。</li>
+          <li><i class="far fa-check-square"></i>註冊及登入使用 Google 第三方登入。 </li>
+          <li><i class="far fa-check-square"></i>串接藍新金流的服務來處理贊助結帳的部分。</li>
+          <li><i class="far fa-check-square"></i>使用 Firebase 作為網站的圖床儲存服務 。</li>
+          <li><i class="far fa-check-square"></i>使用 Swagger 建立 REST API 文件。</li>
+          <li><i class="far fa-check-square"></i>使用 TypeScript 預做型別檢查，並且建立更嚴謹的程式碼撰寫風格。</li>
+          <li><i class="far fa-check-square"></i>使用 GitHub Actions 來完成自動化部屬。</li>
+          <li><i class="far fa-check-square"></i>部署在 Zeabur / Render。</li>
+          <!-- <li class="tag">Node.js</li> -->
+        </ul>
       </div>
     </div>
-  </section> -->
+  </section>
+
   <section>
-    <div id="best">
+    <div class="highlight">
       <a target="_blank" href="https://showanne.github.io/DTNS/#/">
         <h2>個人專題</h2>
         <!-- <i class="fas fa-link"></i> -->

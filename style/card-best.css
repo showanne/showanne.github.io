@@ -1,10 +1,10 @@
-#best {
+.highlight {
 	margin: 2rem auto;
   padding: 1rem 2.5rem;
   background: #f4edffaa;
 }
 
-/* #best h2 {
+/* .highlight h2 {
 	margin: 1em 0;
   font-size: 1.5em;
   border-bottom: 3px solid #2a003e;
@@ -12,11 +12,11 @@
   color: #2a003e;
 } */
 
-#best h2:hover {
+.highlight h2:hover {
 	color: #7876b3;
 }
 
-#best .container {
+.highlight .container {
 	max-width: 1140px;
 	padding: 1rem;
 	margin: auto;
@@ -31,7 +31,7 @@
   flex: 0 1 1;
 }
 
-#best ul{
+.highlight ul{
   padding-inline-start: 0;
 }
 
@@ -41,17 +41,17 @@
 		max-width: 50%;
 		flex: 0 1 50%;
 	}
-  #best ul{
+  .highlight ul{
     padding-inline-start: 40px;
   }
 }
 
-#best i {
+.highlight i {
   margin-right: 0.5rem;
   line-height: 1.9;
 }
 
-#best figure {
+.highlight figure {
   padding: 0.9em;
   /* #f5bca8 #FFBFEC #FF86C6 */
   border: 3px solid #7876b3;
@@ -62,13 +62,13 @@
   /* max-width: 100%; */
 }
 
-#best figure img {
+.highlight figure img {
   margin: 0 auto;
   display: block;
   width: 100%;
 }
 
-#best figcaption {
+.highlight figcaption {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -80,22 +80,22 @@
   counter-increment: figures;
 }
 
-#best .tag {
+.highlight .tag {
   background: #f4edff;
   font-size: 0.9rem;
 }
-#best .tag::after {
+.highlight .tag::after {
   background-color: #f4edff;
 	border-bottom: 13px solid transparent;
   border-left: 10px solid #f4edff;
   border-top: 13px solid transparent;
 }
 
-#best .tag:hover {
+.highlight .tag:hover {
   background-color: #7876b3;
   /* color: white; */
 }
 
-#best .tag:hover::after {
+.highlight .tag:hover::after {
   border-left-color: #7876b3;
 }
