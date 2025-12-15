@@ -1,6 +1,11 @@
 <script setup lang="ts">
+  // Global head metadata
   useHead({
-    title: '詹琇安 Anne — Full Stack Developer 作品集',
+    titleTemplate: titleChunk => {
+      return titleChunk
+        ? `${titleChunk} | Anne's Portfolio`
+        : '詹琇安 Anne — Full Stack Developer 作品集';
+    },
     htmlAttrs: {
       lang: 'zh-Hant'
     },
@@ -21,11 +26,7 @@
   <div class="page">
     <AppHeader />
     <main>
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      <NuxtPage :transition="{ name: 'page', mode: 'out-in' }" />
     </main>
     <AppFooter />
   </div>

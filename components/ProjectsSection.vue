@@ -48,19 +48,8 @@
       </article>
     </div>
 
-    <h3 style="font-size: 1rem; margin-bottom: 1rem">
-      其他作品 Other Projects
-    </h3>
-    <div class="other-projects-grid">
-      <article
-        v-for="(project, index) in data.projects.other"
-        :key="index"
-        class="other-card"
-      >
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        <a :href="project.link.url" target="_blank">{{ project.link.text }}</a>
-      </article>
+    <div style="text-align: center; margin-top: 2.5rem">
+      <NuxtLink to="/projects" class="btn-ghost">查看所有作品</NuxtLink>
     </div>
   </section>
 </template>
