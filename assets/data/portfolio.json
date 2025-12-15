@@ -1,0 +1,92 @@
+{
+  "skills": {
+    "frontend": {
+      "highlight": ["Vue.js", "Nuxt.js"],
+      "tags": ["Vue Router", "Vue CLI", "JavaScript", "TypeScript", "jQuery", "HTML", "CSS / SCSS", "Bootstrap", "Axios"]
+    },
+    "backend": {
+      "highlight": ["Node.js", "Express"],
+      "tags": ["MongoDB", "Mongoose", "JWT Authentication"]
+    },
+    "tools": {
+      "tags": ["Git", "Figma", "Adobe Illustrator", "Adobe Photoshop", "Chrome DevTools"]
+    }
+  },
+  "projects": {
+    "featured": [
+      {
+        "title": "倍而兔募資平台（Rabbit Funding Platform）",
+        "type": "群眾募資平台 · 團隊協作專案",
+        "description": "一個功能完善的群眾募資平台，串連專案發起人與支持者，協助創意與夢想得以實現。",
+        "features": [
+          "使用 Vue3 Composition API 與 Nuxt.js 開發，提供快速且優化的網站體驗。",
+          "整合 Pinia 進行狀態管理，確保前端數據流的一致性。",
+          "實施 TypeScript 和 ESLint，提高程式碼品質和可維護性。",
+          "實現 JWT 驗證和 Google 第三方登入，保證安全便利的註冊登入過程。",
+          "整合藍新金流服務，確保贊助結帳的順暢處理。",
+          "透過 GitHub Actions、Vercel、Zeabur/Render 實現 CI/CD 自動化部署。"
+        ],
+        "tags": ["Vue3 / Nuxt.js", "Pinia", "TypeScript", "Node.js / Express", "MongoDB", "Tailwind CSS", "Google Login API", "NewebPay", "Swagger"],
+        "links": [
+          { "text": "查看專案 Demo", "url": "https://rabbitfund-frontend.vercel.app/" },
+          { "text": "GitHub Repo", "url": "#" },
+          { "text": "技術說明文件", "url": "#" }
+        ]
+      },
+      {
+        "title": "DTNS – 每字美句每個你喜歡的瞬間",
+        "type": "個人化每日筆記／靈感管理工具 · 個人專案",
+        "description": "一款幫助使用者記錄每日想法與靈感的應用程式，兼具筆記、反思與日常管理功能。自行完成從規劃、UI 設計到前後端開發，展現完整產品開發能力。",
+        "features": [
+          "使用 Vue-CLI 快速搭建項目，並以 Vue-Router 管理路由。",
+          "整合 VueMaterial UI 框架，建立美觀且一致的用戶界面。",
+          "支援 PWA（Progressive Web App），提供優化的離線和安裝體驗。",
+          "引入 JWT 驗證機制，並整合 Line Login API 實現快速註冊登入。"
+        ],
+        "tags": ["Vue", "VueMaterial UI", "Node.js", "MongoDB", "PWA", "Line Login API"],
+        "links": [
+          { "text": "查看專案 Demo", "url": "https://showanne.github.io/DTNS/#/" },
+          { "text": "GitHub Repo", "url": "#" },
+          { "text": "功能與架構說明", "url": "#" }
+        ]
+      }
+    ],
+    "other": [
+      {
+        "title": "Stock.Find 股價查詢 LINE Bot",
+        "description": "提供即時股價、五檔、走勢圖與新聞的 LINE 機器人。",
+        "link": { "text": "查看 GitHub", "url": "https://github.com/showanne/line-robot-stock" }
+      },
+      {
+        "title": "木門咖啡（Wooden Door Coffee）",
+        "description": "模擬咖啡店品牌網站，呈現菜單、店面資訊與品牌形象。",
+        "link": { "text": "專案連結／GitHub", "url": "#" }
+      },
+      {
+        "title": "番茄鐘（Pomodoro Timer）",
+        "description": "基於番茄工作法的計時器工具，幫助使用者安排專注與休息節奏。",
+        "link": { "text": "專案連結／GitHub", "url": "#" }
+      },
+      {
+        "title": "To Do List",
+        "description": "簡單實用的待辦清單管理工具，支援新增、完成與刪除。",
+        "link": { "text": "專案連結／GitHub", "url": "#" }
+      },
+      {
+        "title": "射氣球遊戲（Balloon Shooting Game）",
+        "description": "互動式網頁小遊戲，透過射擊氣球考驗反應速度與操作手感。",
+        "link": { "text": "專案連結／GitHub", "url": "#" }
+      },
+      {
+        "title": "打字練習遊戲（Typing Practice Game）",
+        "description": "遊戲化的打字練習工具，提升打字速度與準確度。",
+        "link": { "text": "專案連結／GitHub", "url": "#" }
+      }
+    ]
+  },
+  "contact": {
+    "email": "your-email@example.com",
+    "linkedin": "https://www.linkedin.com/in/your-link",
+    "github": "https://github.com/your-github"
+  }
+}
