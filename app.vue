@@ -25,7 +25,7 @@
 <template>
   <div class="page">
     <AppHeader />
-    <main>
+    <main class="pt-16">
       <NuxtPage :transition="{ name: 'page', mode: 'out-in' }" />
     </main>
     <AppFooter />
