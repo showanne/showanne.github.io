@@ -1,0 +1,225 @@
+import React, { useState, useEffect } from 'react';
+import {
+Github,
+Linkedin,
+Mail,
+ExternalLink,
+Code2,
+Terminal,
+Database,
+Layout,
+ChevronRight,
+Sparkles
+} from 'lucide-react';
+
+/**
+* 說明：
+* 本組件使用 React 模擬 Nuxt/Vue3 的結構，
+* 並採用《許我耀眼》的高級冷色調與金色點綴。
+*/
+
+const Portfolio = () => {
+const [activeTab, setActiveTab] = useState('all');
+const [isScrolled, setIsScrolled] = useState(false);
+
+useEffect(() => {
+const handleScroll = () => setIsScrolled(window.scrollY > 50);
+window.addEventListener('scroll', handleScroll);
+return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+const projects = [
+{
+id: 1,
+title: "耀眼電商平台",
+category: "frontend",
+tech: ["Vue 3", "Nuxt", "Tailwind"],
+desc: "高性能的奢侈品電商界面，專注於極致的視覺體驗與流暢動畫。",
+image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+},
+{
+id: 2,
+title: "都市數據中心",
+category: "fullstack",
+tech: ["TypeScript", "Node.js", "PostgreSQL"],
+desc: "即時數據可視化系統，處理百萬級流量的穩定後端架構。",
+image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+},
+{
+id: 3,
+title: "智能對話系統",
+category: "ai",
+tech: ["Python", "React", "Gemini API"],
+desc: "基於大型語言模型的智能客服，提供擬人化的都市商務對話。",
+image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=800"
+}
+];
+
+const filteredProjects = activeTab === 'all'
+? projects
+: projects.filter(p => p.category === activeTab);
+
+return (
+<div className="min-h-screen bg-[#0A0A0B] text-[#F8F9FA] font-sans selection:bg-[#D4AF37] selection:text-black">
+
+  {/* 導航欄 */}
+  <nav className={`fixed w-full z-50 transition-all duration-300 px-6 py-4 flex justify-between items-center
+    ${isScrolled ? 'bg-[#0A0A0B]/80 backdrop-blur-md border-b border-[#D4AF37]/20' : 'bg-transparent' }`}>
+    <div className="text-2xl font-serif font-bold tracking-tighter flex items-center gap-2">
+      <span className="text-[#D4AF37]">Shining</span>Fullstack
+    </div>
+    <div className="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium">
+      <a href="#about" className="hover:text-[#D4AF37] transition-colors">關於我</a>
+      <a href="#projects" className="hover:text-[#D4AF37] transition-colors">作品</a>
+      <a href="#tech" className="hover:text-[#D4AF37] transition-colors">技術</a>
+      <a href="#contact" className="hover:text-[#D4AF37] transition-colors">聯繫</a>
+    </div>
+    <button
+      className="border border-[#D4AF37] px-6 py-2 text-xs font-bold hover:bg-[#D4AF37] hover:text-black transition-all">
+      下載 CV
+    </button>
+  </nav>
+
+  {/* Hero Section */}
+  <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-[120px] animate-pulse"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-[100px]"></div>
+
+    <div className="z-10">
+      <p
+        className="text-[#D4AF37] tracking-[0.3em] mb-4 text-sm font-bold uppercase flex items-center justify-center gap-2">
+        <Sparkles size={16} /> 許我一個耀眼的數位未來
+      </p>
+      <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 leading-tight">
+        全端工程師 <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F8F9FA] to-[#D4AF37]">
+          張耀晨 (Yao Chen)
+        </span>
+      </h1>
+      <p className="max-w-xl mx-auto text-gray-400 text-lg mb-10 leading-relaxed font-light">
+        專注於 Vue 3 生態系與 Node.js 雲端架構。
+        我將技術邏輯與美學設計完美融合，打造極具生命力的數位產品。
+      </p>
+      <div className="flex gap-4 justify-center">
+        <a href="#projects"
+          className="bg-[#D4AF37] text-black px-8 py-3 font-bold hover:scale-105 transition-transform">
+          查看作品
+        </a>
+        <div className="flex gap-4 items-center ml-4">
+          <Github className="cursor-pointer hover:text-[#D4AF37] transition-colors" />
+          <Linkedin className="cursor-pointer hover:text-[#D4AF37] transition-colors" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 核心技術 */}
+  <section id="tech" className="py-24 px-6 bg-[#0E0E10]">
+    <div className="max-w-6xl mx-auto">
+      <div className="mb-16">
+        <h2 className="text-3xl font-serif font-bold mb-2">核心技術棧</h2>
+        <div className="w-20 h-1 bg-[#D4AF37]"></div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+        { icon:
+        <Layout />, title: "前端開發", list: "Vue 3, Nuxt 3, Tailwind CSS" },
+        { icon:
+        <Terminal />, title: "後端架構", list: "Node.js, Express, NestJS" },
+        { icon:
+        <Database />, title: "數據管理", list: "PostgreSQL, Redis, MongoDB" },
+        { icon:
+        <Code2 />, title: "工程效能", list: "TypeScript, Docker, CI/CD" }
+        ].map((skill, i) => (
+        <div key={i} className="p-8 border border-white/5 bg-white/5 hover:border-[#D4AF37]/50 transition-all group">
+          <div className="text-[#D4AF37] mb-6 group-hover:scale-110 transition-transform">{skill.icon}</div>
+          <h3 className="text-xl font-bold mb-4 font-serif">{skill.title}</h3>
+          <p className="text-gray-400 text-sm leading-relaxed">{skill.list}</p>
+        </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 作品展示 */}
+  <section id="projects" className="py-24 px-6">
+    <div className="max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+          <h2 className="text-3xl font-serif font-bold mb-2">精選作品庫</h2>
+          <div className="w-20 h-1 bg-[#D4AF37]"></div>
+        </div>
+        <div className="flex gap-4 text-xs font-bold tracking-widest">
+          {['all', 'frontend', 'fullstack', 'ai'].map(tab => (
+          <button key={tab} onClick={()=> setActiveTab(tab)}
+            className={`uppercase pb-2 border-b-2 transition-all ${activeTab === tab ? 'border-[#D4AF37] text-[#D4AF37]'
+            : 'border-transparent text-gray-500'}`}
+            >
+            {tab === 'all' ? '全部' : tab}
+          </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {filteredProjects.map((p) => (
+        <div key={p.id} className="group relative overflow-hidden bg-[#0E0E10] border border-white/5">
+          <div className="aspect-video overflow-hidden">
+            <img src={p.image} alt={p.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
+          </div>
+          <div className="p-6">
+            <div className="flex gap-2 mb-3">
+              {p.tech.map(t => (
+              <span key={t} className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">{t}</span>
+              ))}
+            </div>
+            <h3 className="text-xl font-serif font-bold mb-2 flex justify-between items-center">
+              {p.title}
+              <ExternalLink size={16} className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity" />
+            </h3>
+            <p className="text-gray-400 text-sm mb-4 line-clamp-2">{p.desc}</p>
+            <button className="text-[#D4AF37] text-xs font-bold flex items-center gap-1 group/btn">
+              了解更多
+              <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 頁腳 */}
+  <footer id="contact" className="py-20 border-t border-white/5 px-6">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+      <div className="text-center md:text-left">
+        <h2 className="text-3xl font-serif font-bold mb-4">準備好啟動您的耀眼項目了嗎？</h2>
+        <p className="text-gray-400">目前開放接受委託與合作洽談</p>
+      </div>
+      <div className="flex flex-col items-center md:items-end gap-4">
+        <div className="flex gap-6 mb-4">
+          <Mail className="hover:text-[#D4AF37] cursor-pointer" />
+          <Github className="hover:text-[#D4AF37] cursor-pointer" />
+          <Linkedin className="hover:text-[#D4AF37] cursor-pointer" />
+        </div>
+        <p className="text-xs text-gray-600 tracking-widest uppercase">
+          © 2025 Shining Engineering. 版權所有.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  {/* 裝飾線條 */}
+  <div
+    className="fixed top-0 left-10 w-[1px] h-screen bg-gradient-to-b from-transparent via-[#D4AF37]/10 to-transparent pointer-events-none hidden md:block">
+  </div>
+  <div
+    className="fixed top-0 right-10 w-[1px] h-screen bg-gradient-to-b from-transparent via-[#D4AF37]/10 to-transparent pointer-events-none hidden md:block">
+  </div>
+</div>
+);
+};
+
+export default Portfolio;
