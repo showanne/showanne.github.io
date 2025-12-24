@@ -6,4 +6,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    // The private keys which are only available on server-side
+    gmailUser: process.env.GMAIL_USER,
+    gmailAppPassword: process.env.GMAIL_APP_PASSWORD,
+    // Keys within public, will be also exposed to the client-side
+    public: {}
+  }
 })
