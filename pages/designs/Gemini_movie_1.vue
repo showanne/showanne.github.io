@@ -1,0 +1,267 @@
+<template>
+  <div id="app">
+    <div class="min-h-screen bg-[#0D0D0D] text-white selection:bg-amber-500/30">
+
+      <!-- Navigation -->
+      <nav
+        :class="['fixed w-full z-50 transition-all duration-300', scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6']">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <h1
+            class="text-2xl font-serif tracking-widest bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent font-bold">
+            許我耀眼 <span class="text-sm font-light text-gray-400 ml-2 italic">LOVE AMBITION</span>
+          </h1>
+          <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+            <a v-for="item in menuItems" :key="item" href="#" class="hover:text-amber-400 transition-colors">{{ item
+              }}</a>
+          </div>
+          <button
+            class="border border-amber-500/50 px-5 py-2 text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-all">
+            立即觀看
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0D0D0D] z-10"></div>
+          <div
+            class="w-full h-full bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center scale-105 animate-pulse-slow">
+          </div>
+        </div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl">
+          <p class="text-amber-400 tracking-[0.3em] mb-4 uppercase text-sm animate-fade-in">愛是謀略，亦是本能</p>
+          <h2 class="text-6xl md:text-8xl font-serif mb-6 tracking-tight leading-tight">
+            許我 <span class="italic font-light">耀眼</span>
+          </h2>
+          <p class="text-gray-300 text-lg md:text-xl font-light mb-10 leading-relaxed max-w-2xl mx-auto">
+            在霓虹閃爍的都市森林裡，每個人都戴著精緻的面具。
+            當謊言交織成網，我們能否找到那抹純粹的微光？
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-amber-500 text-black font-bold px-10 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-amber-400 transition-all transform hover:scale-105">
+              <i data-lucide="play" class="w-5 h-5 fill-current"></i> 播放預告
+            </button>
+            <button
+              class="bg-white/10 backdrop-blur-md border border-white/20 px-10 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
+              <i data-lucide="info" class="w-5 h-5"></i> 更多細節
+            </button>
+          </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+          <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+      </section>
+
+      <!-- Highlights Section -->
+      <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div v-for="(item, idx) in highlights" :key="idx"
+            class="group p-8 border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 rounded-2xl">
+            <div
+              class="mb-6 inline-flex p-3 rounded-full bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
+              <i :data-lucide="item.icon" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-serif mb-4 text-amber-200">{{ item.title }}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              {{ item.content }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Characters Section -->
+      <section class="py-24 bg-gradient-to-b from-transparent to-black/40">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex justify-between items-end mb-16">
+            <div>
+              <h2 class="text-amber-500 uppercase tracking-widest text-sm mb-2 font-bold">Cast & Characters</h2>
+              <h3 class="text-4xl font-serif">人物誌</h3>
+            </div>
+            <button class="text-amber-500 flex items-center gap-2 hover:underline group">
+              查看全部演員 <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div v-for="(char, idx) in characters" :key="idx"
+              class="relative group overflow-hidden rounded-3xl aspect-[16/9] bg-gray-900">
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+              <div :style="{ backgroundImage: `url(${char.image})` }"
+                class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700 opacity-60 grayscale group-hover:grayscale-0">
+              </div>
+
+              <div class="relative z-20 h-full flex flex-col justify-end p-10">
+                <span class="text-amber-500 text-xs font-bold uppercase tracking-widest mb-1">{{ char.role }}</span>
+                <h4 class="text-3xl font-serif mb-4">{{ char.name }}</h4>
+                <p
+                  class="text-gray-300 max-w-md text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {{ char.desc }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+          <h3 class="text-3xl font-serif italic text-amber-100/80">「在聚光燈下，每道陰影都有它存在的理由。」</h3>
+        </div>
+
+        <div class="flex gap-4 animate-scroll whitespace-nowrap px-4">
+          <div v-for="i in 12" :key="i"
+            class="min-w-[300px] h-[400px] bg-white/5 rounded-lg overflow-hidden border border-white/10 hover:border-amber-500/50 transition-colors">
+            <img :src="`https://images.unsplash.com/photo-${1500000000000 + i * 2345}?auto=format&fit=crop&q=80&w=600`"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="劇場劇照">
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-black py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div class="col-span-1 md:col-span-2">
+            <h2 class="text-xl font-serif text-amber-500 mb-6 tracking-widest uppercase">許我耀眼</h2>
+            <p class="text-gray-500 text-sm leading-relaxed max-w-sm mb-6">
+              這是一個關於都市男女在名利場中尋找真實自我的故事。當一切繁華落盡，只有真心能抵禦孤獨。
+            </p>
+            <div class="flex gap-4">
+              <i data-lucide="share-2" class="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"></i>
+              <i data-lucide="star" class="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"></i>
+              <i data-lucide="book-open" class="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-6 text-sm uppercase">快速連結</h4>
+            <ul class="text-gray-500 text-sm space-y-4">
+              <li><a href="#" class="hover:text-amber-400 transition-colors">最新劇評</a></li>
+              <li><a href="#" class="hover:text-amber-400 transition-colors">製作幕後</a></li>
+              <li><a href="#" class="hover:text-amber-400 transition-colors">OST 音樂</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-6 text-sm uppercase">官方訂閱</h4>
+            <div class="flex border-b border-gray-700 py-2">
+              <input type="email" placeholder="輸入您的信箱" class="bg-transparent text-sm w-full focus:outline-none" />
+              <button class="text-amber-500 hover:text-amber-400">訂閱</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const scrolled = ref(false);
+const menuItems = ['主頁', '劇集亮點', '人物誌', '劇照回顧'];
+
+const highlights = [
+  { icon: 'heart', title: '極致推拉', content: '精心打磨的劇本，帶領觀眾深入都市情感的核心。' },
+  { icon: 'users', title: '權力遊戲', content: '關於『偽裝』與『真心』的深度探討。' },
+  { icon: 'camera', title: '電影質感', content: '每一幀都是視覺盛宴，還原都市繁華下的真實。' }
+];
+
+const characters = [
+  {
+    name: '許妍',
+    role: '當紅主播 / 偽裝者',
+    desc: '在眾人面前是完美無瑕的耀眼主播，實則隱藏著不為人知的過去。',
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1974'
+  },
+  {
+    name: '沈皓明',
+    role: '商界精英 / 獵手',
+    desc: '出生名門，冷靜自持，在利益與情感的邊緣試探。',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1974'
+  }
+];
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 50;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+  // Note: Lucide icons would typically be imported and used as Vue components.
+  // The original HTML uses a script to initialize them. For a Vue component,
+  // you would use a library like 'lucide-vue-next' and import individual icons.
+  // For simplicity, we are omitting direct Lucide icon initialization here
+  // and assuming they will be handled globally or via a plugin.
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script>
+
+<style scoped>
+/*
+  The original <head> content including <style> tags and <link> for fonts
+  should be managed at the Nuxt.js level (e.g., nuxt.config.ts or useHead).
+  For this conversion, we're placing styles here for direct correspondence,
+  but in a real Nuxt app, these would be externalized or handled by Nuxt.
+*/
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #0D0D0D;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
