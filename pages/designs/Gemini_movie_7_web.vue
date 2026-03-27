@@ -170,88 +170,50 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Frontend -->
-          <div class="glass-card p-8 rounded-sm border-t-4 border-t-amber-500/70">
-            <div class="flex items-center justify-between mb-6">
-              <h3 class="text-2xl font-serif italic text-slate-100">Frontend</h3>
-              <i class="fa-brands fa-react text-2xl text-slate-400"></i>
-            </div>
-            <ul class="space-y-4">
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">React / Next.js</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500 w-[95%]"></div>
-                </div>
-              </li>
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">TypeScript</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500 w-[90%]"></div>
-                </div>
-              </li>
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">Tailwind CSS</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500 w-[98%]"></div>
-                </div>
-              </li>
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">Three.js / WebGL</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500/60 w-[75%]"></div>
-                </div>
-              </li>
-            </ul>
+        <!-- Frontend -->
+        <div class="glass-card p-8 rounded-sm border-t-4 border-t-amber-500/70">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-serif italic text-slate-100">Frontend</h3>
+            <i class="fa-brands fa-react text-2xl text-slate-400"></i>
           </div>
+          <ul class="space-y-4">
+            <li v-for="skill in frontendSkills.slice(0, 4)" :key="skill" class="flex justify-between items-center group">
+              <span class="text-slate-300 group-hover:text-amber-400 transition-colors">{{ skill }}</span>
+              <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-500" :style="{ width: `${Math.floor(Math.random() * (98 - 85 + 1)) + 85}%` }"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-          <!-- Backend -->
-          <div class="glass-card p-8 rounded-sm border-t-4 border-t-slate-500/50">
-            <div class="flex items-center justify-between mb-6">
-              <h3 class="text-2xl font-serif italic text-slate-100">Backend</h3>
-              <i class="fa-solid fa-server text-2xl text-slate-400"></i>
-            </div>
-            <ul class="space-y-4">
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">Node.js / Express</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500 w-[90%]"></div>
-                </div>
-              </li>
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">Python / Django</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500/80 w-[85%]"></div>
-                </div>
-              </li>
-              <li class="flex justify-between items-center group">
-                <span class="text-slate-300 group-hover:text-amber-400 transition-colors">PostgreSQL / MongoDB</span>
-                <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div class="h-full bg-amber-500 w-[88%]"></div>
-                </div>
-              </li>
-            </ul>
+        <!-- Backend -->
+        <div class="glass-card p-8 rounded-sm border-t-4 border-t-slate-500/50">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-serif italic text-slate-100">Backend</h3>
+            <i class="fa-solid fa-server text-2xl text-slate-400"></i>
           </div>
+          <ul class="space-y-4">
+            <li v-for="skill in backendSkills.slice(0, 3)" :key="skill" class="flex justify-between items-center group">
+              <span class="text-slate-300 group-hover:text-amber-400 transition-colors">{{ skill }}</span>
+              <div class="w-24 h-1 bg-slate-700 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-500" :style="{ width: `${Math.floor(Math.random() * (90 - 80 + 1)) + 80}%` }"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-          <!-- Tools & Others -->
-          <div class="glass-card p-8 rounded-sm border-t-4 border-t-slate-500/50">
-            <div class="flex items-center justify-between mb-6">
-              <h3 class="text-2xl font-serif italic text-slate-100">DevOps & Design</h3>
-              <i class="fa-solid fa-wand-magic-sparkles text-2xl text-slate-400"></i>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <span
-                class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Docker</span>
-              <span
-                class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">AWS</span>
-              <span
-                class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">CI/CD</span>
-              <span
-                class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Figma</span>
-              <span
-                class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">UI/UX</span>
-            </div>
+        <!-- Tools & Others -->
+        <div class="glass-card p-8 rounded-sm border-t-4 border-t-slate-500/50">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-serif italic text-slate-100">DevOps & Design</h3>
+            <i class="fa-solid fa-wand-magic-sparkles text-2xl text-slate-400"></i>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span v-for="skill in devopsSkills" :key="skill"
+              class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">{{ skill }}</span>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -268,56 +230,29 @@
             All Projects <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-          <!-- Project 1 -->
-          <div class="group cursor-pointer">
-            <div class="relative overflow-hidden rounded-sm aspect-video mb-6 border border-white/5">
-              <img src="https://images.unsplash.com/photo-1481487484168-9b995ecc1660?q=80&w=800&auto=format&fit=crop"
-                alt="Project 1"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-              <div
-                class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                <span
-                  class="px-6 py-2 border border-amber-400 text-amber-400 tracking-widest uppercase text-sm font-medium hover:bg-amber-400 hover:text-slate-900 transition-all">View
-                  Case</span>
-              </div>
-            </div>
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="text-2xl font-serif font-bold text-slate-200 group-hover:text-amber-400 transition-colors">
-                  FinTech Dashboard</h3>
-                <p class="text-slate-500 mt-2 text-sm max-w-sm">高併發金融數據可視化平台，整合實時交易系統。</p>
-              </div>
-              <span class="text-xs font-bold text-slate-600 border border-slate-700 px-2 py-1 rounded">2024</span>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="group cursor-pointer md:mt-12">
-            <div class="relative overflow-hidden rounded-sm aspect-video mb-6 border border-white/5">
-              <img src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?q=80&w=800&auto=format&fit=crop"
-                alt="Project 2"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-              <div
-                class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                <span
-                  class="px-6 py-2 border border-amber-400 text-amber-400 tracking-widest uppercase text-sm font-medium hover:bg-amber-400 hover:text-slate-900 transition-all">View
-                  Case</span>
-              </div>
-            </div>
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="text-2xl font-serif font-bold text-slate-200 group-hover:text-amber-400 transition-colors">
-                  E-Commerce Luxury</h3>
-                <p class="text-slate-500 mt-2 text-sm max-w-sm">為頂級珠寶品牌打造的沉浸式購物體驗網站。</p>
-              </div>
-              <span class="text-xs font-bold text-slate-600 border border-slate-700 px-2 py-1 rounded">2023</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div v-for="(project, index) in featuredProjects" :key="project.title" class="group cursor-pointer" :class="{'md:mt-12': index === 1}">
+                  <div class="relative overflow-hidden rounded-sm aspect-video mb-6 border border-white/5">
+                    <img :src="`https://images.unsplash.com/photo-1481487484168-9b995ecc1660?q=80&w=800&auto=format&fit=crop&h=450&${index}`"
+                      :alt="project.title"
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div
+                      class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                      <a :href="project.links[0]?.url || '#'" target="_blank"
+                        class="px-6 py-2 border border-amber-400 text-amber-400 tracking-widest uppercase text-sm font-medium hover:bg-amber-400 hover:text-slate-900 transition-all">View
+                        Case</a>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-serif font-bold text-slate-200 group-hover:text-amber-400 transition-colors">
+                        {{ project.title }}</h3>
+                      <p class="text-slate-500 mt-2 text-sm max-w-sm">{{ project.description }}</p>
+                    </div>
+                    <span class="text-xs font-bold text-slate-600 border border-slate-700 px-2 py-1 rounded">{{ new Date().getFullYear() - index }}</span>
+                  </div>
+                </div>
+              </div>      </div>
     </section>
 
     <!-- Contact Section -->
@@ -361,10 +296,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const mobileMenuOpen = ref(false);
 const scrolledNavbar = ref(false);
+
+const frontendSkills = computed(() => [...portfolioData.skills.frontend.highlight, ...portfolioData.skills.frontend.tags]);
+const backendSkills = computed(() => [...portfolioData.skills.backend.highlight, ...portfolioData.skills.backend.tags]);
+const devopsSkills = computed(() => portfolioData.skills.tools.tags);
+const featuredProjects = computed(() => portfolioData.projects.featured);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anne Chan | 前端工程師作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              stone: {
+                850: '#1c1917',
+                900: '#0c0a09'
+              },
+              amber: {
+                350: '#fbbf24', // Lighter gold
+                450: '#d97706' // Deep gold
+              }
+            },
+            fontFamily: {
+              sans: ['"Inter"', '"Noto Sans TC"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif']
+            },
+            backgroundImage: {
+              'hero-pattern':
+                'radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.15) 0%, rgba(12, 10, 9, 0) 50%)'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      /* Custom Styles for Glossy/Dazzling feel */
+      .glass-nav {
+        background: rgba(12, 10, 9, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .text-glow {
+        text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+      }
+      .slash-card {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+        transition: all 0.3s ease;
+      }
+      .slash-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px -10px rgba(251, 191, 36, 0.2);
+        border-color: rgba(251, 191, 36, 0.5);
+      }
+      .timeline-dot::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(to bottom, #fbbf24, transparent);
+        left: 50%;
+        top: 20px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-stone-900 text-stone-100 font-sans antialiased selection:bg-amber-500 selection:text-white"
+  >
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="font-serif text-2xl font-bold tracking-wider text-amber-400"
+          >ANNE.</a
+        >
+        <div
+          class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-stone-300"
+        >
+          <a href="#about" class="hover:text-amber-400 transition-colors"
+            >About</a
+          >
+          <a href="#experience" class="hover:text-amber-400 transition-colors"
+            >Experience</a
+          >
+          <a href="#skills" class="hover:text-amber-400 transition-colors"
+            >Skills</a
+          >
+          <a href="#works" class="hover:text-amber-400 transition-colors"
+            >Works</a
+          >
+          <a href="#lifestyle" class="hover:text-amber-400 transition-colors"
+            >Lifestyle</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-pattern"
+    >
+      <div
+        class="absolute top-20 left-20 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px]"
+      ></div>
+      <div
+        class="absolute bottom-20 right-20 w-96 h-96 bg-purple-900/10 rounded-full blur-[100px]"
+      ></div>
+
+      <div class="relative z-10 text-center max-w-4xl px-6">
+        <p
+          class="text-amber-400 tracking-[0.3em] uppercase text-sm mb-4 animate-fade-in-up"
+        >
+          Front-end Developer
+        </p>
+        <h1
+          class="font-serif text-6xl md:text-8xl font-bold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-stone-400 text-glow"
+        >
+          詹琇安 Anne
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-stone-300 font-light mb-10 max-w-2xl mx-auto"
+        >
+          「勇於嘗試、積極學習、斜槓發展」<br />
+          <span class="text-base text-stone-400 mt-2 block"
+            >將創意轉化為實際可行的技術方案，打造耀眼的使用者體驗。</span
+          >
+        </p>
+        <div class="flex justify-center gap-6">
+          <a
+            href="#works"
+            class="px-8 py-3 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-900 transition-all duration-300 uppercase tracking-widest text-sm"
+          >
+            View Portfolio
+          </a>
+          <a
+            href="https://cake.me/showanne"
+            target="_blank"
+            class="px-8 py-3 bg-stone-800 text-stone-300 hover:bg-stone-700 transition-all duration-300 uppercase tracking-widest text-sm"
+          >
+            Resume
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="py-24 bg-stone-850">
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+      >
+        <div class="relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+          ></div>
+          <div
+            class="relative aspect-[3/4] bg-stone-800 rounded-lg overflow-hidden border border-stone-700"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop"
+              alt="Anne Portrait"
+              class="object-cover w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-4xl md:text-5xl text-white mb-8">
+            Professional &<br /><span class="text-amber-400 italic"
+              >Empathetic</span
+            >
+          </h2>
+          <div class="space-y-6 text-stone-300 font-light leading-relaxed">
+            <p>
+              我是一位擁有四年前端實戰經驗的全端工程師，擅長 React.js 與 Vue.js
+              生態系。我不僅僅是寫程式，更憑藉敏銳的設計美感與同理心，致力於從使用者角度優化體驗
+              。
+            </p>
+            <p>
+              從城邦媒體到國泰金控，我主導過多項專案的技術升級，包括導入
+              TypeScript、重構 ERP 系統，並與後端團隊緊密協作 [cite:
+              283]。我相信技術是為了讓生活更美好，就像我在《倍而兔募資平台》與《DTNS》專案中所實踐的那樣。
+            </p>
+            <p>
+              目前的我正積極朝向全端工程師邁進，持續探索動畫細節與更深層的架構設計
+              [cite: 286]。
+            </p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-amber-400 font-serif text-xl mb-2">4+ Years</h4>
+              <p class="text-stone-500 text-sm">Front-end Experience</p>
+            </div>
+            <div>
+              <h4 class="text-amber-400 font-serif text-xl mb-2">Full-Stack</h4>
+              <p class="text-stone-500 text-sm">Vue, React, Node.js</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="experience"
+      class="py-24 bg-stone-900 relative overflow-hidden"
+    >
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-serif text-4xl text-center mb-16 text-white">
+          Career Path
+        </h2>
+
+        <div class="space-y-12 relative timeline-dot">
+          <div class="relative pl-8 md:pl-0">
+            <div class="md:flex items-center justify-between group">
+              <div class="md:w-5/12 md:text-right md:pr-8">
+                <h3
+                  class="text-2xl text-white font-serif group-hover:text-amber-400 transition-colors"
+                >
+                  國泰金融控股 (緯創駐點)
+                </h3>
+                <p class="text-amber-400/80 text-sm mt-1">2025.02 - Present</p>
+              </div>
+              <div
+                class="absolute left-0 md:left-1/2 w-4 h-4 bg-amber-500 rounded-full border-4 border-stone-900 transform -translate-x-[5px] md:-translate-x-2"
+              ></div>
+              <div class="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <h4 class="text-lg text-stone-200">前端工程師</h4>
+                <ul
+                  class="text-stone-400 text-sm list-disc ml-4 mt-2 space-y-1"
+                >
+                  <li>
+                    開發請假管理系統，實作動態篩選與 Lazy Loading [cite: 317,
+                    318]。
+                  </li>
+                  <li>採用 Vue-i18n 架構多語系網站 [cite: 320]。</li>
+                  <li>基於 Quasar 元件庫進行切版與互動開發 [cite: 321]。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-0">
+            <div class="md:flex items-center justify-between group">
+              <div class="md:w-5/12 md:text-right md:pr-8">
+                <h3
+                  class="text-2xl text-white font-serif group-hover:text-amber-400 transition-colors"
+                >
+                  城邦媒體控股集團
+                </h3>
+                <p class="text-amber-400/80 text-sm mt-1">2024.05 - 2025.02</p>
+              </div>
+              <div
+                class="absolute left-0 md:left-1/2 w-4 h-4 bg-stone-600 rounded-full border-4 border-stone-900 transform -translate-x-[5px] md:-translate-x-2"
+              ></div>
+              <div class="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <h4 class="text-lg text-stone-200">前端工程師</h4>
+                <ul
+                  class="text-stone-400 text-sm list-disc ml-4 mt-2 space-y-1"
+                >
+                  <li>整合 TypeScript，建立靜態型別檢查機制 [cite: 329]。</li>
+                  <li>與後端 (C#/Java) 合作重構 API 架構 [cite: 326]。</li>
+                  <li>主導前端專案架構改版，優化效能 [cite: 328]。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-0">
+            <div class="md:flex items-center justify-between group">
+              <div class="md:w-5/12 md:text-right md:pr-8">
+                <h3
+                  class="text-2xl text-white font-serif group-hover:text-amber-400 transition-colors"
+                >
+                  眾策群集 & 凱斯整合
+                </h3>
+                <p class="text-amber-400/80 text-sm mt-1">2021.09 - 2024.07</p>
+              </div>
+              <div
+                class="absolute left-0 md:left-1/2 w-4 h-4 bg-stone-600 rounded-full border-4 border-stone-900 transform -translate-x-[5px] md:-translate-x-2"
+              ></div>
+              <div class="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <h4 class="text-lg text-stone-200">前端工程師</h4>
+                <ul
+                  class="text-stone-400 text-sm list-disc ml-4 mt-2 space-y-1"
+                >
+                  <li>參與多語系平台開發與維運，專注 RWD [cite: 341]。</li>
+                  <li>與 PHP Laravel 後端協作設計 API [cite: 337]。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-stone-850">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="font-serif text-4xl mb-12 text-white border-l-4 border-amber-400 pl-6"
+        >
+          Technical Arsenal
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-stone-900 p-8 border border-stone-800 hover:border-amber-500/50 transition-colors"
+          >
+            <h3 class="text-amber-400 font-serif text-2xl mb-6">Front-end</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Vue.js (v2/v3)</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Nuxt.js</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Pinia/Vuex</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >React.js</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Sass</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Quasar/Element UI</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-stone-900 p-8 border border-stone-800 hover:border-amber-500/50 transition-colors"
+          >
+            <h3 class="text-amber-400 font-serif text-2xl mb-6">Back-end</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Node.js (Express)</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >MongoDB</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >RESTful API</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >AWS EC2</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Docker</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-stone-900 p-8 border border-stone-800 hover:border-amber-500/50 transition-colors"
+          >
+            <h3 class="text-amber-400 font-serif text-2xl mb-6">
+              Design & Tools
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Figma</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Adobe XD</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >UI/UX Concept</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Git/GitHub</span
+              >
+              <span
+                class="px-3 py-1 bg-stone-800 text-stone-300 text-sm rounded-full"
+                >Jenkins</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="py-24 bg-stone-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="font-serif text-4xl md:text-5xl text-center mb-16 text-white"
+        >
+          Selected Works
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-stone-850 border border-stone-800 slash-card group overflow-hidden"
+          >
+            <div class="h-48 bg-stone-800 overflow-hidden relative">
+              <div
+                class="absolute inset-0 bg-stone-700 flex items-center justify-center text-stone-500 text-sm"
+              >
+                倍而兔募資平台 Screenshot
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-2xl font-serif text-white mb-2 group-hover:text-amber-400 transition-colors"
+              >
+                倍而兔募資平台
+              </h3>
+              <p class="text-amber-500 text-xs uppercase tracking-wide mb-4">
+                Vue 3 • Nuxt • Node.js • MongoDB
+              </p>
+              <p class="text-stone-400 text-sm mb-4 line-clamp-3">
+                擔任技術負責人，涵蓋資料庫設計、金流串接與功能開發。整合 Pinia
+                狀態管理與 Swagger API 文件 [cite: 358, 386]。
+              </p>
+              <a
+                href="#"
+                class="text-white border-b border-amber-500 pb-1 text-sm hover:text-amber-400 transition-colors"
+                >View Project -></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-stone-850 border border-stone-800 slash-card group overflow-hidden"
+          >
+            <div class="h-48 bg-stone-800 overflow-hidden relative">
+              <div
+                class="absolute inset-0 bg-stone-700 flex items-center justify-center text-stone-500 text-sm"
+              >
+                DTNS 文字網站 Screenshot
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-2xl font-serif text-white mb-2 group-hover:text-amber-400 transition-colors"
+              >
+                DTNS 文字的溫度
+              </h3>
+              <p class="text-amber-500 text-xs uppercase tracking-wide mb-4">
+                Vue CLI • Express • Line Login
+              </p>
+              <p class="text-stone-400 text-sm mb-4 line-clamp-3">
+                獨立開發概念網站，紀錄讓人心動的瞬間。實作 PWA、JWT
+                驗證與夜間模式，展現全端整合能力 [cite: 410, 423]。
+              </p>
+              <a
+                href="#"
+                class="text-white border-b border-amber-500 pb-1 text-sm hover:text-amber-400 transition-colors"
+                >View Project -></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-stone-850 border border-stone-800 slash-card group overflow-hidden"
+          >
+            <div class="h-48 bg-stone-800 overflow-hidden relative">
+              <div
+                class="absolute inset-0 bg-stone-700 flex items-center justify-center text-stone-500 text-sm"
+              >
+                Stock Find Linebot Screenshot
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-2xl font-serif text-white mb-2 group-hover:text-amber-400 transition-colors"
+              >
+                Stock.Find Line Bot
+              </h3>
+              <p class="text-amber-500 text-xs uppercase tracking-wide mb-4">
+                Node.js • Line Flex Message • API
+              </p>
+              <p class="text-stone-400 text-sm mb-4 line-clamp-3">
+                即時股票查詢機器人。串接多方財經 API，利用 Line Flex Message
+                呈現視覺化五檔報價與新聞 [cite: 443, 530]。
+              </p>
+              <a
+                href="#"
+                class="text-white border-b border-amber-500 pb-1 text-sm hover:text-amber-400 transition-colors"
+                >View Project -></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="lifestyle"
+      class="py-24 bg-gradient-to-b from-stone-900 to-stone-850 relative"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span
+              class="text-amber-400 tracking-widest uppercase text-sm font-semibold"
+              >Beyond the Code</span
+            >
+            <h2 class="font-serif text-4xl md:text-5xl text-white mt-4 mb-8">
+              Crafting Life with <br />
+              Passion & Precision
+            </h2>
+            <p class="text-stone-300 font-light leading-relaxed mb-6">
+              在程式碼之外，我熱愛透過雙手創造實體的溫度。
+            </p>
+            <p class="text-stone-300 font-light leading-relaxed mb-8">
+              **金工 (Metalworking)** 與 **皮雕 (Leather Carving)**
+              是我修煉專注力與美感的途徑。這些愛好不僅展現了我靈活的「斜槓」特質，更讓我能以藝術家的眼光去審視每一個
+              UI 元件的細節與質地。
+            </p>
+            <div class="flex gap-4">
+              <span
+                class="px-4 py-2 border border-stone-600 rounded-full text-stone-400 text-sm"
+                >Metalworking</span
+              >
+              <span
+                class="px-4 py-2 border border-stone-600 rounded-full text-stone-400 text-sm"
+                >Leather Craft</span
+              >
+              <span
+                class="px-4 py-2 border border-stone-600 rounded-full text-stone-400 text-sm"
+                >Active Learner</span
+              >
+            </div>
+          </div>
+
+          <div class="relative h-96">
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-lg overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 z-10 border border-stone-700"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1622625208493-272e50302b4d?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-80"
+                alt="Metalworking"
+              />
+            </div>
+            <div
+              class="absolute bottom-0 left-10 w-64 h-64 bg-stone-800 rounded-lg overflow-hidden shadow-2xl transform -rotate-6 hover:rotate-0 transition-all duration-500 border border-stone-700"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1598532163257-5260155b9588?q=80&w=2072&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-80"
+                alt="Leather craft"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-stone-950 py-12 border-t border-stone-900">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="mb-6 md:mb-0 text-center md:text-left">
+          <h2 class="font-serif text-2xl text-white">ANNE.</h2>
+          <p class="text-stone-500 text-sm mt-2">
+            Designing the future, one pixel at a time.
+          </p>
+        </div>
+
+        <div class="flex gap-6">
+          <a
+            href="https://github.com/showanne"
+            target="_blank"
+            class="text-stone-400 hover:text-amber-400 transition-colors"
+            >GitHub</a
+          >
+          <a
+            href="https://showanne.github.io"
+            target="_blank"
+            class="text-stone-400 hover:text-amber-400 transition-colors"
+            >Blog</a
+          >
+          <a
+            href="https://cake.me/showanne"
+            target="_blank"
+            class="text-stone-400 hover:text-amber-400 transition-colors"
+            >CakeResume</a
+          >
+          <a
+            href="mailto:contact@example.com"
+            class="text-stone-400 hover:text-amber-400 transition-colors"
+            >Email Me</a
+          >
+        </div>
+      </div>
+      <div class="text-center mt-12 text-stone-700 text-xs">
+        © 2025 Anne Chan. Inspired by "The Diamond's Dream". All rights
+        reserved.
+      </div>
+    </footer>
+  </body>
+</html>

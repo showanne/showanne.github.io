@@ -124,74 +124,52 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Frontend -->
-          <div
-            class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-purple-500">
-            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400">
-              <i class="fas fa-laptop-code text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 text-white">前端開發</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>Vue.js (v2/v3), Nuxt.js
-              </li>
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>React.js (Learning)</li>
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>TypeScript, JavaScript
-              </li>
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>Tailwind CSS, Bootstrap
-              </li>
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>Pinia, Vuex</li>
-              <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>HTML5 / CSS3 / Sass</li>
-            </ul>
-          </div>
-
-          <!-- Backend -->
-          <div
-            class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-pink-500">
-            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 text-pink-400">
-              <i class="fas fa-server text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 text-white">後端技術</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>Node.js, Express</li>
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>MongoDB (Mongoose)</li>
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>RESTful API Design</li>
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>PHP + Laravel (Basic)</li>
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>Docker</li>
-              <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>AWS EC2 Deployment</li>
-            </ul>
-          </div>
-
-          <!-- Design -->
-          <div
-            class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-blue-500">
-            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
-              <i class="fas fa-paint-brush text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 text-white">設計能力</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>UI/UX 觀念</li>
-              <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>Figma, Adobe XD</li>
-              <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>Photoshop, Illustrator</li>
-              <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>RWD 響應式設計</li>
-              <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>跨瀏覽器相容性</li>
-            </ul>
-          </div>
-
-          <!-- Tools -->
-          <div
-            class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-yellow-500">
-            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 text-yellow-400">
-              <i class="fas fa-tools text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 text-white">工具與協作</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>Git / GitHub / GitLab
-              </li>
-              <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>Chrome Dev Tools</li>
-              <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>Notion / ClickUp</li>
-              <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>Xmind / Draw.io</li>
-              <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>Jenkins CI/CD</li>
-            </ul>
-          </div>
+                    <div
+                      class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-purple-500">
+                      <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold mb-4 text-white">前端開發</h3>
+                      <ul class="space-y-2 text-gray-400 text-sm">
+                        <li v-for="skill in frontendSkills" :key="skill" class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>{{ skill }}</li>
+                      </ul>
+                    </div>
+          
+                    <!-- Backend -->
+                    <div
+                      class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-pink-500">
+                      <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 text-pink-400">
+                        <i class="fas fa-server text-2xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold mb-4 text-white">後端技術</h3>
+                      <ul class="space-y-2 text-gray-400 text-sm">
+                        <li v-for="skill in backendSkills" :key="skill" class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i>{{ skill }}</li>
+                      </ul>
+                    </div>
+          
+                    <!-- Design -->
+                    <div
+                      class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-blue-500">
+                      <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
+                        <i class="fas fa-paint-brush text-2xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold mb-4 text-white">設計能力</h3>
+                      <ul class="space-y-2 text-gray-400 text-sm">
+                        <li v-for="skill in designSkills" :key="skill" class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i>{{ skill }}</li>
+                      </ul>
+                    </div>
+          
+                    <!-- Tools -->
+                    <div
+                      class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-yellow-500">
+                      <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 text-yellow-400">
+                        <i class="fas fa-tools text-2xl"></i>
+                      </div>
+                      <h3 class="text-xl font-bold mb-4 text-white">工具與協作</h3>
+                      <ul class="space-y-2 text-gray-400 text-sm">
+                        <li v-for="skill in toolsSkills" :key="skill" class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i>{{ skill }}</li>
+                      </ul>
+                    </div>
         </div>
       </div>
     </section>
@@ -287,112 +265,69 @@
           <p class="mt-4 text-gray-400">將創意與技術結合的實際成果</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- Project 1 -->
-          <div
-            class="group relative rounded-2xl overflow-hidden glass-card hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-500">
-            <div class="h-48 bg-gray-800 overflow-hidden relative">
-              <!-- 模擬專案封面 -->
-              <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-900/40 z-10"></div>
-              <div
-                class="w-full h-full flex items-center justify-center bg-gray-900 group-hover:scale-110 transition-transform duration-700">
-                <i class="fas fa-hand-holding-heart text-6xl text-pink-400 opacity-50"></i>
-              </div>
-              <div class="absolute top-2 right-2 z-20">
-                <span class="bg-pink-600 text-white text-xs px-2 py-1 rounded">團隊協作</span>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-chic-pink transition-colors">倍而兔募資平台
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 h-10 overflow-hidden">
-                提供會員提案、贊助、管理的完整募資平台。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span class="text-xs bg-purple-900/50 text-purple-200 px-2 py-1 rounded">Nuxt.js</span>
-                <span class="text-xs bg-purple-900/50 text-purple-200 px-2 py-1 rounded">Node.js</span>
-                <span class="text-xs bg-purple-900/50 text-purple-200 px-2 py-1 rounded">MongoDB</span>
-                <span class="text-xs bg-purple-900/50 text-purple-200 px-2 py-1 rounded">Pinia</span>
-              </div>
-              <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                <a href="#" class="text-gray-300 hover:text-white text-sm flex items-center"><i
-                    class="fas fa-info-circle mr-1"></i> 詳情</a>
-                <a href="#" class="text-chic-pink hover:text-white transition-colors"><i
-                    class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
+                  <div v-for="project in featuredProjects" :key="project.title"
 
-          <!-- Project 2 -->
-          <div
-            class="group relative rounded-2xl overflow-hidden glass-card hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-500">
-            <div class="h-48 bg-gray-800 overflow-hidden relative">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-900/40 z-10"></div>
-              <div
-                class="w-full h-full flex items-center justify-center bg-gray-900 group-hover:scale-110 transition-transform duration-700">
-                <i class="fas fa-book-open text-6xl text-blue-400 opacity-50"></i>
-              </div>
-              <div class="absolute top-2 right-2 z-20">
-                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">個人專案</span>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">DTNS - 每個喜歡的瞬間
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 h-10 overflow-hidden">
-                紀錄書中金句與感動瞬間的文字分享平台。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span class="text-xs bg-blue-900/50 text-blue-200 px-2 py-1 rounded">Vue.js</span>
-                <span class="text-xs bg-blue-900/50 text-blue-200 px-2 py-1 rounded">Express</span>
-                <span class="text-xs bg-blue-900/50 text-blue-200 px-2 py-1 rounded">PWA</span>
-                <span class="text-xs bg-blue-900/50 text-blue-200 px-2 py-1 rounded">JWT</span>
-              </div>
-              <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                <a href="#" class="text-gray-300 hover:text-white text-sm flex items-center"><i
-                    class="fas fa-info-circle mr-1"></i> 詳情</a>
-                <a href="#" class="text-blue-400 hover:text-white transition-colors"><i
-                    class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
+                    class="group relative rounded-2xl overflow-hidden glass-card hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-500">
 
-          <!-- Project 3 -->
-          <div
-            class="group relative rounded-2xl overflow-hidden glass-card hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-500">
-            <div class="h-48 bg-gray-800 overflow-hidden relative">
-              <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-purple-900/40 z-10"></div>
-              <div
-                class="w-full h-full flex items-center justify-center bg-gray-900 group-hover:scale-110 transition-transform duration-700">
-                <i class="fas fa-chart-line text-6xl text-green-400 opacity-50"></i>
-              </div>
-              <div class="absolute top-2 right-2 z-20">
-                <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Line Bot</span>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">Stock Find 股票機器人
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 h-10 overflow-hidden">
-                即時查詢股票交易資訊、新聞與走勢圖的 Line Bot。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span class="text-xs bg-green-900/50 text-green-200 px-2 py-1 rounded">Node.js</span>
-                <span class="text-xs bg-green-900/50 text-green-200 px-2 py-1 rounded">Line Bot API</span>
-                <span class="text-xs bg-green-900/50 text-green-200 px-2 py-1 rounded">Axios</span>
-                <span class="text-xs bg-green-900/50 text-green-200 px-2 py-1 rounded">Render</span>
-              </div>
-              <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                <a href="#" class="text-gray-300 hover:text-white text-sm flex items-center"><i
-                    class="fas fa-info-circle mr-1"></i> 詳情</a>
-                <a href="#" class="text-green-400 hover:text-white transition-colors"><i
-                    class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
+                    <div class="h-48 bg-gray-800 overflow-hidden relative">
 
-        </div>
+                      <!-- 模擬專案封面 -->
+
+                      <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-900/40 z-10"></div>
+
+                      <div
+
+                        class="w-full h-full flex items-center justify-center bg-gray-900 group-hover:scale-110 transition-transform duration-700">
+
+                        <i class="fas fa-hand-holding-heart text-6xl text-pink-400 opacity-50"></i>
+
+                      </div>
+
+                      <div class="absolute top-2 right-2 z-20">
+
+                        <span class="bg-pink-600 text-white text-xs px-2 py-1 rounded">{{ project.type.includes('團隊') ? '團隊協作' : '個人專案' }}</span>
+
+                      </div>
+
+                    </div>
+
+                    <div class="p-6">
+
+                      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-chic-pink transition-colors">{{ project.title }}
+
+                      </h3>
+
+                      <p class="text-gray-400 text-sm mb-4 h-10 overflow-hidden">
+
+                        {{ project.description }}
+
+                      </p>
+
+                      <div class="flex flex-wrap gap-2 mb-6">
+
+                        <span v-for="tag in project.tags.slice(0, 4)" :key="tag" class="text-xs bg-purple-900/50 text-purple-200 px-2 py-1 rounded">{{ tag }}</span>
+
+                      </div>
+
+                      <div class="flex justify-between items-center border-t border-white/10 pt-4">
+
+                        <a :href="project.links[0]?.url || '#'" target="_blank" class="text-gray-300 hover:text-white text-sm flex items-center"><i
+
+                            class="fas fa-info-circle mr-1"></i> 詳情</a>
+
+                        <a :href="project.links[0]?.url || '#'" target="_blank" class="text-chic-pink hover:text-white transition-colors"><i
+
+                            class="fas fa-external-link-alt"></i></a>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
       </div>
     </section>
 
@@ -449,10 +384,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const mobileMenuOpen = ref(false);
 const scrolledNavbar = ref(false);
+
+const frontendSkills = computed(() => [...portfolioData.skills.frontend.highlight, ...portfolioData.skills.frontend.tags]);
+const backendSkills = computed(() => [...portfolioData.skills.backend.highlight, ...portfolioData.skills.backend.tags]);
+// The design page has a "Design" section, which maps to "tools" in the JSON.
+const designSkills = computed(() => portfolioData.skills.tools.tags.filter(tag => ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'].includes(tag)));
+const toolsSkills = computed(() => portfolioData.skills.tools.tags.filter(tag => !['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'].includes(tag)));
+
+const featuredProjects = computed(() => portfolioData.projects.featured);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;

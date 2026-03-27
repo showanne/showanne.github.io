@@ -165,33 +165,36 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const scrolled = ref(false);
 const menuItems = ['首頁', '技術', '專案', '聯繫'];
 
+// Replace hardcoded strengths with a more representative static one or map from skills
 const strengths = [
-  { icon: 'layers', title: '全端架構', content: '從 Node.js 後端 API 到現代化的 Vue/React 前端，打造一體化的流暢體驗。' },
-  { icon: 'database', title: '數據管理', content: '深耕資料庫設計與最佳化，確保海量數據下的查詢效率與穩定性。' },
-  { icon: 'layout', title: '美學交互', content: '拒絕平庸的 UI，追求每一處微交互與排版的極致視覺呈現。' }
+  { icon: 'layers', title: '前端開發', content: '使用 Vue.js 和 Nuxt.js 構建高效、可交互的前端介面。' },
+  { icon: 'server', title: '後端技術', content: '熟悉 Node.js 與 Express，能建立穩定的 RESTful API。' },
+  { icon: 'cpu', title: '開發工具', content: '使用 Git, Figma, 和各式開發工具提升工作效率。' }
 ];
 
-const projects = [
-  {
-    name: '星際貿易平台',
-    tech: 'Nuxt 3 / TypeScript / Supabase',
-    desc: '一個具備即時數據同步的高級電商系統，採用 Serverless 架構確保高併發處理性能。',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426'
-  },
-  {
-    name: '智能資產分析工具',
-    tech: 'Vue 3 / Python / D3.js',
-    desc: '為金融專業人士設計的數據可視化儀表板，將複雜數據轉化為直觀的圖表洞察。',
-    image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=2070'
-  }
-];
+// Map projects from the imported JSON data
+const projects = computed(() => portfolioData.projects.featured.map(p => ({
+  name: p.title,
+  tech: p.tags.slice(0, 3).join(' / '), // Show first 3 tags
+  desc: p.description,
+  // Assuming a placeholder image logic as the JSON doesn't contain images
+  image: `https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426`
+})));
 
-const skills = ['VUE 3', 'NUXT', 'TYPESCRIPT', 'TAILWIND CSS', 'NODE.JS', 'POSTGRESQL', 'DOCKER', 'AWS'];
+// Concatenate all skills from the JSON data for the scrolling banner
+const skills = computed(() => [
+  ...portfolioData.skills.frontend.highlight,
+  ...portfolioData.skills.frontend.tags,
+  ...portfolioData.skills.backend.highlight,
+  ...portfolioData.skills.backend.tags,
+  ...portfolioData.skills.tools.tags
+]);
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50;
@@ -199,11 +202,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
-  // Note: Lucide icons would typically be imported and used as Vue components.
-  // The original HTML uses a script to initialize them. For a Vue component,
-  // you would use a library like 'lucide-vue-next' and import individual icons.
-  // For simplicity, we are omitting direct Lucide icon initialization here
-  // and assuming they will be handled globally or via a plugin.
+  // Lucide icons would be handled by a Nuxt plugin or a component library
 });
 
 onUnmounted(() => {

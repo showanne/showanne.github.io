@@ -122,14 +122,8 @@
             </div>
             <h3 class="text-2xl font-bold mb-6">前端開發</h3>
             <ul class="space-y-3 text-gray-300">
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Vue 3 / Nuxt
-                3
-              </li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> TypeScript
-              </li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Tailwind CSS
-              </li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Pinia 狀態管理
+              <li v-for="skill in frontendSkills" :key="skill" class="flex items-center">
+                <i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> {{ skill }}
               </li>
             </ul>
           </div>
@@ -140,14 +134,8 @@
             </div>
             <h3 class="text-2xl font-bold mb-6">後端技術</h3>
             <ul class="space-y-3 text-gray-300">
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Node.js /
-                Express</li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> MongoDB /
-                Mongoose</li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> RESTful API
-                設計
-              </li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> JWT 身份驗證
+              <li v-for="skill in backendSkills" :key="skill" class="flex items-center">
+                <i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> {{ skill }}
               </li>
             </ul>
           </div>
@@ -158,14 +146,9 @@
             </div>
             <h3 class="text-2xl font-bold mb-6">維運與工具</h3>
             <ul class="space-y-3 text-gray-300">
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Docker / AWS
-                EC2</li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> CI/CD 流程構建
+              <li v-for="tool in tools" :key="tool" class="flex items-center">
+                <i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> {{ tool }}
               </li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Figma / Adobe
-                XD</li>
-              <li class="flex items-center"><i data-lucide="chevron-right" class="mr-2 text-gold w-4"></i> Git / GitLab
-                Flow</li>
             </ul>
           </div>
         </div>
@@ -185,86 +168,33 @@
           </a>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
-          <!-- 專案 1 -->
-          <div
-            class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100">
-            <div class="relative overflow-hidden aspect-video">
-              <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800"
-                alt="Antty" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <button class="flex items-center gap-2 text-white font-bold bg-gold px-4 py-2 rounded-lg">
-                  <i data-lucide="external-link" size="16"></i> 瀏覽網站
-                </button>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold mb-3 group-hover:text-gold transition-colors">倍而兔 Antty 募資平台</h3>
-              <p class="text-gray-500 mb-6 text-sm leading-relaxed">技術負責人，主導從資料庫規劃到 CI/CD 部署的全流程。</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">Nuxt
-                  3</span>
-                <span
-                  class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">TypeScript</span>
-                <span
-                  class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">MongoDB</span>
-              </div>
-            </div>
-          </div>
-          <!-- 專案 2 -->
-          <div
-            class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100">
-            <div class="relative overflow-hidden aspect-video">
-              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800"
-                alt="DTNS" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <button class="flex items-center gap-2 text-white font-bold bg-gold px-4 py-2 rounded-lg">
-                  <i data-lucide="external-link" size="16"></i> 瀏覽網站
-                </button>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold mb-3 group-hover:text-gold transition-colors">DTNS 文字分享平台</h3>
-              <p class="text-gray-500 mb-6 text-sm leading-relaxed">紀錄文字的溫度，支援 PWA 離線瀏覽與多種社群登入。</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">Vue
-                  3</span>
-                <span
-                  class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">Express</span>
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">PWA</span>
-              </div>
-            </div>
-          </div>
-          <!-- 專案 3 -->
-          <div
-            class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100">
-            <div class="relative overflow-hidden aspect-video">
-              <img src="https://images.unsplash.com/photo-1611974714024-46202e006c2a?auto=format&fit=crop&q=80&w=800"
-                alt="Stock Find"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <button class="flex items-center gap-2 text-white font-bold bg-gold px-4 py-2 rounded-lg">
-                  <i data-lucide="external-link" size="16"></i> 瀏覽網站
-                </button>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Stock Find 股票機器人</h3>
-              <p class="text-gray-500 mb-6 text-sm leading-relaxed">即時串接證交所 API，運用 Line Flex Message 視覺化股市數據。</p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">Python</span>
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">Line
-                  Bot</span>
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">API</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="grid md:grid-cols-3 gap-10">
+                <!-- Loop over featured projects -->
+                <div v-for="project in featuredProjects" :key="project.title"
+                  class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  <div class="relative overflow-hidden aspect-video">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800"
+                      :alt="project.title"
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <a :href="project.links[0]?.url || '#'" target="_blank"
+                        class="flex items-center gap-2 text-white font-bold bg-gold px-4 py-2 rounded-lg">
+                        <i data-lucide="external-link" size="16"></i> 瀏覽網站
+                      </a>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-gold transition-colors">{{ project.title }}</h3>
+                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">{{ project.description }}</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span v-for="tag in project.tags.slice(0, 3)" :key="tag"
+                        class="px-3 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">{{ tag
+                        }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>      </div>
     </section>
 
     <!-- Impact Section -->
@@ -309,10 +239,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const scrolled = ref(false);
 const mobileMenuOpen = ref(false);
+
+const featuredProjects = computed(() => portfolioData.projects.featured);
+const frontendSkills = computed(() => [...portfolioData.skills.frontend.highlight, ...portfolioData.skills.frontend.tags]);
+const backendSkills = computed(() => [...portfolioData.skills.backend.highlight, ...portfolioData.skills.backend.tags]);
+const tools = computed(() => portfolioData.skills.tools.tags);
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50;
@@ -324,11 +260,7 @@ const toggleMobileMenu = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
-  // Note: Lucide icons would typically be imported and used as Vue components.
-  // The original HTML uses a script to initialize them. For a Vue component,
-  // you would use a library like 'lucide-vue-next' and import individual icons.
-  // For simplicity, we are omitting direct Lucide icon initialization here
-  // and assuming they will be handled globally or via a plugin.
+  // Lucide icons would be handled by a Nuxt plugin or a component library
 });
 
 onUnmounted(() => {

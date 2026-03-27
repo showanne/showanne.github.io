@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不眠日 Mobius - 官方作品網站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background-color: #05070A;
+      color: #E2E8F0;
+      font-family: 'Noto Sans TC', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .mobius-gradient {
+      background: linear-gradient(135deg, #00F2FF 0%, #7000FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 242, 255, 0.1);
+    }
+
+    .loop-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .scanline {
+      width: 100%;
+      height: 2px;
+      background: rgba(0, 242, 255, 0.1);
+      position: fixed;
+      top: 0;
+      z-index: 50;
+      pointer-events: none;
+      animation: scan 8s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-cyan-500 selection:text-white">
+
+  <!-- 掃描線效果 -->
+  <div class="scanline"></div>
+
+  <!-- 導航欄 -->
+  <nav
+    class="fixed w-full z-40 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/10">
+    <div class="text-2xl font-bold orbitron tracking-tighter">
+      M<span class="text-cyan-400">O</span>BIUS
+    </div>
+    <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+      <a href="#home" class="hover:text-cyan-400 transition">首頁</a>
+      <a href="#about" class="hover:text-cyan-400 transition">關於作品</a>
+      <a href="#episodes" class="hover:text-cyan-400 transition">分集劇情</a>
+      <a href="#cast" class="hover:text-cyan-400 transition">演員陣容</a>
+    </div>
+    <button
+      class="px-5 py-2 border border-cyan-500 text-cyan-500 text-xs hover:bg-cyan-500 hover:text-white transition-all duration-300">
+      立即觀看
+    </button>
+  </nav>
+
+  <!-- Hero 區塊 -->
+  <main id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <!-- 背景裝飾 -->
+    <div class="absolute inset-0 z-0">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[120px]">
+      </div>
+      <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <h2 class="orbitron text-cyan-400 tracking-[0.3em] mb-4 text-sm md:text-lg animate-pulse">MOBIDUS DRAMA SERIES
+      </h2>
+      <h1 class="text-6xl md:text-9xl font-bold mb-6 tracking-tighter">不眠日</h1>
+      <p class="text-lg md:text-2xl font-light text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        在清醒與夢境的邊界，時間是一個無法逃脫的莫比烏斯環。
+      </p>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <a href="#about"
+          class="px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold transition-all rounded-sm">探索真相</a>
+        <a href="#"
+          class="px-10 py-4 border border-white/20 hover:bg-white/10 text-white transition-all rounded-sm">觀看預告片</a>
+      </div>
+    </div>
+
+    <!-- 循環環形圖形 -->
+    <div
+      class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-full max-w-4xl opacity-20 pointer-events-none loop-animation">
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 50 Q50 20 100 20 T150 50 T100 80 T50 50" fill="none" stroke="url(#grad)" stroke-width="0.5" />
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#00F2FF;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#7000FF;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </main>
+
+  <!-- 關於作品 -->
+  <section id="about" class="py-24 container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[3/4] bg-slate-900 overflow-hidden border border-white/10 group">
+          <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?auto=format&fit=crop&q=80&w=800"
+            alt="主視覺"
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+        </div>
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-cyan-500"></div>
+      </div>
+      <div>
+        <h3 class="text-cyan-400 orbitron mb-4">THE STORY</h3>
+        <h2 class="text-4xl font-bold mb-8">當黑夜不再結束</h2>
+        <p class="text-slate-400 mb-6 leading-loose">
+          如果醒來只是另一場夢的開始？《不眠日》講述了一群患有集體失眠症的都市人，在一個永無止盡的夜晚中，發現彼此的記憶正在互相滲透與消失。
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 glass-card">
+            <span class="text-cyan-400 font-bold orbitron">01</span>
+            <div>
+              <h4 class="font-bold mb-1">時空循環</h4>
+              <p class="text-sm text-slate-500">逃不出的 04:44 AM，是懲罰還是救贖？</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 glass-card">
+            <span class="text-cyan-400 font-bold orbitron">02</span>
+            <div>
+              <h4 class="font-bold mb-1">記憶竊取</h4>
+              <p class="text-sm text-slate-500">你的童年回憶，為何出現在他的腦海中？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 腳本區域 -->
+  <footer class="py-12 border-t border-white/10 text-center">
+    <div class="orbitron text-xl font-bold mb-4">M<span class="text-cyan-400">O</span>BIUS</div>
+    <p class="text-xs text-slate-600 uppercase tracking-widest">© 2025 不眠日 Production. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // 滾動偵測與動畫
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // 平滑滾動
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

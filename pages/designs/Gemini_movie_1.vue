@@ -159,31 +159,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const scrolled = ref(false);
 const menuItems = ['主頁', '劇集亮點', '人物誌', '劇照回顧'];
 
-const highlights = [
-  { icon: 'heart', title: '極致推拉', content: '精心打磨的劇本，帶領觀眾深入都市情感的核心。' },
-  { icon: 'users', title: '權力遊戲', content: '關於『偽裝』與『真心』的深度探討。' },
-  { icon: 'camera', title: '電影質感', content: '每一幀都是視覺盛宴，還原都市繁華下的真實。' }
-];
+// Map highlights from skills in portfolio.json
+const highlights = computed(() => [
+  { icon: 'heart', title: '前端技能', content: portfolioData.skills.frontend.tags.join(', ') },
+  { icon: 'users', title: '後端技能', content: portfolioData.skills.backend.tags.join(', ') },
+  { icon: 'camera', title: '開發工具', content: portfolioData.skills.tools.tags.join(', ') }
+]);
 
-const characters = [
-  {
-    name: '許妍',
-    role: '當紅主播 / 偽裝者',
-    desc: '在眾人面前是完美無瑕的耀眼主播，實則隱藏著不為人知的過去。',
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1974'
-  },
-  {
-    name: '沈皓明',
-    role: '商界精英 / 獵手',
-    desc: '出生名門，冷靜自持，在利益與情感的邊緣試探。',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1974'
-  }
-];
+// Map characters from featured projects in portfolio.json
+const characters = computed(() => portfolioData.projects.featured.map(p => ({
+  name: p.title,
+  role: p.type,
+  desc: p.description,
+  image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1974' // Placeholder image
+})));
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50;
@@ -191,11 +186,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
-  // Note: Lucide icons would typically be imported and used as Vue components.
-  // The original HTML uses a script to initialize them. For a Vue component,
-  // you would use a library like 'lucide-vue-next' and import individual icons.
-  // For simplicity, we are omitting direct Lucide icon initialization here
-  // and assuming they will be handled globally or via a plugin.
+  // Lucide icons are expected to be handled globally or via a plugin in a Nuxt app
 });
 
 onUnmounted(() => {

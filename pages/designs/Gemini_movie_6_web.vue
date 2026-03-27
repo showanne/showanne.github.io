@@ -148,15 +148,8 @@
             <h3 class="text-xl font-bold text-midnight mb-4 font-serif">前端開發</h3>
             <p class="text-slate-500 mb-6 text-sm leading-relaxed">打造絲滑流暢的用戶體驗，注重每一個像素的細節。</p>
             <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-white border border-rose-100 text-rose-600 text-xs font-medium rounded-full">React</span>
-              <span
-                class="px-3 py-1 bg-white border border-rose-100 text-rose-600 text-xs font-medium rounded-full">Vue.js</span>
-              <span
-                class="px-3 py-1 bg-white border border-rose-100 text-rose-600 text-xs font-medium rounded-full">Tailwind
-                CSS</span>
-              <span
-                class="px-3 py-1 bg-white border border-rose-100 text-rose-600 text-xs font-medium rounded-full">Next.js</span>
+              <span v-for="skill in frontendSkills" :key="skill"
+                class="px-3 py-1 bg-white border border-rose-100 text-rose-600 text-xs font-medium rounded-full">{{ skill }}</span>
             </div>
           </div>
 
@@ -169,14 +162,8 @@
             <h3 class="text-xl font-bold text-midnight mb-4 font-serif">後端架構</h3>
             <p class="text-slate-500 mb-6 text-sm leading-relaxed">構建穩固、高效的系統核心，如同都市的地下管網般重要。</p>
             <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-white border border-indigo-100 text-indigo-600 text-xs font-medium rounded-full">Node.js</span>
-              <span
-                class="px-3 py-1 bg-white border border-indigo-100 text-indigo-600 text-xs font-medium rounded-full">Python</span>
-              <span
-                class="px-3 py-1 bg-white border border-indigo-100 text-indigo-600 text-xs font-medium rounded-full">PostgreSQL</span>
-              <span
-                class="px-3 py-1 bg-white border border-indigo-100 text-indigo-600 text-xs font-medium rounded-full">GraphQL</span>
+              <span v-for="skill in backendSkills" :key="skill"
+                class="px-3 py-1 bg-white border border-indigo-100 text-indigo-600 text-xs font-medium rounded-full">{{ skill }}</span>
             </div>
           </div>
 
@@ -189,14 +176,8 @@
             <h3 class="text-xl font-bold text-midnight mb-4 font-serif">部署與工具</h3>
             <p class="text-slate-500 mb-6 text-sm leading-relaxed">自動化流程與雲端部署，確保產品隨時保持最佳狀態。</p>
             <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-white border border-amber-100 text-champagne text-xs font-medium rounded-full">AWS</span>
-              <span
-                class="px-3 py-1 bg-white border border-amber-100 text-champagne text-xs font-medium rounded-full">Docker</span>
-              <span
-                class="px-3 py-1 bg-white border border-amber-100 text-champagne text-xs font-medium rounded-full">Git</span>
-              <span
-                class="px-3 py-1 bg-white border border-amber-100 text-champagne text-xs font-medium rounded-full">CI/CD</span>
+              <span v-for="skill in devopsSkills" :key="skill"
+                class="px-3 py-1 bg-white border border-amber-100 text-champagne text-xs font-medium rounded-full">{{ skill }}</span>
             </div>
           </div>
         </div>
@@ -218,64 +199,63 @@
           </a>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <!-- Project 1 -->
-          <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100">
-            <div class="relative overflow-hidden h-64 bg-slate-200">
-              <!-- Simulated Project Image via Gradient -->
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-                <i data-lucide="shopping-bag" class="w-16 h-16 text-white/20"></i>
-              </div>
-              <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-midnight uppercase tracking-wide">
-                E-Commerce</div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-serif font-bold text-midnight mb-3 group-hover:text-champagne transition-colors">
-                Luxe Mode 電商平台</h3>
-              <p class="text-slate-500 mb-6 line-clamp-2">一個專為奢侈品牌設計的 headless 電商解決方案。包含即時庫存管理、AI 推薦引擎以及極致流暢的結帳體驗。</p>
-              <div class="flex items-center justify-between border-t border-slate-100 pt-6">
-                <div class="flex gap-3">
-                  <i data-lucide="code-2" class="w-5 h-5 text-slate-400"></i>
-                  <span class="text-sm text-slate-500">Next.js, Stripe, Sanity</span>
-                </div>
-                <a href="#"
-                  class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-midnight group-hover:bg-midnight group-hover:text-white transition-all">
-                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-          <!-- Project 2 -->
-          <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100">
-            <div class="relative overflow-hidden h-64 bg-slate-200">
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-champagne to-rose-400 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-                <i data-lucide="bar-chart-2" class="w-16 h-16 text-white/20"></i>
-              </div>
-              <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-midnight uppercase tracking-wide">
-                SaaS Dashboard</div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-serif font-bold text-midnight mb-3 group-hover:text-champagne transition-colors">
-                DataVision 數據中台</h3>
-              <p class="text-slate-500 mb-6 line-clamp-2">為企業打造的視覺化數據分析平台。能夠處理百萬級別的數據流，並提供即時圖表渲染與報表導出功能。</p>
-              <div class="flex items-center justify-between border-t border-slate-100 pt-6">
-                <div class="flex gap-3">
-                  <i data-lucide="code-2" class="w-5 h-5 text-slate-400"></i>
-                  <span class="text-sm text-slate-500">React, D3.js, Python</span>
+                <div v-for="(project, index) in featuredProjects" :key="project.title" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100" :class="{'lg:mt-12': index === 1}">
+
+                  <div class="relative overflow-hidden h-64 bg-slate-200">
+
+                    <div
+
+                      class="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
+
+                      <i data-lucide="shopping-bag" class="w-16 h-16 text-white/20"></i>
+
+                    </div>
+
+                    <div
+
+                      class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-midnight uppercase tracking-wide">
+
+                      {{ project.type.includes('團隊') ? '團隊協作' : '個人專案' }}
+
+                    </div>
+
+                  </div>
+
+                  <div class="p-8">
+
+                    <h3 class="text-2xl font-serif font-bold text-midnight mb-3 group-hover:text-champagne transition-colors">
+
+                      {{ project.title }}</h3>
+
+                    <p class="text-slate-500 mb-6 line-clamp-2">{{ project.description }}</p>
+
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-6">
+
+                      <div class="flex gap-3">
+
+                        <i data-lucide="code-2" class="w-5 h-5 text-slate-400"></i>
+
+                        <span class="text-sm text-slate-500">{{ project.tags.slice(0, 3).join(', ') }}</span>
+
+                      </div>
+
+                      <a :href="project.links[0]?.url || '#'" target="_blank"
+
+                        class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-midnight group-hover:bg-midnight group-hover:text-white transition-all">
+
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+
+                      </a>
+
+                    </div>
+
+                  </div>
+
                 </div>
-                <a href="#"
-                  class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-midnight group-hover:bg-midnight group-hover:text-white transition-all">
-                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
+
               </div>
-            </div>
-          </div>
-        </div>
 
         <div class="mt-12 text-center md:hidden">
           <a href="#"
@@ -371,10 +351,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const mobileMenuOpen = ref(false);
 const scrolledNavbar = ref(false);
+
+const frontendSkills = computed(() => ['React', 'Vue.js', 'Tailwind CSS', 'Next.js']);
+const backendSkills = computed(() => ['Node.js', 'Python', 'PostgreSQL', 'GraphQL']);
+const devopsSkills = computed(() => ['AWS', 'Docker', 'Git', 'CI/CD']);
+const featuredProjects = computed(() => portfolioData.projects.featured);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -386,8 +372,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
-  // Note: Lucide icons would typically be imported and used as Vue components.
-  // For simplicity, we are omitting direct Lucide icon initialization here.
+  // Lucide icons would be handled by a Nuxt plugin or a component library
 });
 
 onUnmounted(() => {

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不眠日 (Mobius) | 官方網站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Serif+TC:wght@400;700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+  <!-- Removed Lucide script from here to load it at the end of body for better performance and variable availability -->
+  <style>
+    :root {
+      --color-gold: #fbbf24;
+      --color-cyan: #22d3ee;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    .serif-title {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .mono-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Glitch Effect Animation */
+    .glitch-text:hover {
+      text-shadow: 2px 0 var(--color-gold), -2px 0 var(--color-cyan);
+      animation: noise-anim 0.3s infinite linear alternate-reverse;
+    }
+
+    @keyframes noise-anim {
+      0% {
+        clip-path: inset(10% 0 80% 0);
+      }
+
+      20% {
+        clip-path: inset(80% 0 1% 0);
+      }
+
+      40% {
+        clip-path: inset(40% 0 20% 0);
+      }
+
+      60% {
+        clip-path: inset(10% 0 50% 0);
+      }
+
+      80% {
+        clip-path: inset(70% 0 5% 0);
+      }
+
+      100% {
+        clip-path: inset(30% 0 60% 0);
+      }
+    }
+
+    /* Custom Gradient for Hero */
+    .hero-gradient {
+      background: radial-gradient(circle at center, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 1) 100%);
+    }
+
+    /* Mobius Strip CSS approximation */
+    .mobius-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .mobius-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 800px;
+      height: 800px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: spin 60s linear infinite;
+    }
+
+    .mobius-ring::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 50%;
+    }
+
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="infinity" class="h-8 w-8 text-amber-400"></i>
+          <span class="text-xl font-bold tracking-widest uppercase">Mobius <span class="text-slate-500 text-sm">/
+              不眠日</span></span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#home"
+              class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">首頁</a>
+            <a href="#about"
+              class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">劇情簡介</a>
+            <a href="#characters"
+              class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">角色檔案</a>
+            <a href="#gallery"
+              class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">劇照</a>
+            <a href="#watch"
+              class="bg-amber-500 text-slate-900 hover:bg-amber-400 px-4 py-2 rounded-sm text-sm font-bold transition-all shadow-[0_0_15px_rgba(251,191,36,0.3)]">立即觀看</a>
+          </div>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button class="text-slate-300 hover:text-white p-2">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image Placeholder -->
+    <div class="absolute inset-0 z-0">
+      <!-- Using a solid color fallback but imagine a high-quality poster of Bai Jingting here -->
+      <div
+        class="w-full h-full bg-[url('https://images.unsplash.com/photo-1496369666323-868bf9769562?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale mix-blend-overlay">
+      </div>
+      <div class="hero-gradient absolute inset-0"></div>
+    </div>
+
+    <!-- Abstract Background Animation -->
+    <div class="mobius-bg">
+      <div class="mobius-ring"></div>
+      <div class="mobius-ring"
+        style="width: 600px; height: 600px; animation-duration: 40s; border-color: rgba(34, 211, 238, 0.2);"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div class="mb-4 flex justify-center space-x-4 text-xs tracking-[0.3em] text-cyan-400 opacity-80 mono-font">
+        <span>LOOP DETECTED</span>
+        <span>//</span>
+        <span>TIME: 23:59:59</span>
+        <span>//</span>
+        <span>RESET IMMINENT</span>
+      </div>
+
+      <h1 class="text-6xl md:text-8xl font-bold serif-title mb-2 text-white glitch-text tracking-tighter">
+        不眠日
+      </h1>
+      <p class="text-2xl md:text-3xl font-light text-slate-300 uppercase tracking-widest mb-8 font-sans">
+        MOBIUS
+      </p>
+
+      <p
+        class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed border-l-2 border-amber-500/50 pl-6 italic">
+        「在無盡的黑夜中，尋找那一抹不滅的光。」<br>
+        時間重啟，真相卻依然沉睡。
+      </p>
+
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+        <a href="#watch"
+          class="group relative px-8 py-3 bg-transparent border border-amber-400 text-amber-400 font-bold uppercase tracking-widest hover:bg-amber-400 hover:text-slate-900 transition-all duration-300">
+          <span
+            class="absolute w-0 h-full bg-amber-400 left-0 top-0 transition-all duration-300 group-hover:w-full opacity-10"></span>
+          觀看預告
+        </a>
+        <button class="flex items-center space-x-2 text-slate-400 hover:text-white transition-colors">
+          <i data-lucide="play-circle" class="h-10 w-10"></i>
+          <span>了解更多</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
+      <i data-lucide="chevron-down" class="h-8 w-8"></i>
+    </div>
+  </section>
+
+  <!-- About / Synopsis -->
+  <section id="about" class="py-24 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold serif-title text-white flex items-center">
+            <span class="w-12 h-1 bg-amber-500 mr-4"></span>
+            劇情簡介
+          </h2>
+          <p class="text-slate-400 leading-8 text-lg">
+            華澳市大發銀行發生了一起震驚全市的爆炸案。刑警 <strong class="text-slate-200">丁奇（白敬亭 飾）</strong> 意外陷入了神秘的「5次循環」。
+          </p>
+          <p class="text-slate-400 leading-8">
+            每一次午夜鐘聲響起，時間都會重置回爆炸發生前的早晨。面對代號「烏賊」的幕後黑手發出的死亡威脅，以及MOMA科技隱藏的基因實驗秘密，丁奇必須在有限的循環次數中，抽絲剝繭，拯救無辜者的性命。
+          </p>
+          <p class="text-slate-400 leading-8">
+            這是一場與時間的賽跑，也是一次對人性的極限拷問。當時間不再向前，我們該如何定義未來？
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="bg-slate-800 p-4 border-l-2 border-cyan-500">
+              <h4 class="text-cyan-400 font-bold mb-1">類型</h4>
+              <p class="text-sm text-slate-300">懸疑 / 科幻 / 犯罪</p>
+            </div>
+            <div class="bg-slate-800 p-4 border-l-2 border-amber-500">
+              <h4 class="text-amber-400 font-bold mb-1">主演</h4>
+              <p class="text-sm text-slate-300">白敬亭 / 文詠珊 / 宋洋</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <!-- Decorative elements representing "broken time" -->
+          <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-amber-500/30"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-cyan-500/30"></div>
+
+          <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
+            alt="Abstract Time Concept"
+            class="w-full h-[500px] object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 rounded-sm shadow-2xl">
+
+          <div class="absolute bottom-0 left-0 bg-black/80 p-4 w-full backdrop-blur-sm">
+            <p class="text-xs font-mono text-cyan-400">STATUS: LOOP_ACTIVE // ITERATION: 03</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters -->
+  <section id="characters" class="py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold serif-title text-white mb-4">主要角色</h2>
+        <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Character Card 1: Bai Jingting -->
+        <div
+          class="group relative overflow-hidden bg-slate-900 border border-slate-800 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-96 overflow-hidden relative">
+            <!-- Placeholder for Bai Jingting Image -->
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop"
+              alt="丁奇"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-0 p-6 w-full">
+            <h3 class="text-2xl font-bold text-white mb-1">丁奇</h3>
+            <p class="text-amber-400 text-sm tracking-widest uppercase mb-3">白敬亭 飾</p>
+            <p
+              class="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+              華澳市警局刑警。擁有極強的邏輯推理能力，意外獲得保留循環記憶的能力，是打破僵局的唯一變數。
+            </p>
+          </div>
+        </div>
+
+        <!-- Character Card 2: Janice Man -->
+        <div
+          class="group relative overflow-hidden bg-slate-900 border border-slate-800 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-96 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
+              alt="安嵐"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-0 p-6 w-full">
+            <h3 class="text-2xl font-bold text-white mb-1">安嵐</h3>
+            <p class="text-cyan-400 text-sm tracking-widest uppercase mb-3">文詠珊 飾</p>
+            <p
+              class="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+              MOMA科技基因研究員。冷靜理智，似乎隱藏著關於循環背後的科學秘密，與丁奇在危機中建立起特殊的信任。
+            </p>
+          </div>
+        </div>
+
+        <!-- Character Card 3: Song Yang -->
+        <div
+          class="group relative overflow-hidden bg-slate-900 border border-slate-800 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-96 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop"
+              alt="墨遠致"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-0 p-6 w-full">
+            <h3 class="text-2xl font-bold text-white mb-1">墨遠致</h3>
+            <p class="text-slate-300 text-sm tracking-widest uppercase mb-3">宋洋 飾</p>
+            <p
+              class="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+              MOMA科技創始人，野心勃勃的科學家。堅信科技可以超越時間與生死，是案件中最深不可測的存在。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Gallery / Elements -->
+  <section id="gallery" class="py-24 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="text-3xl font-bold serif-title text-white">關鍵線索</h2>
+          <p class="text-slate-500 mt-2">破碎的記憶碎片...</p>
+        </div>
+        <div class="flex space-x-2">
+          <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
+          <div class="w-3 h-3 bg-slate-700 rounded-full"></div>
+          <div class="w-3 h-3 bg-slate-700 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="col-span-2 row-span-2 relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1621252179027-94459d27d3ee?q=80&w=800&auto=format&fit=crop"
+            alt="Clock"
+            class="w-full h-full object-cover rounded-sm filter brightness-75 group-hover:brightness-100 transition-all">
+          <div class="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/50 transition-all">
+          </div>
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-black/70 text-amber-400 px-2 py-1 text-xs mono-font">EVIDENCE #01: THE WATCH</span>
+          </div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1518544806308-1e42c5dc1907?q=80&w=400&auto=format&fit=crop"
+            alt="Lab"
+            class="w-full h-64 object-cover rounded-sm filter brightness-75 group-hover:brightness-100 transition-all">
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-black/70 text-cyan-400 px-2 py-1 text-xs mono-font">LOC: MOMA LAB</span>
+          </div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1614032686756-74bf56d3c054?q=80&w=400&auto=format&fit=crop"
+            alt="Tunnel"
+            class="w-full h-64 object-cover rounded-sm filter brightness-75 group-hover:brightness-100 transition-all">
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-black/70 text-white px-2 py-1 text-xs mono-font">SCENE: PURSUIT</span>
+          </div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&auto=format&fit=crop"
+            alt="DNA"
+            class="w-full h-64 object-cover rounded-sm filter brightness-75 group-hover:brightness-100 transition-all">
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-black/70 text-cyan-400 px-2 py-1 text-xs mono-font">DATA: GENOME</span>
+          </div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1555616635-640b71bd185e?q=80&w=400&auto=format&fit=crop"
+            alt="Glass"
+            class="w-full h-64 object-cover rounded-sm filter brightness-75 group-hover:brightness-100 transition-all">
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-black/70 text-amber-400 px-2 py-1 text-xs mono-font">STATE: SHATTERED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Streaming -->
+  <footer id="watch" class="bg-black py-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <h3 class="text-2xl font-bold text-white mb-8">線上觀看</h3>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+        <a href="#"
+          class="w-48 py-4 bg-[#00CC33] text-white font-bold rounded-md hover:bg-[#00AA22] transition-colors flex items-center justify-center space-x-2">
+          <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+          <span>iQIYI 愛奇藝</span>
+        </a>
+        <a href="#"
+          class="w-48 py-4 bg-[#E50914] text-white font-bold rounded-md hover:bg-[#B20710] transition-colors flex items-center justify-center space-x-2">
+          <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+          <span>Netflix</span>
+        </a>
+      </div>
+
+      <div class="flex justify-center space-x-8 mb-8 text-slate-500">
+        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+      </div>
+
+      <p class="text-slate-600 text-sm">
+        &copy; 2025 Mobius Production Team. All Rights Reserved. <br>
+        本網站為設計展示用途，非官方運營網站。
+      </p>
+    </div>
+  </footer>
+
+  <!-- Load Lucide Icons UMD build for better browser compatibility -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    // Initialize Lucide Icons with a safety check
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    } else {
+      console.error("Lucide icons failed to load.");
+    }
+
+    // Simple smooth scroll behavior is handled by CSS (scroll-smooth),
+    // but we can add more complex interactions here if needed.
+
+    // Add a subtle parallax effect on scroll for the hero background
+    window.addEventListener('scroll', function () {
+      const scrollPosition = window.pageYOffset;
+      const heroBg = document.querySelector('.hero-gradient');
+      if (heroBg) {
+        // heroBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+      }
+    });
+  </script>
+</body>
+
+</html>

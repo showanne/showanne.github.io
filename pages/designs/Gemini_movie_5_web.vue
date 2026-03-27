@@ -124,16 +124,7 @@
             </div>
             <h3 class="text-xl font-bold text-slate-800 mb-4">前端開發</h3>
             <ul class="space-y-3">
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-primary-400 mr-2"></i>Vue.js
-                (v2/v3) / Nuxt.js</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-primary-400 mr-2"></i>Pinia
-                / Vuex</li>
-              <li class="flex items-center text-slate-600"><i
-                  class="fas fa-check-circle text-primary-400 mr-2"></i>Tailwind CSS / Bootstrap</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-primary-400 mr-2"></i>Sass /
-                CSS3 / HTML5</li>
-              <li class="flex items-center text-slate-600"><i
-                  class="fas fa-check-circle text-primary-400 mr-2"></i>JavaScript (ES6+) / jQuery</li>
+              <li v-for="skill in frontendSkills" :key="skill" class="flex items-center text-slate-600"><i class="fas fa-check-circle text-primary-400 mr-2"></i>{{ skill }}</li>
             </ul>
           </div>
 
@@ -145,16 +136,7 @@
             </div>
             <h3 class="text-xl font-bold text-slate-800 mb-4">後端與架構</h3>
             <ul class="space-y-3">
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-purple-400 mr-2"></i>Node.js
-                / Express</li>
-              <li class="flex items-center text-slate-600"><i
-                  class="fas fa-check-circle text-purple-400 mr-2"></i>TypeScript</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-purple-400 mr-2"></i>MongoDB
-                / Mongoose</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-purple-400 mr-2"></i>PHP +
-                Laravel (Basic)</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-purple-400 mr-2"></i>RESTful
-                API 設計</li>
+              <li v-for="skill in backendSkills" :key="skill" class="flex items-center text-slate-600"><i class="fas fa-check-circle text-purple-400 mr-2"></i>{{ skill }}</li>
             </ul>
           </div>
 
@@ -166,14 +148,7 @@
             </div>
             <h3 class="text-xl font-bold text-slate-800 mb-4">工具與 DevOps</h3>
             <ul class="space-y-3">
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-fuchsia-400 mr-2"></i>Git /
-                GitHub / GitLab</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-fuchsia-400 mr-2"></i>Docker
-                環境建置</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-fuchsia-400 mr-2"></i>AWS
-                EC2 部署</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-fuchsia-400 mr-2"></i>Chrome
-                DevTools</li>
+              <li v-for="skill in devopsSkills" :key="skill" class="flex items-center text-slate-600"><i class="fas fa-check-circle text-fuchsia-400 mr-2"></i>{{ skill }}</li>
             </ul>
           </div>
 
@@ -185,14 +160,7 @@
             </div>
             <h3 class="text-xl font-bold text-slate-800 mb-4">設計與溝通</h3>
             <ul class="space-y-3">
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-pink-400 mr-2"></i>UI/UX 觀念
-              </li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-pink-400 mr-2"></i>Figma /
-                Adobe XD</li>
-              <li class="flex items-center text-slate-600"><i
-                  class="fas fa-check-circle text-pink-400 mr-2"></i>Illustrator / Photoshop</li>
-              <li class="flex items-center text-slate-600"><i class="fas fa-check-circle text-pink-400 mr-2"></i>Notion /
-                ClickUp 專案管理</li>
+              <li v-for="skill in designSkills" :key="skill" class="flex items-center text-slate-600"><i class="fas fa-check-circle text-pink-400 mr-2"></i>{{ skill }}</li>
             </ul>
           </div>
         </div>
@@ -293,8 +261,8 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1: Bear Two -->
-          <div
+          <!-- Loop over featured projects -->
+          <div v-for="project in featuredProjects" :key="project.title"
             class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100">
             <div
               class="h-48 bg-gradient-to-r from-primary-200 to-pink-200 flex items-center justify-center overflow-hidden relative">
@@ -303,70 +271,17 @@
               <!-- Tag -->
               <div
                 class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-primary-700 shadow-sm">
-                團隊協作</div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">倍而兔募資平台</h3>
-              <p class="text-sm text-slate-500 mb-4">Vue3, Nuxt.js, Pinia, Node.js, MongoDB</p>
-              <p class="text-slate-600 text-sm mb-6 line-clamp-3">
-                擔任技術負責人，涵蓋資料庫設計與全端開發。實現JWT驗證、第三方登入與藍新金流串接。使用Tailwind CSS打造響應式介面。
-              </p>
-              <div class="flex gap-2 text-primary-600">
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">TypeScript</span>
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">Swagger</span>
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">Vercel</span>
+                {{ project.type.includes('團隊') ? '團隊協作' : '獨立開發' }}
               </div>
             </div>
-          </div>
-
-          <!-- Project 2: DTNS -->
-          <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100">
-            <div
-              class="h-48 bg-gradient-to-r from-slate-200 to-purple-200 flex items-center justify-center overflow-hidden relative">
-              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-              <i class="fas fa-book-open text-6xl text-white drop-shadow-md"></i>
-              <!-- Tag -->
-              <div
-                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-purple-700 shadow-sm">
-                獨立開發</div>
-            </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">DTNS - 文字的溫度</h3>
-              <p class="text-sm text-slate-500 mb-4">Vue2, Node.js, Express, MongoDB</p>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">{{ project.title }}</h3>
+              <p class="text-sm text-slate-500 mb-4">{{ project.tags.slice(0, 4).join(', ') }}</p>
               <p class="text-slate-600 text-sm mb-6 line-clamp-3">
-                紀錄心動語句的概念網站。包含會員系統、文章分享牆與權限管理。實現夜間模式切換與PWA離線瀏覽功能。
-              </p>
-              <div class="flex gap-2 text-purple-600">
-                <span class="px-2 py-1 bg-purple-50 rounded text-xs">PWA</span>
-                <span class="px-2 py-1 bg-purple-50 rounded text-xs">Line Login</span>
-                <span class="px-2 py-1 bg-purple-50 rounded text-xs">RWD</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Stock Find -->
-          <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100">
-            <div
-              class="h-48 bg-gradient-to-r from-green-100 to-primary-200 flex items-center justify-center overflow-hidden relative">
-              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-              <i class="fab fa-line text-6xl text-white drop-shadow-md"></i>
-              <!-- Tag -->
-              <div
-                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-green-600 shadow-sm">
-                Line Bot</div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">Stock. Find 股票機器人</h3>
-              <p class="text-sm text-slate-500 mb-4">Node.js, Line Messaging API, Axios</p>
-              <p class="text-slate-600 text-sm mb-6 line-clamp-3">
-                串接第三方財經API的Line機器人。提供即時股價、新聞與歷史走勢查詢。使用Flex Message呈現豐富的視覺化資訊。
+                {{ project.description }}
               </p>
               <div class="flex gap-2 text-primary-600">
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">Line Flex</span>
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">Render</span>
-                <span class="px-2 py-1 bg-primary-50 rounded text-xs">Node.js</span>
+                <span v-for="tag in project.tags.slice(0, 3)" :key="tag" class="px-2 py-1 bg-primary-50 rounded text-xs">{{ tag }}</span>
               </div>
             </div>
           </div>
@@ -424,10 +339,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
 
 const mobileMenuOpen = ref(false);
 const scrolledNavbar = ref(false);
+
+const frontendSkills = computed(() => [...portfolioData.skills.frontend.highlight, ...portfolioData.skills.frontend.tags]);
+const backendSkills = computed(() => [...portfolioData.skills.backend.highlight, ...portfolioData.skills.backend.tags]);
+const devopsSkills = computed(() => portfolioData.skills.tools.tags.filter(tag => ['Git', 'Docker', 'AWS', 'CI/CD'].includes(tag)));
+const designSkills = computed(() => portfolioData.skills.tools.tags.filter(tag => ['Figma', 'Adobe XD', 'Illustrator', 'Photoshop'].includes(tag)));
+const featuredProjects = computed(() => portfolioData.projects.featured);
+
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;

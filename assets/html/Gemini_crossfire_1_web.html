@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>穿越火線 Cross Fire | 超級網劇官網</title>
+  <meta name="description" content="2008年落魄老將肖楓，與2019年身殘志堅的天才路小北，在同一張遊戲地圖中跨時空相遇。">
+
+  <!-- Google Fonts: Noto Sans TC for text, Chakra Petch for futuristic headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS (via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind Configuration for Custom Colors and Fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cf: {
+              orange: '#F59E0B', // 肖楓/2008
+              blue: '#0EA5E9',   // 路小北/2019
+              dark: '#0B0E14',   // Deep Gunmetal
+              surface: '#1E293B',
+              red: '#EF4444'
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+            tech: ['"Chakra Petch"', 'sans-serif'],
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)",
+          },
+          animation: {
+            'glitch': 'glitch 1s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glitch: {
+              '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+              '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+              '62%': { transform: 'translate(0,0) skew(5deg)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Utilities */
+    .clip-path-slant {
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .clip-path-slant-reverse {
+      clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    }
+
+    .text-stroke {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+      color: transparent;
+    }
+
+    .glass {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Glitch Effect CSS */
+    .glitch-text {
+      position: relative;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -1px 0 #F59E0B;
+      clip: rect(24px, 550px, 90px, 0);
+      animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -1px 0 #0EA5E9;
+      clip: rect(85px, 550px, 140px, 0);
+      animation: glitch-anim 2.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip: rect(10px, 9999px, 31px, 0);
+      }
+
+      20% {
+        clip: rect(65px, 9999px, 89px, 0);
+      }
+
+      40% {
+        clip: rect(34px, 9999px, 15px, 0);
+      }
+
+      60% {
+        clip: rect(2px, 9999px, 78px, 0);
+      }
+
+      80% {
+        clip: rect(90px, 9999px, 12px, 0);
+      }
+
+      100% {
+        clip: rect(55px, 9999px, 44px, 0);
+      }
+    }
+
+    @keyframes glitch-anim-2 {
+      0% {
+        clip: rect(65px, 9999px, 100px, 0);
+      }
+
+      20% {
+        clip: rect(2px, 9999px, 55px, 0);
+      }
+
+      40% {
+        clip: rect(90px, 9999px, 12px, 0);
+      }
+
+      60% {
+        clip: rect(34px, 9999px, 78px, 0);
+      }
+
+      80% {
+        clip: rect(15px, 9999px, 10px, 0);
+      }
+
+      100% {
+        clip: rect(44px, 9999px, 33px, 0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-cf-dark text-white font-sans overflow-x-hidden selection:bg-cf-orange selection:text-black">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-tech font-bold tracking-widest italic uppercase flex items-center gap-2">
+        <i class="fa-solid fa-crosshairs text-cf-red"></i>
+        <span class="text-white">Cross</span><span class="text-cf-orange">Fire</span>
+      </a>
+
+      <div class="hidden md:flex space-x-8 items-center font-tech tracking-wide text-sm">
+        <a href="#home" class="hover:text-cf-orange transition-colors">首頁</a>
+        <a href="#story" class="hover:text-cf-blue transition-colors">時空劇情</a>
+        <a href="#characters" class="hover:text-cf-orange transition-colors">戰隊陣容</a>
+        <a href="#gallery" class="hover:text-cf-blue transition-colors">劇照圖庫</a>
+        <a href="#" class="bg-cf-red px-6 py-2 rounded skew-x-[-10deg] hover:bg-red-600 transition-colors group">
+          <span class="block skew-x-[10deg] font-bold">立即追劇 <i
+              class="fa-solid fa-play ml-1 group-hover:translate-x-1 transition-transform"></i></span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-white text-2xl" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Splitting -->
+    <div class="absolute inset-0 z-0 flex flex-col md:flex-row">
+      <!-- Left: 2008 (Orange/Warm) -->
+      <div class="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+        <!-- Placeholder for Xiao Feng Image -->
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover sepia-[.5] brightness-50 scale-105 group-hover:scale-110 transition-transform duration-1000"
+          alt="2008 Background">
+        <div class="absolute inset-0 bg-cf-orange/10 mix-blend-overlay"></div>
+      </div>
+
+      <!-- Right: 2019 (Blue/Cold) -->
+      <div class="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+        <!-- Placeholder for Lu Xiaobei Image -->
+        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=2584&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover hue-rotate-[180deg] brightness-50 scale-105 group-hover:scale-110 transition-transform duration-1000"
+          alt="2019 Background">
+        <div class="absolute inset-0 bg-cf-blue/10 mix-blend-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Center Divider & Content -->
+    <div class="relative z-20 container mx-auto px-4 text-center">
+      <div class="inline-block mb-4 animate-float">
+        <span class="bg-cf-red text-white text-xs font-bold px-2 py-1 tracking-widest uppercase">Original Series</span>
+      </div>
+
+      <h1 class="text-6xl md:text-9xl font-black font-tech uppercase tracking-tighter mb-2 glitch-text leading-none"
+        data-text="CROSS FIRE">
+        CROSS FIRE
+      </h1>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 tracking-[0.5em]">
+        穿越<span class="text-cf-orange">火</span><span class="text-cf-blue">線</span>
+      </h2>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24 mt-12">
+        <div class="text-right group cursor-pointer">
+          <p class="text-cf-orange text-xl font-bold mb-1">2008</p>
+          <h3 class="text-4xl font-bold group-hover:text-cf-orange transition-colors">肖 楓</h3>
+          <p class="text-gray-400 text-sm mt-2">1coin 戰隊隊長</p>
+        </div>
+
+        <div class="h-16 w-1 bg-gradient-to-b from-cf-orange to-cf-blue hidden md:block"></div>
+        <div class="w-16 h-1 bg-gradient-to-r from-cf-orange to-cf-blue md:hidden"></div>
+
+        <div class="text-left group cursor-pointer">
+          <p class="text-cf-blue text-xl font-bold mb-1">2019</p>
+          <h3 class="text-4xl font-bold group-hover:text-cf-blue transition-colors">路小北</h3>
+          <p class="text-gray-400 text-sm mt-2">Continue 戰隊隊長</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+      <i class="fa-solid fa-chevron-down text-xl"></i>
+    </div>
+  </header>
+
+  <!-- Story Section -->
+  <section id="story" class="py-24 bg-cf-dark relative bg-[size:40px_40px] bg-grid-pattern">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+        <!-- Text Content -->
+        <div class="md:w-1/2">
+          <h2 class="text-4xl font-bold mb-6 border-l-4 border-cf-red pl-4">
+            一張地圖，<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cf-orange to-cf-blue">跨越 11 年的時空連線</span>
+          </h2>
+          <p class="text-gray-300 leading-relaxed mb-6 text-lg">
+            2008年，落魄的電競老將<strong>肖楓</strong>勉強維持著自己的戰隊，此時電競還遠未迎來它最好的時代，面對誤解與嘲笑，他仍堅持著心中的夢想。
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+            2019年，遊戲裡的天才玩家<strong>路小北</strong>，雖然雙腿殘疾，卻誓要在電競領域打出名堂，卻因一場意外失去了進入職業隊的資格。
+          </p>
+          <div class="flex gap-4">
+            <div class="flex items-center gap-3 bg-gray-800/50 p-4 rounded border border-gray-700">
+              <i class="fa-solid fa-headset text-2xl text-cf-orange"></i>
+              <div>
+                <h4 class="font-bold text-cf-orange">懷舊歲月</h4>
+                <p class="text-xs text-gray-400">網吧時代的熱血</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 bg-gray-800/50 p-4 rounded border border-gray-700">
+              <i class="fa-solid fa-microchip text-2xl text-cf-blue"></i>
+              <div>
+                <h4 class="font-bold text-cf-blue">職業競技</h4>
+                <p class="text-xs text-gray-400">現代賽場的榮耀</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Element -->
+        <div class="md:w-1/2 relative">
+          <div
+            class="relative w-full aspect-video glass rounded-lg overflow-hidden border-2 border-gray-700 shadow-[0_0_30px_rgba(14,165,233,0.1)]">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Simulate Game Map UI -->
+              <div class="w-full h-full bg-black/50 absolute z-0"></div>
+              <i class="fa-solid fa-bolt text-6xl text-yellow-400 animate-pulse z-10"></i>
+              <div class="absolute top-4 left-4 font-tech text-cf-orange text-xl">2008 SERVER</div>
+              <div class="absolute bottom-4 right-4 font-tech text-cf-blue text-xl">2019 SERVER</div>
+              <div class="absolute inset-0 border-[20px] border-transparent border-t-cf-orange/20 border-b-cf-blue/20">
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1548484352-ea579e5233a8?q=80&w=2670&auto=format&fit=crop"
+              class="object-cover w-full h-full opacity-40" alt="Map">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section -->
+  <section id="characters" class="py-24 bg-gradient-to-b from-cf-dark to-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-center text-4xl font-bold mb-4 font-tech">SQUADS / 戰隊陣容</h2>
+      <div class="w-24 h-1 bg-cf-red mx-auto mb-16"></div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Xiao Feng / 2008 -->
+        <div class="group relative">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+          </div>
+          <div class="relative glass p-8 rounded-lg border-l-4 border-cf-orange">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h3 class="text-3xl font-bold text-white">肖楓</h3>
+                <p class="text-cf-orange font-tech uppercase tracking-wider">Lu Han</p>
+              </div>
+              <div class="text-5xl text-gray-700 group-hover:text-cf-orange transition-colors duration-500">
+                <i class="fa-solid fa-gun"></i>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">
+              1coin 戰隊隊長。看似吊兒郎當，實則對電競有著純粹的熱愛與堅持。在電競被視為「不務正業」的年代，帶領兄弟衝破世俗偏見。
+            </p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>LEADERSHIP</span>
+                <span class="text-cf-orange">95%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+                <div class="bg-cf-orange h-full w-[95%]"></div>
+              </div>
+
+              <div class="flex justify-between text-sm text-gray-500 mt-2">
+                <span>AIM</span>
+                <span class="text-cf-orange">88%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+                <div class="bg-cf-orange h-full w-[88%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lu Xiaobei / 2019 -->
+        <div class="group relative">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+          </div>
+          <div class="relative glass p-8 rounded-lg border-r-4 border-cf-blue text-right md:text-left">
+            <div class="flex flex-row-reverse md:flex-row items-start justify-between mb-6">
+              <div class="text-right">
+                <h3 class="text-3xl font-bold text-white">路小北</h3>
+                <p class="text-cf-blue font-tech uppercase tracking-wider">Wu Lei</p>
+              </div>
+              <div class="text-5xl text-gray-700 group-hover:text-cf-blue transition-colors duration-500">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Continue 戰隊隊長。輪椅上的電競天才，繼承了哥哥的遺志。性格高冷孤傲，但在遊戲中擁有絕對的統治力與戰術頭腦。
+            </p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>STRATEGY</span>
+                <span class="text-cf-blue">98%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+                <div class="bg-cf-blue h-full w-[98%]"></div>
+              </div>
+
+              <div class="flex justify-between text-sm text-gray-500 mt-2">
+                <span>REFLEXES</span>
+                <span class="text-cf-blue">92%</span>
+              </div>
+              <div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+                <div class="bg-cf-blue h-full w-[92%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Quote Section -->
+  <section id="gallery" class="py-20 bg-cf-dark border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <i class="fa-solid fa-quote-left text-4xl text-gray-600 mb-6"></i>
+      <h3 class="text-2xl md:text-4xl font-bold italic text-white mb-8 leading-normal">
+        "熱愛是藏不住的，<br>
+        就像<span class="text-cf-orange">子彈</span>出膛一樣，無法收回。"
+      </h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+        <!-- Gallery Item 1 -->
+        <div class="aspect-square relative overflow-hidden group rounded">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            alt="Scene">
+          <div
+            class="absolute inset-0 bg-cf-orange/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="font-bold text-black bg-white/80 px-2 py-1">鋼幣戰隊</span>
+          </div>
+        </div>
+        <!-- Gallery Item 2 -->
+        <div class="aspect-square relative overflow-hidden group rounded">
+          <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=2670&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            alt="Scene">
+          <div
+            class="absolute inset-0 bg-cf-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="font-bold text-black bg-white/80 px-2 py-1">Continue</span>
+          </div>
+        </div>
+        <!-- Gallery Item 3 -->
+        <div class="aspect-square relative overflow-hidden group rounded">
+          <img src="https://images.unsplash.com/photo-1593305841991-05c29736560e?q=80&w=2670&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            alt="Scene">
+          <div
+            class="absolute inset-0 bg-cf-orange/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="font-bold text-black bg-white/80 px-2 py-1">兄弟情</span>
+          </div>
+        </div>
+        <!-- Gallery Item 4 -->
+        <div class="aspect-square relative overflow-hidden group rounded">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            alt="Scene">
+          <div
+            class="absolute inset-0 bg-cf-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="font-bold text-black bg-white/80 px-2 py-1">榮耀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-12 border-t border-gray-800 text-center md:text-left">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <a href="#" class="text-2xl font-tech font-bold tracking-widest uppercase text-white">
+          Cross<span class="text-cf-red">Fire</span>
+        </a>
+        <p class="text-gray-500 text-sm mt-2">© 2024 網劇穿越火線 Fan Concept Site.</p>
+      </div>
+
+      <div class="flex space-x-6 text-2xl">
+        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-weibo"></i></a>
+        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navbar = document.getElementById('navbar');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-lg');
+        navbar.classList.add('bg-black/90');
+        navbar.classList.remove('glass');
+      } else {
+        navbar.classList.remove('shadow-lg');
+        navbar.classList.remove('bg-black/90');
+        navbar.classList.add('glass');
+      }
+    });
+
+    // Simple smooth scroll is handled by CSS (scroll-smooth),
+    // but keeping JS structure for future expansion.
+    console.log("Cross Fire System Online: 2008 <> 2019 Connected.");
+  </script>
+</body>
+
+</html>
