@@ -113,39 +113,23 @@
           <div class="skill-card">
             <h3>前端技能 Frontend</h3>
             <div class="skill-tags">
-              <span class="skill-tag highlight">Vue.js</span>
-              <span class="skill-tag highlight">Nuxt.js</span>
-              <span class="skill-tag">Vue Router</span>
-              <span class="skill-tag">Vue CLI</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">jQuery</span>
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS / SCSS</span>
-              <span class="skill-tag">Bootstrap</span>
-              <span class="skill-tag">Axios</span>
+              <span v-for="skill in frontendSkills.highlight" :key="skill" class="skill-tag highlight">{{ skill }}</span>
+              <span v-for="skill in frontendSkills.tags" :key="skill" class="skill-tag">{{ skill }}</span>
             </div>
           </div>
 
           <div class="skill-card">
             <h3>後端技能 Backend</h3>
             <div class="skill-tags">
-              <span class="skill-tag highlight">Node.js</span>
-              <span class="skill-tag highlight">Express</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">Mongoose</span>
-              <span class="skill-tag">JWT Authentication</span>
+              <span v-for="skill in backendSkills.highlight" :key="skill" class="skill-tag highlight">{{ skill }}</span>
+              <span v-for="skill in backendSkills.tags" :key="skill" class="skill-tag">{{ skill }}</span>
             </div>
           </div>
 
           <div class="skill-card">
             <h3>工具與設計 Tools & Design</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">Adobe Illustrator</span>
-              <span class="skill-tag">Adobe Photoshop</span>
-              <span class="skill-tag">Chrome DevTools</span>
+              <span v-for="skill in toolsSkills.tags" :key="skill" class="skill-tag">{{ skill }}</span>
             </div>
           </div>
         </div>
@@ -162,108 +146,36 @@
 
         <h3 style="font-size:1rem;margin-bottom:1rem;">主要專案 Featured Projects</h3>
         <div class="featured-list">
-          <!-- Rabbit Funding -->
-          <article class="project-card">
+          <article v-for="project in featuredProjects" :key="project.title" class="project-card">
             <div class="project-header">
               <div>
-                <h3 class="project-title">倍而兔募資平台（Rabbit Funding Platform）</h3>
-                <div class="project-type">群眾募資平台 · 團隊協作專案</div>
+                <h3 class="project-title">{{ project.title }}</h3>
+                <div class="project-type">{{ project.type }}</div>
               </div>
             </div>
             <p class="project-desc">
-              一個功能完善的群眾募資平台，串連專案發起人與支持者，協助創意與夢想得以實現。
+              {{ project.description }}
             </p>
             <div class="project-subtitle">主要特色</div>
             <ul class="project-list">
-              <li>採用 SSR（Nuxt）提升網站效能與 SEO 表現</li>
-              <li>整合 Google 登入，提供便捷且安全的登入體驗</li>
-              <li>串接藍新金流 NewebPay，確保交易流程安全順暢</li>
-              <li>團隊協作開發，具備良好的溝通、分工與協作能力</li>
+              <li v-for="feature in project.features" :key="feature">{{ feature }}</li>
             </ul>
             <div class="project-subtitle">使用技術</div>
             <div class="project-tags">
-              <span class="project-tag">Vue3</span>
-              <span class="project-tag">Nuxt.js</span>
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">Node.js</span>
-              <span class="project-tag">Express</span>
-              <span class="project-tag">MongoDB</span>
-              <span class="project-tag">Google Login API</span>
-              <span class="project-tag">NewebPay</span>
+              <span v-for="tag in project.tags" :key="tag" class="project-tag">{{ tag }}</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="#" target="_blank">查看專案 Demo</a>
-              <a class="project-link" href="#" target="_blank">GitHub Repo</a>
-              <a class="project-link" href="#" target="_blank">技術說明文件</a>
-            </div>
-          </article>
-
-          <!-- DTNS -->
-          <article class="project-card">
-            <div class="project-header">
-              <div>
-                <h3 class="project-title">DTNS – 每字美句</h3>
-                <div class="project-type">個人化每日筆記／靈感管理工具 · 個人專案</div>
-              </div>
-            </div>
-            <p class="project-desc">
-              一款幫助使用者記錄每日想法與靈感的應用程式，兼具筆記、反思與日常管理功能。
-            </p>
-            <div class="project-subtitle">主要特色</div>
-            <ul class="project-list">
-              <li>支援 PWA，可安裝至桌面並支援離線使用</li>
-              <li>整合 Line 登入，降低註冊門檻、加快登入流程</li>
-              <li>提供深色模式（Dark Mode），在不同環境下維持良好閱讀體驗</li>
-              <li>自行完成從規劃、UI 設計到前後端開發，展現完整產品開發能力</li>
-            </ul>
-            <div class="project-subtitle">使用技術</div>
-            <div class="project-tags">
-              <span class="project-tag">Vue</span>
-              <span class="project-tag">VueMaterial UI</span>
-              <span class="project-tag">Node.js</span>
-              <span class="project-tag">MongoDB</span>
-              <span class="project-tag">PWA</span>
-              <span class="project-tag">Line Login API</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="#" target="_blank">查看專案 Demo</a>
-              <a class="project-link" href="#" target="_blank">GitHub Repo</a>
-              <a class="project-link" href="#" target="_blank">功能與架構說明</a>
+              <a v-for="link in project.links" :key="link.text" class="project-link" :href="link.url" target="_blank">{{ link.text }}</a>
             </div>
           </article>
         </div>
 
         <h3 style="font-size:1rem;margin-bottom:1rem;">其他作品 Other Projects</h3>
         <div class="other-projects-grid">
-          <article class="other-card">
-            <h3>Stock.Find 股價查詢機器人</h3>
-            <p>能查詢即時股價資訊的聊天機器人應用。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
-          </article>
-          <article class="other-card">
-            <h3>木門咖啡（Wooden Door Coffee）</h3>
-            <p>模擬咖啡店品牌網站，呈現菜單、店面資訊與品牌形象。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
-          </article>
-          <article class="other-card">
-            <h3>番茄鐘（Pomodoro Timer）</h3>
-            <p>基於番茄工作法的計時器工具，幫助使用者安排專注與休息節奏。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
-          </article>
-          <article class="other-card">
-            <h3>To Do List</h3>
-            <p>簡單實用的待辦清單管理工具，支援新增、完成與刪除。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
-          </article>
-          <article class="other-card">
-            <h3>射氣球遊戲（Balloon Shooting Game）</h3>
-            <p>互動式網頁小遊戲，透過射擊氣球考驗反應速度與操作手感。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
-          </article>
-          <article class="other-card">
-            <h3>打字練習遊戲（Typing Practice Game）</h3>
-            <p>遊戲化的打字練習工具，提升打字速度與準確度。</p>
-            <a href="#" target="_blank">專案連結／GitHub</a>
+          <article v-for="project in otherProjects" :key="project.title" class="other-card">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <a :href="project.link.url" target="_blank">{{ project.link.text }}</a>
           </article>
         </div>
       </section>
@@ -277,18 +189,18 @@
             <ul class="contact-list">
               <li>
                 <span class="contact-label">Email</span>
-                <a href="mailto:your-email@example.com">your-email@example.com</a>
+                <a :href="`mailto:${contactInfo.email}`">{{ contactInfo.email }}</a>
               </li>
               <li>
                 <span class="contact-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/your-link" target="_blank">
-                  https://www.linkedin.com/in/your-link
+                <a :href="contactInfo.linkedin" target="_blank">
+                  {{ contactInfo.linkedin }}
                 </a>
               </li>
               <li>
                 <span class="contact-label">GitHub</span>
-                <a href="https://github.com/your-github" target="_blank">
-                  https://github.com/your-github
+                <a :href="contactInfo.github" target="_blank">
+                  {{ contactInfo.github }}
                 </a>
               </li>
               <li>
@@ -328,8 +240,15 @@
 </template>
 
 <script setup lang="ts">
-// No interactive JavaScript found in the original HTML beyond basic link navigation.
-// Vue reactivity and lifecycle hooks can be added here if dynamic behavior is introduced later.
+import { computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
+
+const frontendSkills = computed(() => portfolioData.skills.frontend);
+const backendSkills = computed(() => portfolioData.skills.backend);
+const toolsSkills = computed(() => portfolioData.skills.tools);
+const featuredProjects = computed(() => portfolioData.projects.featured);
+const otherProjects = computed(() => portfolioData.projects.other);
+const contactInfo = computed(() => portfolioData.contact);
 </script>
 
 <style scoped>

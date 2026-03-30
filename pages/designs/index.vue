@@ -2,7 +2,7 @@
   <div class="container mx-auto p-8 bg-slate-50 min-h-screen">
     <h1 class="text-4xl font-bold mb-2 text-slate-800">設計頁面索引</h1>
     <p class="text-slate-600 mb-8 border-b pb-4">點擊以下連結以預覽從 HTML 轉換而來的 Nuxt/Vue 設計版型：</p>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div v-for="design in designs" :key="design.path" class="group">
         <NuxtLink :to="design.path" class="block p-6 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:border-blue-400 transition-all duration-300">
@@ -29,9 +29,6 @@
 <script setup lang="ts">
 const designs = [
   { name: '設計總覽入口', path: '/designs/design_index', file: 'design_index.vue' },
-  { name: '超級融合版 1 (Fusion V1)', path: '/designs/Gemini_fusion_1', file: 'Gemini_fusion_1.vue' },
-  { name: '硬核黑客版 2 (Fusion V2)', path: '/designs/Gemini_fusion_2', file: 'Gemini_fusion_2.vue' },
-  { name: '旗艦融合版 3 (Fusion V3)', path: '/designs/Gemini_fusion_3', file: 'Gemini_fusion_3.vue' },
   { name: 'Mobius 不眠日風格', path: '/designs/Gemini_mobius_1_web', file: 'Gemini_mobius_1_web.vue' },
   { name: 'Dual 邏輯美學風格', path: '/designs/Gemini_love_1_web_dev', file: 'Gemini_love_1_web_dev.vue' },
   { name: 'Cross Fire 穿越火線風格', path: '/designs/Gemini_crossfire_1_web', file: 'Gemini_crossfire_1_web.vue' },
@@ -46,8 +43,13 @@ const designs = [
   { name: '電影版型 5 (Web)', path: '/designs/Gemini_movie_5_web', file: 'Gemini_movie_5_web.vue' },
   { name: '電影版型 6 (Web)', path: '/designs/Gemini_movie_6_web', file: 'Gemini_movie_6_web.vue' },
   { name: '電影版型 7 (Web)', path: '/designs/Gemini_movie_7_web', file: 'Gemini_movie_7_web.vue' },
-  { name: '測試版型 A', path: '/designs/TEST_ANNE_PORTIFOLIO', file: 'TEST_ANNE_PORTIFOLIO.vue' },
-  { name: '測試版型 B', path: '/designs/TEST_ANNE_PORTIFOLIO-2', file: 'TEST_ANNE_PORTIFOLIO-2.vue' },
+  { name: '電影版型 8 (Web)', path: '/designs/Gemini_movie_8_web', file: 'Gemini_movie_8_web.vue' },
+  { name: '測試版型 A', path: '/designs/TEST_ANNE_PORTFOLIO-1', file: 'TEST_ANNE_PORTFOLIO-1.vue' },
+  { name: '測試版型 B', path: '/designs/TEST_ANNE_PORTFOLIO-2', file: 'TEST_ANNE_PORTFOLIO-2.vue' },
+  { name: '超級融合版 1', path: '/designs/TEST_ANNE_PORTFOLIO-3', file: 'TEST_ANNE_PORTFOLIO-3.vue' },
+  { name: '硬核黑客版 2', path: '/designs/TEST_ANNE_PORTFOLIO-4', file: 'TEST_ANNE_PORTFOLIO-4.vue' },
+  { name: '旗艦融合版 3', path: '/designs/TEST_ANNE_PORTFOLIO-5', file: 'TEST_ANNE_PORTFOLIO-5.vue' },
+  { name: '戰鬥融合版 4', path: '/designs/TEST_ANNE_PORTFOLIO-6', file: 'TEST_ANNE_PORTFOLIO-6.vue' },
 ];
 
 useHead({

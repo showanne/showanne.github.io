@@ -57,28 +57,19 @@
             <div>
               <strong>框架 / 函式庫</strong>
               <div class="tag-list">
-                <span class="tag">Vue.js</span>
-                <span class="tag">Vue Router</span>
-                <span class="tag">Vue CLI</span>
-                <span class="tag">Nuxt.js</span>
+                <span v-for="skill in frontendFrameworks" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>語言</strong>
               <div class="tag-list">
-                <span class="tag">JavaScript</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">jQuery</span>
+                <span v-for="skill in frontendLangs" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>標記與樣式</strong>
               <div class="tag-list">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">Scss</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">Axios</span>
+                <span v-for="skill in frontendStyles" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
           </div>
@@ -90,21 +81,19 @@
             <div>
               <strong>語言 / 框架</strong>
               <div class="tag-list">
-                <span class="tag">Node.js</span>
-                <span class="tag">Express</span>
+                <span v-for="skill in backendFrameworks" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>資料庫</strong>
               <div class="tag-list">
-                <span class="tag">MongoDB</span>
-                <span class="tag">Mongoose</span>
+                <span v-for="skill in backendDb" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>認證與安全</strong>
               <div class="tag-list">
-                <span class="tag">JWT 驗證</span>
+                <span v-for="skill in backendAuth" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
           </div>
@@ -116,21 +105,19 @@
             <div>
               <strong>版本控制</strong>
               <div class="tag-list">
-                <span class="tag">Git</span>
+                <span v-for="skill in versionControl" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>設計工具</strong>
               <div class="tag-list">
-                <span class="tag">Figma</span>
-                <span class="tag">Adobe Illustrator</span>
-                <span class="tag">Adobe Photoshop</span>
+                <span v-for="skill in designTools" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
             <div style="margin-top:10px;">
               <strong>除錯工具</strong>
               <div class="tag-list">
-                <span class="tag">Chrome DevTool</span>
+                <span v-for="skill in debugTools" :key="skill" class="tag">{{ skill }}</span>
               </div>
             </div>
           </div>
@@ -146,51 +133,20 @@
 
         <!-- 主要專案 -->
         <div class="projects-grid">
-          <!-- 倍而兔募資平台 -->
-          <div class="card">
-            <div class="project-title">倍而兔募資平台 (Rabbit Funding Platform)</div>
-            <div class="project-meta">群眾募資平台｜團隊協作專案</div>
+          <div v-for="project in featuredProjects" :key="project.title" class="card">
+            <div class="project-title">{{ project.title }}</div>
+            <div class="project-meta">{{ project.type }}</div>
             <p class="project-desc">
-              一個功能完善的群眾募資平台，連結專案發起人與支持者，協助創意與夢想得以實現。
+              {{ project.description }}
             </p>
             <ul class="project-list">
-              <li>導入 SSR (Server-Side Rendering)，提升網站效能與 SEO 表現。</li>
-              <li>整合 Google 登入功能，提供便捷的使用者體驗。</li>
-              <li>串接藍新金流 (NewebPay) 支付系統，確保交易安全與流暢。</li>
-              <li>跨職能團隊協作，展現良好溝通與協作能力。</li>
+              <li v-for="feature in project.features" :key="feature">{{ feature }}</li>
             </ul>
             <div class="project-tech">
-              <strong>使用技術：</strong>Vue3、Nuxt.js、TypeScript、Node.js、Express、MongoDB、Google Login API、藍新金流 NewebPay
+              <strong>使用技術：</strong>{{ project.tags.join(', ') }}
             </div>
             <div class="project-links">
-              <!-- TODO: 替換實際連結 -->
-              <a href="#" target="_blank">查看專案</a>
-              <span>·</span>
-              <a href="#" target="_blank">GitHub Repo</a>
-            </div>
-          </div>
-
-          <!-- DTNS 每字美句 -->
-          <div class="card">
-            <div class="project-title">DTNS - 每字美句 (Daily Thought &amp; Note System)</div>
-            <div class="project-meta">個人化筆記應用｜個人獨立專案</div>
-            <p class="project-desc">
-              一款個人化的每日思緒與筆記應用程式，協助使用者記錄靈感、管理日常、整理思緒。
-            </p>
-            <ul class="project-list">
-              <li>支援 PWA，提供近似原生 App 的體驗，可離線使用。</li>
-              <li>整合 Line 登入，降低註冊門檻，提升使用者轉換率。</li>
-              <li>提供深色模式 (Dark Mode)，在不同環境下維持舒適閱讀體驗。</li>
-              <li>從需求規劃、介面設計到前後端實作皆獨立完成。</li>
-            </ul>
-            <div class="project-tech">
-              <strong>使用技術：</strong>Vue、VueMaterial UI、Node.js、MongoDB、PWA、Line Login API
-            </div>
-            <div class="project-links">
-              <!-- TODO: 替換實際連結 -->
-              <a href="#" target="_blank">查看專案</a>
-              <span>·</span>
-              <a href="#" target="_blank">GitHub Repo</a>
+              <a v-for="link in project.links" :key="link.text" :href="link.url" target="_blank">{{ link.text }}</a>
             </div>
           </div>
         </div>
@@ -202,48 +158,12 @@
         </p>
 
         <div class="other-projects">
-          <div class="other-project">
-            <div class="other-project-name">Stock.Find 股價查詢機器人</div>
+          <div v-for="project in otherProjects" :key="project.title" class="other-project">
+            <div class="other-project-name">{{ project.title }}</div>
             <div class="other-project-desc">
-              能查詢即時股價資訊的機器人應用。
+              {{ project.description }}
             </div>
-            <!-- TODO: 替換實際連結 -->
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
-          </div>
-          <div class="other-project">
-            <div class="other-project-name">木門咖啡 (Wooden Door Coffee)</div>
-            <div class="other-project-desc">
-              模擬咖啡店網站，呈現菜單與店面資訊的品牌形象頁面。
-            </div>
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
-          </div>
-          <div class="other-project">
-            <div class="other-project-name">番茄鐘 (Pomodoro Timer)</div>
-            <div class="other-project-desc">
-              經典番茄工作法計時器，協助提升專注力與工作節奏。
-            </div>
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
-          </div>
-          <div class="other-project">
-            <div class="other-project-name">To Do List</div>
-            <div class="other-project-desc">
-              簡單實用的待辦清單工具，協助管理日常任務。
-            </div>
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
-          </div>
-          <div class="other-project">
-            <div class="other-project-name">射氣球遊戲 (Balloon Shooting Game)</div>
-            <div class="other-project-desc">
-              互動式網頁小遊戲，考驗反應速度與操作手感。
-            </div>
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
-          </div>
-          <div class="other-project">
-            <div class="other-project-name">打字練習遊戲 (Typing Practice Game)</div>
-            <div class="other-project-desc">
-              透過遊戲化方式提升打字速度與準確度。
-            </div>
-            <div style="margin-top:6px;"><a href="#" target="_blank">專案連結 / GitHub</a></div>
+            <div style="margin-top:6px;"><a :href="project.link.url" target="_blank">{{ project.link.text }}</a></div>
           </div>
         </div>
       </div>
@@ -262,20 +182,19 @@
             我樂於參與具有挑戰性的專案，也期待在團隊中持續成長、分享與學習。
           </p>
           <ul class="contact-list">
-            <!-- TODO: 將以下換成實際資訊 -->
             <li>
               <span class="contact-label">電子郵件：</span>
-              <a href="mailto:anne.developer@email.com">
-                anne.developer@email.com
+              <a :href="`mailto:${contactInfo.email}`">
+                {{ contactInfo.email }}
               </a>
             </li>
             <li>
               <span class="contact-label">LinkedIn：</span>
-              <a href="https://www.linkedin.com/">linkedin.com/in/anne</a>
+              <a :href="contactInfo.linkedin" target="_blank">{{ contactInfo.linkedin }}</a>
             </li>
             <li>
               <span class="contact-label">GitHub：</span>
-              <a href="">git</a>
+              <a :href="contactInfo.github" target="_blank">{{ contactInfo.github }}</a>
             </li>
           </ul>
         </div>
@@ -288,8 +207,23 @@
 </template>
 
 <script setup lang="ts">
-// No interactive JavaScript found in the original HTML beyond basic link navigation.
-// Vue reactivity and lifecycle hooks can be added here if dynamic behavior is introduced later.
+import { computed } from 'vue';
+import portfolioData from '~/assets/data/portfolio.json';
+
+const frontendFrameworks = computed(() => portfolioData.skills.frontend.tags.filter(tag => tag.includes('Vue') || tag.includes('Nuxt')));
+const frontendLangs = computed(() => portfolioData.skills.frontend.tags.filter(tag => ['JavaScript', 'TypeScript', 'jQuery'].includes(tag)));
+const frontendStyles = computed(() => portfolioData.skills.frontend.tags.filter(tag => ['HTML', 'CSS', 'Scss', 'Bootstrap', 'Axios'].includes(tag)));
+const backendFrameworks = computed(() => portfolioData.skills.backend.highlight);
+const backendDb = computed(() => portfolioData.skills.backend.tags.filter(tag => tag.includes('Mongo')));
+const backendAuth = computed(() => portfolioData.skills.backend.tags.filter(tag => tag.includes('JWT')));
+const versionControl = computed(() => portfolioData.skills.tools.tags.filter(tag => tag === 'Git'));
+const designTools = computed(() => portfolioData.skills.tools.tags.filter(tag => tag.includes('Figma') || tag.includes('Adobe')));
+const debugTools = computed(() => portfolioData.skills.tools.tags.filter(tag => tag.includes('Chrome')));
+
+const featuredProjects = computed(() => portfolioData.projects.featured);
+const otherProjects = computed(() => portfolioData.projects.other);
+const contactInfo = computed(() => portfolioData.contact);
+
 </script>
 
 <style scoped>
