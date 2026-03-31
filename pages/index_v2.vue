@@ -8,7 +8,7 @@ definePageMeta({
 
 // Use standard Head metadata
 useHead({
-  title: 'Anne Jhan | Full-Stack Developer V2',
+  title: 'Anne Jan | Full-Stack Developer V2',
   link: [
     {
       rel: 'stylesheet',
@@ -41,14 +41,14 @@ onMounted(() => {
 
 <template>
   <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans overflow-x-hidden">
-    
+
     <!-- 全域掃描線與噪點 -->
     <div class="scanline"></div>
     <div class="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none z-0"></div>
 
     <!-- 獨立於原版的組件 -->
     <FusionNavbar @scrollToTop="scrollToTop" />
-    
+
     <main>
       <FusionHero id="home" />
       <FusionAbout id="about" />

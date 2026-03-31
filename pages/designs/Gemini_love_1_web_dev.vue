@@ -40,7 +40,7 @@ const menuItems = [
 
 <template>
   <div class="bg-[#0F172A] text-[#F8FAFC] font-sans antialiased selection:bg-[#C5A572] selection:text-[#0F172A]">
-    
+
     <!-- 粒子背景 -->
     <div class="particles"></div>
 
@@ -89,7 +89,7 @@ const menuItems = [
       <!-- 中央標題 -->
       <div class="relative z-10 text-center px-4">
         <p class="font-mono text-[#C5A572] text-sm md:text-base tracking-[0.4em] mb-4 uppercase animate-fade-in-up">
-          Anne Jhan
+          Anne Jan
         </p>
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-2xl tracking-tight opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
           邏輯與美學的<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A572] to-[#38BDF8] italic">雙重奏</span>
@@ -185,11 +185,11 @@ const menuItems = [
         </div>
 
         <div class="space-y-40">
-          <div v-for="(project, index) in featuredProjects" :key="project.title" 
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
             :class="['relative group flex flex-col lg:items-center animate-on-scroll', index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row']">
-            
+
             <div class="absolute -inset-4 bg-gradient-to-r from-[#C5A572]/10 to-[#38BDF8]/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-1000"></div>
-            
+
             <!-- Visual Side -->
             <div class="lg:w-1/2 relative overflow-hidden bg-slate-800 flex items-center justify-center p-12 rounded-xl glass-panel border border-white/5">
               <div class="w-full aspect-video bg-[#1a2635] flex items-center justify-center text-[#C5A572]/20 font-serif text-3xl group-hover:scale-105 transition-transform duration-700 uppercase tracking-widest">
@@ -215,7 +215,7 @@ const menuItems = [
                     {{ project.description }}
                   </p>
                 </div>
-                
+
                 <div class="flex flex-wrap gap-2">
                   <span v-for="tag in project.tags" :key="tag" class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 text-gray-400 rounded-sm uppercase font-mono tracking-tighter">
                     #{{ tag }}
@@ -224,7 +224,7 @@ const menuItems = [
               </div>
 
               <div class="mt-8 flex gap-4">
-                <a v-for="link in project.links" :key="link.text" :href="link.url" target="_blank" 
+                <a v-for="link in project.links" :key="link.text" :href="link.url" target="_blank"
                   class="text-xs font-mono text-gray-500 hover:text-[#C5A572] transition-colors flex items-center gap-2 uppercase tracking-widest">
                   <i :class="link.text.includes('GitHub') ? 'fab fa-github' : 'fas fa-link'"></i> {{ link.text }}
                 </a>

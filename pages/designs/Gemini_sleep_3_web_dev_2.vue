@@ -4,7 +4,7 @@ import portfolioData from '~/assets/data/portfolio.json';
 
 // Use standard Head metadata
 useHead({
-  title: 'DEV.LOG | Anne Jhan | Full Stack Engineer',
+  title: 'DEV.LOG | Anne Jan | Full Stack Engineer',
   link: [
     {
       rel: 'stylesheet',
@@ -59,7 +59,7 @@ const menuItems = [
 
 <template>
   <div class="antialiased selection:bg-purple-500 selection:text-white bg-[#030005] text-[#e2e8f0] font-sans">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 transition-all duration-300', scrolled ? 'glass py-2' : 'bg-transparent py-4']">
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -89,7 +89,7 @@ const menuItems = [
       <div class="relative z-10 text-center px-4">
         <p class="font-mono text-[#A855F7] tracking-[0.3em] text-xs mb-4 animate-bounce uppercase">READY TO DEPLOY // {{ new Date().getFullYear() }} PORTFOLIO</p>
         <h1 class="text-6xl md:text-9xl font-black text-white mb-6 tracking-tighter italic uppercase">
-          ANNE JHAN<br>
+          ANNE JAN<br>
           <span class="purple-gradient-text">ENGINEER</span>
         </h1>
         <div class="h-1 w-24 bg-[#A855F7] mx-auto mb-8 shadow-[0_0_15px_#A855F7]"></div>
@@ -122,9 +122,9 @@ const menuItems = [
 
         <div class="grid gap-32">
           <!-- Featured Projects Loop -->
-          <div v-for="(project, index) in featuredProjects" :key="project.title" 
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
             :class="['grid md:grid-cols-12 gap-8 items-center group animate-on-scroll', index % 2 !== 0 ? 'md:flex-row-reverse' : '']">
-            
+
             <!-- Project Image -->
             <div :class="['md:col-span-7 relative overflow-hidden rounded-sm bento-card aspect-video', index % 2 !== 0 ? 'md:order-2' : '']">
               <div class="w-full h-full bg-[#1a0b2e] flex items-center justify-center text-[#A855F7]/30 font-mono text-2xl group-hover:scale-105 transition-transform duration-700 uppercase tracking-tighter">
@@ -173,7 +173,7 @@ const menuItems = [
           <div class="bento-card p-8 md:col-span-2">
             <h4 class="text-white font-bold mb-6 flex items-center gap-2"><i class="ph ph-layout text-[#A855F7]"></i> 前端開發 Frontend</h4>
             <div class="flex flex-wrap gap-3">
-              <span v-for="tag in [...skills.frontend.highlight, ...skills.frontend.tags.slice(0, 3)]" :key="tag" 
+              <span v-for="tag in [...skills.frontend.highlight, ...skills.frontend.tags.slice(0, 3)]" :key="tag"
                 class="px-4 py-1.5 bg-white/5 text-gray-300 text-xs rounded-full border border-white/10 hover:border-[#A855F7]/50 transition-colors">
                 {{ tag }}
               </span>
@@ -189,7 +189,7 @@ const menuItems = [
           <div class="bento-card p-8 md:col-span-2">
             <h4 class="text-white font-bold mb-6 flex items-center gap-2"><i class="ph ph-database text-[#FF2A6D]"></i> 後端架構 Backend</h4>
             <div class="flex flex-wrap gap-3">
-              <span v-for="tag in [...skills.backend.highlight, ...skills.backend.tags]" :key="tag" 
+              <span v-for="tag in [...skills.backend.highlight, ...skills.backend.tags]" :key="tag"
                 class="px-4 py-1.5 bg-white/5 text-gray-300 text-xs rounded-full border border-white/10 hover:border-[#FF2A6D]/50 transition-colors">
                 {{ tag }}
               </span>
@@ -252,7 +252,7 @@ const menuItems = [
       <div class="mb-4">
         System: <span class="text-[#A855F7]">Operational</span> | Load: 0.12 | Env: Production
       </div>
-      &copy; {{ new Date().getFullYear() }} ANNE JHAN. ALL RIGHTS RESERVED.
+      &copy; {{ new Date().getFullYear() }} ANNE JAN. ALL RIGHTS RESERVED.
     </footer>
   </div>
 </template>

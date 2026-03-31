@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useHead({
-  title: 'All Projects | Anne Jhan Full-Stack Deployed',
+  title: 'All Projects | Anne Jan Full-Stack Deployed',
   link: [
     {
       rel: 'stylesheet',

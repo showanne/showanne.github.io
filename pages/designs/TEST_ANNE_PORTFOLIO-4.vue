@@ -59,14 +59,14 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#050505] text-[#C5C6C7] font-sans overflow-x-hidden selection:bg-[#45F3FF] selection:text-black">
-    
+
     <div class="scanline"></div>
 
     <!-- [1] Hero Section - Sleep 3 Style -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 bg-noise opacity-20 z-0"></div>
       <div class="absolute inset-0 grid-bg opacity-20 z-0"></div>
-      
+
       <!-- Abstract Rings -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#45F3FF]/10 rounded-full animate-spin-slow z-0"></div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-[#FF2A6D]/10 rounded-full animate-spin-reverse z-0"></div>
@@ -74,11 +74,11 @@ onMounted(() => {
       <div class="relative z-20 text-center px-4 max-w-5xl mx-auto">
         <div class="inline-block border border-[#45F3FF]/30 px-3 py-1 bg-[#45F3FF]/5 mb-6 backdrop-blur-sm">
           <p class="text-[#45F3FF] font-mono tracking-widest text-[10px] animate-pulse uppercase">
-            // Init Sequence Complete // User: Anne_Jhan
+            // Init Sequence Complete // User: Anne_Jan
           </p>
         </div>
-        <h1 class="text-6xl md:text-9xl font-black text-white mb-2 tracking-tighter glitch-text uppercase" data-text="ANNE JHAN">
-          ANNE JHAN
+        <h1 class="text-6xl md:text-9xl font-black text-white mb-2 tracking-tighter glitch-text uppercase" data-text="ANNE JAN">
+          ANNE JAN
         </h1>
         <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-white to-slate-500 font-mono tracking-wider opacity-80 mb-8 cursor-blink uppercase">
           Full_Stack_Developer
@@ -102,7 +102,7 @@ onMounted(() => {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div v-for="(project, index) in featuredProjects" :key="project.title" 
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
             class="group relative rounded-xl overflow-hidden glass-card border border-white/5 hover:border-[#45F3FF]/30 transition-all duration-500 animate-on-scroll">
             <div class="h-56 bg-[#111] overflow-hidden relative">
               <div class="w-full h-full flex items-center justify-center text-[#45F3FF]/10 font-mono text-4xl group-hover:scale-110 transition-transform duration-700">
@@ -144,7 +144,7 @@ onMounted(() => {
           </div>
           <div class="p-8 font-mono text-sm min-h-[350px] bg-black/60 backdrop-blur-xl flex flex-col">
             <div class="terminal-body flex-1 overflow-y-auto space-y-3 mb-6">
-              <div v-for="(log, i) in terminalHistory" :key="i" 
+              <div v-for="(log, i) in terminalHistory" :key="i"
                 :class="{'text-[#39FF14]': log.type === 'info', 'text-slate-400': log.type === 'res', 'text-[#45F3FF]': log.type === 'cmd'}">
                 <span v-if="log.type === 'cmd'">$ </span>{{ log.text }}
               </div>
@@ -219,7 +219,7 @@ onMounted(() => {
 
     <!-- Footer -->
     <footer class="py-12 bg-black border-t border-white/5 text-center font-mono text-[9px] text-slate-700 tracking-[0.5em] uppercase">
-      &copy; {{ new Date().getFullYear() }} ANNE JHAN // FUSION_CORE_V2 // NO_SLEEP_PROTOCOL
+      &copy; {{ new Date().getFullYear() }} ANNE JAN // FUSION_CORE_V2 // NO_SLEEP_PROTOCOL
     </footer>
   </div>
 </template>

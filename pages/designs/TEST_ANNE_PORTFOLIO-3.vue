@@ -4,7 +4,7 @@ import portfolioData from '~/assets/data/portfolio.json';
 
 // Use standard Head metadata
 useHead({
-  title: 'Gemini Fusion | Anne Jhan Full-Stack Portfolio',
+  title: 'Gemini Fusion | Anne Jan Full-Stack Portfolio',
   link: [
     {
       rel: 'stylesheet',
@@ -49,7 +49,7 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#0B0E14] text-white font-sans overflow-x-hidden selection:bg-[#F59E0B] selection:text-black">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 transition-all duration-300', scrolled ? 'bg-black/90 shadow-lg py-3' : 'bg-transparent py-5']">
       <div class="container mx-auto px-6 flex justify-between items-center text-sm font-mono tracking-widest uppercase">
@@ -89,8 +89,8 @@ onMounted(() => {
         <div class="inline-block mb-4 animate-float">
           <span class="bg-[#EF4444] text-white text-[10px] font-bold px-3 py-1 tracking-[0.3em] uppercase rounded-sm">System Fusion Active</span>
         </div>
-        <h1 class="text-6xl md:text-9xl font-black font-tech uppercase tracking-tighter mb-2 glitch-text leading-none" data-text="ANNE JHAN">
-          ANNE JHAN
+        <h1 class="text-6xl md:text-9xl font-black font-tech uppercase tracking-tighter mb-2 glitch-text leading-none" data-text="ANNE JAN">
+          ANNE JAN
         </h1>
         <h2 class="text-2xl md:text-5xl font-bold text-white mb-12 tracking-[0.4em] uppercase">
           全端<span class="text-[#F59E0B]">視覺</span>與<span class="text-[#0EA5E9]">邏輯</span>
@@ -156,7 +156,7 @@ onMounted(() => {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div v-for="(project, index) in featuredProjects" :key="project.title" 
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
             class="group relative rounded-2xl overflow-hidden glass-card border border-white/5 hover:shadow-[0_0_40px_rgba(245,158,11,0.15)] transition-all duration-700 animate-on-scroll">
             <div class="h-64 bg-gray-900 overflow-hidden relative">
               <div class="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/20 to-black/60 z-10"></div>
@@ -192,7 +192,7 @@ onMounted(() => {
         </h2>
 
         <div class="space-y-32">
-          <div v-for="(project, idx) in otherProjects.slice(0, 3)" :key="project.title" 
+          <div v-for="(project, idx) in otherProjects.slice(0, 3)" :key="project.title"
             :class="['flex flex-col gap-16 items-center animate-on-scroll', idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse']">
             <div class="w-full md:w-3/5 group relative overflow-hidden bento-card aspect-video border border-white/5">
               <div class="w-full h-full bg-slate-900 flex items-center justify-center text-[#F59E0B]/20 font-mono italic uppercase tracking-[0.2em]">
@@ -282,7 +282,7 @@ onMounted(() => {
 
     <!-- Footer -->
     <footer class="py-12 bg-black border-t border-white/5 text-center font-mono text-[10px] text-slate-700 tracking-[0.4em] uppercase">
-      &copy; {{ new Date().getFullYear() }} ANNE JHAN // BUILT WITH NUXT 3 // FUSION CORE
+      &copy; {{ new Date().getFullYear() }} ANNE JAN // BUILT WITH NUXT 3 // FUSION CORE
     </footer>
   </div>
 </template>
@@ -305,8 +305,8 @@ onMounted(() => {
 }
 
 .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 

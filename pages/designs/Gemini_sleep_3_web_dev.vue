@@ -4,7 +4,7 @@ import portfolioData from '~/assets/data/portfolio.json';
 
 // Use standard Head metadata
 useHead({
-  title: 'DEV.LOG | Anne Jhan | Full Stack Developer',
+  title: 'DEV.LOG | Anne Jan | Full Stack Developer',
   link: [
     {
       rel: 'stylesheet',
@@ -63,7 +63,7 @@ const menuItems = [
 
 <template>
   <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 glass transition-all duration-300', scrolled ? 'h-16' : 'h-20']" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -103,8 +103,8 @@ const menuItems = [
           </p>
         </div>
 
-        <h1 class="text-6xl md:text-8xl font-black text-white mb-2 tracking-tighter glitch-text uppercase" data-text="ANNE JHAN">
-          ANNE JHAN
+        <h1 class="text-6xl md:text-8xl font-black text-white mb-2 tracking-tighter glitch-text uppercase" data-text="ANNE JAN">
+          ANNE JAN
         </h1>
         <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8892b0] via-white to-[#8892b0] font-mono tracking-wider opacity-80 mb-8 cursor-blink uppercase">
           FULL_STACK_DEVELOPER
@@ -156,7 +156,7 @@ const menuItems = [
 
             <div class="code-block p-6 text-sm text-[#8892b0] leading-relaxed rounded-sm shadow-[0_0_15px_rgba(69,243,255,0.1)]">
               <p><span class="text-[#FF2A6D]">const</span> developer = {</p>
-              <p class="pl-4">name: <span class="text-[#45F3FF]">'Anne Jhan'</span>,</p>
+              <p class="pl-4">name: <span class="text-[#45F3FF]">'Anne Jan'</span>,</p>
               <p class="pl-4">focus: [<span class="text-[#45F3FF]">'Scalability'</span>, <span class="text-[#45F3FF]">'Elegance'</span>, <span class="text-[#45F3FF]">'UX'</span>],</p>
               <p class="pl-4">mission: <span class="text-[#45F3FF]">'To debug reality.'</span></p>
               <p>};</p>
@@ -352,7 +352,7 @@ const menuItems = [
     <footer class="bg-black border-t border-white/10 py-12 font-mono">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-gray-600 text-sm mb-4">
-          &copy; {{ new Date().getFullYear() }} Anne Jhan. Built with <span class="text-[#45F3FF]">Nuxt 3</span> & <span class="text-[#45F3FF]">Tailwind</span>.
+          &copy; {{ new Date().getFullYear() }} Anne Jan. Built with <span class="text-[#45F3FF]">Nuxt 3</span> & <span class="text-[#45F3FF]">Tailwind</span>.
         </p>
         <div class="text-xs text-gray-800">
           01000001 01001110 01001110 01000101

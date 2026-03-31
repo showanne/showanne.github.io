@@ -61,7 +61,7 @@ const backendHighlights = computed(() => portfolioData.skills.backend.highlight.
 
 <template>
   <div class="antialiased overflow-x-hidden bg-[#0f172a] text-[#f8fafc] selection:bg-amber-500/30">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 transition-all duration-300 border-b', scrolled ? 'bg-slate-900/90 backdrop-blur-md py-2 border-slate-800' : 'bg-transparent py-4 border-transparent']">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,7 +238,7 @@ const backendHighlights = computed(() => portfolioData.skills.backend.highlight.
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div v-for="project in otherProjects" :key="project.title" 
+          <div v-for="project in otherProjects" :key="project.title"
             class="bg-slate-800/50 p-6 rounded-sm border border-slate-700 hover:border-amber-400/50 transition-all group">
             <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">{{ project.title }}</h4>
             <p class="text-slate-400 text-sm mb-4 line-clamp-2">{{ project.description }}</p>
@@ -254,7 +254,7 @@ const backendHighlights = computed(() => portfolioData.skills.backend.highlight.
     <footer id="watch" class="bg-black py-16 border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h3 class="text-2xl font-bold text-white mb-8">與我聯絡</h3>
-        
+
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
           <a :href="'mailto:' + contact.email"
             class="w-64 py-4 bg-amber-500 text-slate-900 font-bold rounded-md hover:bg-amber-400 transition-colors flex items-center justify-center space-x-2 shadow-[0_0_20px_rgba(251,191,36,0.2)]">
@@ -269,7 +269,7 @@ const backendHighlights = computed(() => portfolioData.skills.backend.highlight.
         </div>
 
         <p class="text-slate-600 text-sm">
-          &copy; {{ new Date().getFullYear() }} Anne Jhan. All Rights Reserved. <br>
+          &copy; {{ new Date().getFullYear() }} Anne Jan. All Rights Reserved. <br>
           Designed in Mobius Cinematic Style.
         </p>
       </div>

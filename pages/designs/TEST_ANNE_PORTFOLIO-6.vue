@@ -43,7 +43,7 @@ onMounted(() => {
 
 <template>
   <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans overflow-x-hidden">
-    
+
     <!-- Sleep 3: Global Effects -->
     <div class="scanline"></div>
     <div class="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none z-0"></div>
@@ -85,13 +85,13 @@ onMounted(() => {
 
       <div class="relative z-20 text-center px-4">
         <div class="inline-block border border-[#45F3FF]/30 px-4 py-1 bg-[#45F3FF]/5 mb-8 backdrop-blur-sm animate-on-scroll">
-          <p class="text-[#45F3FF] font-mono tracking-[0.4em] text-[10px] uppercase">// Mission_ID: Anne_Jhan // Status: Ready</p>
+          <p class="text-[#45F3FF] font-mono tracking-[0.4em] text-[10px] uppercase">// Mission_ID: Anne_Jan // Status: Ready</p>
         </div>
-        
-        <h1 class="text-6xl md:text-9xl font-black text-white mb-4 tracking-tighter font-tech italic glitch-text uppercase" data-text="ANNE JHAN">
-          ANNE JHAN
+
+        <h1 class="text-6xl md:text-9xl font-black text-white mb-4 tracking-tighter font-tech italic glitch-text uppercase" data-text="ANNE JAN">
+          ANNE JAN
         </h1>
-        
+
         <h2 class="text-2xl md:text-5xl font-bold text-white mb-12 tracking-[0.5em] font-tech">
           CROSS<span class="text-[#FF2A6D]">FIRE</span><span class="text-[#45F3FF]">.LOG</span>
         </h2>
@@ -155,7 +155,7 @@ onMounted(() => {
                     <span :class="idx === 0 ? 'text-[#FF2A6D]' : 'text-[#45F3FF]'">{{ 95 - (idx * 5) }}%</span>
                   </div>
                   <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                    <div :class="['h-full transition-all duration-[2s] group-hover:w-full', idx === 0 ? 'bg-[#FF2A6D]' : 'bg-[#45F3FF]']" 
+                    <div :class="['h-full transition-all duration-[2s] group-hover:w-full', idx === 0 ? 'bg-[#FF2A6D]' : 'bg-[#45F3FF]']"
                       :style="{ width: (95 - (idx * 5)) + '%' }"></div>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ onMounted(() => {
     <!-- [Sleep 3 Bento Style] Deployed Modules -->
     <section id="projects" class="py-32 bg-void relative overflow-hidden">
       <div class="absolute top-20 right-0 text-[15rem] font-tech font-black text-white/5 select-none -translate-y-1/2 translate-x-1/4 italic uppercase">MISSION</div>
-      
+
       <div class="max-w-7xl mx-auto px-8 relative z-10 animate-on-scroll">
         <h3 class="text-[#45F3FF] font-mono tracking-[0.3em] text-xs uppercase mb-16 flex items-center gap-3">
           <span class="w-8 h-px bg-[#45F3FF]/30"></span> 02. Deployed_Modules
@@ -268,7 +268,7 @@ onMounted(() => {
     <!-- Footer -->
     <footer class="py-16 bg-black border-t border-white/5 text-center">
       <p class="font-mono text-[10px] text-slate-700 tracking-[0.5em] uppercase">
-        &copy; {{ new Date().getFullYear() }} ANNE JHAN // COMBAT_FUSION_V4 // TERMINATE_SESSION
+        &copy; {{ new Date().getFullYear() }} ANNE JAN // COMBAT_FUSION_V4 // TERMINATE_SESSION
       </p>
     </footer>
   </div>
@@ -292,7 +292,7 @@ onMounted(() => {
 
 .grid-bg {
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(69, 243, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(69, 243, 255, 0.03) 1px, transparent 1px);
 }

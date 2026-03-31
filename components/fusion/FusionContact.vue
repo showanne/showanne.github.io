@@ -20,7 +20,7 @@ const handleCommand = () => {
     case 'help': response = 'Available commands: [about, email, resume, skills, status, clear]'; break;
     case 'about': response = '> Hybrid Developer: Building bridges between data and design.'; break;
     case 'email': response = `> TRANSMISSION_KEY: ${contact.email}`; break;
-    case 'resume': response = '> FILE_PATH: /assets/cv/anne_jhan_2025.pdf (Encrypted)'; break;
+    case 'resume': response = '> FILE_PATH: /assets/cv/anne_jan_2025.pdf (Encrypted)'; break;
     case 'status': response = '> SYSTEM: OPTIMAL | CORE: VUE_3 | ENERGY: 100%'; break;
     case 'skills': response = `> FRONT: ${portfolioData.skills.frontend.highlight[0]} | BACK: ${portfolioData.skills.backend.highlight[0]}`; break;
     case 'clear': terminalHistory.value = []; terminalInput.value = ''; return;
@@ -58,7 +58,7 @@ const handleCommand = () => {
               Send_Signal()
             </a>
           </div>
-          
+
           <div class="grid grid-cols-2 gap-4">
             <a :href="contact.github" target="_blank" class="bento-card p-6 flex flex-col items-center justify-center gap-2 group border-white/5 hover:border-[#45F3FF]/30">
               <i class="ph ph-github-logo text-3xl text-white group-hover:text-[#45F3FF] transition-colors"></i>
@@ -82,7 +82,7 @@ const handleCommand = () => {
             </div>
             <div class="p-8 font-mono text-sm flex-1 bg-[#050505]/40 backdrop-blur-xl flex flex-col">
               <div class="terminal-body flex-1 overflow-y-auto space-y-3 mb-6 scrollbar-thin">
-                <div v-for="(log, i) in terminalHistory" :key="i" 
+                <div v-for="(log, i) in terminalHistory" :key="i"
                   :class="{'text-[#39FF14]': log.type === 'info', 'text-slate-500': log.type === 'res', 'text-[#45F3FF]': log.type === 'cmd'}">
                   <span v-if="log.type === 'cmd'">$ </span>{{ log.text }}
                 </div>

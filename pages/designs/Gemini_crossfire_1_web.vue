@@ -48,13 +48,13 @@ const menuItems = [
 
 <template>
   <div class="bg-[#0B0E14] text-white font-sans overflow-x-hidden selection:bg-[#F59E0B] selection:text-black">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 transition-all duration-300', scrolled ? 'bg-black/90 shadow-lg py-3' : 'glass py-4']" id="navbar">
       <div class="container mx-auto px-6 flex justify-between items-center">
         <a href="#" class="text-2xl font-tech font-bold tracking-widest italic uppercase flex items-center gap-2">
           <i class="fa-solid fa-crosshairs text-[#EF4444]"></i>
-          <span class="text-white">Anne</span><span class="text-[#F59E0B]">Jhan</span>
+          <span class="text-white">Anne</span><span class="text-[#F59E0B]">Jan</span>
         </a>
 
         <div class="hidden md:flex space-x-8 items-center font-tech tracking-wide text-sm">
@@ -101,8 +101,8 @@ const menuItems = [
         </div>
 
         <h1 class="text-6xl md:text-9xl font-black font-tech uppercase tracking-tighter mb-2 glitch-text leading-none"
-          data-text="ANNE JHAN">
-          ANNE JHAN
+          data-text="ANNE JAN">
+          ANNE JAN
         </h1>
         <h2 class="text-2xl md:text-5xl font-bold text-white mb-8 tracking-[0.5em] uppercase">
           穿越<span class="text-[#F59E0B]">邏輯</span>與<span class="text-[#0EA5E9]">美學</span>
@@ -211,7 +211,7 @@ const menuItems = [
               <p class="text-gray-400 mb-6 text-sm leading-relaxed">
                 {{ project.description }}
               </p>
-              
+
               <!-- Skill Bars (Representing project complexity/tech stack) -->
               <div class="space-y-4">
                 <div v-for="(tag, tIdx) in project.tags.slice(0, 3)" :key="tag" class="space-y-1">
@@ -264,11 +264,11 @@ const menuItems = [
     <footer class="bg-black py-16 border-t border-gray-800 text-center md:text-left relative overflow-hidden">
       <!-- Decorative Slant Line -->
       <div class="absolute top-0 right-0 w-1/3 h-1 bg-[#EF4444] skew-x-[-45deg] translate-x-10"></div>
-      
+
       <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <div class="mb-8 md:mb-0">
           <a href="#" class="text-2xl font-tech font-bold tracking-widest uppercase text-white">
-            Anne<span class="text-[#EF4444]">Jhan</span>
+            Anne<span class="text-[#EF4444]">Jan</span>
           </a>
           <p class="text-gray-500 text-sm mt-3 font-mono">© 2026 Full-Stack Cross-Border Portfolio.</p>
           <div class="mt-6 flex flex-col gap-2">
@@ -309,8 +309,8 @@ const menuItems = [
 }
 
 .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(30, 41, 59, 0.2) 1px, transparent 1px), 
+  background-image:
+    linear-gradient(to right, rgba(30, 41, 59, 0.2) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
 }
 

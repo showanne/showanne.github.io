@@ -4,7 +4,7 @@ import portfolioData from '~/assets/data/portfolio.json';
 
 // Use standard Head metadata
 useHead({
-  title: 'Anne Jhan | Professional & Empathetic Portfolio',
+  title: 'Anne Jan | Professional & Empathetic Portfolio',
   link: [
     {
       rel: 'stylesheet',
@@ -51,7 +51,7 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#0c0a09] text-stone-100 font-sans antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden">
-    
+
     <!-- Navigation -->
     <nav :class="['fixed w-full z-50 transition-all duration-500 border-b', scrolled ? 'bg-stone-900/90 backdrop-blur-xl py-4 border-white/10 shadow-lg' : 'bg-transparent py-6 border-transparent']">
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -165,7 +165,7 @@ onMounted(() => {
           <div v-for="(cat, key) in skills" :key="key" class="bg-[#0c0a09] p-10 border border-stone-800 hover:border-amber-500/30 transition-all group">
             <h3 class="text-amber-400 font-serif text-2xl mb-8 uppercase italic group-hover:translate-x-2 transition-transform">{{ key }}</h3>
             <div class="flex flex-wrap gap-2">
-              <span v-for="tag in cat.tags" :key="tag" 
+              <span v-for="tag in cat.tags" :key="tag"
                 class="px-3 py-1 bg-stone-800 text-stone-400 text-[10px] uppercase font-bold tracking-tighter hover:text-white transition-colors">
                 {{ tag }}
               </span>
@@ -181,7 +181,7 @@ onMounted(() => {
         <h2 class="font-serif text-4xl md:text-6xl text-center mb-24 text-white uppercase italic tracking-widest">Selected Works</h2>
 
         <div class="grid md:grid-cols-3 gap-10">
-          <div v-for="(project, index) in featuredProjects" :key="project.title" 
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
             class="bg-[#1c1917] border border-stone-800 slash-card group overflow-hidden">
             <div class="h-56 bg-stone-800 overflow-hidden relative">
               <div class="absolute inset-0 bg-stone-900 flex items-center justify-center text-stone-700 font-serif text-2xl opacity-40 uppercase tracking-widest italic group-hover:scale-110 transition-transform duration-700">
@@ -256,7 +256,7 @@ onMounted(() => {
         </div>
       </div>
       <div class="text-center mt-20 text-stone-800 text-[9px] uppercase tracking-[0.5em] font-bold">
-        &copy; {{ new Date().getFullYear() }} Anne Jhan. All rights reserved. // Inspired by "The Diamond's Dream".
+        &copy; {{ new Date().getFullYear() }} Anne Jan. All rights reserved. // Inspired by "The Diamond's Dream".
       </div>
     </footer>
   </div>
