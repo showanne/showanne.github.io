@@ -40,10 +40,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans overflow-x-hidden">
+  <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans">
 
-    <!-- 全域掃描線與噪點 -->
-    <div class="scanline"></div>
+    <!-- 全域掃描線與噪點 -->    <div class="scanline"></div>
     <div class="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none z-0"></div>
 
     <!-- 獨立於原版的組件 -->
@@ -53,7 +52,7 @@ onMounted(() => {
       <FusionHero id="home" />
       <FusionAbout id="about" />
       <FusionExperience id="experience" />
-      <FusionProjects id="projects" :limit="2" :show-more-button="true" />
+      <FusionProjectsHome id="projects" />
       <FusionContact id="contact" />
     </main>
 
