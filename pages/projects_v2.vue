@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useHead({
-  title: 'All Projects | Anne Jan Full-Stack Deployed',
+  title: 'All Projects | Anne Jhan Full-Stack Deployed',
   link: [
     {
       rel: 'stylesheet',
@@ -19,6 +19,10 @@ useHead({
   ],
   script: [{ src: 'https://unpkg.com/@phosphor-icons/web', defer: true }]
 });
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -34,15 +38,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans overflow-x-hidden min-h-screen">
+  <!-- 移除這裡的 overflow-x-hidden 以修復 position: sticky -->
+  <div class="antialiased selection:bg-[#45F3FF] selection:text-black bg-[#050505] text-[#C5C6C7] font-sans min-h-screen">
     <div class="scanline"></div>
     <div class="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none z-0"></div>
 
-    <FusionNavbar />
+    <FusionNavbar @scrollToTop="scrollToTop" />
     
     <main class="pt-20">
-      <!-- 這裡不傳入 limit，會顯示所有專案，並開啟詳細功能清單 -->
-      <FusionProjects :expand-details="true" />
+      <FusionProjectsGrid :expand-details="true" />
     </main>
 
     <FusionFooter />
@@ -52,6 +56,13 @@ onMounted(() => {
 <style>
 .font-tech { font-family: 'Chakra Petch', sans-serif; }
 .font-mono { font-family: 'Share Tech Mono', monospace; }
+
+/* 在 html/body 層級處理橫向溢出，不影響 sticky */
+html, body {
+  overflow-x: hidden;
+  background-color: #050505;
+}
+
 .scanline {
   width: 100%; height: 100vh;
   background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
