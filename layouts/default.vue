@@ -1,9 +1,7 @@
 <template>
-  <div class="page">
-    <AppHeader />
-    <main class="pt-16">
+  <div class="min-h-screen bg-[#050505]">
+    <main>
       <slot />
     </main>
-    <AppFooter />
   </div>
 </template>

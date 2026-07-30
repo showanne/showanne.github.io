@@ -70,7 +70,7 @@ const totalCount = computed(() => portfolioData.projects.featured.length + portf
 
       <!-- More Button -->
       <div class="mt-48 text-center animate-on-scroll">
-        <NuxtLink to="/projects_v2" class="relative inline-flex items-center gap-6 px-16 py-6 bg-transparent border border-[#45F3FF]/30 text-[#45F3FF] font-mono text-xs tracking-[0.4em] uppercase hover:bg-[#45F3FF] hover:text-black transition-all group overflow-hidden">
+        <NuxtLink to="/projects" class="relative inline-flex items-center gap-6 px-16 py-6 bg-transparent border border-[#45F3FF]/30 text-[#45F3FF] font-mono text-xs tracking-[0.4em] uppercase hover:bg-[#45F3FF] hover:text-black transition-all group overflow-hidden">
           <span class="relative z-10">Access_Full_Database ({{ totalCount }})</span>
           <i class="ph ph-arrow-right relative z-10 group-hover:translate-x-2 transition-transform"></i>
           <div class="absolute inset-0 bg-[#45F3FF] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
