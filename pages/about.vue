@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useHead({
-  title: 'All Projects | Anne Jhan Full-Stack Deployed',
+  title: 'About | Anne Jan',
   link: [
     {
       rel: 'stylesheet',
@@ -45,7 +45,7 @@ onMounted(() => {
     <FusionNavbar @scrollToTop="scrollToTop" />
 
     <main class="pt-20 relative z-10">
-      <FusionProjectsGrid :expand-details="true" />
+      <FusionAbout />
     </main>
 
     <FusionFooter />

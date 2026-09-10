@@ -9,10 +9,10 @@ onMounted(() => {
 });
 
 const menuItems = [
-  { name: 'ABOUT', href: '#about' },
-  { name: 'HISTORY', href: '#experience' },
-  { name: 'REPO', href: '#projects' },
-  { name: 'TERMINAL', href: '#contact' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'HISTORY', href: '/experience' },
+  { name: 'REPO', href: '/projects' },
+  { name: 'TERMINAL', href: '/contact' },
 ];
 </script>
 
@@ -28,9 +28,9 @@ const menuItems = [
         <span class="font-bold text-xl tracking-[0.2em] text-white uppercase">ANNE<span class="text-[#45F3FF]">.</span>V3</span>
       </div>
       <div class="hidden md:flex space-x-12 font-mono text-[11px] tracking-[0.3em] uppercase text-slate-400">
-        <a v-for="item in menuItems" :key="item.name" :href="item.href" class="hover:text-[#45F3FF] transition-colors relative group">
+        <NuxtLink v-for="item in menuItems" :key="item.name" :to="item.href" class="hover:text-[#45F3FF] transition-colors relative group">
           {{ item.name }}
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </nav>
