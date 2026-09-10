@@ -45,6 +45,24 @@ onMounted(() => {
     <FusionNavbar @scrollToTop="scrollToTop" />
 
     <main class="pt-20 relative z-10">
+      <section class="py-20 border-b border-white/5 animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="mb-10">
+            <p class="text-[#45F3FF] font-mono tracking-[0.4em] text-[10px] uppercase mb-4">00. System_Identity</p>
+            <h1 class="text-4xl md:text-6xl font-tech font-bold text-white uppercase tracking-tight">Profile_Specification</h1>
+          </div>
+          <div class="max-w-4xl space-y-6">
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed font-light">
+              我將產品邏輯與視覺設計一同對齊，讓每一次互動都既能被理解，也能留下記憶。
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <NuxtLink to="/experience" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-[#45F3FF]/30 px-5 py-3 text-[#45F3FF] hover:bg-[#45F3FF] hover:text-black transition-all">System_Logs</NuxtLink>
+              <NuxtLink to="/projects" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-white/10 px-5 py-3 text-white hover:border-[#A855F7] hover:text-[#A855F7] transition-all">Access_Repository</NuxtLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FusionAbout />
     </main>
 

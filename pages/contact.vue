@@ -46,6 +46,24 @@ onMounted(() => {
     <FusionNavbar @scrollToTop="scrollToTop" />
 
     <main class="pt-20 relative z-10">
+      <section class="py-20 border-b border-white/5 animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="mb-10">
+            <p class="text-[#FF2A6D] font-mono tracking-[0.4em] text-[10px] uppercase mb-4">04. Initiate_Handshake</p>
+            <h1 class="text-4xl md:text-6xl font-tech font-bold text-white uppercase tracking-tight">Signal_Protocol</h1>
+          </div>
+          <div class="max-w-4xl space-y-6">
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed font-light">
+              如果你正在尋找能把想法轉成穩定產品的合作夥伴，歡迎直接透過這個頁面發送聯絡信號。
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <NuxtLink to="/projects" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-[#45F3FF]/30 px-5 py-3 text-[#45F3FF] hover:bg-[#45F3FF] hover:text-black transition-all">Access_Repository</NuxtLink>
+              <NuxtLink to="/about" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-white/10 px-5 py-3 text-white hover:border-[#A855F7] hover:text-[#A855F7] transition-all">Profile_Specs</NuxtLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FusionContact />
     </main>
 

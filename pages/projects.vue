@@ -45,6 +45,24 @@ onMounted(() => {
     <FusionNavbar @scrollToTop="scrollToTop" />
 
     <main class="pt-20 relative z-10">
+      <section class="py-20 border-b border-white/5 animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="mb-10">
+            <p class="text-[#45F3FF] font-mono tracking-[0.4em] text-[10px] uppercase mb-4">03. Core_Deployments</p>
+            <h1 class="text-4xl md:text-6xl font-tech font-bold text-white uppercase tracking-tight">Project_Repository</h1>
+          </div>
+          <div class="max-w-4xl space-y-6">
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed font-light">
+              這裡是工程與產品落地的索引，從全端架構、可視化互動到企業內部系統，都有完整的設計與實作脈絡。
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <NuxtLink to="/experience" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-[#45F3FF]/30 px-5 py-3 text-[#45F3FF] hover:bg-[#45F3FF] hover:text-black transition-all">System_Logs</NuxtLink>
+              <NuxtLink to="/contact" class="text-[10px] font-mono uppercase tracking-[0.4em] border border-white/10 px-5 py-3 text-white hover:border-[#FF2A6D] hover:text-[#FF2A6D] transition-all">Initiate_Handshake</NuxtLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FusionProjectsGrid :expand-details="true" />
     </main>
 
